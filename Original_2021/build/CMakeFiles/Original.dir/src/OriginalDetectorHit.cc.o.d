@@ -1,6 +1,6 @@
 CMakeFiles/Original.dir/src/OriginalDetectorHit.cc.o: \
-  /Users/jiancheng/g4work/Original_2021/src/OriginalDetectorHit.cc \
-  /Users/jiancheng/g4work/Original_2021/include/OriginalDetectorHit.hh \
+  /Users/jiancheng/CloudDocuments/Documents/GitHub/Geant4-simulation/Original_2021/src/OriginalDetectorHit.cc \
+  /Users/jiancheng/CloudDocuments/Documents/GitHub/Geant4-simulation/Original_2021/include/OriginalDetectorHit.hh \
   /opt/geant4/pro/include/Geant4/G4VHit.hh \
   /opt/geant4/pro/include/Geant4/globals.hh \
   /opt/geant4/pro/include/Geant4/G4ios.hh \
@@ -427,6 +427,6 @@ CMakeFiles/Original.dir/src/OriginalDetectorHit.cc.o: \
   /opt/geant4/pro/include/Geant4/G4VisAttributes.hh \
   /opt/geant4/pro/include/Geant4/graphics_reps_defs.hh \
   /opt/geant4/pro/include/Geant4/G4VisAttributes.icc \
-  /Users/jiancheng/g4work/Original_2021/include/global.h \
+  /Users/jiancheng/CloudDocuments/Documents/GitHub/Geant4-simulation/Original_2021/include/global.h \
   /opt/geant4/pro/include/Geant4/G4VUserDetectorConstruction.hh \
   /opt/geant4/pro/include/Geant4/G4SystemOfUnits.hh

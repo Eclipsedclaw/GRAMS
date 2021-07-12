@@ -1,6 +1,6 @@
 CMakeFiles/Original.dir/src/OriginalEventAction.cc.o: \
-  /Users/jiancheng/g4work/Original_2021/src/OriginalEventAction.cc \
-  /Users/jiancheng/g4work/Original_2021/include/OriginalEventAction.hh \
+  /Users/jiancheng/CloudDocuments/Documents/GitHub/Geant4-simulation/Original_2021/src/OriginalEventAction.cc \
+  /Users/jiancheng/CloudDocuments/Documents/GitHub/Geant4-simulation/Original_2021/include/OriginalEventAction.hh \
   /opt/geant4/pro/include/Geant4/G4UserEventAction.hh \
   /opt/geant4/pro/include/Geant4/G4Event.hh \
   /opt/geant4/pro/include/Geant4/globals.hh \
@@ -496,7 +496,7 @@ CMakeFiles/Original.dir/src/OriginalEventAction.cc.o: \
   /opt/geant4/pro/include/Geant4/trkgdefs.hh \
   /opt/geant4/pro/include/Geant4/G4TrajectoryPoint.hh \
   /opt/geant4/pro/include/Geant4/G4VTrajectoryPoint.hh \
-  /Users/jiancheng/g4work/Original_2021/include/global.h \
+  /Users/jiancheng/CloudDocuments/Documents/GitHub/Geant4-simulation/Original_2021/include/global.h \
   /opt/geant4/pro/include/Geant4/G4VUserDetectorConstruction.hh \
   /opt/geant4/pro/include/Geant4/G4SystemOfUnits.hh \
   /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/unistd.h \

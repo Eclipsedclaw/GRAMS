@@ -53,10 +53,10 @@ RM = /opt/homebrew/Cellar/cmake/3.20.5/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/jiancheng/g4work/Original_2021
+CMAKE_SOURCE_DIR = /Users/jiancheng/CloudDocuments/Documents/GitHub/Geant4-simulation/Original_2021
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/jiancheng/g4work/Original_2021/build
+CMAKE_BINARY_DIR = /Users/jiancheng/CloudDocuments/Documents/GitHub/Geant4-simulation/Original_2021/build
 
 # Utility rule file for PJ.
 
@@ -81,6 +81,6 @@ CMakeFiles/PJ.dir/clean:
 .PHONY : CMakeFiles/PJ.dir/clean
 
 CMakeFiles/PJ.dir/depend:
-	cd /Users/jiancheng/g4work/Original_2021/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/jiancheng/g4work/Original_2021 /Users/jiancheng/g4work/Original_2021 /Users/jiancheng/g4work/Original_2021/build /Users/jiancheng/g4work/Original_2021/build /Users/jiancheng/g4work/Original_2021/build/CMakeFiles/PJ.dir/DependInfo.cmake --color=$(COLOR)
+	cd /Users/jiancheng/CloudDocuments/Documents/GitHub/Geant4-simulation/Original_2021/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/jiancheng/CloudDocuments/Documents/GitHub/Geant4-simulation/Original_2021 /Users/jiancheng/CloudDocuments/Documents/GitHub/Geant4-simulation/Original_2021 /Users/jiancheng/CloudDocuments/Documents/GitHub/Geant4-simulation/Original_2021/build /Users/jiancheng/CloudDocuments/Documents/GitHub/Geant4-simulation/Original_2021/build /Users/jiancheng/CloudDocuments/Documents/GitHub/Geant4-simulation/Original_2021/build/CMakeFiles/PJ.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/PJ.dir/depend
 

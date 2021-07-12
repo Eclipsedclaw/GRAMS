@@ -1,6 +1,6 @@
 CMakeFiles/Original.dir/src/OriginalDetectorMessenger.cc.o: \
-  /Users/jiancheng/g4work/Original_2021/src/OriginalDetectorMessenger.cc \
-  /Users/jiancheng/g4work/Original_2021/include/OriginalDetectorMessenger.hh \
+  /Users/jiancheng/CloudDocuments/Documents/GitHub/Geant4-simulation/Original_2021/src/OriginalDetectorMessenger.cc \
+  /Users/jiancheng/CloudDocuments/Documents/GitHub/Geant4-simulation/Original_2021/include/OriginalDetectorMessenger.hh \
   /opt/geant4/pro/include/Geant4/globals.hh \
   /opt/geant4/pro/include/Geant4/G4ios.hh \
   /opt/geant4/pro/include/Geant4/G4Types.hh \
@@ -258,7 +258,7 @@ CMakeFiles/Original.dir/src/OriginalDetectorMessenger.cc.o: \
   /opt/geant4/pro/include/Geant4/CLHEP/Vector/ThreeVector.h \
   /opt/geant4/pro/include/Geant4/CLHEP/Utility/defs.h \
   /opt/geant4/pro/include/Geant4/CLHEP/Vector/ThreeVector.icc \
-  /Users/jiancheng/g4work/Original_2021/include/global.h \
+  /Users/jiancheng/CloudDocuments/Documents/GitHub/Geant4-simulation/Original_2021/include/global.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/fstream \
   /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/filesystem \
   /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/stack \
@@ -266,8 +266,8 @@ CMakeFiles/Original.dir/src/OriginalDetectorMessenger.cc.o: \
   /opt/geant4/pro/include/Geant4/G4VUserDetectorConstruction.hh \
   /opt/geant4/pro/include/Geant4/G4SystemOfUnits.hh \
   /opt/geant4/pro/include/Geant4/CLHEP/Units/SystemOfUnits.h \
-  /Users/jiancheng/g4work/Original_2021/include/OriginalDetectorConstruction.hh \
-  /Users/jiancheng/g4work/Original_2021/include/OriginalDetectorSD.hh \
+  /Users/jiancheng/CloudDocuments/Documents/GitHub/Geant4-simulation/Original_2021/include/OriginalDetectorConstruction.hh \
+  /Users/jiancheng/CloudDocuments/Documents/GitHub/Geant4-simulation/Original_2021/include/OriginalDetectorSD.hh \
   /opt/geant4/pro/include/Geant4/G4VSensitiveDetector.hh \
   /opt/geant4/pro/include/Geant4/G4VHit.hh \
   /opt/geant4/pro/include/Geant4/G4Step.hh \
@@ -382,7 +382,7 @@ CMakeFiles/Original.dir/src/OriginalDetectorMessenger.cc.o: \
   /opt/geant4/pro/include/Geant4/G4TouchableHistory.icc \
   /opt/geant4/pro/include/Geant4/G4CollectionNameVector.hh \
   /opt/geant4/pro/include/Geant4/G4VSDFilter.hh \
-  /Users/jiancheng/g4work/Original_2021/include/OriginalDetectorHit.hh \
+  /Users/jiancheng/CloudDocuments/Documents/GitHub/Geant4-simulation/Original_2021/include/OriginalDetectorHit.hh \
   /opt/geant4/pro/include/Geant4/G4THitsCollection.hh \
   /opt/geant4/pro/include/Geant4/G4VProcess.hh \
   /opt/geant4/pro/include/Geant4/Randomize.hh \
