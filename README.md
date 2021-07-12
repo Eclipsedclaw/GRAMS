@@ -1,5 +1,5 @@
 # Geant-simulation
-## For GFP simulation in GAPS. This is the toy model case
+For GFP simulation in GAPS. This is the toy model case
 
 # All should be done in Terminal
 ## Install XCode
