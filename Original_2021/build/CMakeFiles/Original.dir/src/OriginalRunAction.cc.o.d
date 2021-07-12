@@ -1,6 +1,6 @@
 CMakeFiles/Original.dir/src/OriginalRunAction.cc.o: \
-  /Users/jiancheng/g4work/Original_2021/src/OriginalRunAction.cc \
-  /Users/jiancheng/g4work/Original_2021/include/OriginalRunAction.hh \
+  /Users/jiancheng/CloudDocuments/Documents/GitHub/Geant4-simulation/Original_2021/src/OriginalRunAction.cc \
+  /Users/jiancheng/CloudDocuments/Documents/GitHub/Geant4-simulation/Original_2021/include/OriginalRunAction.hh \
   /opt/geant4/pro/include/Geant4/G4UserRunAction.hh \
   /opt/geant4/pro/include/Geant4/G4Types.hh \
   /opt/geant4/pro/include/Geant4/G4GlobalConfig.hh \
@@ -500,5 +500,5 @@ CMakeFiles/Original.dir/src/OriginalRunAction.cc.o: \
   /opt/geant4/pro/include/Geant4/G4UnitsTable.hh \
   /opt/geant4/pro/include/Geant4/G4UnitsTable.icc \
   /opt/geant4/pro/include/Geant4/G4SystemOfUnits.hh \
-  /Users/jiancheng/g4work/Original_2021/include/global.h \
+  /Users/jiancheng/CloudDocuments/Documents/GitHub/Geant4-simulation/Original_2021/include/global.h \
   /opt/geant4/pro/include/Geant4/G4VUserDetectorConstruction.hh

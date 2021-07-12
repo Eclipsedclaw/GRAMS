@@ -1,6 +1,6 @@
 CMakeFiles/Original.dir/Original.cc.o: \
-  /Users/jiancheng/g4work/Original_2021/Original.cc \
-  /Users/jiancheng/g4work/Original_2021/include/OriginalDetectorConstruction.hh \
+  /Users/jiancheng/CloudDocuments/Documents/GitHub/Geant4-simulation/Original_2021/Original.cc \
+  /Users/jiancheng/CloudDocuments/Documents/GitHub/Geant4-simulation/Original_2021/include/OriginalDetectorConstruction.hh \
   /opt/geant4/pro/include/Geant4/globals.hh \
   /opt/geant4/pro/include/Geant4/G4ios.hh \
   /opt/geant4/pro/include/Geant4/G4Types.hh \
@@ -249,7 +249,7 @@ CMakeFiles/Original.dir/Original.cc.o: \
   /opt/geant4/pro/include/Geant4/G4VUserDetectorConstruction.hh \
   /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/vector \
   /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/__split_buffer \
-  /Users/jiancheng/g4work/Original_2021/include/OriginalDetectorSD.hh \
+  /Users/jiancheng/CloudDocuments/Documents/GitHub/Geant4-simulation/Original_2021/include/OriginalDetectorSD.hh \
   /opt/geant4/pro/include/Geant4/G4VSensitiveDetector.hh \
   /opt/geant4/pro/include/Geant4/G4VHit.hh \
   /opt/geant4/pro/include/Geant4/G4Step.hh \
@@ -373,7 +373,7 @@ CMakeFiles/Original.dir/Original.cc.o: \
   /opt/geant4/pro/include/Geant4/G4TouchableHistory.icc \
   /opt/geant4/pro/include/Geant4/G4CollectionNameVector.hh \
   /opt/geant4/pro/include/Geant4/G4VSDFilter.hh \
-  /Users/jiancheng/g4work/Original_2021/include/OriginalDetectorHit.hh \
+  /Users/jiancheng/CloudDocuments/Documents/GitHub/Geant4-simulation/Original_2021/include/OriginalDetectorHit.hh \
   /opt/geant4/pro/include/Geant4/G4THitsCollection.hh \
   /opt/geant4/pro/include/Geant4/G4VProcess.hh \
   /opt/geant4/pro/include/Geant4/Randomize.hh \
@@ -439,7 +439,7 @@ CMakeFiles/Original.dir/Original.cc.o: \
   /opt/geant4/pro/include/Geant4/G4Colour.hh \
   /opt/geant4/pro/include/Geant4/G4Color.hh \
   /opt/geant4/pro/include/Geant4/G4VisAttributes.icc \
-  /Users/jiancheng/g4work/Original_2021/include/OriginalPhysicsList.hh \
+  /Users/jiancheng/CloudDocuments/Documents/GitHub/Geant4-simulation/Original_2021/include/OriginalPhysicsList.hh \
   /opt/geant4/pro/include/Geant4/G4VModularPhysicsList.hh \
   /opt/geant4/pro/include/Geant4/rundefs.hh \
   /opt/geant4/pro/include/Geant4/G4VPhysicsConstructor.hh \
@@ -458,11 +458,11 @@ CMakeFiles/Original.dir/Original.cc.o: \
   /opt/geant4/pro/include/Geant4/G4MaterialCutsCouple.hh \
   /opt/geant4/pro/include/Geant4/G4ProductionCuts.hh \
   /opt/geant4/pro/include/Geant4/G4MCCIndexConversionTable.hh \
-  /Users/jiancheng/g4work/Original_2021/include/OriginalPrimaryGeneratorAction.hh \
+  /Users/jiancheng/CloudDocuments/Documents/GitHub/Geant4-simulation/Original_2021/include/OriginalPrimaryGeneratorAction.hh \
   /opt/geant4/pro/include/Geant4/G4VUserPrimaryGeneratorAction.hh \
-  /Users/jiancheng/g4work/Original_2021/include/OriginalRunAction.hh \
+  /Users/jiancheng/CloudDocuments/Documents/GitHub/Geant4-simulation/Original_2021/include/OriginalRunAction.hh \
   /opt/geant4/pro/include/Geant4/G4UserRunAction.hh \
-  /Users/jiancheng/g4work/Original_2021/include/OriginalEventAction.hh \
+  /Users/jiancheng/CloudDocuments/Documents/GitHub/Geant4-simulation/Original_2021/include/OriginalEventAction.hh \
   /opt/geant4/pro/include/Geant4/G4UserEventAction.hh \
   /opt/geant4/pro/include/Geant4/G4RunManager.hh \
   /opt/geant4/pro/include/Geant4/G4Event.hh \
@@ -614,5 +614,5 @@ CMakeFiles/Original.dir/Original.cc.o: \
   /opt/geant4/pro/include/Geant4/G4OpenGLQt.hh \
   /opt/geant4/pro/include/Geant4/G4OpenGLStoredQt.hh \
   /opt/geant4/pro/include/Geant4/G4UIExecutive.hh \
-  /Users/jiancheng/g4work/Original_2021/include/global.h \
+  /Users/jiancheng/CloudDocuments/Documents/GitHub/Geant4-simulation/Original_2021/include/global.h \
   /opt/geant4/pro/include/Geant4/G4SystemOfUnits.hh

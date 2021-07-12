@@ -1,8 +1,8 @@
 CMakeFiles/Original.dir/src/OriginalPrimaryGeneratorAction.cc.o: \
-  /Users/jiancheng/g4work/Original_2021/src/OriginalPrimaryGeneratorAction.cc \
-  /Users/jiancheng/g4work/Original_2021/include/OriginalPrimaryGeneratorAction.hh \
+  /Users/jiancheng/CloudDocuments/Documents/GitHub/Geant4-simulation/Original_2021/src/OriginalPrimaryGeneratorAction.cc \
+  /Users/jiancheng/CloudDocuments/Documents/GitHub/Geant4-simulation/Original_2021/include/OriginalPrimaryGeneratorAction.hh \
   /opt/geant4/pro/include/Geant4/G4VUserPrimaryGeneratorAction.hh \
-  /Users/jiancheng/g4work/Original_2021/include/OriginalDetectorConstruction.hh \
+  /Users/jiancheng/CloudDocuments/Documents/GitHub/Geant4-simulation/Original_2021/include/OriginalDetectorConstruction.hh \
   /opt/geant4/pro/include/Geant4/globals.hh \
   /opt/geant4/pro/include/Geant4/G4ios.hh \
   /opt/geant4/pro/include/Geant4/G4Types.hh \
@@ -251,7 +251,7 @@ CMakeFiles/Original.dir/src/OriginalPrimaryGeneratorAction.cc.o: \
   /opt/geant4/pro/include/Geant4/G4VUserDetectorConstruction.hh \
   /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/vector \
   /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/__split_buffer \
-  /Users/jiancheng/g4work/Original_2021/include/OriginalDetectorSD.hh \
+  /Users/jiancheng/CloudDocuments/Documents/GitHub/Geant4-simulation/Original_2021/include/OriginalDetectorSD.hh \
   /opt/geant4/pro/include/Geant4/G4VSensitiveDetector.hh \
   /opt/geant4/pro/include/Geant4/G4VHit.hh \
   /opt/geant4/pro/include/Geant4/G4Step.hh \
@@ -375,7 +375,7 @@ CMakeFiles/Original.dir/src/OriginalPrimaryGeneratorAction.cc.o: \
   /opt/geant4/pro/include/Geant4/G4TouchableHistory.icc \
   /opt/geant4/pro/include/Geant4/G4CollectionNameVector.hh \
   /opt/geant4/pro/include/Geant4/G4VSDFilter.hh \
-  /Users/jiancheng/g4work/Original_2021/include/OriginalDetectorHit.hh \
+  /Users/jiancheng/CloudDocuments/Documents/GitHub/Geant4-simulation/Original_2021/include/OriginalDetectorHit.hh \
   /opt/geant4/pro/include/Geant4/G4THitsCollection.hh \
   /opt/geant4/pro/include/Geant4/G4VProcess.hh \
   /opt/geant4/pro/include/Geant4/Randomize.hh \
@@ -504,5 +504,5 @@ CMakeFiles/Original.dir/src/OriginalPrimaryGeneratorAction.cc.o: \
   /opt/geant4/pro/include/Geant4/G4ParticleTable.hh \
   /opt/geant4/pro/include/Geant4/G4ParticleTableIterator.hh \
   /opt/geant4/pro/include/Geant4/G4ParticleTable.icc \
-  /Users/jiancheng/g4work/Original_2021/include/global.h \
+  /Users/jiancheng/CloudDocuments/Documents/GitHub/Geant4-simulation/Original_2021/include/global.h \
   /opt/geant4/pro/include/Geant4/G4SystemOfUnits.hh

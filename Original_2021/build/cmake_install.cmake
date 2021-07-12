@@ -1,4 +1,4 @@
-# Install script for directory: /Users/jiancheng/g4work/Original_2021
+# Install script for directory: /Users/jiancheng/CloudDocuments/Documents/GitHub/Geant4-simulation/Original_2021
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -38,7 +38,7 @@ if(NOT DEFINED CMAKE_OBJDUMP)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE EXECUTABLE FILES "/Users/jiancheng/g4work/Original_2021/build/Original")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE EXECUTABLE FILES "/Users/jiancheng/CloudDocuments/Documents/GitHub/Geant4-simulation/Original_2021/build/Original")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/Original" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/Original")
     execute_process(COMMAND /usr/bin/install_name_tool
@@ -61,5 +61,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/Users/jiancheng/g4work/Original_2021/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/Users/jiancheng/CloudDocuments/Documents/GitHub/Geant4-simulation/Original_2021/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

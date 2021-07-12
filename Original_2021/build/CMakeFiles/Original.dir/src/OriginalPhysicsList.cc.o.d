@@ -1,6 +1,6 @@
 CMakeFiles/Original.dir/src/OriginalPhysicsList.cc.o: \
-  /Users/jiancheng/g4work/Original_2021/src/OriginalPhysicsList.cc \
-  /Users/jiancheng/g4work/Original_2021/include/OriginalPhysicsList.hh \
+  /Users/jiancheng/CloudDocuments/Documents/GitHub/Geant4-simulation/Original_2021/src/OriginalPhysicsList.cc \
+  /Users/jiancheng/CloudDocuments/Documents/GitHub/Geant4-simulation/Original_2021/include/OriginalPhysicsList.hh \
   /opt/geant4/pro/include/Geant4/G4VModularPhysicsList.hh \
   /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/vector \
   /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/__config \
