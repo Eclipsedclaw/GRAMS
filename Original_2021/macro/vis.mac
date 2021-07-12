@@ -1,0 +1,61 @@
+### Macro file for "Original.cc"
+### @author Tsuguo Aramaki
+### @date 2015 March 23
+
+#/process/em/deexcitation World true true true
+#/process/list
+
+/Visualization 1
+/CheckOverlap 1
+/OutputFormat 1
+/TrackType 0
+/TrackEdep 1
+
+#/InputDirectory output
+#/InputFile test.txt
+
+/update
+
+# HepRepFile diriver
+/vis/open HepRepFile
+
+# Add world volume
+/vis/drawVolume
+
+# Visualise geometry
+/vis/viewer/flush
+
+
+# Add trajectories to the visualization.
+
+/vis/scene/add/trajectories
+
+# Add hits to scene
+/vis/scene/add/hits
+
+# Accumulate multiple events in one picture.
+#/vis/scene/endOfEventAction accumulate
+
+
+# Create a drawByParticleID model named drawByParticleID-0
+/vis/modeling/trajectories/create/drawByParticleID
+# Configure drawByParticleID-0 model
+#/vis/modeling/trajectories/drawByParticleID-0/set gamma red
+#/vis/modeling/trajectories/drawByParticleID-0/set pi+ blue
+#/vis/modeling/trajectories/drawByParticleID-0/set pi- blue
+#/vis/modeling/trajectories/drawByParticleID-0/set pi0 blue
+
+# Trajectory colouring scheme
+#/vis/modeling/trajectories/create/drawByCharge
+#/vis/modeling/trajectories/drawByCharge-0/set -1 blue
+#/vis/modeling/trajectories/drawByCharge-0/set 1 blue
+#/vis/modeling/trajectories/drawByCharge-0/set 0 red
+
+/gun/particle anti_proton
+/gun/energy 60. keV
+/gun/direction 1 0 0
+/gun/position 0. 0. 0. cm
+
+/OutputDirectory output
+/OutputFile vis
+/run/beamOn 5
