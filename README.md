@@ -104,7 +104,7 @@ For GFP simulation in GAPS. This is the toy model case
 > 
 > build/Original macro/vis.mac
 
-# Visualization (see files in Teams/Labsetup). Download/Install Java8. Download and move HepRApp to /Application
+## Visualization (see files in Teams/Labsetup). Download/Install Java8. Download and move HepRApp to /Application
 > echo 'alias HepRApp="java -jar /Applications/HepRApp.jar"' >> ~/.zshrc
 > 
 > HepRApp G4Data0.heprep
