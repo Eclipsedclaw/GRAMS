@@ -3,7 +3,7 @@
 
 # All should be done in Terminal
 ## Install XCode
-$ xcode-select --install
+$ <code>xcode-select --install</code>
 
 ## Install Homebrew
 $ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
