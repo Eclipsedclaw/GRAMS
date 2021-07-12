@@ -1,16 +1,20 @@
 # Geant-simulation
-##For GFP simulation in GAPS. This is the toy model case
+## For GFP simulation in GAPS. This is the toy model case
 
 # All should be done in Terminal
 ## Install XCode
 $ xcode-select --install
 
 ## Install Homebrew
-$ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" 
-$ brew update 
-$ brew upgrade 
-$ echo 'alias brew="PATH=/opt/homebrew/bin brew"' 
-$ echo 'export PATH="/opt/homebrew/bin:$PATH"' 
+$ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+$ brew update
+
+$ brew upgrade
+
+$ echo 'alias brew="PATH=/opt/homebrew/bin brew"'
+
+$ echo 'export PATH="/opt/homebrew/bin:$PATH"'
 
 # Install anyenv/pyenv 
 $ brew install pyenv
