@@ -1,0 +1,35 @@
+### Macro file for "Original.cc"
+### @author Tsuguo Aramaki
+### @date 2015 March 23
+
+#/run/verbose 1
+#/run/particle/applyCuts
+#/event/verbose 0
+#/tracking/verbose 0
+#/tracking/storeTrajectory 1
+
+# set active sensitive detector
+#/hits/inactivate DetectorSD
+
+/process/em/deexcitation World true true true
+/process/list
+
+/Visualization 0
+/CheckOverlap 1
+/OutputFormat 0
+/TrackType 0
+/TrackEdep 1
+
+/OutputDirectory output
+
+/GeneralParticleSource 1
+/gps/particle gamma
+/gps/ene/type Mono
+/gps/ene/mono 0.06 MeV
+/gps/pos/type Point
+/gps/pos/centre 0.0 0.0 0.0 cm
+/gps/ang/type iso
+
+/OutputFile test
+/update
+/run/beamOn 10000

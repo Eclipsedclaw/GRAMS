@@ -1,0 +1,27 @@
+### Macro file for "Original.cc"
+### @author Tsuguo Aramaki
+### @date 2015 March 23
+
+# /OutputDirectory
+# /OutputFile
+# /InputDirectory
+# /InputFile
+# /gun/seed, default 9876
+
+# /SimulationType:
+# /OutputType 0 for all, 1 for simple mode (parent process, process name = 0)
+# /OutputFormat 0: 0 for ASCII 1 for ROOT tree
+# /TrackType: 0 for all, 1 for trackID = 1, 2 for parentID = 1 only
+# /TrackEdep: 0 for all, 1 for eDep > 0.0 keV 
+
+# /GeneralParticleSource: general particle source, 0 for off, 1 for on (use GPS command)
+
+# /Visualization default 0, 1: no Si(Li), frame, pipe for visualization 
+# /DetectorType: 0
+# /CheckOverlap: 0 for off, 1 for on
+# /update: need update whenever geometry is changed
+
+# set active sensitive detector
+# /hits/inactivate DetectorSD
+# /process/inactivate muMinusCaptureAtRest
+# /particle/process/list: show the list of physics processes
