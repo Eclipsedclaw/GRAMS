@@ -52,10 +52,10 @@
 #/vis/modeling/trajectories/drawByCharge-0/set 0 red
 
 /gun/particle anti_deuteron
-/gun/energy 5. MeV
+/gun/energy 1. MeV
 /gun/direction 0 0 -1
 /gun/position 0. 0. 100. cm
 
 /OutputDirectory output
 /OutputFile 210712_anti_deuteron
-/run/beamOn 5
+/run/beamOn 10
