@@ -88,11 +88,11 @@
               <heprep:attvalue showLabel="NONE" name="Material"
                 value="LAr"/>
               <heprep:attvalue showLabel="NONE" name="Density"
-                value="1.4"/>
+                value="1400"/>
               <heprep:attvalue showLabel="NONE" name="State"
-                value="3"/>
+                value="1"/>
               <heprep:attvalue showLabel="NONE" name="Radlen"
-                value="139.634"/>
+                value="0.139634"/>
               <heprep:attvalue showLabel="NONE" name="DrawAs"
                 value="Prism"/>
               <heprep:attvalue showLabel="NONE" name="LineColor"
@@ -100,21 +100,21 @@
               <heprep:attvalue showLabel="NONE" name="Visibility"
                 value="True"/>
               <heprep:primitive>
-                <heprep:point x="500" y="500" z="-500">
+                <heprep:point x="1500" y="1500" z="-200">
                 </heprep:point>
-                <heprep:point x="500" y="-500" z="-500">
+                <heprep:point x="1500" y="-1500" z="-200">
                 </heprep:point>
-                <heprep:point x="-500" y="-500" z="-500">
+                <heprep:point x="-1500" y="-1500" z="-200">
                 </heprep:point>
-                <heprep:point x="-500" y="500" z="-500">
+                <heprep:point x="-1500" y="1500" z="-200">
                 </heprep:point>
-                <heprep:point x="500" y="500" z="500">
+                <heprep:point x="1500" y="1500" z="200">
                 </heprep:point>
-                <heprep:point x="500" y="-500" z="500">
+                <heprep:point x="1500" y="-1500" z="200">
                 </heprep:point>
-                <heprep:point x="-500" y="-500" z="500">
+                <heprep:point x="-1500" y="-1500" z="200">
                 </heprep:point>
-                <heprep:point x="-500" y="500" z="500">
+                <heprep:point x="-1500" y="1500" z="200">
                 </heprep:point>
               </heprep:primitive>
             </heprep:instance>

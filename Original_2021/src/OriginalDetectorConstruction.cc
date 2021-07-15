@@ -120,7 +120,7 @@ void OriginalDetectorConstruction::DefineMaterials()
     Vacuum = new G4Material("Vacuum", density, nel=1, kStateGas,temperature,pressure);
     Vacuum-> AddMaterial(Air, 100*perCent);
     // Liquid Argone
-    LAr = new G4Material("LAr",z=18.,a=39.95*g/mole,density=0.0014*g/cm3);
+    LAr = new G4Material("LAr",z=18.,a=39.95*g/mole,density=1.4*g/cm3);
     // Liquid Xenon
     LXe = new G4Material("LXe",z=54.,a=131.29*g/mole,density=3.020*g/cm3);
     
@@ -196,7 +196,7 @@ G4VPhysicalVolume* OriginalDetectorConstruction::ConstructOriginalDetector()
     // Detector
     //------------------------------------------------
     
-    SolidDetector = new G4Box("SolidDetector",lDetector*0.5,lDetector*0.5,lDetector*0.5);
+    SolidDetector = new G4Box("SolidDetector",lDetector*1.5,lDetector*1.5,lDetector*0.2);
     LVDetector = new G4LogicalVolume(SolidDetector,MaterialDetector,"LVDetector",0,0,0);
     PVDetector = new G4PVPlacement(0,
                                   G4ThreeVector(),     // at (x,y,z)
