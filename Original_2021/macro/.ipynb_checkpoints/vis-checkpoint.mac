@@ -58,4 +58,4 @@
 
 /OutputDirectory output
 /OutputFile test
-/run/beamOn 20
+/run/beamOn 100
