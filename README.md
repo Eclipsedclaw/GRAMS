@@ -35,7 +35,8 @@ For GFP simulation in GAPS. This is the toy model case
 > conda install ROOT 
 
 ## Install GEANT4 
-> brew install cmake qt
+do not reinstall cmake when you finish set up geant4 which will cause error. 
+> brew install cmake qt5
 > 
 > sudo mkdir /opt/geant4
 > 
@@ -72,7 +73,7 @@ For GFP simulation in GAPS. This is the toy model case
 > 
 > echo 'export CPPFLAGS="-I/opt/homebrew/opt/qt5/include":$CPPFLAGS' >> ~/.zshrc
 > 
-> echo 'export PKG_CONFIG_PATH=/opt/homebrew/opt/qt5/lib/pkgconfig:$PKG_CONFIG_PATH' >> ~/.zshrc
+> echo 'export PKG_CONFIG_PATH="/opt/homebrew/opt/qt5/lib/pkgconfig":$PKG_CONFIG_PATH' >> ~/.zshrc
 
 ## Run example
 > mkdir g4work  
