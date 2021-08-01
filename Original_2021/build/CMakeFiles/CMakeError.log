@@ -1,5 +1,5 @@
 Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
-Compiler: /Library/Developer/CommandLineTools/usr/bin/cc 
+Compiler: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc 
 Build flags: 
 Id flags:  
 
@@ -10,7 +10,7 @@ clang: error: linker command failed with exit code 1 (use -v to see invocation)
 
 
 Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
-Compiler: /Library/Developer/CommandLineTools/usr/bin/c++ 
+Compiler: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ 
 Build flags: 
 Id flags:  
 
@@ -18,5 +18,21 @@ The output was:
 1
 ld: library not found for -lc++
 clang: error: linker command failed with exit code 1 (use -v to see invocation)
+
+
+Determining if the function IceConnectionNumber exists in the ICE failed with the following output:
+Change Dir: /Users/jiancheng/CloudDocuments/Documents/GitHub/Geant4-simulation/Original_2021/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_17138/fast && /Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_17138.dir/build.make CMakeFiles/cmTC_17138.dir/build
+Building C object CMakeFiles/cmTC_17138.dir/CheckFunctionExists.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=IceConnectionNumber -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -MD -MT CMakeFiles/cmTC_17138.dir/CheckFunctionExists.c.o -MF CMakeFiles/cmTC_17138.dir/CheckFunctionExists.c.o.d -o CMakeFiles/cmTC_17138.dir/CheckFunctionExists.c.o -c /opt/homebrew/Cellar/cmake/3.21.1/share/cmake/Modules/CheckFunctionExists.c
+Linking C executable cmTC_17138
+/opt/homebrew/Cellar/cmake/3.21.1/bin/cmake -E cmake_link_script CMakeFiles/cmTC_17138.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=IceConnectionNumber -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_17138.dir/CheckFunctionExists.c.o -o cmTC_17138   -L/opt/homebrew/lib  -Wl,-rpath,/opt/homebrew/lib -lICE 
+ld: library not found for -lICE
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+make[1]: *** [cmTC_17138] Error 1
+make: *** [cmTC_17138/fast] Error 2
+
 
 
