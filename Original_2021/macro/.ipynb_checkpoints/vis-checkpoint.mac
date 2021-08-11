@@ -9,7 +9,7 @@
 /CheckOverlap 1
 /OutputFormat 1
 /TrackType 0
-/TrackEdep 1
+/TrackEdep 0
 
 #/InputDirectory output
 #/InputFile test.txt
@@ -52,10 +52,10 @@
 #/vis/modeling/trajectories/drawByCharge-0/set 0 red
 
 /gun/particle anti_deuteron
-/gun/energy 100. GeV
+/gun/energy 80. MeV
 /gun/direction 0 0 -1
-/gun/position 0. 0. 50. cm
+/gun/position 0. 0. 2200. cm
 
 /OutputDirectory output
-/OutputFile test
-/run/beamOn 100
+/OutputFile test1
+/run/beamOn 10000

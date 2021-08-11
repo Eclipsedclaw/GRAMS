@@ -73,127 +73,127 @@ CMakeFiles/Original.dir/Original.cc.o: CMakeFiles/Original.dir/flags.make
 CMakeFiles/Original.dir/Original.cc.o: ../Original.cc
 CMakeFiles/Original.dir/Original.cc.o: CMakeFiles/Original.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/jiancheng/CloudDocuments/Documents/GitHub/Geant4-simulation/Original_2021/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Original.dir/Original.cc.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Original.dir/Original.cc.o -MF CMakeFiles/Original.dir/Original.cc.o.d -o CMakeFiles/Original.dir/Original.cc.o -c /Users/jiancheng/CloudDocuments/Documents/GitHub/Geant4-simulation/Original_2021/Original.cc
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Original.dir/Original.cc.o -MF CMakeFiles/Original.dir/Original.cc.o.d -o CMakeFiles/Original.dir/Original.cc.o -c /Users/jiancheng/CloudDocuments/Documents/GitHub/Geant4-simulation/Original_2021/Original.cc
 
 CMakeFiles/Original.dir/Original.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Original.dir/Original.cc.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/jiancheng/CloudDocuments/Documents/GitHub/Geant4-simulation/Original_2021/Original.cc > CMakeFiles/Original.dir/Original.cc.i
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/jiancheng/CloudDocuments/Documents/GitHub/Geant4-simulation/Original_2021/Original.cc > CMakeFiles/Original.dir/Original.cc.i
 
 CMakeFiles/Original.dir/Original.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Original.dir/Original.cc.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/jiancheng/CloudDocuments/Documents/GitHub/Geant4-simulation/Original_2021/Original.cc -o CMakeFiles/Original.dir/Original.cc.s
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/jiancheng/CloudDocuments/Documents/GitHub/Geant4-simulation/Original_2021/Original.cc -o CMakeFiles/Original.dir/Original.cc.s
 
 CMakeFiles/Original.dir/src/OriginalDetectorConstruction.cc.o: CMakeFiles/Original.dir/flags.make
 CMakeFiles/Original.dir/src/OriginalDetectorConstruction.cc.o: ../src/OriginalDetectorConstruction.cc
 CMakeFiles/Original.dir/src/OriginalDetectorConstruction.cc.o: CMakeFiles/Original.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/jiancheng/CloudDocuments/Documents/GitHub/Geant4-simulation/Original_2021/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Original.dir/src/OriginalDetectorConstruction.cc.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Original.dir/src/OriginalDetectorConstruction.cc.o -MF CMakeFiles/Original.dir/src/OriginalDetectorConstruction.cc.o.d -o CMakeFiles/Original.dir/src/OriginalDetectorConstruction.cc.o -c /Users/jiancheng/CloudDocuments/Documents/GitHub/Geant4-simulation/Original_2021/src/OriginalDetectorConstruction.cc
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Original.dir/src/OriginalDetectorConstruction.cc.o -MF CMakeFiles/Original.dir/src/OriginalDetectorConstruction.cc.o.d -o CMakeFiles/Original.dir/src/OriginalDetectorConstruction.cc.o -c /Users/jiancheng/CloudDocuments/Documents/GitHub/Geant4-simulation/Original_2021/src/OriginalDetectorConstruction.cc
 
 CMakeFiles/Original.dir/src/OriginalDetectorConstruction.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Original.dir/src/OriginalDetectorConstruction.cc.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/jiancheng/CloudDocuments/Documents/GitHub/Geant4-simulation/Original_2021/src/OriginalDetectorConstruction.cc > CMakeFiles/Original.dir/src/OriginalDetectorConstruction.cc.i
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/jiancheng/CloudDocuments/Documents/GitHub/Geant4-simulation/Original_2021/src/OriginalDetectorConstruction.cc > CMakeFiles/Original.dir/src/OriginalDetectorConstruction.cc.i
 
 CMakeFiles/Original.dir/src/OriginalDetectorConstruction.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Original.dir/src/OriginalDetectorConstruction.cc.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/jiancheng/CloudDocuments/Documents/GitHub/Geant4-simulation/Original_2021/src/OriginalDetectorConstruction.cc -o CMakeFiles/Original.dir/src/OriginalDetectorConstruction.cc.s
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/jiancheng/CloudDocuments/Documents/GitHub/Geant4-simulation/Original_2021/src/OriginalDetectorConstruction.cc -o CMakeFiles/Original.dir/src/OriginalDetectorConstruction.cc.s
 
 CMakeFiles/Original.dir/src/OriginalDetectorHit.cc.o: CMakeFiles/Original.dir/flags.make
 CMakeFiles/Original.dir/src/OriginalDetectorHit.cc.o: ../src/OriginalDetectorHit.cc
 CMakeFiles/Original.dir/src/OriginalDetectorHit.cc.o: CMakeFiles/Original.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/jiancheng/CloudDocuments/Documents/GitHub/Geant4-simulation/Original_2021/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Original.dir/src/OriginalDetectorHit.cc.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Original.dir/src/OriginalDetectorHit.cc.o -MF CMakeFiles/Original.dir/src/OriginalDetectorHit.cc.o.d -o CMakeFiles/Original.dir/src/OriginalDetectorHit.cc.o -c /Users/jiancheng/CloudDocuments/Documents/GitHub/Geant4-simulation/Original_2021/src/OriginalDetectorHit.cc
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Original.dir/src/OriginalDetectorHit.cc.o -MF CMakeFiles/Original.dir/src/OriginalDetectorHit.cc.o.d -o CMakeFiles/Original.dir/src/OriginalDetectorHit.cc.o -c /Users/jiancheng/CloudDocuments/Documents/GitHub/Geant4-simulation/Original_2021/src/OriginalDetectorHit.cc
 
 CMakeFiles/Original.dir/src/OriginalDetectorHit.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Original.dir/src/OriginalDetectorHit.cc.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/jiancheng/CloudDocuments/Documents/GitHub/Geant4-simulation/Original_2021/src/OriginalDetectorHit.cc > CMakeFiles/Original.dir/src/OriginalDetectorHit.cc.i
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/jiancheng/CloudDocuments/Documents/GitHub/Geant4-simulation/Original_2021/src/OriginalDetectorHit.cc > CMakeFiles/Original.dir/src/OriginalDetectorHit.cc.i
 
 CMakeFiles/Original.dir/src/OriginalDetectorHit.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Original.dir/src/OriginalDetectorHit.cc.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/jiancheng/CloudDocuments/Documents/GitHub/Geant4-simulation/Original_2021/src/OriginalDetectorHit.cc -o CMakeFiles/Original.dir/src/OriginalDetectorHit.cc.s
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/jiancheng/CloudDocuments/Documents/GitHub/Geant4-simulation/Original_2021/src/OriginalDetectorHit.cc -o CMakeFiles/Original.dir/src/OriginalDetectorHit.cc.s
 
 CMakeFiles/Original.dir/src/OriginalDetectorMessenger.cc.o: CMakeFiles/Original.dir/flags.make
 CMakeFiles/Original.dir/src/OriginalDetectorMessenger.cc.o: ../src/OriginalDetectorMessenger.cc
 CMakeFiles/Original.dir/src/OriginalDetectorMessenger.cc.o: CMakeFiles/Original.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/jiancheng/CloudDocuments/Documents/GitHub/Geant4-simulation/Original_2021/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Original.dir/src/OriginalDetectorMessenger.cc.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Original.dir/src/OriginalDetectorMessenger.cc.o -MF CMakeFiles/Original.dir/src/OriginalDetectorMessenger.cc.o.d -o CMakeFiles/Original.dir/src/OriginalDetectorMessenger.cc.o -c /Users/jiancheng/CloudDocuments/Documents/GitHub/Geant4-simulation/Original_2021/src/OriginalDetectorMessenger.cc
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Original.dir/src/OriginalDetectorMessenger.cc.o -MF CMakeFiles/Original.dir/src/OriginalDetectorMessenger.cc.o.d -o CMakeFiles/Original.dir/src/OriginalDetectorMessenger.cc.o -c /Users/jiancheng/CloudDocuments/Documents/GitHub/Geant4-simulation/Original_2021/src/OriginalDetectorMessenger.cc
 
 CMakeFiles/Original.dir/src/OriginalDetectorMessenger.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Original.dir/src/OriginalDetectorMessenger.cc.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/jiancheng/CloudDocuments/Documents/GitHub/Geant4-simulation/Original_2021/src/OriginalDetectorMessenger.cc > CMakeFiles/Original.dir/src/OriginalDetectorMessenger.cc.i
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/jiancheng/CloudDocuments/Documents/GitHub/Geant4-simulation/Original_2021/src/OriginalDetectorMessenger.cc > CMakeFiles/Original.dir/src/OriginalDetectorMessenger.cc.i
 
 CMakeFiles/Original.dir/src/OriginalDetectorMessenger.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Original.dir/src/OriginalDetectorMessenger.cc.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/jiancheng/CloudDocuments/Documents/GitHub/Geant4-simulation/Original_2021/src/OriginalDetectorMessenger.cc -o CMakeFiles/Original.dir/src/OriginalDetectorMessenger.cc.s
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/jiancheng/CloudDocuments/Documents/GitHub/Geant4-simulation/Original_2021/src/OriginalDetectorMessenger.cc -o CMakeFiles/Original.dir/src/OriginalDetectorMessenger.cc.s
 
 CMakeFiles/Original.dir/src/OriginalDetectorSD.cc.o: CMakeFiles/Original.dir/flags.make
 CMakeFiles/Original.dir/src/OriginalDetectorSD.cc.o: ../src/OriginalDetectorSD.cc
 CMakeFiles/Original.dir/src/OriginalDetectorSD.cc.o: CMakeFiles/Original.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/jiancheng/CloudDocuments/Documents/GitHub/Geant4-simulation/Original_2021/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Original.dir/src/OriginalDetectorSD.cc.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Original.dir/src/OriginalDetectorSD.cc.o -MF CMakeFiles/Original.dir/src/OriginalDetectorSD.cc.o.d -o CMakeFiles/Original.dir/src/OriginalDetectorSD.cc.o -c /Users/jiancheng/CloudDocuments/Documents/GitHub/Geant4-simulation/Original_2021/src/OriginalDetectorSD.cc
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Original.dir/src/OriginalDetectorSD.cc.o -MF CMakeFiles/Original.dir/src/OriginalDetectorSD.cc.o.d -o CMakeFiles/Original.dir/src/OriginalDetectorSD.cc.o -c /Users/jiancheng/CloudDocuments/Documents/GitHub/Geant4-simulation/Original_2021/src/OriginalDetectorSD.cc
 
 CMakeFiles/Original.dir/src/OriginalDetectorSD.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Original.dir/src/OriginalDetectorSD.cc.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/jiancheng/CloudDocuments/Documents/GitHub/Geant4-simulation/Original_2021/src/OriginalDetectorSD.cc > CMakeFiles/Original.dir/src/OriginalDetectorSD.cc.i
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/jiancheng/CloudDocuments/Documents/GitHub/Geant4-simulation/Original_2021/src/OriginalDetectorSD.cc > CMakeFiles/Original.dir/src/OriginalDetectorSD.cc.i
 
 CMakeFiles/Original.dir/src/OriginalDetectorSD.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Original.dir/src/OriginalDetectorSD.cc.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/jiancheng/CloudDocuments/Documents/GitHub/Geant4-simulation/Original_2021/src/OriginalDetectorSD.cc -o CMakeFiles/Original.dir/src/OriginalDetectorSD.cc.s
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/jiancheng/CloudDocuments/Documents/GitHub/Geant4-simulation/Original_2021/src/OriginalDetectorSD.cc -o CMakeFiles/Original.dir/src/OriginalDetectorSD.cc.s
 
 CMakeFiles/Original.dir/src/OriginalEventAction.cc.o: CMakeFiles/Original.dir/flags.make
 CMakeFiles/Original.dir/src/OriginalEventAction.cc.o: ../src/OriginalEventAction.cc
 CMakeFiles/Original.dir/src/OriginalEventAction.cc.o: CMakeFiles/Original.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/jiancheng/CloudDocuments/Documents/GitHub/Geant4-simulation/Original_2021/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Original.dir/src/OriginalEventAction.cc.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Original.dir/src/OriginalEventAction.cc.o -MF CMakeFiles/Original.dir/src/OriginalEventAction.cc.o.d -o CMakeFiles/Original.dir/src/OriginalEventAction.cc.o -c /Users/jiancheng/CloudDocuments/Documents/GitHub/Geant4-simulation/Original_2021/src/OriginalEventAction.cc
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Original.dir/src/OriginalEventAction.cc.o -MF CMakeFiles/Original.dir/src/OriginalEventAction.cc.o.d -o CMakeFiles/Original.dir/src/OriginalEventAction.cc.o -c /Users/jiancheng/CloudDocuments/Documents/GitHub/Geant4-simulation/Original_2021/src/OriginalEventAction.cc
 
 CMakeFiles/Original.dir/src/OriginalEventAction.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Original.dir/src/OriginalEventAction.cc.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/jiancheng/CloudDocuments/Documents/GitHub/Geant4-simulation/Original_2021/src/OriginalEventAction.cc > CMakeFiles/Original.dir/src/OriginalEventAction.cc.i
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/jiancheng/CloudDocuments/Documents/GitHub/Geant4-simulation/Original_2021/src/OriginalEventAction.cc > CMakeFiles/Original.dir/src/OriginalEventAction.cc.i
 
 CMakeFiles/Original.dir/src/OriginalEventAction.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Original.dir/src/OriginalEventAction.cc.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/jiancheng/CloudDocuments/Documents/GitHub/Geant4-simulation/Original_2021/src/OriginalEventAction.cc -o CMakeFiles/Original.dir/src/OriginalEventAction.cc.s
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/jiancheng/CloudDocuments/Documents/GitHub/Geant4-simulation/Original_2021/src/OriginalEventAction.cc -o CMakeFiles/Original.dir/src/OriginalEventAction.cc.s
 
 CMakeFiles/Original.dir/src/OriginalPhysicsList.cc.o: CMakeFiles/Original.dir/flags.make
 CMakeFiles/Original.dir/src/OriginalPhysicsList.cc.o: ../src/OriginalPhysicsList.cc
 CMakeFiles/Original.dir/src/OriginalPhysicsList.cc.o: CMakeFiles/Original.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/jiancheng/CloudDocuments/Documents/GitHub/Geant4-simulation/Original_2021/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/Original.dir/src/OriginalPhysicsList.cc.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Original.dir/src/OriginalPhysicsList.cc.o -MF CMakeFiles/Original.dir/src/OriginalPhysicsList.cc.o.d -o CMakeFiles/Original.dir/src/OriginalPhysicsList.cc.o -c /Users/jiancheng/CloudDocuments/Documents/GitHub/Geant4-simulation/Original_2021/src/OriginalPhysicsList.cc
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Original.dir/src/OriginalPhysicsList.cc.o -MF CMakeFiles/Original.dir/src/OriginalPhysicsList.cc.o.d -o CMakeFiles/Original.dir/src/OriginalPhysicsList.cc.o -c /Users/jiancheng/CloudDocuments/Documents/GitHub/Geant4-simulation/Original_2021/src/OriginalPhysicsList.cc
 
 CMakeFiles/Original.dir/src/OriginalPhysicsList.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Original.dir/src/OriginalPhysicsList.cc.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/jiancheng/CloudDocuments/Documents/GitHub/Geant4-simulation/Original_2021/src/OriginalPhysicsList.cc > CMakeFiles/Original.dir/src/OriginalPhysicsList.cc.i
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/jiancheng/CloudDocuments/Documents/GitHub/Geant4-simulation/Original_2021/src/OriginalPhysicsList.cc > CMakeFiles/Original.dir/src/OriginalPhysicsList.cc.i
 
 CMakeFiles/Original.dir/src/OriginalPhysicsList.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Original.dir/src/OriginalPhysicsList.cc.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/jiancheng/CloudDocuments/Documents/GitHub/Geant4-simulation/Original_2021/src/OriginalPhysicsList.cc -o CMakeFiles/Original.dir/src/OriginalPhysicsList.cc.s
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/jiancheng/CloudDocuments/Documents/GitHub/Geant4-simulation/Original_2021/src/OriginalPhysicsList.cc -o CMakeFiles/Original.dir/src/OriginalPhysicsList.cc.s
 
 CMakeFiles/Original.dir/src/OriginalPrimaryGeneratorAction.cc.o: CMakeFiles/Original.dir/flags.make
 CMakeFiles/Original.dir/src/OriginalPrimaryGeneratorAction.cc.o: ../src/OriginalPrimaryGeneratorAction.cc
 CMakeFiles/Original.dir/src/OriginalPrimaryGeneratorAction.cc.o: CMakeFiles/Original.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/jiancheng/CloudDocuments/Documents/GitHub/Geant4-simulation/Original_2021/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/Original.dir/src/OriginalPrimaryGeneratorAction.cc.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Original.dir/src/OriginalPrimaryGeneratorAction.cc.o -MF CMakeFiles/Original.dir/src/OriginalPrimaryGeneratorAction.cc.o.d -o CMakeFiles/Original.dir/src/OriginalPrimaryGeneratorAction.cc.o -c /Users/jiancheng/CloudDocuments/Documents/GitHub/Geant4-simulation/Original_2021/src/OriginalPrimaryGeneratorAction.cc
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Original.dir/src/OriginalPrimaryGeneratorAction.cc.o -MF CMakeFiles/Original.dir/src/OriginalPrimaryGeneratorAction.cc.o.d -o CMakeFiles/Original.dir/src/OriginalPrimaryGeneratorAction.cc.o -c /Users/jiancheng/CloudDocuments/Documents/GitHub/Geant4-simulation/Original_2021/src/OriginalPrimaryGeneratorAction.cc
 
 CMakeFiles/Original.dir/src/OriginalPrimaryGeneratorAction.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Original.dir/src/OriginalPrimaryGeneratorAction.cc.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/jiancheng/CloudDocuments/Documents/GitHub/Geant4-simulation/Original_2021/src/OriginalPrimaryGeneratorAction.cc > CMakeFiles/Original.dir/src/OriginalPrimaryGeneratorAction.cc.i
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/jiancheng/CloudDocuments/Documents/GitHub/Geant4-simulation/Original_2021/src/OriginalPrimaryGeneratorAction.cc > CMakeFiles/Original.dir/src/OriginalPrimaryGeneratorAction.cc.i
 
 CMakeFiles/Original.dir/src/OriginalPrimaryGeneratorAction.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Original.dir/src/OriginalPrimaryGeneratorAction.cc.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/jiancheng/CloudDocuments/Documents/GitHub/Geant4-simulation/Original_2021/src/OriginalPrimaryGeneratorAction.cc -o CMakeFiles/Original.dir/src/OriginalPrimaryGeneratorAction.cc.s
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/jiancheng/CloudDocuments/Documents/GitHub/Geant4-simulation/Original_2021/src/OriginalPrimaryGeneratorAction.cc -o CMakeFiles/Original.dir/src/OriginalPrimaryGeneratorAction.cc.s
 
 CMakeFiles/Original.dir/src/OriginalRunAction.cc.o: CMakeFiles/Original.dir/flags.make
 CMakeFiles/Original.dir/src/OriginalRunAction.cc.o: ../src/OriginalRunAction.cc
 CMakeFiles/Original.dir/src/OriginalRunAction.cc.o: CMakeFiles/Original.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/jiancheng/CloudDocuments/Documents/GitHub/Geant4-simulation/Original_2021/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/Original.dir/src/OriginalRunAction.cc.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Original.dir/src/OriginalRunAction.cc.o -MF CMakeFiles/Original.dir/src/OriginalRunAction.cc.o.d -o CMakeFiles/Original.dir/src/OriginalRunAction.cc.o -c /Users/jiancheng/CloudDocuments/Documents/GitHub/Geant4-simulation/Original_2021/src/OriginalRunAction.cc
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Original.dir/src/OriginalRunAction.cc.o -MF CMakeFiles/Original.dir/src/OriginalRunAction.cc.o.d -o CMakeFiles/Original.dir/src/OriginalRunAction.cc.o -c /Users/jiancheng/CloudDocuments/Documents/GitHub/Geant4-simulation/Original_2021/src/OriginalRunAction.cc
 
 CMakeFiles/Original.dir/src/OriginalRunAction.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Original.dir/src/OriginalRunAction.cc.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/jiancheng/CloudDocuments/Documents/GitHub/Geant4-simulation/Original_2021/src/OriginalRunAction.cc > CMakeFiles/Original.dir/src/OriginalRunAction.cc.i
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/jiancheng/CloudDocuments/Documents/GitHub/Geant4-simulation/Original_2021/src/OriginalRunAction.cc > CMakeFiles/Original.dir/src/OriginalRunAction.cc.i
 
 CMakeFiles/Original.dir/src/OriginalRunAction.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Original.dir/src/OriginalRunAction.cc.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/jiancheng/CloudDocuments/Documents/GitHub/Geant4-simulation/Original_2021/src/OriginalRunAction.cc -o CMakeFiles/Original.dir/src/OriginalRunAction.cc.s
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/jiancheng/CloudDocuments/Documents/GitHub/Geant4-simulation/Original_2021/src/OriginalRunAction.cc -o CMakeFiles/Original.dir/src/OriginalRunAction.cc.s
 
 # Object files for target Original
 Original_OBJECTS = \
@@ -238,16 +238,9 @@ Original: /opt/geant4/pro/lib/libG4readout.dylib
 Original: /opt/geant4/pro/lib/libG4physicslists.dylib
 Original: /opt/geant4/pro/lib/libG4tasking.dylib
 Original: /opt/geant4/pro/lib/libG4parmodels.dylib
-Original: /usr/X11R6/lib/libXmu.dylib
-Original: /opt/homebrew/lib/libXext.dylib
-Original: /usr/X11R6/lib/libXt.dylib
-Original: /usr/X11R6/lib/libICE.dylib
-Original: /usr/X11R6/lib/libSM.dylib
-Original: /opt/homebrew/lib/libX11.dylib
-Original: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk/System/Library/Frameworks/OpenGL.framework/OpenGL.tbd
+Original: /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/System/Library/Frameworks/OpenGL.framework/OpenGL.tbd
 Original: /opt/homebrew/opt/qt5/lib/QtOpenGL.framework/QtOpenGL
 Original: /opt/homebrew/opt/qt5/lib/QtPrintSupport.framework/QtPrintSupport
-Original: /usr/X11R6/lib/libGL.dylib
 Original: /opt/homebrew/opt/qt5/lib/QtWidgets.framework/QtWidgets
 Original: /opt/homebrew/opt/qt5/lib/Qt3DExtras.framework/Qt3DExtras
 Original: /opt/homebrew/opt/qt5/lib/Qt3DInput.framework/Qt3DInput
@@ -264,7 +257,7 @@ Original: /opt/geant4/pro/lib/libG4event.dylib
 Original: /opt/geant4/pro/lib/libG4tracking.dylib
 Original: /opt/geant4/pro/lib/libG4processes.dylib
 Original: /opt/geant4/pro/lib/libG4analysis.dylib
-Original: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk/usr/lib/libexpat.tbd
+Original: /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/lib/libexpat.tbd
 Original: /opt/geant4/pro/lib/libG4digits_hits.dylib
 Original: /opt/geant4/pro/lib/libG4track.dylib
 Original: /opt/geant4/pro/lib/libG4particles.dylib

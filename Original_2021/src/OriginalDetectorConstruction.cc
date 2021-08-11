@@ -196,7 +196,7 @@ G4VPhysicalVolume* OriginalDetectorConstruction::ConstructOriginalDetector()
     // Detector
     //------------------------------------------------
     
-    SolidDetector = new G4Box("SolidDetector",lDetector*1.5,lDetector*1.5,lDetector*0.2);
+    SolidDetector = new G4Box("SolidDetector",lDetector*15,lDetector*15,lDetector*20);
     LVDetector = new G4LogicalVolume(SolidDetector,MaterialDetector,"LVDetector",0,0,0);
     PVDetector = new G4PVPlacement(0,
                                   G4ThreeVector(),     // at (x,y,z)
