@@ -17,7 +17,7 @@
 /update
 
 # HepRepFile diriver
-#/vis/open HepRepFile
+/vis/open HepRepFile
 
 # Add world volume
 /vis/drawVolume
@@ -57,5 +57,5 @@
 /gun/position 0. 0. 2200. cm
 
 /OutputDirectory output
-/OutputFile test1
-/run/beamOn 10000
+/OutputFile test
+/run/beamOn 10
