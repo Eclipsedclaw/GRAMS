@@ -17,28 +17,28 @@
 /update
 
 # HepRepFile diriver
-/vis/open HepRepFile
+#/vis/open HepRepFile
 
 # Add world volume
-/vis/drawVolume
+#/vis/drawVolume
 
 # Visualise geometry
-/vis/viewer/flush
+#/vis/viewer/flush
 
 
 # Add trajectories to the visualization.
 
-/vis/scene/add/trajectories
+#/vis/scene/add/trajectories
 
 # Add hits to scene
-/vis/scene/add/hits
+#/vis/scene/add/hits
 
 # Accumulate multiple events in one picture.
 #/vis/scene/endOfEventAction accumulate
 
 
 # Create a drawByParticleID model named drawByParticleID-0
-/vis/modeling/trajectories/create/drawByParticleID
+#/vis/modeling/trajectories/create/drawByParticleID
 # Configure drawByParticleID-0 model
 #/vis/modeling/trajectories/drawByParticleID-0/set gamma red
 #/vis/modeling/trajectories/drawByParticleID-0/set pi+ blue
@@ -58,4 +58,4 @@
 
 /OutputDirectory output
 /OutputFile test
-/run/beamOn 10
+/run/beamOn 500
