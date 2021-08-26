@@ -51,11 +51,11 @@
 #/vis/modeling/trajectories/drawByCharge-0/set 1 blue
 #/vis/modeling/trajectories/drawByCharge-0/set 0 red
 
-/gun/particle anti_deuteron
+/gun/particle anti_proton
 /gun/energy 80. MeV
 /gun/direction 0 0 -1
 /gun/position 0. 0. 2200. cm
 
 /OutputDirectory output
 /OutputFile test
-/run/beamOn 500
+/run/beamOn 1000
