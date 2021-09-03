@@ -23,17 +23,17 @@
 /OutputDirectory output
 
 /GeneralParticleSource 1
-/gps/particle anti_deuteron
+/gps/particle anti_proton
 /gps/ene/type Gauss
-/gps/ene/mono 260.0 MeV
-/gps/ene/min 20.0 MeV
-/gps/ene/max 500.0 MeV
-/gps/ene/sigma 500.0 MeV
+/gps/ene/mono 130.0 MeV
+/gps/ene/min 10.0 MeV
+/gps/ene/max 250.0 MeV
+/gps/ene/sigma 250.0 MeV
 /gps/pos/type Point
 /gps/pos/centre 0.0 0.0 2200.0 cm
 /gps/direction 0.0 0.0 -1.0
 /gps/ang/type focused
 
-/OutputFile test_deuteron
+/OutputFile test_proton
 #/update
 /run/beamOn 500
