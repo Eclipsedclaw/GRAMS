@@ -1,0 +1,539 @@
+# Macro file for "GRAMS.cc"
+# @author Tsuguo Aramaki
+# @date 2015 March 23
+
+/Visualization 0
+/CheckOverlap 1
+/SimulationType 2
+/OutputType 0
+/OutputFormat 0
+/TrackType 1
+/TrackEdep 1
+/StopEvent 0
+
+/DetectorType 1
+/NbOfLArLayer 1
+/NbOfLXeLayer 1
+/NbOfCellL 1
+/NbOfLArCellZ 1
+/NbOfLXeCellZ 1
+
+/Atmos_Z 0.0 cm
+/LArTPC_Z 20.0 cm
+/LXeTPC_Z 0.0 cm
+/TPC_L 100.0 cm
+/TPC_space 0.0 cm
+/TOFin_Z 0.5 cm
+/TOFout_Z 0.5 cm
+/TOFout_L 360. cm
+#/TOFout_H 200. cm
+/TOFout_Angle 90. deg
+
+/ParticleSource 1
+/OutputDirectory output
+
+/gps/pos/type Plane
+/gps/pos/shape Square
+/gps/pos/centre 0. 0. 150. cm
+/gps/pos/halfx 100. cm
+/gps/pos/halfy 100. cm
+
+/gps/ang/type iso
+/gps/ang/mintheta 0.0 deg
+/gps/ang/maxtheta 0.0 deg
+/gps/ang/minphi 0. deg
+/gps/ang/maxphi 0. deg
+
+/gps/particle gamma
+/gps/ene/type Pow
+/gps/ene/min 0.1 MeV
+/gps/ene/max 0.1 MeV
+/gps/ene/alpha 0.
+
+
+/OutputDirectory output
+/TPC_L 100.0 cm
+/LArTPC_Z 0.0 cm
+/LXeTPC_Z 10.0 cm
+
+/gps/ene/min 0.1 MeV
+/gps/ene/max 0.1 MeV
+/OutputFile Gamma_0.1MeV_LAr0cm_LXe10cm
+/update
+/run/beamOn 100000
+
+/gps/ene/min 0.3 MeV
+/gps/ene/max 0.3 MeV
+/OutputFile Gamma_0.3MeV_LAr0cm_LXe10cm
+/update
+/run/beamOn 100000
+
+/gps/ene/min 0.5 MeV
+/gps/ene/max 0.5 MeV
+/OutputFile Gamma_0.5MeV_LAr0cm_LXe10cm
+/update
+/run/beamOn 100000
+
+/gps/ene/min 1. MeV
+/gps/ene/max 1. MeV
+/OutputFile Gamma_1MeV_LAr0cm_LXe10cm
+/update
+/run/beamOn 100000
+
+/gps/ene/min 2. MeV
+/gps/ene/max 2. MeV
+/OutputFile Gamma_2MeV_LAr0cm_LXe10cm
+/update
+/run/beamOn 100000
+
+/gps/ene/min 5. MeV
+/gps/ene/max 5. MeV
+/OutputFile Gamma_5MeV_LAr0cm_LXe10cm
+/update
+/run/beamOn 100000
+
+/gps/ene/min 7. MeV
+/gps/ene/max 7. MeV
+/OutputFile Gamma_7MeV_LAr0cm_LXe10cm
+/update
+/run/beamOn 100000
+
+/gps/ene/min 10. MeV
+/gps/ene/max 10. MeV
+/OutputFile Gamma_10MeV_LAr0cm_LXe10cm
+/update
+/run/beamOn 100000
+
+
+/OutputDirectory output
+/TPC_L 100.0 cm
+/LArTPC_Z 2.0 cm
+/LXeTPC_Z 9.0 cm
+
+/gps/ene/min 0.1 MeV
+/gps/ene/max 0.1 MeV
+/OutputFile Gamma_0.1MeV_LAr2cm_LXe9cm
+/update
+/run/beamOn 100000
+
+/gps/ene/min 0.3 MeV
+/gps/ene/max 0.3 MeV
+/OutputFile Gamma_0.3MeV_LAr2cm_LXe9cm
+/update
+/run/beamOn 100000
+
+/gps/ene/min 0.5 MeV
+/gps/ene/max 0.5 MeV
+/OutputFile Gamma_0.5MeV_LAr2cm_LXe9cm
+/update
+/run/beamOn 100000
+
+/gps/ene/min 1. MeV
+/gps/ene/max 1. MeV
+/OutputFile Gamma_1MeV_LAr2cm_LXe9cm
+/update
+/run/beamOn 100000
+
+/gps/ene/min 2. MeV
+/gps/ene/max 2. MeV
+/OutputFile Gamma_2MeV_LAr2cm_LXe9cm
+/update
+/run/beamOn 100000
+
+/gps/ene/min 5. MeV
+/gps/ene/max 5. MeV
+/OutputFile Gamma_5MeV_LAr2cm_LXe9cm
+/update
+/run/beamOn 100000
+
+/gps/ene/min 7. MeV
+/gps/ene/max 7. MeV
+/OutputFile Gamma_7MeV_LAr2cm_LXe9cm
+/update
+/run/beamOn 100000
+
+/gps/ene/min 10. MeV
+/gps/ene/max 10. MeV
+/OutputFile Gamma_10MeV_LAr2cm_LXe9cm
+/update
+/run/beamOn 100000
+
+
+/OutputDirectory output
+/TPC_L 100.0 cm
+/LArTPC_Z 4.0 cm
+/LXeTPC_Z 8.0 cm
+
+/gps/ene/min 0.1 MeV
+/gps/ene/max 0.1 MeV
+/OutputFile Gamma_0.1MeV_LAr4cm_LXe8cm
+/update
+/run/beamOn 100000
+
+/gps/ene/min 0.3 MeV
+/gps/ene/max 0.3 MeV
+/OutputFile Gamma_0.3MeV_LAr4cm_LXe8cm
+/update
+/run/beamOn 100000
+
+/gps/ene/min 0.5 MeV
+/gps/ene/max 0.5 MeV
+/OutputFile Gamma_0.5MeV_LAr4cm_LXe8cm
+/update
+/run/beamOn 100000
+
+/gps/ene/min 1. MeV
+/gps/ene/max 1. MeV
+/OutputFile Gamma_1MeV_LAr4cm_LXe8cm
+/update
+/run/beamOn 100000
+
+/gps/ene/min 2. MeV
+/gps/ene/max 2. MeV
+/OutputFile Gamma_2MeV_LAr4cm_LXe8cm
+/update
+/run/beamOn 100000
+
+/gps/ene/min 5. MeV
+/gps/ene/max 5. MeV
+/OutputFile Gamma_5MeV_LAr4cm_LXe8cm
+/update
+/run/beamOn 100000
+
+/gps/ene/min 7. MeV
+/gps/ene/max 7. MeV
+/OutputFile Gamma_7MeV_LAr4cm_LXe8cm
+/update
+/run/beamOn 100000
+
+/gps/ene/min 10. MeV
+/gps/ene/max 10. MeV
+/OutputFile Gamma_10MeV_LAr4cm_LXe8cm
+/update
+/run/beamOn 100000
+
+
+/OutputDirectory output
+/TPC_L 100.0 cm
+/LArTPC_Z 6.0 cm
+/LXeTPC_Z 7.0 cm
+
+/gps/ene/min 0.1 MeV
+/gps/ene/max 0.1 MeV
+/OutputFile Gamma_0.1MeV_LAr6cm_LXe7cm
+/update
+/run/beamOn 100000
+
+/gps/ene/min 0.3 MeV
+/gps/ene/max 0.3 MeV
+/OutputFile Gamma_0.3MeV_LAr6cm_LXe7cm
+/update
+/run/beamOn 100000
+
+/gps/ene/min 0.5 MeV
+/gps/ene/max 0.5 MeV
+/OutputFile Gamma_0.5MeV_LAr6cm_LXe7cm
+/update
+/run/beamOn 100000
+
+/gps/ene/min 1. MeV
+/gps/ene/max 1. MeV
+/OutputFile Gamma_1MeV_LAr6cm_LXe7cm
+/update
+/run/beamOn 100000
+
+/gps/ene/min 2. MeV
+/gps/ene/max 2. MeV
+/OutputFile Gamma_2MeV_LAr6cm_LXe7cm
+/update
+/run/beamOn 100000
+
+/gps/ene/min 5. MeV
+/gps/ene/max 5. MeV
+/OutputFile Gamma_5MeV_LAr6cm_LXe7cm
+/update
+/run/beamOn 100000
+
+/gps/ene/min 7. MeV
+/gps/ene/max 7. MeV
+/OutputFile Gamma_7MeV_LAr6cm_LXe7cm
+/update
+/run/beamOn 100000
+
+/gps/ene/min 10. MeV
+/gps/ene/max 10. MeV
+/OutputFile Gamma_10MeV_LAr6cm_LXe7cm
+/update
+/run/beamOn 100000
+
+
+/OutputDirectory output
+/TPC_L 100.0 cm
+/LArTPC_Z 8.0 cm
+/LXeTPC_Z 6.0 cm
+
+/gps/ene/min 0.1 MeV
+/gps/ene/max 0.1 MeV
+/OutputFile Gamma_0.1MeV_LAr8cm_LXe6cm
+/update
+/run/beamOn 100000
+
+/gps/ene/min 0.3 MeV
+/gps/ene/max 0.3 MeV
+/OutputFile Gamma_0.3MeV_LAr8cm_LXe6cm
+/update
+/run/beamOn 100000
+
+/gps/ene/min 0.5 MeV
+/gps/ene/max 0.5 MeV
+/OutputFile Gamma_0.5MeV_LAr8cm_LXe6cm
+/update
+/run/beamOn 100000
+
+/gps/ene/min 1. MeV
+/gps/ene/max 1. MeV
+/OutputFile Gamma_1MeV_LAr8cm_LXe6cm
+/update
+/run/beamOn 100000
+
+/gps/ene/min 2. MeV
+/gps/ene/max 2. MeV
+/OutputFile Gamma_2MeV_LAr8cm_LXe6cm
+/update
+/run/beamOn 100000
+
+/gps/ene/min 5. MeV
+/gps/ene/max 5. MeV
+/OutputFile Gamma_5MeV_LAr8cm_LXe6cm
+/update
+/run/beamOn 100000
+
+/gps/ene/min 7. MeV
+/gps/ene/max 7. MeV
+/OutputFile Gamma_7MeV_LAr8cm_LXe6cm
+/update
+/run/beamOn 100000
+
+/gps/ene/min 10. MeV
+/gps/ene/max 10. MeV
+/OutputFile Gamma_10MeV_LAr8cm_LXe6cm
+/update
+/run/beamOn 100000
+
+
+/OutputDirectory output
+/TPC_L 100.0 cm
+/LArTPC_Z 10.0 cm
+/LXeTPC_Z 5.0 cm
+
+/gps/ene/min 0.1 MeV
+/gps/ene/max 0.1 MeV
+/OutputFile Gamma_0.1MeV_LAr10cm_LXe5cm
+/update
+/run/beamOn 100000
+
+/gps/ene/min 0.3 MeV
+/gps/ene/max 0.3 MeV
+/OutputFile Gamma_0.3MeV_LAr10cm_LXe5cm
+/update
+/run/beamOn 100000
+
+/gps/ene/min 0.5 MeV
+/gps/ene/max 0.5 MeV
+/OutputFile Gamma_0.5MeV_LAr10cm_LXe5cm
+/update
+/run/beamOn 100000
+
+/gps/ene/min 1. MeV
+/gps/ene/max 1. MeV
+/OutputFile Gamma_1MeV_LAr10cm_LXe5cm
+/update
+/run/beamOn 100000
+
+/gps/ene/min 2. MeV
+/gps/ene/max 2. MeV
+/OutputFile Gamma_2MeV_LAr10cm_LXe5cm
+/update
+/run/beamOn 100000
+
+/gps/ene/min 5. MeV
+/gps/ene/max 5. MeV
+/OutputFile Gamma_5MeV_LAr10cm_LXe5cm
+/update
+/run/beamOn 100000
+
+/gps/ene/min 7. MeV
+/gps/ene/max 7. MeV
+/OutputFile Gamma_7MeV_LAr10cm_LXe5cm
+/update
+/run/beamOn 100000
+
+/gps/ene/min 10. MeV
+/gps/ene/max 10. MeV
+/OutputFile Gamma_10MeV_LAr10cm_LXe5cm
+/update
+/run/beamOn 100000
+
+
+/OutputDirectory output
+/TPC_L 100.0 cm
+/LArTPC_Z 12.0 cm
+/LXeTPC_Z 4.0 cm
+
+/gps/ene/min 0.1 MeV
+/gps/ene/max 0.1 MeV
+/OutputFile Gamma_0.1MeV_LAr12cm_LXe4cm
+/update
+/run/beamOn 100000
+
+/gps/ene/min 0.3 MeV
+/gps/ene/max 0.3 MeV
+/OutputFile Gamma_0.3MeV_LAr12cm_LXe4cm
+/update
+/run/beamOn 100000
+
+/gps/ene/min 0.5 MeV
+/gps/ene/max 0.5 MeV
+/OutputFile Gamma_0.5MeV_LAr12cm_LXe4cm
+/update
+/run/beamOn 100000
+
+/gps/ene/min 1. MeV
+/gps/ene/max 1. MeV
+/OutputFile Gamma_1MeV_LAr12cm_LXe4cm
+/update
+/run/beamOn 100000
+
+/gps/ene/min 2. MeV
+/gps/ene/max 2. MeV
+/OutputFile Gamma_2MeV_LAr12cm_LXe4cm
+/update
+/run/beamOn 100000
+
+/gps/ene/min 5. MeV
+/gps/ene/max 5. MeV
+/OutputFile Gamma_5MeV_LAr12cm_LXe4cm
+/update
+/run/beamOn 100000
+
+/gps/ene/min 7. MeV
+/gps/ene/max 7. MeV
+/OutputFile Gamma_7MeV_LAr12cm_LXe4cm
+/update
+/run/beamOn 100000
+
+/gps/ene/min 10. MeV
+/gps/ene/max 10. MeV
+/OutputFile Gamma_10MeV_LAr12cm_LXe4cm
+/update
+/run/beamOn 100000
+
+
+/OutputDirectory output
+/TPC_L 100.0 cm
+/LArTPC_Z 16.0 cm
+/LXeTPC_Z 2.0 cm
+
+/gps/ene/min 0.1 MeV
+/gps/ene/max 0.1 MeV
+/OutputFile Gamma_0.1MeV_LAr16cm_LXe2cm
+/update
+/run/beamOn 100000
+
+/gps/ene/min 0.3 MeV
+/gps/ene/max 0.3 MeV
+/OutputFile Gamma_0.3MeV_LAr16cm_LXe2cm
+/update
+/run/beamOn 100000
+
+/gps/ene/min 0.5 MeV
+/gps/ene/max 0.5 MeV
+/OutputFile Gamma_0.5MeV_LAr16cm_LXe2cm
+/update
+/run/beamOn 100000
+
+/gps/ene/min 1. MeV
+/gps/ene/max 1. MeV
+/OutputFile Gamma_1MeV_LAr16cm_LXe2cm
+/update
+/run/beamOn 100000
+
+/gps/ene/min 2. MeV
+/gps/ene/max 2. MeV
+/OutputFile Gamma_2MeV_LAr16cm_LXe2cm
+/update
+/run/beamOn 100000
+
+/gps/ene/min 5. MeV
+/gps/ene/max 5. MeV
+/OutputFile Gamma_5MeV_LAr16cm_LXe2cm
+/update
+/run/beamOn 100000
+
+/gps/ene/min 7. MeV
+/gps/ene/max 7. MeV
+/OutputFile Gamma_7MeV_LAr16cm_LXe2cm
+/update
+/run/beamOn 100000
+
+/gps/ene/min 10. MeV
+/gps/ene/max 10. MeV
+/OutputFile Gamma_10MeV_LAr16cm_LXe2cm
+/update
+/run/beamOn 100000
+
+
+/OutputDirectory output
+/TPC_L 100.0 cm
+/LArTPC_Z 20.0 cm
+/LXeTPC_Z 0.0 cm
+
+/gps/ene/min 0.1 MeV
+/gps/ene/max 0.1 MeV
+/OutputFile Gamma_0.1MeV_LAr20cm_LXe0cm
+/update
+/run/beamOn 100000
+
+/gps/ene/min 0.3 MeV
+/gps/ene/max 0.3 MeV
+/OutputFile Gamma_0.3MeV_LAr20cm_LXe0cm
+/update
+/run/beamOn 100000
+
+/gps/ene/min 0.5 MeV
+/gps/ene/max 0.5 MeV
+/OutputFile Gamma_0.5MeV_LAr20cm_LXe0cm
+/update
+/run/beamOn 100000
+
+/gps/ene/min 1. MeV
+/gps/ene/max 1. MeV
+/OutputFile Gamma_1MeV_LAr20cm_LXe0cm
+/update
+/run/beamOn 100000
+
+/gps/ene/min 2. MeV
+/gps/ene/max 2. MeV
+/OutputFile Gamma_2MeV_LAr20cm_LXe0cm
+/update
+/run/beamOn 100000
+
+/gps/ene/min 5. MeV
+/gps/ene/max 5. MeV
+/OutputFile Gamma_5MeV_LAr20cm_LXe0cm
+/update
+/run/beamOn 100000
+
+/gps/ene/min 7. MeV
+/gps/ene/max 7. MeV
+/OutputFile Gamma_7MeV_LAr20cm_LXe0cm
+/update
+/run/beamOn 100000
+
+/gps/ene/min 10. MeV
+/gps/ene/max 10. MeV
+/OutputFile Gamma_10MeV_LAr20cm_LXe0cm
+/update
+/run/beamOn 100000
+
+
