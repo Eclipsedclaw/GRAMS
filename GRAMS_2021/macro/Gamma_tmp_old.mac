@@ -1,0 +1,120 @@
+# Macro file for "GRAMS.cc"
+# @author Tsuguo Aramaki
+# @date 2015 March 23
+
+/Visualization 0
+/CheckOverlap 1
+/SimulationType 1
+/OutputType 0
+/OutputFormat 0
+/TrackType 3
+/TrackEdep 1
+/StopEvent 0
+
+/DetectorType 1
+/NbOfLArLayer 1
+/NbOfLXeLayer 1
+/NbOfCellL 1
+/NbOfLArCellZ 1
+/NbOfLXeCellZ 1
+
+/Atmos_Z 4.0 cm
+/LArTPC_Z 20.0 cm
+/LXeTPC_Z 0.0 cm
+/TPC_L 100.0 cm
+/TPC_space 0.0 cm
+/TOFin_Z 0.5 cm
+/TOFout_Z 0.5 cm
+/TOFout_L 360. cm
+#/TOFout_H 200. cm
+/TOFout_Angle 90. deg
+
+/ParticleSource 1
+/OutputDirectory output
+
+/gps/pos/type Plane
+/gps/pos/shape Square
+/gps/pos/centre 0. 0. 150. cm
+/gps/pos/halfx 100. cm
+/gps/pos/halfy 100. cm
+
+/gps/ang/type iso
+/gps/ang/mintheta 0.0 deg
+/gps/ang/maxtheta 0.0 deg
+/gps/ang/minphi 0. deg
+/gps/ang/maxphi 0. deg
+
+/gps/particle gamma
+/gps/ene/type Pow
+/gps/ene/min 0.1 MeV
+/gps/ene/max 0.1 MeV
+/gps/ene/alpha 0.
+
+/OutputDirectory output/LArTPC/100cm_20cm
+/TPC_L 100.0 cm
+/LArTPC_Z 20.0 cm
+/LXeTPC_Z 0.0 cm
+/NbOfCellL 500
+/NbOfLArCellZ 100
+/NbOfLXeCellZ 0
+
+/gps/ene/min 0.1 MeV
+/gps/ene/max 0.1 MeV
+/OutputFile Gamma_0.1MeV
+/update
+/run/beamOn 100000
+
+/gps/ene/min 0.2 MeV
+/gps/ene/max 0.2 MeV
+/OutputFile Gamma_0.2MeV
+/update
+/run/beamOn 100000
+
+/gps/ene/min 0.5 MeV
+/gps/ene/max 0.5 MeV
+/OutputFile Gamma_0.5MeV
+/update
+/run/beamOn 100000
+
+/gps/ene/min 1. MeV
+/gps/ene/max 1. MeV
+/OutputFile Gamma_1MeV
+/update
+/run/beamOn 100000
+
+/gps/ene/min 2. MeV
+/gps/ene/max 2. MeV
+/OutputFile Gamma_2MeV
+/update
+/run/beamOn 100000
+
+/gps/ene/min 5. MeV
+/gps/ene/max 5. MeV
+/OutputFile Gamma_5MeV
+/update
+/run/beamOn 100000
+
+/gps/ene/min 10. MeV
+/gps/ene/max 10. MeV
+/OutputFile Gamma_10MeV
+/update
+/run/beamOn 100000
+
+/gps/ene/min 20. MeV
+/gps/ene/max 20. MeV
+/OutputFile Gamma_20MeV
+/update
+/run/beamOn 100000
+
+/gps/ene/min 50. MeV
+/gps/ene/max 50. MeV
+/OutputFile Gamma_50MeV
+/update
+/run/beamOn 100000
+
+/gps/ene/min 100. MeV
+/gps/ene/max 100. MeV
+/OutputFile Gamma_100MeV
+/update
+/run/beamOn 100000
+

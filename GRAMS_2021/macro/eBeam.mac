@@ -1,0 +1,94 @@
+# Macro file for "GRAMS.cc"
+# @author Tsuguo Aramaki
+# @date 2015 March 23
+
+/Visualization 0
+/CheckOverlap 1
+/DetectorType 2
+/OutputType 0
+/OutputFormat 0
+/TrackType 1
+/TrackEdep 1
+/StopEvent 0
+
+/NbOfLArLayer 1
+/NbOfLXeLayer 1
+/NbOfCellL 1
+/NbOfLArCellZ 1
+/NbOfLXeCellZ 1
+
+/Atmos_Z 0.0 cm
+/LArTPC_Z 20.0 cm
+/LXeTPC_Z 0.0 cm
+/TPC_L 140.0 cm
+/TPC_space 40.0 cm
+/TOFin_Z 0.5 cm
+/TOFout_Z 0.5 cm
+/TOFout_L 360. cm
+#/TOFout_H 200. cm
+/TOFout_Angle 90. deg
+/Gondola_Angle 0. deg
+
+/ParticleSource 1
+/gps/pos/type Plane
+/gps/pos/shape Square
+/gps/pos/centre 0. 0. 0. cm
+/gps/pos/halfx 0. cm
+/gps/pos/halfy 0. cm
+/gps/ang/type iso
+/gps/ang/mintheta 90.0 deg
+/gps/ang/maxtheta 90.0 deg
+/gps/ang/minphi 0. deg
+/gps/ang/maxphi 0. deg
+/gps/particle e-
+/gps/ene/type Pow
+/gps/ene/min 0.1 MeV
+/gps/ene/max 0.1 MeV
+/gps/ene/alpha 0.
+
+/OutputDirectory output/eBeam
+
+/gps/ene/min 1.0 MeV
+/gps/ene/max 1.0 MeV
+/OutputFile eBeam_1MeV
+/update
+/run/beamOn 100000
+
+/gps/ene/min 2.0 MeV
+/gps/ene/max 2.0 MeV
+/OutputFile eBeam_2MeV
+/update
+/run/beamOn 100000
+
+/gps/ene/min 5.0 MeV
+/gps/ene/max 5.0 MeV
+/OutputFile eBeam_5MeV
+/update
+/run/beamOn 100000
+
+/gps/ene/min 10.0 MeV
+/gps/ene/max 10.0 MeV
+/OutputFile eBeam_10MeV
+/update
+/run/beamOn 100000
+
+/gps/ene/min 20.0 MeV
+/gps/ene/max 20.0 MeV
+/OutputFile eBeam_20MeV
+/update
+/run/beamOn 100000
+
+/gps/ene/min 50.0 MeV
+/gps/ene/max 50.0 MeV
+/OutputFile eBeam_50MeV
+/update
+/run/beamOn 100000
+
+/gps/ene/min 100.0 MeV
+/gps/ene/max 100.0 MeV
+/OutputFile eBeam_100MeV
+/update
+/run/beamOn 100000
+
+
+
