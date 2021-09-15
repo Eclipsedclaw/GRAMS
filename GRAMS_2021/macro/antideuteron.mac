@@ -1,0 +1,29 @@
+### macro file for antideuteron
+### @author Jiancheng Zeng
+### @date 2021 September 3rd
+
+/process/em/dexcitation World true true true
+/process/list
+
+/Visualization 0
+/CheckOverlap 1
+/OutputFormat 0
+/TrackType 0
+/TrackEdep 1
+
+/OutputDirectory output
+
+/GeneralParticleSource 1
+/gps/particle anti_deuteron
+/gps/ene/type lin
+/gps/ene/min 20 MeV
+/gps/ene/max 500 MeV
+/gps/ene/gradient
+/gps/ene/intercept
+/gps/pos/type Point
+/gps/pos/centre 0.0 0.0 2200.0 cm
+/gps/direction 0.0 0.0 -1.0
+/gps/ang/type focused
+
+/OutputFile test_anti_deuteron
+/run/beamOn 10

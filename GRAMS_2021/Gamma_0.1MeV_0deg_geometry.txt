@@ -10,3 +10,6 @@ TOFout length: 350 cm
 TOFout height: 186 cm
 TOFout angle: 90 deg
 Atmos depth: 0 g/cm2
+primary particle area: 0 m^2
+primary particle minimum energy: 0 MeV
+primary particle maximum energy: 0 MeV
