@@ -277,7 +277,6 @@ G4VPhysicalVolume* GRAMSDetectorConstruction::ConstructGRAMSDetector()
   worldMaterial = FlightAir;
   atmosMaterial = CompressedAir;
   scoreMaterial = Vacuum;
-  TPCMaterial = FlightAir;
   ChamberMaterial = Fe;
   TOFMaterial = Plastic;
   TPCMaterial = LAr;
@@ -304,7 +303,7 @@ G4VPhysicalVolume* GRAMSDetectorConstruction::ConstructGRAMSDetector()
                                  0,               // its mother  volume
                                  false,           // no boolean operations
                                  copyWorld,								// copy number
-																 true);
+																 overlap);
   
 	//------------------------------------------------
 	// global.beamZ = TOFoutL*2.0;
@@ -449,7 +448,7 @@ G4VPhysicalVolume* GRAMSDetectorConstruction::ConstructGRAMSDetector()
                                      logicWorld,        // its mother  volume
                                      false,             // no boolean operations
                                      copyWorld,       // copy number
-                                     true);
+                                     overlap);
 
     
     //------------------------------------------------
@@ -465,7 +464,7 @@ G4VPhysicalVolume* GRAMSDetectorConstruction::ConstructGRAMSDetector()
                                      logicGondola,        // its mother  volume
                                      false,             // no boolean operations
                                      copyWorld,       // copy number
-                                     true);
+                                     overlap);
     
     logicChamber->SetSensitiveDetector(TPCSD);
     
@@ -478,7 +477,7 @@ G4VPhysicalVolume* GRAMSDetectorConstruction::ConstructGRAMSDetector()
                                      logicChamber,        // its mother  volume
                                      false,             // no boolean operations
                                      copyWorld,       // copy number
-                                     true);
+                                     overlap);
     
     //------------------------------------------------
 		// TPC
