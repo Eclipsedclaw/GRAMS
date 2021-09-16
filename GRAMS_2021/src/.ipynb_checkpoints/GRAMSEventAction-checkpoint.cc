@@ -26,106 +26,49 @@
 //
 // @author Tsuguo Aramaki
 // @date 2015 March 23
-// 
+//
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
+ 
+#include "GRAMSEventAction.hh"
 
-#include "GRAMSRunAction.hh"
-
-#include "G4Run.hh"
-#include "G4RunManager.hh"
-#include "G4UnitsTable.hh"
-#include "G4SystemOfUnits.hh"
-/*
+#include "G4Event.hh"
+#include "G4EventManager.hh"
+#include "G4TrajectoryContainer.hh"
+#include "G4Trajectory.hh"
 #include "G4ios.hh"
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <fcntl.h>
-#include <unistd.h>
-*/
 #include "global.h"
-#include <fstream>
-
-using namespace std;
-
+#include <unistd.h>
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
-
-GRAMSRunAction::GRAMSRunAction()
+ 
+GRAMSEventAction::GRAMSEventAction()
 {}
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
-
-GRAMSRunAction::~GRAMSRunAction()
+ 
+GRAMSEventAction::~GRAMSEventAction()
 {}
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
-
-void GRAMSRunAction::BeginOfRunAction(const G4Run* aRun)
-{
+ 
+void GRAMSEventAction::BeginOfEventAction(const G4Event* evt)
+{  
   extern global_struct global;
-  char fname[100];
-  global.NbStop = 0;
-  global.NbInflight = 0;
-	
-  ((G4Run *)(aRun))->SetRunID(global.runnum);
-  G4cout << "### Run " << aRun->GetRunID() << " start." << G4endl;
-
-// Particles in Scoring volume  
-  if(global.OutputFormat == 0)
-  {
-    sprintf(fname, "%s/%s.dat", global.outdir, global.outfile );
-    G4cout << "Output file: " << fname << G4endl;
-    global.output.open (fname);
-  }
-  if(global.ParticleSource > 2) // for pbar/dbar stop event
-  {
-    global.inputX.clear();
-    global.inputY.clear();
-    global.inputZ.clear();
-    sprintf(fname, "%s/%s", global.indir, global.infile );
-    G4cout << "Input file for primary particles: " << fname << G4endl;
-    global.input.open (fname);
-    // Read input files for primary particles
-    float X,Y,Z;
-    int nLine = 0;
-    while (global.input.good())
-    {
-      global.input >> X >> Y >> Z;
-      //				cout << X << " " << Y << " " <<  Z << endl;
-      global.inputX.push_back(X);
-      global.inputY.push_back(Y);
-      global.inputZ.push_back(Z);
-      nLine++;
-    }
-    cout << "there are " << nLine << " lines in the input file" << endl;
-    global.nLine = nLine;
-    global.input.close();
-  }
+  G4int event_id = evt->GetEventID();
+  global.eventID = event_id;
+	global.lStopEvent = 0;
+  global.TOF0 = 0.0;
+  global.TOF1 = 0.0;
+  global.TScore1 = 0.0;
+  global.TScore2 = 0.0;
+	if (event_id < 10 || event_id%1000 == 0) G4cout << ">>> Event " << evt->GetEventID() << G4endl;
 }
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
-
-void GRAMSRunAction::EndOfRunAction(const G4Run*)
+ 
+void GRAMSEventAction::EndOfEventAction(const G4Event* evt)
 {
-	extern global_struct global;
-    std::ofstream outfile;
-	if(global.OutputFormat == 0) global.output.close();
-  if(global.StopEvent == 1)
-  {
-    if(global.NbStop > 0) 
-    {
-        G4cout << "Stop Event = " << global.NbStop << G4endl;
-        outfile.open("NoS.txt", std::ios_base::app); 
-        outfile << global.NbStop << '\t' << global.NbInflight << '\n';
-        outfile.close();
-    }
-    if(global.NbInflight > 0) G4cout << "Inflight Event = " << global.NbInflight << G4endl;
-  }
-	G4cout << "Run end  " << G4endl;
 }
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
-
-
-
