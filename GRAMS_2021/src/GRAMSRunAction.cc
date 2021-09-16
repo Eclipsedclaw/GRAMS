@@ -109,10 +109,17 @@ void GRAMSRunAction::BeginOfRunAction(const G4Run* aRun)
 void GRAMSRunAction::EndOfRunAction(const G4Run*)
 {
 	extern global_struct global;
+    std::ofstream outfile;
 	if(global.OutputFormat == 0) global.output.close();
   if(global.StopEvent == 1)
   {
-    if(global.NbStop > 0) G4cout << "Stop Event = " << global.NbStop << G4endl;
+    if(global.NbStop > 0) 
+    {
+        G4cout << "Stop Event = " << global.NbStop << G4endl;
+        outfile.open("NoS.txt", std::ios_base::app); 
+        outfile << global.NbStop << '\t' << global.NbInflight << '\n';
+        outfile.close();
+    }
     if(global.NbInflight > 0) G4cout << "Inflight Event = " << global.NbInflight << G4endl;
   }
 	G4cout << "Run end  " << G4endl;

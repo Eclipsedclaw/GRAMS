@@ -56,8 +56,8 @@
 /vis/scene/add/hits
 
 # Accumulate multiple events in one picture.
-#/vis/scene/endOfEventAction accumulate
 
+/vis/scene/endOfEventAction accumulate
 # Create a drawByParticleID model named drawByParticleID-0
 /vis/modeling/trajectories/create/drawByParticleID
 # Configure drawByParticleID-0 model
