@@ -1,8 +1,8 @@
-/Users/jiancheng/CloudDocuments/Documents/GitHub/GRAMS/GRAMS_2021/build/CMakeFiles/install/local.dir
-/Users/jiancheng/CloudDocuments/Documents/GitHub/GRAMS/GRAMS_2021/build/CMakeFiles/install/strip.dir
-/Users/jiancheng/CloudDocuments/Documents/GitHub/GRAMS/GRAMS_2021/build/CMakeFiles/install.dir
-/Users/jiancheng/CloudDocuments/Documents/GitHub/GRAMS/GRAMS_2021/build/CMakeFiles/list_install_components.dir
-/Users/jiancheng/CloudDocuments/Documents/GitHub/GRAMS/GRAMS_2021/build/CMakeFiles/PJ.dir
-/Users/jiancheng/CloudDocuments/Documents/GitHub/GRAMS/GRAMS_2021/build/CMakeFiles/rebuild_cache.dir
-/Users/jiancheng/CloudDocuments/Documents/GitHub/GRAMS/GRAMS_2021/build/CMakeFiles/edit_cache.dir
-/Users/jiancheng/CloudDocuments/Documents/GitHub/GRAMS/GRAMS_2021/build/CMakeFiles/GRAMS.dir
+/home/aramakilab/GRAMS/GRAMS/GRAMS_2021/build/CMakeFiles/install/strip.dir
+/home/aramakilab/GRAMS/GRAMS/GRAMS_2021/build/CMakeFiles/install/local.dir
+/home/aramakilab/GRAMS/GRAMS/GRAMS_2021/build/CMakeFiles/install.dir
+/home/aramakilab/GRAMS/GRAMS/GRAMS_2021/build/CMakeFiles/list_install_components.dir
+/home/aramakilab/GRAMS/GRAMS/GRAMS_2021/build/CMakeFiles/rebuild_cache.dir
+/home/aramakilab/GRAMS/GRAMS/GRAMS_2021/build/CMakeFiles/edit_cache.dir
+/home/aramakilab/GRAMS/GRAMS/GRAMS_2021/build/CMakeFiles/PJ.dir
+/home/aramakilab/GRAMS/GRAMS/GRAMS_2021/build/CMakeFiles/GRAMS.dir
