@@ -2,7 +2,7 @@
 # @author Jiancheng Zeng
 # @date 2021 September 20
 
-/Visualization 1
+/Visualization 0
 /CheckOverlap 1
 /DetectorType 1
 /OutputType 1
@@ -29,59 +29,20 @@
 /TOFout_Angle 90. deg
 /Gondola_Angle 0. deg
 
-/gps/particle anti_He3
+/ParticleSource 1
+/gps/particle anti_proton
 /gps/ene/type Gauss
-/gps/ene/mono 130.0 MeV
-/gps/ene/min 10.0 MeV
+/gps/ene/mono 125.0 MeV
+/gps/ene/min 0.0 MeV
 /gps/ene/max 250.0 MeV
-/gps/ene/sigma 250.0 MeV
+/gps/ene/sigma 250 MeV
 /gps/pos/type Point
-/gps/pos/centre 0.0 0.0 2200.0 cm
+/gps/pos/centre 0.0 0.0 210.0 cm
 /gps/direction 0.0 0.0 -1.0
 /gps/ang/type focused
 
-/OutputDirectory output/anti_He3
-/OutputFile test_vis
+/OutputDirectory output/TOF
+/OutputFile TOF_anti_proton
 /update
 
-# HepRepFile diriver
-/vis/open HepRepFile
-
-# Add world volume
-/vis/drawVolume
-
-# Visualise geometry
-/vis/viewer/flush
-
-# Add trajectories to the visualization.
-/vis/scene/add/trajectories
-
-# HandsOn4: add hits to scene
-/vis/scene/add/hits
-
-# Accumulate multiple events in one picture.
-
-#/vis/scene/endOfEventAction accumulate
-# Create a drawByParticleID model named drawByParticleID-0
-/vis/modeling/trajectories/create/drawByParticleID
-# Configure drawByParticleID-0 model
-#/vis/modeling/trajectories/drawByParticleID-0/set gamma red
-#/vis/modeling/trajectories/drawByParticleID-0/set pi+ blue
-#/vis/modeling/trajectories/drawByParticleID-0/set pi- blue
-#/vis/modeling/trajectories/drawByParticleID-0/set pi0 blue
-
-# Trajectory colouring scheme
-#/vis/modeling/trajectories/create/drawByCharge
-#/vis/modeling/trajectories/drawByCharge-0/set -1 blue
-#/vis/modeling/trajectories/drawByCharge-0/set 1 blue
-#/vis/modeling/trajectories/drawByCharge-0/set 0 red
-
-#/update
-
-# Specify view angle:
-/vis/viewer/set/viewpointThetaPhi 45. 45.
-
-# Specify zoom value:
-/vis/viewer/zoom 2.
-
-/run/beamOn 5
+/run/beamOn 10000
