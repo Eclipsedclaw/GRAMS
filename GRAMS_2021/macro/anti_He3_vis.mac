@@ -17,7 +17,7 @@
 /NbOfLArCellZ 1
 /NbOfLXeCellZ 1
 
-/Atmos_Z 3.9 cm
+/Atmos_Z 0.0 cm
 /LArTPC_Z 20.0 cm
 /LXeTPC_Z 0.0 cm
 /TPC_L 100.0 cm
@@ -30,14 +30,26 @@
 /Gondola_Angle 0. deg
 
 
-/ParticleSource 0
-/PrimaryParticle/area 2000.0 cm
-/PrimaryParticle/Emin 0.0 MeV
-/PrimaryParticle/Emax 750. MeV
-/gun/particle anti_He3
+/ParticleSource 1
+/gps/particle anti_He3
+/gps/ene/type Gauss
+/gps/ene/mono 375.0 MeV
+/gps/ene/min 0.0 MeV
+/gps/ene/max 750.0 MeV
+/gps/ene/sigma 375 MeV
+/gps/pos/type Point
+/gps/pos/centre 210.0 0.0 210.0 cm
+/gps/direction -210.0 0.0 -210.0
+/gps/ang/type focused
+
+#/gps/ang/type iso
+#/gps/ang/mintheta 0.0 deg
+#/gps/ang/maxtheta 5.0 deg
+#/gps/ang/minphi 0. deg
+#/gps/ang/maxphi 0. deg
 
 /OutputDirectory output/anti_He3
-/OutputFile test_vis
+/OutputFile ang_vis
 /update
 
 # HepRepFile diriver
@@ -57,7 +69,7 @@
 
 # Accumulate multiple events in one picture.
 
-/vis/scene/endOfEventAction accumulate
+#/vis/scene/endOfEventAction accumulate
 # Create a drawByParticleID model named drawByParticleID-0
 /vis/modeling/trajectories/create/drawByParticleID
 # Configure drawByParticleID-0 model
