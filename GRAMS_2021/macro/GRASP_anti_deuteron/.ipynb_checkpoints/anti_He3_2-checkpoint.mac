@@ -1,0 +1,43 @@
+# Macro file for "GRAMS.cc"
+# @author Jiancheng Zeng
+# @date 2021 September 15
+
+/Visualization 0
+/CheckOverlap 1
+/DetectorType 1
+/OutputType 1
+/OutputFormat 0
+/TrackType 1
+/TrackEdep 1
+/StopEvent 1
+
+/NbOfLArLayer 1
+/NbOfLXeLayer 1
+/NbOfCellL 1
+/NbOfLArCellZ 1
+/NbOfLXeCellZ 1
+
+/Atmos_Z 3.9 cm
+/LArTPC_Z 20.0 cm
+/LXeTPC_Z 0.0 cm
+/TPC_L 140.0 cm
+/TPC_space 40.0 cm
+/TOFin_Z 0.5 cm
+/TOFout_Z 0.5 cm
+/TOFout_L 360. cm
+#/TOFout_H 200. cm
+/TOFout_Angle 90. deg
+/Gondola_Angle 0. deg
+
+
+/ParticleSource 0
+/PrimaryParticle/area 2000.0 cm
+/PrimaryParticle/Emin 50.0 MeV
+/PrimaryParticle/Emax 100.0 MeV
+/gun/particle anti_He3
+
+/OutputDirectory output/anti_He3
+/OutputFile GRASP_anti_He3_1e7_2
+/update
+
+/run/beamOn 10000000

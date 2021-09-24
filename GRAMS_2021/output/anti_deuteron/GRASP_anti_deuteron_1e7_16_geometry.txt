@@ -1,0 +1,15 @@
+Gondola angle: 0 deg
+Number of TPCs: 2
+TPC length: 140 cm
+TPC thickness: 20 cm
+TOFin thickness: 0.5 cm
+TOFin length: 150 cm
+TOFin height: 31 cm
+TOFout thickness: 0.5 cm
+TOFout length: 350 cm
+TOFout height: 186 cm
+TOFout angle: 90 deg
+Atmos depth: 3.9 g/cm2
+primary particle area: 400 m^2
+primary particle minimum energy: 750 MeV
+primary particle maximum energy: 800 MeV
