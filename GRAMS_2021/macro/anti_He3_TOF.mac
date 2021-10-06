@@ -30,15 +30,15 @@
 /Gondola_Angle 0. deg
 
 /ParticleSource 1
-/gps/particle anti_He3
+/gps/particle anti_proton
 /gps/ene/type Gauss
-/gps/ene/mono 375.0 MeV
+/gps/ene/mono 125.0 MeV
 /gps/ene/min 0.0 MeV
-/gps/ene/max 750.0 MeV
-/gps/ene/sigma 375 MeV
+/gps/ene/max 250.0 MeV
+/gps/ene/sigma 125 MeV
 /gps/pos/type Point
 /gps/pos/centre 210.0 0.0 210.0 cm
-/gps/direction -210.0 0.0 -210.0
+/gps/direction -210.0 0.0 -210.0 cm
 /gps/ang/type focused
 
 /gps/ang/type iso
@@ -48,7 +48,7 @@
 /gps/ang/maxphi 0. deg
 
 /OutputDirectory output/TOF
-/OutputFile TOF_anti_He3_1e7_45_5
+/OutputFile TOF_anti_proton_1e4_45_5
 /update
 
 /run/beamOn 10000
