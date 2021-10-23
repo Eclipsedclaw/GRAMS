@@ -17,10 +17,10 @@
 /NbOfLArCellZ 1
 /NbOfLXeCellZ 1
 
-/Atmos_Z 3.9 cm
+/Atmos_Z 0.0 cm
 /LArTPC_Z 20.0 cm
 /LXeTPC_Z 0.0 cm
-/TPC_L 100.0 cm
+/TPC_L 300.0 cm
 /TPC_space 40.0 cm
 /TOFin_Z 0.5 cm
 /TOFout_Z 0.5 cm
@@ -29,15 +29,25 @@
 /TOFout_Angle 90. deg
 /Gondola_Angle 0. deg
 
+/ParticleSource 1
+/gps/particle anti_He3
+/gps/ene/type Pow
+/gps/ene/min 0.0 MeV
+/gps/ene/max 1500.0 MeV
+/gps/ene/alpha 0.0 MeV
+/gps/pos/type Point
+/gps/pos/centre 210.0 0.0 210.0 cm
+#/gps/direction -210.0 0.0 -210.0 cm
+#/gps/ang/type focused
 
-/ParticleSource 0
-/PrimaryParticle/area 2000.0 cm
-/PrimaryParticle/Emin 0.0 MeV
-/PrimaryParticle/Emax 750. MeV
-/gun/particle anti_He3
+/gps/ang/type iso
+/gps/ang/mintheta 41 deg
+/gps/ang/maxtheta 49 deg
+/gps/ang/minphi 0. deg
+/gps/ang/maxphi 0. deg
 
-/OutputDirectory output/anti_He3
-/OutputFile test_vis
+/OutputDirectory output/TOF
+/OutputFile ang_vis
 /update
 
 # HepRepFile diriver
@@ -57,7 +67,7 @@
 
 # Accumulate multiple events in one picture.
 
-/vis/scene/endOfEventAction accumulate
+#/vis/scene/endOfEventAction accumulate
 # Create a drawByParticleID model named drawByParticleID-0
 /vis/modeling/trajectories/create/drawByParticleID
 # Configure drawByParticleID-0 model
@@ -80,4 +90,4 @@
 # Specify zoom value:
 /vis/viewer/zoom 2.
 
-/run/beamOn 10
+/run/beamOn 5

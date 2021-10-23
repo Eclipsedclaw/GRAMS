@@ -93,7 +93,7 @@ GRAMSDetectorConstruction::GRAMSDetectorConstruction()
 	atmosL = 50.0*m;
 	scoreL = atmosL;
 	scoreZ = 0.001*cm;
-	TOFspaceL = 100.0*cm;
+	TOFspaceL = 30.0*cm;
   TOFspaceH = 150.0*cm;
   space = 5.0*cm;
 	
