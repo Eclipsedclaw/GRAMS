@@ -117,7 +117,7 @@ void GRAMSRunAction::EndOfRunAction(const G4Run*)
     {
         G4cout << "Stop Event = " << global.NbStop << G4endl;
         outfile.open("NoS.txt", std::ios_base::app); 
-        outfile << global.NbStop << '\t' << global.NbInflight << '\n';
+        outfile << global.NbStop << '\t' << global.NbInflight << '\t' << global.Emin << '\n';
         outfile.close();
     }
     if(global.NbInflight > 0) G4cout << "Inflight Event = " << global.NbInflight << G4endl;
