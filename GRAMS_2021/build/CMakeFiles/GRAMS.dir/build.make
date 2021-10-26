@@ -44,19 +44,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /usr/local/bin/cmake
+CMAKE_COMMAND = /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/cmake
 
 # The command to remove a file.
-RM = /usr/local/bin/cmake -E rm -f
+RM = /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/aramakilab/GRAMS/GRAMS/GRAMS_2021
+CMAKE_SOURCE_DIR = /mnt/sda1/jiancheng/GRAMS/GRAMS/GRAMS_2021
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/aramakilab/GRAMS/GRAMS/GRAMS_2021/build
+CMAKE_BINARY_DIR = /mnt/sda1/jiancheng/GRAMS/GRAMS/GRAMS_2021/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/GRAMS.dir/depend.make
@@ -72,128 +72,128 @@ include CMakeFiles/GRAMS.dir/flags.make
 CMakeFiles/GRAMS.dir/GRAMS.cc.o: CMakeFiles/GRAMS.dir/flags.make
 CMakeFiles/GRAMS.dir/GRAMS.cc.o: ../GRAMS.cc
 CMakeFiles/GRAMS.dir/GRAMS.cc.o: CMakeFiles/GRAMS.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/aramakilab/GRAMS/GRAMS/GRAMS_2021/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/GRAMS.dir/GRAMS.cc.o"
-	/opt/gcc/gcc-11.2.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GRAMS.dir/GRAMS.cc.o -MF CMakeFiles/GRAMS.dir/GRAMS.cc.o.d -o CMakeFiles/GRAMS.dir/GRAMS.cc.o -c /home/aramakilab/GRAMS/GRAMS/GRAMS_2021/GRAMS.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/sda1/jiancheng/GRAMS/GRAMS/GRAMS_2021/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/GRAMS.dir/GRAMS.cc.o"
+	/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/x86_64-conda-linux-gnu-c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GRAMS.dir/GRAMS.cc.o -MF CMakeFiles/GRAMS.dir/GRAMS.cc.o.d -o CMakeFiles/GRAMS.dir/GRAMS.cc.o -c /mnt/sda1/jiancheng/GRAMS/GRAMS/GRAMS_2021/GRAMS.cc
 
 CMakeFiles/GRAMS.dir/GRAMS.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/GRAMS.dir/GRAMS.cc.i"
-	/opt/gcc/gcc-11.2.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/aramakilab/GRAMS/GRAMS/GRAMS_2021/GRAMS.cc > CMakeFiles/GRAMS.dir/GRAMS.cc.i
+	/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/x86_64-conda-linux-gnu-c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/sda1/jiancheng/GRAMS/GRAMS/GRAMS_2021/GRAMS.cc > CMakeFiles/GRAMS.dir/GRAMS.cc.i
 
 CMakeFiles/GRAMS.dir/GRAMS.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/GRAMS.dir/GRAMS.cc.s"
-	/opt/gcc/gcc-11.2.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/aramakilab/GRAMS/GRAMS/GRAMS_2021/GRAMS.cc -o CMakeFiles/GRAMS.dir/GRAMS.cc.s
+	/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/x86_64-conda-linux-gnu-c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/sda1/jiancheng/GRAMS/GRAMS/GRAMS_2021/GRAMS.cc -o CMakeFiles/GRAMS.dir/GRAMS.cc.s
 
 CMakeFiles/GRAMS.dir/src/GRAMSDetectorConstruction.cc.o: CMakeFiles/GRAMS.dir/flags.make
 CMakeFiles/GRAMS.dir/src/GRAMSDetectorConstruction.cc.o: ../src/GRAMSDetectorConstruction.cc
 CMakeFiles/GRAMS.dir/src/GRAMSDetectorConstruction.cc.o: CMakeFiles/GRAMS.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/aramakilab/GRAMS/GRAMS/GRAMS_2021/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/GRAMS.dir/src/GRAMSDetectorConstruction.cc.o"
-	/opt/gcc/gcc-11.2.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GRAMS.dir/src/GRAMSDetectorConstruction.cc.o -MF CMakeFiles/GRAMS.dir/src/GRAMSDetectorConstruction.cc.o.d -o CMakeFiles/GRAMS.dir/src/GRAMSDetectorConstruction.cc.o -c /home/aramakilab/GRAMS/GRAMS/GRAMS_2021/src/GRAMSDetectorConstruction.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/sda1/jiancheng/GRAMS/GRAMS/GRAMS_2021/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/GRAMS.dir/src/GRAMSDetectorConstruction.cc.o"
+	/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/x86_64-conda-linux-gnu-c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GRAMS.dir/src/GRAMSDetectorConstruction.cc.o -MF CMakeFiles/GRAMS.dir/src/GRAMSDetectorConstruction.cc.o.d -o CMakeFiles/GRAMS.dir/src/GRAMSDetectorConstruction.cc.o -c /mnt/sda1/jiancheng/GRAMS/GRAMS/GRAMS_2021/src/GRAMSDetectorConstruction.cc
 
 CMakeFiles/GRAMS.dir/src/GRAMSDetectorConstruction.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/GRAMS.dir/src/GRAMSDetectorConstruction.cc.i"
-	/opt/gcc/gcc-11.2.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/aramakilab/GRAMS/GRAMS/GRAMS_2021/src/GRAMSDetectorConstruction.cc > CMakeFiles/GRAMS.dir/src/GRAMSDetectorConstruction.cc.i
+	/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/x86_64-conda-linux-gnu-c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/sda1/jiancheng/GRAMS/GRAMS/GRAMS_2021/src/GRAMSDetectorConstruction.cc > CMakeFiles/GRAMS.dir/src/GRAMSDetectorConstruction.cc.i
 
 CMakeFiles/GRAMS.dir/src/GRAMSDetectorConstruction.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/GRAMS.dir/src/GRAMSDetectorConstruction.cc.s"
-	/opt/gcc/gcc-11.2.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/aramakilab/GRAMS/GRAMS/GRAMS_2021/src/GRAMSDetectorConstruction.cc -o CMakeFiles/GRAMS.dir/src/GRAMSDetectorConstruction.cc.s
+	/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/x86_64-conda-linux-gnu-c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/sda1/jiancheng/GRAMS/GRAMS/GRAMS_2021/src/GRAMSDetectorConstruction.cc -o CMakeFiles/GRAMS.dir/src/GRAMSDetectorConstruction.cc.s
 
 CMakeFiles/GRAMS.dir/src/GRAMSDetectorHit.cc.o: CMakeFiles/GRAMS.dir/flags.make
 CMakeFiles/GRAMS.dir/src/GRAMSDetectorHit.cc.o: ../src/GRAMSDetectorHit.cc
 CMakeFiles/GRAMS.dir/src/GRAMSDetectorHit.cc.o: CMakeFiles/GRAMS.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/aramakilab/GRAMS/GRAMS/GRAMS_2021/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/GRAMS.dir/src/GRAMSDetectorHit.cc.o"
-	/opt/gcc/gcc-11.2.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GRAMS.dir/src/GRAMSDetectorHit.cc.o -MF CMakeFiles/GRAMS.dir/src/GRAMSDetectorHit.cc.o.d -o CMakeFiles/GRAMS.dir/src/GRAMSDetectorHit.cc.o -c /home/aramakilab/GRAMS/GRAMS/GRAMS_2021/src/GRAMSDetectorHit.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/sda1/jiancheng/GRAMS/GRAMS/GRAMS_2021/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/GRAMS.dir/src/GRAMSDetectorHit.cc.o"
+	/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/x86_64-conda-linux-gnu-c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GRAMS.dir/src/GRAMSDetectorHit.cc.o -MF CMakeFiles/GRAMS.dir/src/GRAMSDetectorHit.cc.o.d -o CMakeFiles/GRAMS.dir/src/GRAMSDetectorHit.cc.o -c /mnt/sda1/jiancheng/GRAMS/GRAMS/GRAMS_2021/src/GRAMSDetectorHit.cc
 
 CMakeFiles/GRAMS.dir/src/GRAMSDetectorHit.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/GRAMS.dir/src/GRAMSDetectorHit.cc.i"
-	/opt/gcc/gcc-11.2.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/aramakilab/GRAMS/GRAMS/GRAMS_2021/src/GRAMSDetectorHit.cc > CMakeFiles/GRAMS.dir/src/GRAMSDetectorHit.cc.i
+	/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/x86_64-conda-linux-gnu-c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/sda1/jiancheng/GRAMS/GRAMS/GRAMS_2021/src/GRAMSDetectorHit.cc > CMakeFiles/GRAMS.dir/src/GRAMSDetectorHit.cc.i
 
 CMakeFiles/GRAMS.dir/src/GRAMSDetectorHit.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/GRAMS.dir/src/GRAMSDetectorHit.cc.s"
-	/opt/gcc/gcc-11.2.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/aramakilab/GRAMS/GRAMS/GRAMS_2021/src/GRAMSDetectorHit.cc -o CMakeFiles/GRAMS.dir/src/GRAMSDetectorHit.cc.s
+	/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/x86_64-conda-linux-gnu-c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/sda1/jiancheng/GRAMS/GRAMS/GRAMS_2021/src/GRAMSDetectorHit.cc -o CMakeFiles/GRAMS.dir/src/GRAMSDetectorHit.cc.s
 
 CMakeFiles/GRAMS.dir/src/GRAMSDetectorMessenger.cc.o: CMakeFiles/GRAMS.dir/flags.make
 CMakeFiles/GRAMS.dir/src/GRAMSDetectorMessenger.cc.o: ../src/GRAMSDetectorMessenger.cc
 CMakeFiles/GRAMS.dir/src/GRAMSDetectorMessenger.cc.o: CMakeFiles/GRAMS.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/aramakilab/GRAMS/GRAMS/GRAMS_2021/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/GRAMS.dir/src/GRAMSDetectorMessenger.cc.o"
-	/opt/gcc/gcc-11.2.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GRAMS.dir/src/GRAMSDetectorMessenger.cc.o -MF CMakeFiles/GRAMS.dir/src/GRAMSDetectorMessenger.cc.o.d -o CMakeFiles/GRAMS.dir/src/GRAMSDetectorMessenger.cc.o -c /home/aramakilab/GRAMS/GRAMS/GRAMS_2021/src/GRAMSDetectorMessenger.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/sda1/jiancheng/GRAMS/GRAMS/GRAMS_2021/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/GRAMS.dir/src/GRAMSDetectorMessenger.cc.o"
+	/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/x86_64-conda-linux-gnu-c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GRAMS.dir/src/GRAMSDetectorMessenger.cc.o -MF CMakeFiles/GRAMS.dir/src/GRAMSDetectorMessenger.cc.o.d -o CMakeFiles/GRAMS.dir/src/GRAMSDetectorMessenger.cc.o -c /mnt/sda1/jiancheng/GRAMS/GRAMS/GRAMS_2021/src/GRAMSDetectorMessenger.cc
 
 CMakeFiles/GRAMS.dir/src/GRAMSDetectorMessenger.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/GRAMS.dir/src/GRAMSDetectorMessenger.cc.i"
-	/opt/gcc/gcc-11.2.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/aramakilab/GRAMS/GRAMS/GRAMS_2021/src/GRAMSDetectorMessenger.cc > CMakeFiles/GRAMS.dir/src/GRAMSDetectorMessenger.cc.i
+	/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/x86_64-conda-linux-gnu-c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/sda1/jiancheng/GRAMS/GRAMS/GRAMS_2021/src/GRAMSDetectorMessenger.cc > CMakeFiles/GRAMS.dir/src/GRAMSDetectorMessenger.cc.i
 
 CMakeFiles/GRAMS.dir/src/GRAMSDetectorMessenger.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/GRAMS.dir/src/GRAMSDetectorMessenger.cc.s"
-	/opt/gcc/gcc-11.2.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/aramakilab/GRAMS/GRAMS/GRAMS_2021/src/GRAMSDetectorMessenger.cc -o CMakeFiles/GRAMS.dir/src/GRAMSDetectorMessenger.cc.s
+	/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/x86_64-conda-linux-gnu-c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/sda1/jiancheng/GRAMS/GRAMS/GRAMS_2021/src/GRAMSDetectorMessenger.cc -o CMakeFiles/GRAMS.dir/src/GRAMSDetectorMessenger.cc.s
 
 CMakeFiles/GRAMS.dir/src/GRAMSDetectorSD.cc.o: CMakeFiles/GRAMS.dir/flags.make
 CMakeFiles/GRAMS.dir/src/GRAMSDetectorSD.cc.o: ../src/GRAMSDetectorSD.cc
 CMakeFiles/GRAMS.dir/src/GRAMSDetectorSD.cc.o: CMakeFiles/GRAMS.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/aramakilab/GRAMS/GRAMS/GRAMS_2021/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/GRAMS.dir/src/GRAMSDetectorSD.cc.o"
-	/opt/gcc/gcc-11.2.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GRAMS.dir/src/GRAMSDetectorSD.cc.o -MF CMakeFiles/GRAMS.dir/src/GRAMSDetectorSD.cc.o.d -o CMakeFiles/GRAMS.dir/src/GRAMSDetectorSD.cc.o -c /home/aramakilab/GRAMS/GRAMS/GRAMS_2021/src/GRAMSDetectorSD.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/sda1/jiancheng/GRAMS/GRAMS/GRAMS_2021/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/GRAMS.dir/src/GRAMSDetectorSD.cc.o"
+	/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/x86_64-conda-linux-gnu-c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GRAMS.dir/src/GRAMSDetectorSD.cc.o -MF CMakeFiles/GRAMS.dir/src/GRAMSDetectorSD.cc.o.d -o CMakeFiles/GRAMS.dir/src/GRAMSDetectorSD.cc.o -c /mnt/sda1/jiancheng/GRAMS/GRAMS/GRAMS_2021/src/GRAMSDetectorSD.cc
 
 CMakeFiles/GRAMS.dir/src/GRAMSDetectorSD.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/GRAMS.dir/src/GRAMSDetectorSD.cc.i"
-	/opt/gcc/gcc-11.2.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/aramakilab/GRAMS/GRAMS/GRAMS_2021/src/GRAMSDetectorSD.cc > CMakeFiles/GRAMS.dir/src/GRAMSDetectorSD.cc.i
+	/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/x86_64-conda-linux-gnu-c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/sda1/jiancheng/GRAMS/GRAMS/GRAMS_2021/src/GRAMSDetectorSD.cc > CMakeFiles/GRAMS.dir/src/GRAMSDetectorSD.cc.i
 
 CMakeFiles/GRAMS.dir/src/GRAMSDetectorSD.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/GRAMS.dir/src/GRAMSDetectorSD.cc.s"
-	/opt/gcc/gcc-11.2.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/aramakilab/GRAMS/GRAMS/GRAMS_2021/src/GRAMSDetectorSD.cc -o CMakeFiles/GRAMS.dir/src/GRAMSDetectorSD.cc.s
+	/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/x86_64-conda-linux-gnu-c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/sda1/jiancheng/GRAMS/GRAMS/GRAMS_2021/src/GRAMSDetectorSD.cc -o CMakeFiles/GRAMS.dir/src/GRAMSDetectorSD.cc.s
 
 CMakeFiles/GRAMS.dir/src/GRAMSEventAction.cc.o: CMakeFiles/GRAMS.dir/flags.make
 CMakeFiles/GRAMS.dir/src/GRAMSEventAction.cc.o: ../src/GRAMSEventAction.cc
 CMakeFiles/GRAMS.dir/src/GRAMSEventAction.cc.o: CMakeFiles/GRAMS.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/aramakilab/GRAMS/GRAMS/GRAMS_2021/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/GRAMS.dir/src/GRAMSEventAction.cc.o"
-	/opt/gcc/gcc-11.2.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GRAMS.dir/src/GRAMSEventAction.cc.o -MF CMakeFiles/GRAMS.dir/src/GRAMSEventAction.cc.o.d -o CMakeFiles/GRAMS.dir/src/GRAMSEventAction.cc.o -c /home/aramakilab/GRAMS/GRAMS/GRAMS_2021/src/GRAMSEventAction.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/sda1/jiancheng/GRAMS/GRAMS/GRAMS_2021/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/GRAMS.dir/src/GRAMSEventAction.cc.o"
+	/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/x86_64-conda-linux-gnu-c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GRAMS.dir/src/GRAMSEventAction.cc.o -MF CMakeFiles/GRAMS.dir/src/GRAMSEventAction.cc.o.d -o CMakeFiles/GRAMS.dir/src/GRAMSEventAction.cc.o -c /mnt/sda1/jiancheng/GRAMS/GRAMS/GRAMS_2021/src/GRAMSEventAction.cc
 
 CMakeFiles/GRAMS.dir/src/GRAMSEventAction.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/GRAMS.dir/src/GRAMSEventAction.cc.i"
-	/opt/gcc/gcc-11.2.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/aramakilab/GRAMS/GRAMS/GRAMS_2021/src/GRAMSEventAction.cc > CMakeFiles/GRAMS.dir/src/GRAMSEventAction.cc.i
+	/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/x86_64-conda-linux-gnu-c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/sda1/jiancheng/GRAMS/GRAMS/GRAMS_2021/src/GRAMSEventAction.cc > CMakeFiles/GRAMS.dir/src/GRAMSEventAction.cc.i
 
 CMakeFiles/GRAMS.dir/src/GRAMSEventAction.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/GRAMS.dir/src/GRAMSEventAction.cc.s"
-	/opt/gcc/gcc-11.2.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/aramakilab/GRAMS/GRAMS/GRAMS_2021/src/GRAMSEventAction.cc -o CMakeFiles/GRAMS.dir/src/GRAMSEventAction.cc.s
+	/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/x86_64-conda-linux-gnu-c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/sda1/jiancheng/GRAMS/GRAMS/GRAMS_2021/src/GRAMSEventAction.cc -o CMakeFiles/GRAMS.dir/src/GRAMSEventAction.cc.s
 
 CMakeFiles/GRAMS.dir/src/GRAMSPhysicsList.cc.o: CMakeFiles/GRAMS.dir/flags.make
 CMakeFiles/GRAMS.dir/src/GRAMSPhysicsList.cc.o: ../src/GRAMSPhysicsList.cc
 CMakeFiles/GRAMS.dir/src/GRAMSPhysicsList.cc.o: CMakeFiles/GRAMS.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/aramakilab/GRAMS/GRAMS/GRAMS_2021/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/GRAMS.dir/src/GRAMSPhysicsList.cc.o"
-	/opt/gcc/gcc-11.2.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GRAMS.dir/src/GRAMSPhysicsList.cc.o -MF CMakeFiles/GRAMS.dir/src/GRAMSPhysicsList.cc.o.d -o CMakeFiles/GRAMS.dir/src/GRAMSPhysicsList.cc.o -c /home/aramakilab/GRAMS/GRAMS/GRAMS_2021/src/GRAMSPhysicsList.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/sda1/jiancheng/GRAMS/GRAMS/GRAMS_2021/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/GRAMS.dir/src/GRAMSPhysicsList.cc.o"
+	/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/x86_64-conda-linux-gnu-c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GRAMS.dir/src/GRAMSPhysicsList.cc.o -MF CMakeFiles/GRAMS.dir/src/GRAMSPhysicsList.cc.o.d -o CMakeFiles/GRAMS.dir/src/GRAMSPhysicsList.cc.o -c /mnt/sda1/jiancheng/GRAMS/GRAMS/GRAMS_2021/src/GRAMSPhysicsList.cc
 
 CMakeFiles/GRAMS.dir/src/GRAMSPhysicsList.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/GRAMS.dir/src/GRAMSPhysicsList.cc.i"
-	/opt/gcc/gcc-11.2.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/aramakilab/GRAMS/GRAMS/GRAMS_2021/src/GRAMSPhysicsList.cc > CMakeFiles/GRAMS.dir/src/GRAMSPhysicsList.cc.i
+	/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/x86_64-conda-linux-gnu-c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/sda1/jiancheng/GRAMS/GRAMS/GRAMS_2021/src/GRAMSPhysicsList.cc > CMakeFiles/GRAMS.dir/src/GRAMSPhysicsList.cc.i
 
 CMakeFiles/GRAMS.dir/src/GRAMSPhysicsList.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/GRAMS.dir/src/GRAMSPhysicsList.cc.s"
-	/opt/gcc/gcc-11.2.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/aramakilab/GRAMS/GRAMS/GRAMS_2021/src/GRAMSPhysicsList.cc -o CMakeFiles/GRAMS.dir/src/GRAMSPhysicsList.cc.s
+	/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/x86_64-conda-linux-gnu-c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/sda1/jiancheng/GRAMS/GRAMS/GRAMS_2021/src/GRAMSPhysicsList.cc -o CMakeFiles/GRAMS.dir/src/GRAMSPhysicsList.cc.s
 
 CMakeFiles/GRAMS.dir/src/GRAMSPrimaryGeneratorAction.cc.o: CMakeFiles/GRAMS.dir/flags.make
 CMakeFiles/GRAMS.dir/src/GRAMSPrimaryGeneratorAction.cc.o: ../src/GRAMSPrimaryGeneratorAction.cc
 CMakeFiles/GRAMS.dir/src/GRAMSPrimaryGeneratorAction.cc.o: CMakeFiles/GRAMS.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/aramakilab/GRAMS/GRAMS/GRAMS_2021/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/GRAMS.dir/src/GRAMSPrimaryGeneratorAction.cc.o"
-	/opt/gcc/gcc-11.2.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GRAMS.dir/src/GRAMSPrimaryGeneratorAction.cc.o -MF CMakeFiles/GRAMS.dir/src/GRAMSPrimaryGeneratorAction.cc.o.d -o CMakeFiles/GRAMS.dir/src/GRAMSPrimaryGeneratorAction.cc.o -c /home/aramakilab/GRAMS/GRAMS/GRAMS_2021/src/GRAMSPrimaryGeneratorAction.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/sda1/jiancheng/GRAMS/GRAMS/GRAMS_2021/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/GRAMS.dir/src/GRAMSPrimaryGeneratorAction.cc.o"
+	/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/x86_64-conda-linux-gnu-c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GRAMS.dir/src/GRAMSPrimaryGeneratorAction.cc.o -MF CMakeFiles/GRAMS.dir/src/GRAMSPrimaryGeneratorAction.cc.o.d -o CMakeFiles/GRAMS.dir/src/GRAMSPrimaryGeneratorAction.cc.o -c /mnt/sda1/jiancheng/GRAMS/GRAMS/GRAMS_2021/src/GRAMSPrimaryGeneratorAction.cc
 
 CMakeFiles/GRAMS.dir/src/GRAMSPrimaryGeneratorAction.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/GRAMS.dir/src/GRAMSPrimaryGeneratorAction.cc.i"
-	/opt/gcc/gcc-11.2.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/aramakilab/GRAMS/GRAMS/GRAMS_2021/src/GRAMSPrimaryGeneratorAction.cc > CMakeFiles/GRAMS.dir/src/GRAMSPrimaryGeneratorAction.cc.i
+	/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/x86_64-conda-linux-gnu-c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/sda1/jiancheng/GRAMS/GRAMS/GRAMS_2021/src/GRAMSPrimaryGeneratorAction.cc > CMakeFiles/GRAMS.dir/src/GRAMSPrimaryGeneratorAction.cc.i
 
 CMakeFiles/GRAMS.dir/src/GRAMSPrimaryGeneratorAction.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/GRAMS.dir/src/GRAMSPrimaryGeneratorAction.cc.s"
-	/opt/gcc/gcc-11.2.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/aramakilab/GRAMS/GRAMS/GRAMS_2021/src/GRAMSPrimaryGeneratorAction.cc -o CMakeFiles/GRAMS.dir/src/GRAMSPrimaryGeneratorAction.cc.s
+	/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/x86_64-conda-linux-gnu-c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/sda1/jiancheng/GRAMS/GRAMS/GRAMS_2021/src/GRAMSPrimaryGeneratorAction.cc -o CMakeFiles/GRAMS.dir/src/GRAMSPrimaryGeneratorAction.cc.s
 
 CMakeFiles/GRAMS.dir/src/GRAMSRunAction.cc.o: CMakeFiles/GRAMS.dir/flags.make
 CMakeFiles/GRAMS.dir/src/GRAMSRunAction.cc.o: ../src/GRAMSRunAction.cc
 CMakeFiles/GRAMS.dir/src/GRAMSRunAction.cc.o: CMakeFiles/GRAMS.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/aramakilab/GRAMS/GRAMS/GRAMS_2021/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/GRAMS.dir/src/GRAMSRunAction.cc.o"
-	/opt/gcc/gcc-11.2.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GRAMS.dir/src/GRAMSRunAction.cc.o -MF CMakeFiles/GRAMS.dir/src/GRAMSRunAction.cc.o.d -o CMakeFiles/GRAMS.dir/src/GRAMSRunAction.cc.o -c /home/aramakilab/GRAMS/GRAMS/GRAMS_2021/src/GRAMSRunAction.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/sda1/jiancheng/GRAMS/GRAMS/GRAMS_2021/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/GRAMS.dir/src/GRAMSRunAction.cc.o"
+	/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/x86_64-conda-linux-gnu-c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GRAMS.dir/src/GRAMSRunAction.cc.o -MF CMakeFiles/GRAMS.dir/src/GRAMSRunAction.cc.o.d -o CMakeFiles/GRAMS.dir/src/GRAMSRunAction.cc.o -c /mnt/sda1/jiancheng/GRAMS/GRAMS/GRAMS_2021/src/GRAMSRunAction.cc
 
 CMakeFiles/GRAMS.dir/src/GRAMSRunAction.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/GRAMS.dir/src/GRAMSRunAction.cc.i"
-	/opt/gcc/gcc-11.2.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/aramakilab/GRAMS/GRAMS/GRAMS_2021/src/GRAMSRunAction.cc > CMakeFiles/GRAMS.dir/src/GRAMSRunAction.cc.i
+	/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/x86_64-conda-linux-gnu-c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/sda1/jiancheng/GRAMS/GRAMS/GRAMS_2021/src/GRAMSRunAction.cc > CMakeFiles/GRAMS.dir/src/GRAMSRunAction.cc.i
 
 CMakeFiles/GRAMS.dir/src/GRAMSRunAction.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/GRAMS.dir/src/GRAMSRunAction.cc.s"
-	/opt/gcc/gcc-11.2.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/aramakilab/GRAMS/GRAMS/GRAMS_2021/src/GRAMSRunAction.cc -o CMakeFiles/GRAMS.dir/src/GRAMSRunAction.cc.s
+	/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/x86_64-conda-linux-gnu-c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/sda1/jiancheng/GRAMS/GRAMS/GRAMS_2021/src/GRAMSRunAction.cc -o CMakeFiles/GRAMS.dir/src/GRAMSRunAction.cc.s
 
 # Object files for target GRAMS
 GRAMS_OBJECTS = \
@@ -220,55 +220,56 @@ GRAMS: CMakeFiles/GRAMS.dir/src/GRAMSPhysicsList.cc.o
 GRAMS: CMakeFiles/GRAMS.dir/src/GRAMSPrimaryGeneratorAction.cc.o
 GRAMS: CMakeFiles/GRAMS.dir/src/GRAMSRunAction.cc.o
 GRAMS: CMakeFiles/GRAMS.dir/build.make
-GRAMS: /opt/geant4/pro/lib/libG4Tree.so
-GRAMS: /opt/geant4/pro/lib/libG4FR.so
-GRAMS: /opt/geant4/pro/lib/libG4GMocren.so
-GRAMS: /opt/geant4/pro/lib/libG4visHepRep.so
-GRAMS: /opt/geant4/pro/lib/libG4RayTracer.so
-GRAMS: /opt/geant4/pro/lib/libG4VRML.so
-GRAMS: /opt/geant4/pro/lib/libG4OpenGL.so
-GRAMS: /opt/geant4/pro/lib/libG4gl2ps.so
-GRAMS: /opt/geant4/pro/lib/libG4vis_management.so
-GRAMS: /opt/geant4/pro/lib/libG4modeling.so
-GRAMS: /opt/geant4/pro/lib/libG4interfaces.so
-GRAMS: /opt/geant4/pro/lib/libG4persistency.so
-GRAMS: /opt/geant4/pro/lib/libG4error_propagation.so
-GRAMS: /opt/geant4/pro/lib/libG4readout.so
-GRAMS: /opt/geant4/pro/lib/libG4physicslists.so
-GRAMS: /opt/geant4/pro/lib/libG4tasking.so
-GRAMS: /opt/geant4/pro/lib/libG4parmodels.so
-GRAMS: /usr/lib/x86_64-linux-gnu/libXmu.so
-GRAMS: /usr/lib/x86_64-linux-gnu/libXext.so
-GRAMS: /usr/lib/x86_64-linux-gnu/libXt.so
-GRAMS: /usr/lib/x86_64-linux-gnu/libICE.so
-GRAMS: /usr/lib/x86_64-linux-gnu/libSM.so
-GRAMS: /usr/lib/x86_64-linux-gnu/libX11.so
-GRAMS: /usr/lib/x86_64-linux-gnu/libGL.so
-GRAMS: /usr/lib/x86_64-linux-gnu/libQt5OpenGL.so.5.15.2
-GRAMS: /usr/lib/x86_64-linux-gnu/libQt5PrintSupport.so.5.15.2
-GRAMS: /usr/lib/x86_64-linux-gnu/libQt5Widgets.so.5.15.2
-GRAMS: /usr/lib/x86_64-linux-gnu/libQt5Gui.so.5.15.2
-GRAMS: /usr/lib/x86_64-linux-gnu/libQt5Core.so.5.15.2
-GRAMS: /usr/lib/x86_64-linux-gnu/libxerces-c.so
-GRAMS: /opt/geant4/pro/lib/libG4run.so
-GRAMS: /opt/geant4/pro/lib/libG4event.so
-GRAMS: /opt/geant4/pro/lib/libG4tracking.so
-GRAMS: /opt/geant4/pro/lib/libG4processes.so
-GRAMS: /opt/geant4/pro/lib/libG4analysis.so
-GRAMS: /usr/lib/x86_64-linux-gnu/libexpat.so
-GRAMS: /opt/geant4/pro/lib/libG4digits_hits.so
-GRAMS: /opt/geant4/pro/lib/libG4track.so
-GRAMS: /opt/geant4/pro/lib/libG4particles.so
-GRAMS: /opt/geant4/pro/lib/libG4geometry.so
-GRAMS: /opt/geant4/pro/lib/libG4materials.so
-GRAMS: /opt/geant4/pro/lib/libG4zlib.so
-GRAMS: /opt/geant4/pro/lib/libG4graphics_reps.so
-GRAMS: /opt/geant4/pro/lib/libG4intercoms.so
-GRAMS: /opt/geant4/pro/lib/libG4global.so
-GRAMS: /opt/geant4/pro/lib/libG4clhep.so
-GRAMS: /opt/geant4/pro/lib/libG4ptl.so.0.0.2
+GRAMS: /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib/libG4Tree.so
+GRAMS: /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib/libG4FR.so
+GRAMS: /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib/libG4GMocren.so
+GRAMS: /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib/libG4visHepRep.so
+GRAMS: /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib/libG4RayTracer.so
+GRAMS: /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib/libG4VRML.so
+GRAMS: /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib/libG4OpenGL.so
+GRAMS: /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib/libG4gl2ps.so
+GRAMS: /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib/libG4vis_management.so
+GRAMS: /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib/libG4modeling.so
+GRAMS: /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib/libG4interfaces.so
+GRAMS: /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib/libG4persistency.so
+GRAMS: /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib/libG4error_propagation.so
+GRAMS: /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib/libG4readout.so
+GRAMS: /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib/libG4physicslists.so
+GRAMS: /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib/libG4tasking.so
+GRAMS: /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib/libG4parmodels.so
+GRAMS: /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib/libXmu.so
+GRAMS: /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib/libXext.so
+GRAMS: /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib/libXt.so
+GRAMS: /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib/libICE.so
+GRAMS: /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib/libSM.so
+GRAMS: /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib/libX11.so
+GRAMS: /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/x86_64-conda-linux-gnu/sysroot/usr/lib/libGL.so
+GRAMS: /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib/libQt5OpenGL.so.5.12.9
+GRAMS: /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib/libQt5PrintSupport.so.5.12.9
+GRAMS: /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib/libQt5Widgets.so.5.12.9
+GRAMS: /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib/libQt5Gui.so.5.12.9
+GRAMS: /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib/libQt5Core.so.5.12.9
+GRAMS: /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib/libxerces-c.so
+GRAMS: /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib/libG4run.so
+GRAMS: /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib/libG4event.so
+GRAMS: /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib/libG4tracking.so
+GRAMS: /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib/libG4processes.so
+GRAMS: /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib/libG4analysis.so
+GRAMS: /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib/libfreetype.so
+GRAMS: /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib/libexpat.so
+GRAMS: /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib/libG4digits_hits.so
+GRAMS: /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib/libG4track.so
+GRAMS: /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib/libG4particles.so
+GRAMS: /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib/libG4geometry.so
+GRAMS: /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib/libG4materials.so
+GRAMS: /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib/libz.so
+GRAMS: /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib/libG4graphics_reps.so
+GRAMS: /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib/libG4intercoms.so
+GRAMS: /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib/libG4global.so
+GRAMS: /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib/libG4ptl.so.0.0.2
+GRAMS: /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib/libCLHEP-2.4.4.0.so
 GRAMS: CMakeFiles/GRAMS.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/aramakilab/GRAMS/GRAMS/GRAMS_2021/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable GRAMS"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/mnt/sda1/jiancheng/GRAMS/GRAMS/GRAMS_2021/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable GRAMS"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/GRAMS.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -280,6 +281,6 @@ CMakeFiles/GRAMS.dir/clean:
 .PHONY : CMakeFiles/GRAMS.dir/clean
 
 CMakeFiles/GRAMS.dir/depend:
-	cd /home/aramakilab/GRAMS/GRAMS/GRAMS_2021/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/aramakilab/GRAMS/GRAMS/GRAMS_2021 /home/aramakilab/GRAMS/GRAMS/GRAMS_2021 /home/aramakilab/GRAMS/GRAMS/GRAMS_2021/build /home/aramakilab/GRAMS/GRAMS/GRAMS_2021/build /home/aramakilab/GRAMS/GRAMS/GRAMS_2021/build/CMakeFiles/GRAMS.dir/DependInfo.cmake --color=$(COLOR)
+	cd /mnt/sda1/jiancheng/GRAMS/GRAMS/GRAMS_2021/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /mnt/sda1/jiancheng/GRAMS/GRAMS/GRAMS_2021 /mnt/sda1/jiancheng/GRAMS/GRAMS/GRAMS_2021 /mnt/sda1/jiancheng/GRAMS/GRAMS/GRAMS_2021/build /mnt/sda1/jiancheng/GRAMS/GRAMS/GRAMS_2021/build /mnt/sda1/jiancheng/GRAMS/GRAMS/GRAMS_2021/build/CMakeFiles/GRAMS.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/GRAMS.dir/depend
 

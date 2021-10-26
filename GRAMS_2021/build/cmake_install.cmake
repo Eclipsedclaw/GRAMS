@@ -1,4 +1,4 @@
-# Install script for directory: /home/aramakilab/GRAMS/GRAMS/GRAMS_2021
+# Install script for directory: /mnt/sda1/jiancheng/GRAMS/GRAMS/GRAMS_2021
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,7 +39,7 @@ endif()
 
 # Set default install directory permissions.
 if(NOT DEFINED CMAKE_OBJDUMP)
-  set(CMAKE_OBJDUMP "/usr/bin/objdump")
+  set(CMAKE_OBJDUMP "/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/x86_64-conda-linux-gnu-objdump")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
@@ -49,15 +49,11 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/GRAMS"
          RPATH "")
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE EXECUTABLE FILES "/home/aramakilab/GRAMS/GRAMS/GRAMS_2021/build/GRAMS")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE EXECUTABLE FILES "/mnt/sda1/jiancheng/GRAMS/GRAMS/GRAMS_2021/build/GRAMS")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/GRAMS" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/GRAMS")
-    file(RPATH_CHANGE
-         FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/GRAMS"
-         OLD_RPATH "/opt/geant4/pro/lib:"
-         NEW_RPATH "")
     if(CMAKE_INSTALL_DO_STRIP)
-      execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/GRAMS")
+      execute_process(COMMAND "/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/x86_64-conda-linux-gnu-strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/GRAMS")
     endif()
   endif()
 endif()
@@ -70,5 +66,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/aramakilab/GRAMS/GRAMS/GRAMS_2021/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/mnt/sda1/jiancheng/GRAMS/GRAMS/GRAMS_2021/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
