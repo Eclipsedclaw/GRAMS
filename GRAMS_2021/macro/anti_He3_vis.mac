@@ -20,7 +20,7 @@
 /Atmos_Z 0.0 cm
 /LArTPC_Z 20.0 cm
 /LXeTPC_Z 0.0 cm
-/TPC_L 300.0 cm
+/TPC_L 140.0 cm
 /TPC_space 40.0 cm
 /TOFin_Z 0.5 cm
 /TOFout_Z 0.5 cm
