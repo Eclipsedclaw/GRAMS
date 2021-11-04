@@ -1,5 +1,6 @@
 # Geant-simulation
-For GFP simulation in GAPS. This is the toy model case
+For GFP simulation in GAPS. This is the toy model case for MacOS. If on other platform, technically you just need python/root/geant4/qt/HepRApp.
+
 
 # All should be done in Terminal
 ## Install XCode
@@ -75,7 +76,7 @@ do not reinstall cmake when you finish set up geant4 which will cause error.
 > 
 > echo 'export PKG_CONFIG_PATH="/opt/homebrew/opt/qt5/lib/pkgconfig":$PKG_CONFIG_PATH' >> ~/.zshrc
 
-## Run example
+## Run example（not necessary）
 > mkdir g4work  
 > 
 > cd g4work
