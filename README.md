@@ -1,5 +1,5 @@
 # Geant-simulation
-For GFP simulation in GAPS. This is the toy model case for MacOS. If on other platform, technically you just need python/root/geant4/qt/HepRApp.
+For GRAMS simulation. This is the toy model case for MacOS. If on other platform, technically you just need python/root/geant4/qt/HepRApp.
 
 
 # All should be done in Terminal
