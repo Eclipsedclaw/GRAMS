@@ -1,8 +1,8 @@
-/mnt/sda1/jiancheng/GRAMS/GRAMS/GRAMS_2021/build/CMakeFiles/install/strip.dir
-/mnt/sda1/jiancheng/GRAMS/GRAMS/GRAMS_2021/build/CMakeFiles/install/local.dir
-/mnt/sda1/jiancheng/GRAMS/GRAMS/GRAMS_2021/build/CMakeFiles/install.dir
-/mnt/sda1/jiancheng/GRAMS/GRAMS/GRAMS_2021/build/CMakeFiles/list_install_components.dir
-/mnt/sda1/jiancheng/GRAMS/GRAMS/GRAMS_2021/build/CMakeFiles/rebuild_cache.dir
-/mnt/sda1/jiancheng/GRAMS/GRAMS/GRAMS_2021/build/CMakeFiles/edit_cache.dir
-/mnt/sda1/jiancheng/GRAMS/GRAMS/GRAMS_2021/build/CMakeFiles/PJ.dir
-/mnt/sda1/jiancheng/GRAMS/GRAMS/GRAMS_2021/build/CMakeFiles/GRAMS.dir
+/home/jiancheng/GRAMS/GRAMS/GRAMS_2021/build/CMakeFiles/install/strip.dir
+/home/jiancheng/GRAMS/GRAMS/GRAMS_2021/build/CMakeFiles/install/local.dir
+/home/jiancheng/GRAMS/GRAMS/GRAMS_2021/build/CMakeFiles/install.dir
+/home/jiancheng/GRAMS/GRAMS/GRAMS_2021/build/CMakeFiles/list_install_components.dir
+/home/jiancheng/GRAMS/GRAMS/GRAMS_2021/build/CMakeFiles/rebuild_cache.dir
+/home/jiancheng/GRAMS/GRAMS/GRAMS_2021/build/CMakeFiles/edit_cache.dir
+/home/jiancheng/GRAMS/GRAMS/GRAMS_2021/build/CMakeFiles/PJ.dir
+/home/jiancheng/GRAMS/GRAMS/GRAMS_2021/build/CMakeFiles/GRAMS.dir
