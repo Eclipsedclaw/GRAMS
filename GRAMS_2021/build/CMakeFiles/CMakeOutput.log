@@ -1,7 +1,7 @@
-The system is: Linux - 5.11.0-38-generic - x86_64
+The system is: Linux - 5.11.0-49-generic - x86_64
 Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
-Compiler: /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/x86_64-conda-linux-gnu-cc 
-Build flags: -march=nocona;-mtune=haswell;-ftree-vectorize;-fPIC;-fstack-protector-strong;-fno-plt;-O2;-ffunction-sections;-pipe;-isystem;/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/include
+Compiler: /usr/bin/cc 
+Build flags: 
 Id flags:  
 
 The output was:
@@ -10,11 +10,11 @@ The output was:
 
 Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
 
-The C compiler identification is GNU, found in "/mnt/sda1/jiancheng/GRAMS/GRAMS/GRAMS_2021/build/CMakeFiles/3.21.3/CompilerIdC/a.out"
+The C compiler identification is GNU, found in "/home/jiancheng/GRAMS/GRAMS/GRAMS_2021/build/CMakeFiles/3.21.3/CompilerIdC/a.out"
 
 Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
-Compiler: /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/x86_64-conda-linux-gnu-c++ 
-Build flags: -fvisibility-inlines-hidden;-std=c++17;-fmessage-length=0;-march=nocona;-mtune=haswell;-ftree-vectorize;-fPIC;-fstack-protector-strong;-fno-plt;-O2;-ffunction-sections;-pipe;-isystem;/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/include
+Compiler: /usr/bin/c++ 
+Build flags: 
 Id flags:  
 
 The output was:
@@ -23,187 +23,185 @@ The output was:
 
 Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
 
-The CXX compiler identification is GNU, found in "/mnt/sda1/jiancheng/GRAMS/GRAMS/GRAMS_2021/build/CMakeFiles/3.21.3/CompilerIdCXX/a.out"
+The CXX compiler identification is GNU, found in "/home/jiancheng/GRAMS/GRAMS/GRAMS_2021/build/CMakeFiles/3.21.3/CompilerIdCXX/a.out"
 
 Detecting C compiler ABI info compiled with the following output:
-Change Dir: /mnt/sda1/jiancheng/GRAMS/GRAMS/GRAMS_2021/build/CMakeFiles/CMakeTmp
+Change Dir: /home/jiancheng/GRAMS/GRAMS/GRAMS_2021/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_60a72/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_60a72.dir/build.make CMakeFiles/cmTC_60a72.dir/build
-gmake[1]: Entering directory '/mnt/sda1/jiancheng/GRAMS/GRAMS/GRAMS_2021/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_60a72.dir/CMakeCCompilerABI.c.o
-/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/x86_64-conda-linux-gnu-cc   -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -isystem /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/include    -v -o CMakeFiles/cmTC_60a72.dir/CMakeCCompilerABI.c.o -c /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/share/cmake-3.21/Modules/CMakeCCompilerABI.c
-Reading specs from /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/specs
-COLLECT_GCC=/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/x86_64-conda-linux-gnu-cc
-Target: x86_64-conda-linux-gnu
-Configured with: ../configure --prefix=/home/conda/feedstock_root/build_artifacts/gcc_compilers_1634095554843/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placeho --with-slibdir=/home/conda/feedstock_root/build_artifacts/gcc_compilers_1634095554843/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placeho/lib --libdir=/home/conda/feedstock_root/build_artifacts/gcc_compilers_1634095554843/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placeho/lib --build=x86_64-conda-linux-gnu --host=x86_64-conda-linux-gnu --target=x86_64-conda-linux-gnu --enable-default-pie --enable-languages=c,c++,fortran,objc,obj-c++ --enable-__cxa_atexit --disable-libmudflap --enable-libgomp --disable-libssp --enable-libquadmath --enable-libquadmath-support --enable-libsanitizer --enable-lto --enable-threads=posix --enable-target-optspace --enable-plugin --enable-gold --disable-nls --disable-bootstrap --disable-multilib --enable-long-long --enable-default-pie --with-sysroot=/home/conda/feedstock_root/build_artifacts/gcc_compilers_1634095554843/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placeho/x86_64-conda-linux-gnu/sysroot --with-build-sysroot=/home/conda/feedstock_root/build_artifacts/gcc_compilers_1634095554843/_build_env/x86_64-conda-linux-gnu/sysroot --with-gxx-include-dir=/home/conda/feedstock_root/build_artifacts/gcc_compilers_1634095554843/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placeho/x86_64-conda-linux-gnu/include/c++/9.4.0
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_95f1d/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_95f1d.dir/build.make CMakeFiles/cmTC_95f1d.dir/build
+gmake[1]: Entering directory '/home/jiancheng/GRAMS/GRAMS/GRAMS_2021/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_95f1d.dir/CMakeCCompilerABI.c.o
+/usr/bin/cc   -v -o CMakeFiles/cmTC_95f1d.dir/CMakeCCompilerABI.c.o -c /usr/local/share/cmake-3.21/Modules/CMakeCCompilerABI.c
+Using built-in specs.
+COLLECT_GCC=/usr/bin/cc
+OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa:hsa
+OFFLOAD_TARGET_DEFAULT=1
+Target: x86_64-linux-gnu
+Configured with: ../src/configure -v --with-pkgversion='Ubuntu 10.3.0-1ubuntu1' --with-bugurl=file:///usr/share/doc/gcc-10/README.Bugs --enable-languages=c,ada,c++,go,brig,d,fortran,objc,obj-c++,m2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-10 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-10-gDeRY6/gcc-10-10.3.0/debian/tmp-nvptx/usr,amdgcn-amdhsa=/build/gcc-10-gDeRY6/gcc-10-10.3.0/debian/tmp-gcn/usr,hsa --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu --with-build-config=bootstrap-lto-lean --enable-link-mutex
 Thread model: posix
-gcc version 9.4.0 (GCC) 
-COLLECT_GCC_OPTIONS='-march=nocona' '-mtune=haswell' '-ftree-vectorize' '-fPIC' '-fstack-protector-strong' '-fno-plt' '-O2' '-ffunction-sections' '-pipe' '-isystem' '/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/include' '-v' '-o' 'CMakeFiles/cmTC_60a72.dir/CMakeCCompilerABI.c.o' '-c'
- /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../libexec/gcc/x86_64-conda-linux-gnu/9.4.0/cc1 -quiet -v -iprefix /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/ -isysroot /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../x86_64-conda-linux-gnu/sysroot -isystem /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/include /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/share/cmake-3.21/Modules/CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -march=nocona -mtune=haswell -auxbase-strip CMakeFiles/cmTC_60a72.dir/CMakeCCompilerABI.c.o -O2 -version -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -ffunction-sections -o - |
- /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/../../../../x86_64-conda-linux-gnu/bin/as -v --64 -o CMakeFiles/cmTC_60a72.dir/CMakeCCompilerABI.c.o
-GNU assembler version 2.36.1 (x86_64-conda-linux-gnu) using BFD version (GNU Binutils) 2.36.1
-GNU C17 (GCC) version 9.4.0 (x86_64-conda-linux-gnu)
-	compiled by GNU C version 9.4.0, GMP version 6.1.0, MPFR version 3.1.4, MPC version 1.0.3, isl version isl-0.18-GMP
+Supported LTO compression algorithms: zlib zstd
+gcc version 10.3.0 (Ubuntu 10.3.0-1ubuntu1) 
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_95f1d.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-linux-gnu/10/cc1 -quiet -v -imultiarch x86_64-linux-gnu /usr/local/share/cmake-3.21/Modules/CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_95f1d.dir/CMakeCCompilerABI.c.o -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccjzmtu7.s
+GNU C17 (Ubuntu 10.3.0-1ubuntu1) version 10.3.0 (x86_64-linux-gnu)
+	compiled by GNU C version 10.3.0, GMP version 6.2.1, MPFR version 4.1.0, MPC version 1.2.0, isl version isl-0.23-GMP
 
 GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
-ignoring duplicate directory "/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/../../lib/gcc/x86_64-conda-linux-gnu/9.4.0/include"
-ignoring nonexistent directory "/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../x86_64-conda-linux-gnu/sysroot/usr/local/include"
-ignoring duplicate directory "/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/../../lib/gcc/x86_64-conda-linux-gnu/9.4.0/include-fixed"
-ignoring duplicate directory "/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/../../lib/gcc/x86_64-conda-linux-gnu/9.4.0/../../../../x86_64-conda-linux-gnu/include"
+ignoring nonexistent directory "/usr/local/include/x86_64-linux-gnu"
+ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/10/include-fixed"
+ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/10/../../../../x86_64-linux-gnu/include"
 #include "..." search starts here:
 #include <...> search starts here:
- /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/include
- /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/include
- /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/include-fixed
- /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/../../../../x86_64-conda-linux-gnu/include
- /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../x86_64-conda-linux-gnu/sysroot/usr/include
+ /usr/lib/gcc/x86_64-linux-gnu/10/include
+ /usr/local/include
+ /usr/include/x86_64-linux-gnu
+ /usr/include
 End of search list.
-GNU C17 (GCC) version 9.4.0 (x86_64-conda-linux-gnu)
-	compiled by GNU C version 9.4.0, GMP version 6.1.0, MPFR version 3.1.4, MPC version 1.0.3, isl version isl-0.18-GMP
+GNU C17 (Ubuntu 10.3.0-1ubuntu1) version 10.3.0 (x86_64-linux-gnu)
+	compiled by GNU C version 10.3.0, GMP version 6.2.1, MPFR version 4.1.0, MPC version 1.2.0, isl version isl-0.23-GMP
 
 GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
-Compiler executable checksum: 3e283385a4db2f80212490ed2d871191
-COMPILER_PATH=/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../libexec/gcc/x86_64-conda-linux-gnu/9.4.0/:/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../libexec/gcc/:/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/../../../../x86_64-conda-linux-gnu/bin/
-LIBRARY_PATH=/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/:/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/:/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/../../../../x86_64-conda-linux-gnu/lib/../lib/:/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/../../../../lib/:/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../x86_64-conda-linux-gnu/sysroot/lib/../lib/:/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib/:/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/../../../../x86_64-conda-linux-gnu/lib/:/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/../../../:/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../x86_64-conda-linux-gnu/sysroot/lib/:/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/
-COLLECT_GCC_OPTIONS='-march=nocona' '-mtune=haswell' '-ftree-vectorize' '-fPIC' '-fstack-protector-strong' '-fno-plt' '-O2' '-ffunction-sections' '-pipe' '-isystem' '/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/include' '-v' '-o' 'CMakeFiles/cmTC_60a72.dir/CMakeCCompilerABI.c.o' '-c'
-Linking C executable cmTC_60a72
-/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/cmake -E cmake_link_script CMakeFiles/cmTC_60a72.dir/link.txt --verbose=1
-/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/x86_64-conda-linux-gnu-cc -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -isystem /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/include  -Wl,-O2 -Wl,--sort-common -Wl,--as-needed -Wl,-z,relro -Wl,-z,now -Wl,--disable-new-dtags -Wl,--gc-sections -Wl,-rpath,/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib -Wl,-rpath-link,/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib -L/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib -v -rdynamic CMakeFiles/cmTC_60a72.dir/CMakeCCompilerABI.c.o -o cmTC_60a72 
-Reading specs from /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/specs
-COLLECT_GCC=/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/x86_64-conda-linux-gnu-cc
-COLLECT_LTO_WRAPPER=/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../libexec/gcc/x86_64-conda-linux-gnu/9.4.0/lto-wrapper
-Target: x86_64-conda-linux-gnu
-Configured with: ../configure --prefix=/home/conda/feedstock_root/build_artifacts/gcc_compilers_1634095554843/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placeho --with-slibdir=/home/conda/feedstock_root/build_artifacts/gcc_compilers_1634095554843/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placeho/lib --libdir=/home/conda/feedstock_root/build_artifacts/gcc_compilers_1634095554843/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placeho/lib --build=x86_64-conda-linux-gnu --host=x86_64-conda-linux-gnu --target=x86_64-conda-linux-gnu --enable-default-pie --enable-languages=c,c++,fortran,objc,obj-c++ --enable-__cxa_atexit --disable-libmudflap --enable-libgomp --disable-libssp --enable-libquadmath --enable-libquadmath-support --enable-libsanitizer --enable-lto --enable-threads=posix --enable-target-optspace --enable-plugin --enable-gold --disable-nls --disable-bootstrap --disable-multilib --enable-long-long --enable-default-pie --with-sysroot=/home/conda/feedstock_root/build_artifacts/gcc_compilers_1634095554843/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placeho/x86_64-conda-linux-gnu/sysroot --with-build-sysroot=/home/conda/feedstock_root/build_artifacts/gcc_compilers_1634095554843/_build_env/x86_64-conda-linux-gnu/sysroot --with-gxx-include-dir=/home/conda/feedstock_root/build_artifacts/gcc_compilers_1634095554843/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placeho/x86_64-conda-linux-gnu/include/c++/9.4.0
+Compiler executable checksum: 58794417508a053c2d813aa212cbee7e
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_95f1d.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64'
+ as -v --64 -o CMakeFiles/cmTC_95f1d.dir/CMakeCCompilerABI.c.o /tmp/ccjzmtu7.s
+GNU assembler version 2.36.1 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.36.1
+COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/
+LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/10/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/10/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_95f1d.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64'
+Linking C executable cmTC_95f1d
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_95f1d.dir/link.txt --verbose=1
+/usr/bin/cc  -v -rdynamic CMakeFiles/cmTC_95f1d.dir/CMakeCCompilerABI.c.o -o cmTC_95f1d 
+Using built-in specs.
+COLLECT_GCC=/usr/bin/cc
+COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/10/lto-wrapper
+OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa:hsa
+OFFLOAD_TARGET_DEFAULT=1
+Target: x86_64-linux-gnu
+Configured with: ../src/configure -v --with-pkgversion='Ubuntu 10.3.0-1ubuntu1' --with-bugurl=file:///usr/share/doc/gcc-10/README.Bugs --enable-languages=c,ada,c++,go,brig,d,fortran,objc,obj-c++,m2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-10 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-10-gDeRY6/gcc-10-10.3.0/debian/tmp-nvptx/usr,amdgcn-amdhsa=/build/gcc-10-gDeRY6/gcc-10-10.3.0/debian/tmp-gcn/usr,hsa --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu --with-build-config=bootstrap-lto-lean --enable-link-mutex
 Thread model: posix
-gcc version 9.4.0 (GCC) 
-COMPILER_PATH=/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../libexec/gcc/x86_64-conda-linux-gnu/9.4.0/:/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../libexec/gcc/:/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/../../../../x86_64-conda-linux-gnu/bin/
-LIBRARY_PATH=/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/:/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/:/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/../../../../x86_64-conda-linux-gnu/lib/../lib/:/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/../../../../lib/:/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../x86_64-conda-linux-gnu/sysroot/lib/../lib/:/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib/:/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/../../../../x86_64-conda-linux-gnu/lib/:/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/../../../:/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../x86_64-conda-linux-gnu/sysroot/lib/:/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/
-COLLECT_GCC_OPTIONS='-march=nocona' '-mtune=haswell' '-ftree-vectorize' '-fPIC' '-fstack-protector-strong' '-fno-plt' '-O2' '-ffunction-sections' '-pipe' '-isystem' '/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/include' '-L/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib' '-v' '-rdynamic' '-o' 'cmTC_60a72'
- /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../libexec/gcc/x86_64-conda-linux-gnu/9.4.0/collect2 -plugin /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../libexec/gcc/x86_64-conda-linux-gnu/9.4.0/liblto_plugin.so -plugin-opt=/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../libexec/gcc/x86_64-conda-linux-gnu/9.4.0/lto-wrapper -plugin-opt=-fresolution=/tmp/cc7ZKVpw.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --sysroot=/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../x86_64-conda-linux-gnu/sysroot --eh-frame-hdr -m elf_x86_64 -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_60a72 /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib/Scrt1.o /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib/crti.o /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/crtbeginS.o -L/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib -L/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0 -L/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc -L/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/../../../../x86_64-conda-linux-gnu/lib/../lib -L/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/../../../../lib -L/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../x86_64-conda-linux-gnu/sysroot/lib/../lib -L/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib -L/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/../../../../x86_64-conda-linux-gnu/lib -L/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/../../.. -L/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../x86_64-conda-linux-gnu/sysroot/lib -L/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib -O2 --sort-common --as-needed -z relro -z now --disable-new-dtags --gc-sections -rpath /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib -rpath-link /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib CMakeFiles/cmTC_60a72.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/crtendS.o /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib/crtn.o -rpath /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib
-COLLECT_GCC_OPTIONS='-march=nocona' '-mtune=haswell' '-ftree-vectorize' '-fPIC' '-fstack-protector-strong' '-fno-plt' '-O2' '-ffunction-sections' '-pipe' '-isystem' '/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/include' '-L/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib' '-v' '-rdynamic' '-o' 'cmTC_60a72'
-gmake[1]: Leaving directory '/mnt/sda1/jiancheng/GRAMS/GRAMS/GRAMS_2021/build/CMakeFiles/CMakeTmp'
+Supported LTO compression algorithms: zlib zstd
+gcc version 10.3.0 (Ubuntu 10.3.0-1ubuntu1) 
+COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/
+LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/10/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/10/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_95f1d' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-linux-gnu/10/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/10/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/10/lto-wrapper -plugin-opt=-fresolution=/tmp/ccFNqi6W.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_95f1d /usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/10/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/10 -L/usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/10/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/10/../../.. CMakeFiles/cmTC_95f1d.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/10/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_95f1d' '-mtune=generic' '-march=x86-64'
+gmake[1]: Leaving directory '/home/jiancheng/GRAMS/GRAMS/GRAMS_2021/build/CMakeFiles/CMakeTmp'
 
 
 
 Parsed C implicit include dir info from above output: rv=done
   found start of include info
   found start of implicit include info
-    add: [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/include]
-    add: [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/include]
-    add: [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/include-fixed]
-    add: [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/../../../../x86_64-conda-linux-gnu/include]
-    add: [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../x86_64-conda-linux-gnu/sysroot/usr/include]
+    add: [/usr/lib/gcc/x86_64-linux-gnu/10/include]
+    add: [/usr/local/include]
+    add: [/usr/include/x86_64-linux-gnu]
+    add: [/usr/include]
   end of search list found
-  collapse include dir [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/include] ==> [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/include]
-  collapse include dir [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/include] ==> [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib/gcc/x86_64-conda-linux-gnu/9.4.0/include]
-  collapse include dir [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/include-fixed] ==> [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib/gcc/x86_64-conda-linux-gnu/9.4.0/include-fixed]
-  collapse include dir [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/../../../../x86_64-conda-linux-gnu/include] ==> [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/x86_64-conda-linux-gnu/include]
-  collapse include dir [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../x86_64-conda-linux-gnu/sysroot/usr/include] ==> [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/x86_64-conda-linux-gnu/sysroot/usr/include]
-  implicit include dirs: [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/include;/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib/gcc/x86_64-conda-linux-gnu/9.4.0/include;/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib/gcc/x86_64-conda-linux-gnu/9.4.0/include-fixed;/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/x86_64-conda-linux-gnu/include;/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/x86_64-conda-linux-gnu/sysroot/usr/include]
+  collapse include dir [/usr/lib/gcc/x86_64-linux-gnu/10/include] ==> [/usr/lib/gcc/x86_64-linux-gnu/10/include]
+  collapse include dir [/usr/local/include] ==> [/usr/local/include]
+  collapse include dir [/usr/include/x86_64-linux-gnu] ==> [/usr/include/x86_64-linux-gnu]
+  collapse include dir [/usr/include] ==> [/usr/include]
+  implicit include dirs: [/usr/lib/gcc/x86_64-linux-gnu/10/include;/usr/local/include;/usr/include/x86_64-linux-gnu;/usr/include]
 
 
 Parsed C implicit link information from above output:
-  link line regex: [^( *|.*[/\])(x86_64-conda-linux-gnu-ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
-  ignore line: [Change Dir: /mnt/sda1/jiancheng/GRAMS/GRAMS/GRAMS_2021/build/CMakeFiles/CMakeTmp]
+  link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /home/jiancheng/GRAMS/GRAMS/GRAMS_2021/build/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_60a72/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_60a72.dir/build.make CMakeFiles/cmTC_60a72.dir/build]
-  ignore line: [gmake[1]: Entering directory '/mnt/sda1/jiancheng/GRAMS/GRAMS/GRAMS_2021/build/CMakeFiles/CMakeTmp']
-  ignore line: [Building C object CMakeFiles/cmTC_60a72.dir/CMakeCCompilerABI.c.o]
-  ignore line: [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/x86_64-conda-linux-gnu-cc   -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -isystem /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/include    -v -o CMakeFiles/cmTC_60a72.dir/CMakeCCompilerABI.c.o -c /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/share/cmake-3.21/Modules/CMakeCCompilerABI.c]
-  ignore line: [Reading specs from /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/specs]
-  ignore line: [COLLECT_GCC=/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/x86_64-conda-linux-gnu-cc]
-  ignore line: [Target: x86_64-conda-linux-gnu]
-  ignore line: [Configured with: ../configure --prefix=/home/conda/feedstock_root/build_artifacts/gcc_compilers_1634095554843/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placeho --with-slibdir=/home/conda/feedstock_root/build_artifacts/gcc_compilers_1634095554843/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placeho/lib --libdir=/home/conda/feedstock_root/build_artifacts/gcc_compilers_1634095554843/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placeho/lib --build=x86_64-conda-linux-gnu --host=x86_64-conda-linux-gnu --target=x86_64-conda-linux-gnu --enable-default-pie --enable-languages=c c++ fortran objc obj-c++ --enable-__cxa_atexit --disable-libmudflap --enable-libgomp --disable-libssp --enable-libquadmath --enable-libquadmath-support --enable-libsanitizer --enable-lto --enable-threads=posix --enable-target-optspace --enable-plugin --enable-gold --disable-nls --disable-bootstrap --disable-multilib --enable-long-long --enable-default-pie --with-sysroot=/home/conda/feedstock_root/build_artifacts/gcc_compilers_1634095554843/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placeho/x86_64-conda-linux-gnu/sysroot --with-build-sysroot=/home/conda/feedstock_root/build_artifacts/gcc_compilers_1634095554843/_build_env/x86_64-conda-linux-gnu/sysroot --with-gxx-include-dir=/home/conda/feedstock_root/build_artifacts/gcc_compilers_1634095554843/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placeho/x86_64-conda-linux-gnu/include/c++/9.4.0]
+  ignore line: [Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_95f1d/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_95f1d.dir/build.make CMakeFiles/cmTC_95f1d.dir/build]
+  ignore line: [gmake[1]: Entering directory '/home/jiancheng/GRAMS/GRAMS/GRAMS_2021/build/CMakeFiles/CMakeTmp']
+  ignore line: [Building C object CMakeFiles/cmTC_95f1d.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/usr/bin/cc   -v -o CMakeFiles/cmTC_95f1d.dir/CMakeCCompilerABI.c.o -c /usr/local/share/cmake-3.21/Modules/CMakeCCompilerABI.c]
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=/usr/bin/cc]
+  ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa:hsa]
+  ignore line: [OFFLOAD_TARGET_DEFAULT=1]
+  ignore line: [Target: x86_64-linux-gnu]
+  ignore line: [Configured with: ../src/configure -v --with-pkgversion='Ubuntu 10.3.0-1ubuntu1' --with-bugurl=file:///usr/share/doc/gcc-10/README.Bugs --enable-languages=c ada c++ go brig d fortran objc obj-c++ m2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-10 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32 m64 mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-10-gDeRY6/gcc-10-10.3.0/debian/tmp-nvptx/usr amdgcn-amdhsa=/build/gcc-10-gDeRY6/gcc-10-10.3.0/debian/tmp-gcn/usr hsa --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu --with-build-config=bootstrap-lto-lean --enable-link-mutex]
   ignore line: [Thread model: posix]
-  ignore line: [gcc version 9.4.0 (GCC) ]
-  ignore line: [COLLECT_GCC_OPTIONS='-march=nocona' '-mtune=haswell' '-ftree-vectorize' '-fPIC' '-fstack-protector-strong' '-fno-plt' '-O2' '-ffunction-sections' '-pipe' '-isystem' '/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/include' '-v' '-o' 'CMakeFiles/cmTC_60a72.dir/CMakeCCompilerABI.c.o' '-c']
-  ignore line: [ /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../libexec/gcc/x86_64-conda-linux-gnu/9.4.0/cc1 -quiet -v -iprefix /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/ -isysroot /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../x86_64-conda-linux-gnu/sysroot -isystem /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/include /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/share/cmake-3.21/Modules/CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -march=nocona -mtune=haswell -auxbase-strip CMakeFiles/cmTC_60a72.dir/CMakeCCompilerABI.c.o -O2 -version -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -ffunction-sections -o - |]
-  ignore line: [ /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/../../../../x86_64-conda-linux-gnu/bin/as -v --64 -o CMakeFiles/cmTC_60a72.dir/CMakeCCompilerABI.c.o]
-  ignore line: [GNU assembler version 2.36.1 (x86_64-conda-linux-gnu) using BFD version (GNU Binutils) 2.36.1]
-  ignore line: [GNU C17 (GCC) version 9.4.0 (x86_64-conda-linux-gnu)]
-  ignore line: [	compiled by GNU C version 9.4.0  GMP version 6.1.0  MPFR version 3.1.4  MPC version 1.0.3  isl version isl-0.18-GMP]
+  ignore line: [Supported LTO compression algorithms: zlib zstd]
+  ignore line: [gcc version 10.3.0 (Ubuntu 10.3.0-1ubuntu1) ]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_95f1d.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64']
+  ignore line: [ /usr/lib/gcc/x86_64-linux-gnu/10/cc1 -quiet -v -imultiarch x86_64-linux-gnu /usr/local/share/cmake-3.21/Modules/CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_95f1d.dir/CMakeCCompilerABI.c.o -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccjzmtu7.s]
+  ignore line: [GNU C17 (Ubuntu 10.3.0-1ubuntu1) version 10.3.0 (x86_64-linux-gnu)]
+  ignore line: [	compiled by GNU C version 10.3.0  GMP version 6.2.1  MPFR version 4.1.0  MPC version 1.2.0  isl version isl-0.23-GMP]
   ignore line: []
   ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
-  ignore line: [ignoring duplicate directory "/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/../../lib/gcc/x86_64-conda-linux-gnu/9.4.0/include"]
-  ignore line: [ignoring nonexistent directory "/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../x86_64-conda-linux-gnu/sysroot/usr/local/include"]
-  ignore line: [ignoring duplicate directory "/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/../../lib/gcc/x86_64-conda-linux-gnu/9.4.0/include-fixed"]
-  ignore line: [ignoring duplicate directory "/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/../../lib/gcc/x86_64-conda-linux-gnu/9.4.0/../../../../x86_64-conda-linux-gnu/include"]
+  ignore line: [ignoring nonexistent directory "/usr/local/include/x86_64-linux-gnu"]
+  ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/10/include-fixed"]
+  ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/10/../../../../x86_64-linux-gnu/include"]
   ignore line: [#include "..." search starts here:]
   ignore line: [#include <...> search starts here:]
-  ignore line: [ /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/include]
-  ignore line: [ /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/include]
-  ignore line: [ /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/include-fixed]
-  ignore line: [ /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/../../../../x86_64-conda-linux-gnu/include]
-  ignore line: [ /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../x86_64-conda-linux-gnu/sysroot/usr/include]
+  ignore line: [ /usr/lib/gcc/x86_64-linux-gnu/10/include]
+  ignore line: [ /usr/local/include]
+  ignore line: [ /usr/include/x86_64-linux-gnu]
+  ignore line: [ /usr/include]
   ignore line: [End of search list.]
-  ignore line: [GNU C17 (GCC) version 9.4.0 (x86_64-conda-linux-gnu)]
-  ignore line: [	compiled by GNU C version 9.4.0  GMP version 6.1.0  MPFR version 3.1.4  MPC version 1.0.3  isl version isl-0.18-GMP]
+  ignore line: [GNU C17 (Ubuntu 10.3.0-1ubuntu1) version 10.3.0 (x86_64-linux-gnu)]
+  ignore line: [	compiled by GNU C version 10.3.0  GMP version 6.2.1  MPFR version 4.1.0  MPC version 1.2.0  isl version isl-0.23-GMP]
   ignore line: []
   ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
-  ignore line: [Compiler executable checksum: 3e283385a4db2f80212490ed2d871191]
-  ignore line: [COMPILER_PATH=/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../libexec/gcc/x86_64-conda-linux-gnu/9.4.0/:/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../libexec/gcc/:/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/../../../../x86_64-conda-linux-gnu/bin/]
-  ignore line: [LIBRARY_PATH=/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/:/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/:/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/../../../../x86_64-conda-linux-gnu/lib/../lib/:/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/../../../../lib/:/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../x86_64-conda-linux-gnu/sysroot/lib/../lib/:/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib/:/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/../../../../x86_64-conda-linux-gnu/lib/:/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/../../../:/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../x86_64-conda-linux-gnu/sysroot/lib/:/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-march=nocona' '-mtune=haswell' '-ftree-vectorize' '-fPIC' '-fstack-protector-strong' '-fno-plt' '-O2' '-ffunction-sections' '-pipe' '-isystem' '/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/include' '-v' '-o' 'CMakeFiles/cmTC_60a72.dir/CMakeCCompilerABI.c.o' '-c']
-  ignore line: [Linking C executable cmTC_60a72]
-  ignore line: [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/cmake -E cmake_link_script CMakeFiles/cmTC_60a72.dir/link.txt --verbose=1]
-  ignore line: [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/x86_64-conda-linux-gnu-cc -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -isystem /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/include  -Wl -O2 -Wl --sort-common -Wl --as-needed -Wl -z relro -Wl -z now -Wl --disable-new-dtags -Wl --gc-sections -Wl -rpath /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib -Wl -rpath-link /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib -L/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib -v -rdynamic CMakeFiles/cmTC_60a72.dir/CMakeCCompilerABI.c.o -o cmTC_60a72 ]
-  ignore line: [Reading specs from /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/specs]
-  ignore line: [COLLECT_GCC=/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/x86_64-conda-linux-gnu-cc]
-  ignore line: [COLLECT_LTO_WRAPPER=/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../libexec/gcc/x86_64-conda-linux-gnu/9.4.0/lto-wrapper]
-  ignore line: [Target: x86_64-conda-linux-gnu]
-  ignore line: [Configured with: ../configure --prefix=/home/conda/feedstock_root/build_artifacts/gcc_compilers_1634095554843/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placeho --with-slibdir=/home/conda/feedstock_root/build_artifacts/gcc_compilers_1634095554843/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placeho/lib --libdir=/home/conda/feedstock_root/build_artifacts/gcc_compilers_1634095554843/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placeho/lib --build=x86_64-conda-linux-gnu --host=x86_64-conda-linux-gnu --target=x86_64-conda-linux-gnu --enable-default-pie --enable-languages=c c++ fortran objc obj-c++ --enable-__cxa_atexit --disable-libmudflap --enable-libgomp --disable-libssp --enable-libquadmath --enable-libquadmath-support --enable-libsanitizer --enable-lto --enable-threads=posix --enable-target-optspace --enable-plugin --enable-gold --disable-nls --disable-bootstrap --disable-multilib --enable-long-long --enable-default-pie --with-sysroot=/home/conda/feedstock_root/build_artifacts/gcc_compilers_1634095554843/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placeho/x86_64-conda-linux-gnu/sysroot --with-build-sysroot=/home/conda/feedstock_root/build_artifacts/gcc_compilers_1634095554843/_build_env/x86_64-conda-linux-gnu/sysroot --with-gxx-include-dir=/home/conda/feedstock_root/build_artifacts/gcc_compilers_1634095554843/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placeho/x86_64-conda-linux-gnu/include/c++/9.4.0]
+  ignore line: [Compiler executable checksum: 58794417508a053c2d813aa212cbee7e]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_95f1d.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64']
+  ignore line: [ as -v --64 -o CMakeFiles/cmTC_95f1d.dir/CMakeCCompilerABI.c.o /tmp/ccjzmtu7.s]
+  ignore line: [GNU assembler version 2.36.1 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.36.1]
+  ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/]
+  ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/10/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/10/../../../:/lib/:/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_95f1d.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64']
+  ignore line: [Linking C executable cmTC_95f1d]
+  ignore line: [/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_95f1d.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/cc  -v -rdynamic CMakeFiles/cmTC_95f1d.dir/CMakeCCompilerABI.c.o -o cmTC_95f1d ]
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=/usr/bin/cc]
+  ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/10/lto-wrapper]
+  ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa:hsa]
+  ignore line: [OFFLOAD_TARGET_DEFAULT=1]
+  ignore line: [Target: x86_64-linux-gnu]
+  ignore line: [Configured with: ../src/configure -v --with-pkgversion='Ubuntu 10.3.0-1ubuntu1' --with-bugurl=file:///usr/share/doc/gcc-10/README.Bugs --enable-languages=c ada c++ go brig d fortran objc obj-c++ m2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-10 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32 m64 mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-10-gDeRY6/gcc-10-10.3.0/debian/tmp-nvptx/usr amdgcn-amdhsa=/build/gcc-10-gDeRY6/gcc-10-10.3.0/debian/tmp-gcn/usr hsa --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu --with-build-config=bootstrap-lto-lean --enable-link-mutex]
   ignore line: [Thread model: posix]
-  ignore line: [gcc version 9.4.0 (GCC) ]
-  ignore line: [COMPILER_PATH=/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../libexec/gcc/x86_64-conda-linux-gnu/9.4.0/:/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../libexec/gcc/:/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/../../../../x86_64-conda-linux-gnu/bin/]
-  ignore line: [LIBRARY_PATH=/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/:/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/:/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/../../../../x86_64-conda-linux-gnu/lib/../lib/:/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/../../../../lib/:/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../x86_64-conda-linux-gnu/sysroot/lib/../lib/:/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib/:/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/../../../../x86_64-conda-linux-gnu/lib/:/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/../../../:/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../x86_64-conda-linux-gnu/sysroot/lib/:/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-march=nocona' '-mtune=haswell' '-ftree-vectorize' '-fPIC' '-fstack-protector-strong' '-fno-plt' '-O2' '-ffunction-sections' '-pipe' '-isystem' '/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/include' '-L/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib' '-v' '-rdynamic' '-o' 'cmTC_60a72']
-  link line: [ /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../libexec/gcc/x86_64-conda-linux-gnu/9.4.0/collect2 -plugin /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../libexec/gcc/x86_64-conda-linux-gnu/9.4.0/liblto_plugin.so -plugin-opt=/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../libexec/gcc/x86_64-conda-linux-gnu/9.4.0/lto-wrapper -plugin-opt=-fresolution=/tmp/cc7ZKVpw.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --sysroot=/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../x86_64-conda-linux-gnu/sysroot --eh-frame-hdr -m elf_x86_64 -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_60a72 /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib/Scrt1.o /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib/crti.o /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/crtbeginS.o -L/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib -L/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0 -L/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc -L/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/../../../../x86_64-conda-linux-gnu/lib/../lib -L/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/../../../../lib -L/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../x86_64-conda-linux-gnu/sysroot/lib/../lib -L/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib -L/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/../../../../x86_64-conda-linux-gnu/lib -L/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/../../.. -L/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../x86_64-conda-linux-gnu/sysroot/lib -L/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib -O2 --sort-common --as-needed -z relro -z now --disable-new-dtags --gc-sections -rpath /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib -rpath-link /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib CMakeFiles/cmTC_60a72.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/crtendS.o /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib/crtn.o -rpath /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib]
-    arg [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../libexec/gcc/x86_64-conda-linux-gnu/9.4.0/collect2] ==> ignore
+  ignore line: [Supported LTO compression algorithms: zlib zstd]
+  ignore line: [gcc version 10.3.0 (Ubuntu 10.3.0-1ubuntu1) ]
+  ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/]
+  ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/10/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/10/../../../:/lib/:/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_95f1d' '-mtune=generic' '-march=x86-64']
+  link line: [ /usr/lib/gcc/x86_64-linux-gnu/10/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/10/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/10/lto-wrapper -plugin-opt=-fresolution=/tmp/ccFNqi6W.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_95f1d /usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/10/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/10 -L/usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/10/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/10/../../.. CMakeFiles/cmTC_95f1d.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/10/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/crtn.o]
+    arg [/usr/lib/gcc/x86_64-linux-gnu/10/collect2] ==> ignore
     arg [-plugin] ==> ignore
-    arg [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../libexec/gcc/x86_64-conda-linux-gnu/9.4.0/liblto_plugin.so] ==> ignore
-    arg [-plugin-opt=/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../libexec/gcc/x86_64-conda-linux-gnu/9.4.0/lto-wrapper] ==> ignore
-    arg [-plugin-opt=-fresolution=/tmp/cc7ZKVpw.res] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/10/liblto_plugin.so] ==> ignore
+    arg [-plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/10/lto-wrapper] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/ccFNqi6W.res] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
     arg [-plugin-opt=-pass-through=-lc] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
-    arg [--sysroot=/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../x86_64-conda-linux-gnu/sysroot] ==> ignore
+    arg [--build-id] ==> ignore
     arg [--eh-frame-hdr] ==> ignore
     arg [-m] ==> ignore
     arg [elf_x86_64] ==> ignore
+    arg [--hash-style=gnu] ==> ignore
+    arg [--as-needed] ==> ignore
     arg [-export-dynamic] ==> ignore
     arg [-dynamic-linker] ==> ignore
     arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
     arg [-pie] ==> ignore
-    arg [-o] ==> ignore
-    arg [cmTC_60a72] ==> ignore
-    arg [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib/Scrt1.o] ==> obj [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib/Scrt1.o]
-    arg [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib/crti.o] ==> obj [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib/crti.o]
-    arg [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/crtbeginS.o] ==> obj [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/crtbeginS.o]
-    arg [-L/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib] ==> dir [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib]
-    arg [-L/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0] ==> dir [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0]
-    arg [-L/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc] ==> dir [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc]
-    arg [-L/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/../../../../x86_64-conda-linux-gnu/lib/../lib] ==> dir [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/../../../../x86_64-conda-linux-gnu/lib/../lib]
-    arg [-L/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/../../../../lib] ==> dir [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/../../../../lib]
-    arg [-L/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../x86_64-conda-linux-gnu/sysroot/lib/../lib] ==> dir [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../x86_64-conda-linux-gnu/sysroot/lib/../lib]
-    arg [-L/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib] ==> dir [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib]
-    arg [-L/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/../../../../x86_64-conda-linux-gnu/lib] ==> dir [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/../../../../x86_64-conda-linux-gnu/lib]
-    arg [-L/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/../../..] ==> dir [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/../../..]
-    arg [-L/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../x86_64-conda-linux-gnu/sysroot/lib] ==> dir [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../x86_64-conda-linux-gnu/sysroot/lib]
-    arg [-L/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib] ==> dir [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib]
-    arg [-O2] ==> ignore
-    arg [--sort-common] ==> ignore
-    arg [--as-needed] ==> ignore
-    arg [-zrelro] ==> ignore
     arg [-znow] ==> ignore
-    arg [--disable-new-dtags] ==> ignore
-    arg [--gc-sections] ==> ignore
-    arg [-rpath] ==> ignore
-    arg [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib] ==> ignore
-    arg [-rpath-link] ==> ignore
-    arg [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib] ==> ignore
-    arg [CMakeFiles/cmTC_60a72.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [-zrelro] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTC_95f1d] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/Scrt1.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/Scrt1.o]
+    arg [/usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/crti.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/crti.o]
+    arg [/usr/lib/gcc/x86_64-linux-gnu/10/crtbeginS.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/10/crtbeginS.o]
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/10] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/10]
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu]
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/10/../../../../lib] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/10/../../../../lib]
+    arg [-L/lib/x86_64-linux-gnu] ==> dir [/lib/x86_64-linux-gnu]
+    arg [-L/lib/../lib] ==> dir [/lib/../lib]
+    arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
+    arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/10/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/10/../../..]
+    arg [CMakeFiles/cmTC_95f1d.dir/CMakeCCompilerABI.c.o] ==> ignore
     arg [-lgcc] ==> lib [gcc]
     arg [--push-state] ==> ignore
     arg [--as-needed] ==> ignore
@@ -215,223 +213,216 @@ Parsed C implicit link information from above output:
     arg [--as-needed] ==> ignore
     arg [-lgcc_s] ==> lib [gcc_s]
     arg [--pop-state] ==> ignore
-    arg [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/crtendS.o] ==> obj [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/crtendS.o]
-    arg [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib/crtn.o] ==> obj [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib/crtn.o]
-    arg [-rpath] ==> ignore
-    arg [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib] ==> ignore
-  collapse obj [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib/Scrt1.o] ==> [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/x86_64-conda-linux-gnu/sysroot/usr/lib/Scrt1.o]
-  collapse obj [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib/crti.o] ==> [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/x86_64-conda-linux-gnu/sysroot/usr/lib/crti.o]
-  collapse obj [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/crtbeginS.o] ==> [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib/gcc/x86_64-conda-linux-gnu/9.4.0/crtbeginS.o]
-  collapse obj [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/crtendS.o] ==> [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib/gcc/x86_64-conda-linux-gnu/9.4.0/crtendS.o]
-  collapse obj [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib/crtn.o] ==> [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/x86_64-conda-linux-gnu/sysroot/usr/lib/crtn.o]
-  collapse library dir [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib] ==> [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib]
-  collapse library dir [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0] ==> [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib/gcc/x86_64-conda-linux-gnu/9.4.0]
-  collapse library dir [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc] ==> [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib/gcc]
-  collapse library dir [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/../../../../x86_64-conda-linux-gnu/lib/../lib] ==> [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/x86_64-conda-linux-gnu/lib]
-  collapse library dir [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/../../../../lib] ==> [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib]
-  collapse library dir [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../x86_64-conda-linux-gnu/sysroot/lib/../lib] ==> [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/x86_64-conda-linux-gnu/sysroot/lib]
-  collapse library dir [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib] ==> [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/x86_64-conda-linux-gnu/sysroot/usr/lib]
-  collapse library dir [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/../../../../x86_64-conda-linux-gnu/lib] ==> [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/x86_64-conda-linux-gnu/lib]
-  collapse library dir [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/../../..] ==> [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib]
-  collapse library dir [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../x86_64-conda-linux-gnu/sysroot/lib] ==> [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/x86_64-conda-linux-gnu/sysroot/lib]
-  collapse library dir [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib] ==> [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/x86_64-conda-linux-gnu/sysroot/usr/lib]
+    arg [/usr/lib/gcc/x86_64-linux-gnu/10/crtendS.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/10/crtendS.o]
+    arg [/usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/crtn.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/crtn.o]
+  collapse obj [/usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/Scrt1.o] ==> [/usr/lib/x86_64-linux-gnu/Scrt1.o]
+  collapse obj [/usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/crti.o] ==> [/usr/lib/x86_64-linux-gnu/crti.o]
+  collapse obj [/usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/crtn.o] ==> [/usr/lib/x86_64-linux-gnu/crtn.o]
+  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/10] ==> [/usr/lib/gcc/x86_64-linux-gnu/10]
+  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
+  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/10/../../../../lib] ==> [/usr/lib]
+  collapse library dir [/lib/x86_64-linux-gnu] ==> [/lib/x86_64-linux-gnu]
+  collapse library dir [/lib/../lib] ==> [/lib]
+  collapse library dir [/usr/lib/x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
+  collapse library dir [/usr/lib/../lib] ==> [/usr/lib]
+  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/10/../../..] ==> [/usr/lib]
   implicit libs: [gcc;gcc_s;c;gcc;gcc_s]
-  implicit objs: [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/x86_64-conda-linux-gnu/sysroot/usr/lib/Scrt1.o;/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/x86_64-conda-linux-gnu/sysroot/usr/lib/crti.o;/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib/gcc/x86_64-conda-linux-gnu/9.4.0/crtbeginS.o;/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib/gcc/x86_64-conda-linux-gnu/9.4.0/crtendS.o;/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/x86_64-conda-linux-gnu/sysroot/usr/lib/crtn.o]
-  implicit dirs: [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib;/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib/gcc/x86_64-conda-linux-gnu/9.4.0;/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib/gcc;/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/x86_64-conda-linux-gnu/lib;/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/x86_64-conda-linux-gnu/sysroot/lib;/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/x86_64-conda-linux-gnu/sysroot/usr/lib]
+  implicit objs: [/usr/lib/x86_64-linux-gnu/Scrt1.o;/usr/lib/x86_64-linux-gnu/crti.o;/usr/lib/gcc/x86_64-linux-gnu/10/crtbeginS.o;/usr/lib/gcc/x86_64-linux-gnu/10/crtendS.o;/usr/lib/x86_64-linux-gnu/crtn.o]
+  implicit dirs: [/usr/lib/gcc/x86_64-linux-gnu/10;/usr/lib/x86_64-linux-gnu;/usr/lib;/lib/x86_64-linux-gnu;/lib]
   implicit fwks: []
 
 
 Detecting CXX compiler ABI info compiled with the following output:
-Change Dir: /mnt/sda1/jiancheng/GRAMS/GRAMS/GRAMS_2021/build/CMakeFiles/CMakeTmp
+Change Dir: /home/jiancheng/GRAMS/GRAMS/GRAMS_2021/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_0d784/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_0d784.dir/build.make CMakeFiles/cmTC_0d784.dir/build
-gmake[1]: Entering directory '/mnt/sda1/jiancheng/GRAMS/GRAMS/GRAMS_2021/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_0d784.dir/CMakeCXXCompilerABI.cpp.o
-/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/x86_64-conda-linux-gnu-c++   -fvisibility-inlines-hidden -std=c++17 -fmessage-length=0 -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -isystem /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/include    -v -o CMakeFiles/cmTC_0d784.dir/CMakeCXXCompilerABI.cpp.o -c /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/share/cmake-3.21/Modules/CMakeCXXCompilerABI.cpp
-Reading specs from /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/specs
-COLLECT_GCC=/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/x86_64-conda-linux-gnu-c++
-Target: x86_64-conda-linux-gnu
-Configured with: ../configure --prefix=/home/conda/feedstock_root/build_artifacts/gcc_compilers_1634095554843/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placeho --with-slibdir=/home/conda/feedstock_root/build_artifacts/gcc_compilers_1634095554843/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placeho/lib --libdir=/home/conda/feedstock_root/build_artifacts/gcc_compilers_1634095554843/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placeho/lib --build=x86_64-conda-linux-gnu --host=x86_64-conda-linux-gnu --target=x86_64-conda-linux-gnu --enable-default-pie --enable-languages=c,c++,fortran,objc,obj-c++ --enable-__cxa_atexit --disable-libmudflap --enable-libgomp --disable-libssp --enable-libquadmath --enable-libquadmath-support --enable-libsanitizer --enable-lto --enable-threads=posix --enable-target-optspace --enable-plugin --enable-gold --disable-nls --disable-bootstrap --disable-multilib --enable-long-long --enable-default-pie --with-sysroot=/home/conda/feedstock_root/build_artifacts/gcc_compilers_1634095554843/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placeho/x86_64-conda-linux-gnu/sysroot --with-build-sysroot=/home/conda/feedstock_root/build_artifacts/gcc_compilers_1634095554843/_build_env/x86_64-conda-linux-gnu/sysroot --with-gxx-include-dir=/home/conda/feedstock_root/build_artifacts/gcc_compilers_1634095554843/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placeho/x86_64-conda-linux-gnu/include/c++/9.4.0
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_992b7/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_992b7.dir/build.make CMakeFiles/cmTC_992b7.dir/build
+gmake[1]: Entering directory '/home/jiancheng/GRAMS/GRAMS/GRAMS_2021/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_992b7.dir/CMakeCXXCompilerABI.cpp.o
+/usr/bin/c++   -v -o CMakeFiles/cmTC_992b7.dir/CMakeCXXCompilerABI.cpp.o -c /usr/local/share/cmake-3.21/Modules/CMakeCXXCompilerABI.cpp
+Using built-in specs.
+COLLECT_GCC=/usr/bin/c++
+OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa:hsa
+OFFLOAD_TARGET_DEFAULT=1
+Target: x86_64-linux-gnu
+Configured with: ../src/configure -v --with-pkgversion='Ubuntu 10.3.0-1ubuntu1' --with-bugurl=file:///usr/share/doc/gcc-10/README.Bugs --enable-languages=c,ada,c++,go,brig,d,fortran,objc,obj-c++,m2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-10 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-10-gDeRY6/gcc-10-10.3.0/debian/tmp-nvptx/usr,amdgcn-amdhsa=/build/gcc-10-gDeRY6/gcc-10-10.3.0/debian/tmp-gcn/usr,hsa --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu --with-build-config=bootstrap-lto-lean --enable-link-mutex
 Thread model: posix
-gcc version 9.4.0 (GCC) 
-COLLECT_GCC_OPTIONS='-fvisibility-inlines-hidden' '-std=c++17' '-fmessage-length=0' '-march=nocona' '-mtune=haswell' '-ftree-vectorize' '-fPIC' '-fstack-protector-strong' '-fno-plt' '-O2' '-ffunction-sections' '-pipe' '-isystem' '/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/include' '-v' '-o' 'CMakeFiles/cmTC_0d784.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc'
- /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../libexec/gcc/x86_64-conda-linux-gnu/9.4.0/cc1plus -quiet -v -iprefix /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/ -isysroot /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../x86_64-conda-linux-gnu/sysroot -D_GNU_SOURCE -isystem /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/include /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/share/cmake-3.21/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpbase CMakeCXXCompilerABI.cpp -march=nocona -mtune=haswell -auxbase-strip CMakeFiles/cmTC_0d784.dir/CMakeCXXCompilerABI.cpp.o -O2 -std=c++17 -version -fvisibility-inlines-hidden -fmessage-length=0 -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -ffunction-sections -o - |
- /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/../../../../x86_64-conda-linux-gnu/bin/as -v --64 -o CMakeFiles/cmTC_0d784.dir/CMakeCXXCompilerABI.cpp.o
-GNU assembler version 2.36.1 (x86_64-conda-linux-gnu) using BFD version (GNU Binutils) 2.36.1
-GNU C++17 (GCC) version 9.4.0 (x86_64-conda-linux-gnu)
-	compiled by GNU C version 9.4.0, GMP version 6.1.0, MPFR version 3.1.4, MPC version 1.0.3, isl version isl-0.18-GMP
+Supported LTO compression algorithms: zlib zstd
+gcc version 10.3.0 (Ubuntu 10.3.0-1ubuntu1) 
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_992b7.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-linux-gnu/10/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE /usr/local/share/cmake-3.21/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpbase CMakeCXXCompilerABI.cpp -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_992b7.dir/CMakeCXXCompilerABI.cpp.o -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccxwdoOf.s
+GNU C++14 (Ubuntu 10.3.0-1ubuntu1) version 10.3.0 (x86_64-linux-gnu)
+	compiled by GNU C version 10.3.0, GMP version 6.2.1, MPFR version 4.1.0, MPC version 1.2.0, isl version isl-0.23-GMP
 
 GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
-ignoring duplicate directory "/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/../../lib/gcc/x86_64-conda-linux-gnu/9.4.0/include"
-ignoring nonexistent directory "/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../x86_64-conda-linux-gnu/sysroot/usr/local/include"
-ignoring duplicate directory "/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/../../lib/gcc/x86_64-conda-linux-gnu/9.4.0/include-fixed"
-ignoring duplicate directory "/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/../../lib/gcc/x86_64-conda-linux-gnu/9.4.0/../../../../x86_64-conda-linux-gnu/include"
+ignoring duplicate directory "/usr/include/x86_64-linux-gnu/c++/10"
+ignoring nonexistent directory "/usr/local/include/x86_64-linux-gnu"
+ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/10/include-fixed"
+ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/10/../../../../x86_64-linux-gnu/include"
 #include "..." search starts here:
 #include <...> search starts here:
- /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/include
- /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/include
- /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/include-fixed
- /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/../../../../x86_64-conda-linux-gnu/include
- /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/../../x86_64-conda-linux-gnu/include/c++/9.4.0
- /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/../../x86_64-conda-linux-gnu/include/c++/9.4.0/x86_64-conda-linux-gnu
- /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/../../x86_64-conda-linux-gnu/include/c++/9.4.0/backward
- /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../x86_64-conda-linux-gnu/sysroot/usr/include
+ /usr/include/c++/10
+ /usr/include/x86_64-linux-gnu/c++/10
+ /usr/include/c++/10/backward
+ /usr/lib/gcc/x86_64-linux-gnu/10/include
+ /usr/local/include
+ /usr/include/x86_64-linux-gnu
+ /usr/include
 End of search list.
-GNU C++17 (GCC) version 9.4.0 (x86_64-conda-linux-gnu)
-	compiled by GNU C version 9.4.0, GMP version 6.1.0, MPFR version 3.1.4, MPC version 1.0.3, isl version isl-0.18-GMP
+GNU C++14 (Ubuntu 10.3.0-1ubuntu1) version 10.3.0 (x86_64-linux-gnu)
+	compiled by GNU C version 10.3.0, GMP version 6.2.1, MPFR version 4.1.0, MPC version 1.2.0, isl version isl-0.23-GMP
 
 GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
-Compiler executable checksum: 450d352db2c8843336545535add284ec
-COMPILER_PATH=/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../libexec/gcc/x86_64-conda-linux-gnu/9.4.0/:/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../libexec/gcc/:/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/../../../../x86_64-conda-linux-gnu/bin/
-LIBRARY_PATH=/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/:/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/:/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/../../../../x86_64-conda-linux-gnu/lib/../lib/:/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/../../../../lib/:/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../x86_64-conda-linux-gnu/sysroot/lib/../lib/:/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib/:/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/../../../../x86_64-conda-linux-gnu/lib/:/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/../../../:/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../x86_64-conda-linux-gnu/sysroot/lib/:/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/
-COLLECT_GCC_OPTIONS='-fvisibility-inlines-hidden' '-std=c++17' '-fmessage-length=0' '-march=nocona' '-mtune=haswell' '-ftree-vectorize' '-fPIC' '-fstack-protector-strong' '-fno-plt' '-O2' '-ffunction-sections' '-pipe' '-isystem' '/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/include' '-v' '-o' 'CMakeFiles/cmTC_0d784.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc'
-Linking CXX executable cmTC_0d784
-/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0d784.dir/link.txt --verbose=1
-/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/x86_64-conda-linux-gnu-c++ -fvisibility-inlines-hidden -std=c++17 -fmessage-length=0 -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -isystem /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/include  -Wl,-O2 -Wl,--sort-common -Wl,--as-needed -Wl,-z,relro -Wl,-z,now -Wl,--disable-new-dtags -Wl,--gc-sections -Wl,-rpath,/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib -Wl,-rpath-link,/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib -L/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib -v -rdynamic CMakeFiles/cmTC_0d784.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_0d784 
-Reading specs from /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/specs
-COLLECT_GCC=/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/x86_64-conda-linux-gnu-c++
-COLLECT_LTO_WRAPPER=/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../libexec/gcc/x86_64-conda-linux-gnu/9.4.0/lto-wrapper
-Target: x86_64-conda-linux-gnu
-Configured with: ../configure --prefix=/home/conda/feedstock_root/build_artifacts/gcc_compilers_1634095554843/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placeho --with-slibdir=/home/conda/feedstock_root/build_artifacts/gcc_compilers_1634095554843/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placeho/lib --libdir=/home/conda/feedstock_root/build_artifacts/gcc_compilers_1634095554843/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placeho/lib --build=x86_64-conda-linux-gnu --host=x86_64-conda-linux-gnu --target=x86_64-conda-linux-gnu --enable-default-pie --enable-languages=c,c++,fortran,objc,obj-c++ --enable-__cxa_atexit --disable-libmudflap --enable-libgomp --disable-libssp --enable-libquadmath --enable-libquadmath-support --enable-libsanitizer --enable-lto --enable-threads=posix --enable-target-optspace --enable-plugin --enable-gold --disable-nls --disable-bootstrap --disable-multilib --enable-long-long --enable-default-pie --with-sysroot=/home/conda/feedstock_root/build_artifacts/gcc_compilers_1634095554843/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placeho/x86_64-conda-linux-gnu/sysroot --with-build-sysroot=/home/conda/feedstock_root/build_artifacts/gcc_compilers_1634095554843/_build_env/x86_64-conda-linux-gnu/sysroot --with-gxx-include-dir=/home/conda/feedstock_root/build_artifacts/gcc_compilers_1634095554843/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placeho/x86_64-conda-linux-gnu/include/c++/9.4.0
+Compiler executable checksum: 118e824ee50d24f402f1f2e0e1ebfb12
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_992b7.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+ as -v --64 -o CMakeFiles/cmTC_992b7.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccxwdoOf.s
+GNU assembler version 2.36.1 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.36.1
+COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/
+LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/10/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/10/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_992b7.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+Linking CXX executable cmTC_992b7
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_992b7.dir/link.txt --verbose=1
+/usr/bin/c++  -v -rdynamic CMakeFiles/cmTC_992b7.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_992b7 
+Using built-in specs.
+COLLECT_GCC=/usr/bin/c++
+COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/10/lto-wrapper
+OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa:hsa
+OFFLOAD_TARGET_DEFAULT=1
+Target: x86_64-linux-gnu
+Configured with: ../src/configure -v --with-pkgversion='Ubuntu 10.3.0-1ubuntu1' --with-bugurl=file:///usr/share/doc/gcc-10/README.Bugs --enable-languages=c,ada,c++,go,brig,d,fortran,objc,obj-c++,m2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-10 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-10-gDeRY6/gcc-10-10.3.0/debian/tmp-nvptx/usr,amdgcn-amdhsa=/build/gcc-10-gDeRY6/gcc-10-10.3.0/debian/tmp-gcn/usr,hsa --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu --with-build-config=bootstrap-lto-lean --enable-link-mutex
 Thread model: posix
-gcc version 9.4.0 (GCC) 
-COMPILER_PATH=/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../libexec/gcc/x86_64-conda-linux-gnu/9.4.0/:/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../libexec/gcc/:/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/../../../../x86_64-conda-linux-gnu/bin/
-LIBRARY_PATH=/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/:/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/:/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/../../../../x86_64-conda-linux-gnu/lib/../lib/:/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/../../../../lib/:/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../x86_64-conda-linux-gnu/sysroot/lib/../lib/:/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib/:/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/../../../../x86_64-conda-linux-gnu/lib/:/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/../../../:/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../x86_64-conda-linux-gnu/sysroot/lib/:/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/
-COLLECT_GCC_OPTIONS='-fvisibility-inlines-hidden' '-std=c++17' '-fmessage-length=0' '-march=nocona' '-mtune=haswell' '-ftree-vectorize' '-fPIC' '-fstack-protector-strong' '-fno-plt' '-O2' '-ffunction-sections' '-pipe' '-isystem' '/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/include' '-L/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib' '-v' '-rdynamic' '-o' 'cmTC_0d784' '-shared-libgcc'
- /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../libexec/gcc/x86_64-conda-linux-gnu/9.4.0/collect2 -plugin /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../libexec/gcc/x86_64-conda-linux-gnu/9.4.0/liblto_plugin.so -plugin-opt=/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../libexec/gcc/x86_64-conda-linux-gnu/9.4.0/lto-wrapper -plugin-opt=-fresolution=/tmp/ccKWDd7z.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../x86_64-conda-linux-gnu/sysroot --eh-frame-hdr -m elf_x86_64 -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_0d784 /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib/Scrt1.o /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib/crti.o /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/crtbeginS.o -L/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib -L/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0 -L/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc -L/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/../../../../x86_64-conda-linux-gnu/lib/../lib -L/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/../../../../lib -L/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../x86_64-conda-linux-gnu/sysroot/lib/../lib -L/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib -L/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/../../../../x86_64-conda-linux-gnu/lib -L/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/../../.. -L/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../x86_64-conda-linux-gnu/sysroot/lib -L/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib -O2 --sort-common --as-needed -z relro -z now --disable-new-dtags --gc-sections -rpath /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib -rpath-link /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib CMakeFiles/cmTC_0d784.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/crtendS.o /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib/crtn.o -rpath /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib
-COLLECT_GCC_OPTIONS='-fvisibility-inlines-hidden' '-std=c++17' '-fmessage-length=0' '-march=nocona' '-mtune=haswell' '-ftree-vectorize' '-fPIC' '-fstack-protector-strong' '-fno-plt' '-O2' '-ffunction-sections' '-pipe' '-isystem' '/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/include' '-L/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib' '-v' '-rdynamic' '-o' 'cmTC_0d784' '-shared-libgcc'
-gmake[1]: Leaving directory '/mnt/sda1/jiancheng/GRAMS/GRAMS/GRAMS_2021/build/CMakeFiles/CMakeTmp'
+Supported LTO compression algorithms: zlib zstd
+gcc version 10.3.0 (Ubuntu 10.3.0-1ubuntu1) 
+COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/
+LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/10/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/10/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_992b7' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-linux-gnu/10/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/10/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/10/lto-wrapper -plugin-opt=-fresolution=/tmp/cco2UW12.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_992b7 /usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/10/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/10 -L/usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/10/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/10/../../.. CMakeFiles/cmTC_992b7.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/10/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_992b7' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+gmake[1]: Leaving directory '/home/jiancheng/GRAMS/GRAMS/GRAMS_2021/build/CMakeFiles/CMakeTmp'
 
 
 
 Parsed CXX implicit include dir info from above output: rv=done
   found start of include info
   found start of implicit include info
-    add: [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/include]
-    add: [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/include]
-    add: [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/include-fixed]
-    add: [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/../../../../x86_64-conda-linux-gnu/include]
-    add: [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/../../x86_64-conda-linux-gnu/include/c++/9.4.0]
-    add: [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/../../x86_64-conda-linux-gnu/include/c++/9.4.0/x86_64-conda-linux-gnu]
-    add: [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/../../x86_64-conda-linux-gnu/include/c++/9.4.0/backward]
-    add: [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../x86_64-conda-linux-gnu/sysroot/usr/include]
+    add: [/usr/include/c++/10]
+    add: [/usr/include/x86_64-linux-gnu/c++/10]
+    add: [/usr/include/c++/10/backward]
+    add: [/usr/lib/gcc/x86_64-linux-gnu/10/include]
+    add: [/usr/local/include]
+    add: [/usr/include/x86_64-linux-gnu]
+    add: [/usr/include]
   end of search list found
-  collapse include dir [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/include] ==> [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/include]
-  collapse include dir [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/include] ==> [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib/gcc/x86_64-conda-linux-gnu/9.4.0/include]
-  collapse include dir [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/include-fixed] ==> [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib/gcc/x86_64-conda-linux-gnu/9.4.0/include-fixed]
-  collapse include dir [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/../../../../x86_64-conda-linux-gnu/include] ==> [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/x86_64-conda-linux-gnu/include]
-  collapse include dir [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/../../x86_64-conda-linux-gnu/include/c++/9.4.0] ==> [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/x86_64-conda-linux-gnu/include/c++/9.4.0]
-  collapse include dir [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/../../x86_64-conda-linux-gnu/include/c++/9.4.0/x86_64-conda-linux-gnu] ==> [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/x86_64-conda-linux-gnu/include/c++/9.4.0/x86_64-conda-linux-gnu]
-  collapse include dir [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/../../x86_64-conda-linux-gnu/include/c++/9.4.0/backward] ==> [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/x86_64-conda-linux-gnu/include/c++/9.4.0/backward]
-  collapse include dir [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../x86_64-conda-linux-gnu/sysroot/usr/include] ==> [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/x86_64-conda-linux-gnu/sysroot/usr/include]
-  implicit include dirs: [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/include;/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib/gcc/x86_64-conda-linux-gnu/9.4.0/include;/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib/gcc/x86_64-conda-linux-gnu/9.4.0/include-fixed;/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/x86_64-conda-linux-gnu/include;/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/x86_64-conda-linux-gnu/include/c++/9.4.0;/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/x86_64-conda-linux-gnu/include/c++/9.4.0/x86_64-conda-linux-gnu;/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/x86_64-conda-linux-gnu/include/c++/9.4.0/backward;/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/x86_64-conda-linux-gnu/sysroot/usr/include]
+  collapse include dir [/usr/include/c++/10] ==> [/usr/include/c++/10]
+  collapse include dir [/usr/include/x86_64-linux-gnu/c++/10] ==> [/usr/include/x86_64-linux-gnu/c++/10]
+  collapse include dir [/usr/include/c++/10/backward] ==> [/usr/include/c++/10/backward]
+  collapse include dir [/usr/lib/gcc/x86_64-linux-gnu/10/include] ==> [/usr/lib/gcc/x86_64-linux-gnu/10/include]
+  collapse include dir [/usr/local/include] ==> [/usr/local/include]
+  collapse include dir [/usr/include/x86_64-linux-gnu] ==> [/usr/include/x86_64-linux-gnu]
+  collapse include dir [/usr/include] ==> [/usr/include]
+  implicit include dirs: [/usr/include/c++/10;/usr/include/x86_64-linux-gnu/c++/10;/usr/include/c++/10/backward;/usr/lib/gcc/x86_64-linux-gnu/10/include;/usr/local/include;/usr/include/x86_64-linux-gnu;/usr/include]
 
 
 Parsed CXX implicit link information from above output:
-  link line regex: [^( *|.*[/\])(x86_64-conda-linux-gnu-ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
-  ignore line: [Change Dir: /mnt/sda1/jiancheng/GRAMS/GRAMS/GRAMS_2021/build/CMakeFiles/CMakeTmp]
+  link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /home/jiancheng/GRAMS/GRAMS/GRAMS_2021/build/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_0d784/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_0d784.dir/build.make CMakeFiles/cmTC_0d784.dir/build]
-  ignore line: [gmake[1]: Entering directory '/mnt/sda1/jiancheng/GRAMS/GRAMS/GRAMS_2021/build/CMakeFiles/CMakeTmp']
-  ignore line: [Building CXX object CMakeFiles/cmTC_0d784.dir/CMakeCXXCompilerABI.cpp.o]
-  ignore line: [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/x86_64-conda-linux-gnu-c++   -fvisibility-inlines-hidden -std=c++17 -fmessage-length=0 -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -isystem /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/include    -v -o CMakeFiles/cmTC_0d784.dir/CMakeCXXCompilerABI.cpp.o -c /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/share/cmake-3.21/Modules/CMakeCXXCompilerABI.cpp]
-  ignore line: [Reading specs from /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/specs]
-  ignore line: [COLLECT_GCC=/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/x86_64-conda-linux-gnu-c++]
-  ignore line: [Target: x86_64-conda-linux-gnu]
-  ignore line: [Configured with: ../configure --prefix=/home/conda/feedstock_root/build_artifacts/gcc_compilers_1634095554843/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placeho --with-slibdir=/home/conda/feedstock_root/build_artifacts/gcc_compilers_1634095554843/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placeho/lib --libdir=/home/conda/feedstock_root/build_artifacts/gcc_compilers_1634095554843/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placeho/lib --build=x86_64-conda-linux-gnu --host=x86_64-conda-linux-gnu --target=x86_64-conda-linux-gnu --enable-default-pie --enable-languages=c c++ fortran objc obj-c++ --enable-__cxa_atexit --disable-libmudflap --enable-libgomp --disable-libssp --enable-libquadmath --enable-libquadmath-support --enable-libsanitizer --enable-lto --enable-threads=posix --enable-target-optspace --enable-plugin --enable-gold --disable-nls --disable-bootstrap --disable-multilib --enable-long-long --enable-default-pie --with-sysroot=/home/conda/feedstock_root/build_artifacts/gcc_compilers_1634095554843/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placeho/x86_64-conda-linux-gnu/sysroot --with-build-sysroot=/home/conda/feedstock_root/build_artifacts/gcc_compilers_1634095554843/_build_env/x86_64-conda-linux-gnu/sysroot --with-gxx-include-dir=/home/conda/feedstock_root/build_artifacts/gcc_compilers_1634095554843/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placeho/x86_64-conda-linux-gnu/include/c++/9.4.0]
+  ignore line: [Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_992b7/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_992b7.dir/build.make CMakeFiles/cmTC_992b7.dir/build]
+  ignore line: [gmake[1]: Entering directory '/home/jiancheng/GRAMS/GRAMS/GRAMS_2021/build/CMakeFiles/CMakeTmp']
+  ignore line: [Building CXX object CMakeFiles/cmTC_992b7.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [/usr/bin/c++   -v -o CMakeFiles/cmTC_992b7.dir/CMakeCXXCompilerABI.cpp.o -c /usr/local/share/cmake-3.21/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=/usr/bin/c++]
+  ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa:hsa]
+  ignore line: [OFFLOAD_TARGET_DEFAULT=1]
+  ignore line: [Target: x86_64-linux-gnu]
+  ignore line: [Configured with: ../src/configure -v --with-pkgversion='Ubuntu 10.3.0-1ubuntu1' --with-bugurl=file:///usr/share/doc/gcc-10/README.Bugs --enable-languages=c ada c++ go brig d fortran objc obj-c++ m2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-10 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32 m64 mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-10-gDeRY6/gcc-10-10.3.0/debian/tmp-nvptx/usr amdgcn-amdhsa=/build/gcc-10-gDeRY6/gcc-10-10.3.0/debian/tmp-gcn/usr hsa --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu --with-build-config=bootstrap-lto-lean --enable-link-mutex]
   ignore line: [Thread model: posix]
-  ignore line: [gcc version 9.4.0 (GCC) ]
-  ignore line: [COLLECT_GCC_OPTIONS='-fvisibility-inlines-hidden' '-std=c++17' '-fmessage-length=0' '-march=nocona' '-mtune=haswell' '-ftree-vectorize' '-fPIC' '-fstack-protector-strong' '-fno-plt' '-O2' '-ffunction-sections' '-pipe' '-isystem' '/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/include' '-v' '-o' 'CMakeFiles/cmTC_0d784.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc']
-  ignore line: [ /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../libexec/gcc/x86_64-conda-linux-gnu/9.4.0/cc1plus -quiet -v -iprefix /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/ -isysroot /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../x86_64-conda-linux-gnu/sysroot -D_GNU_SOURCE -isystem /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/include /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/share/cmake-3.21/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpbase CMakeCXXCompilerABI.cpp -march=nocona -mtune=haswell -auxbase-strip CMakeFiles/cmTC_0d784.dir/CMakeCXXCompilerABI.cpp.o -O2 -std=c++17 -version -fvisibility-inlines-hidden -fmessage-length=0 -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -ffunction-sections -o - |]
-  ignore line: [ /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/../../../../x86_64-conda-linux-gnu/bin/as -v --64 -o CMakeFiles/cmTC_0d784.dir/CMakeCXXCompilerABI.cpp.o]
-  ignore line: [GNU assembler version 2.36.1 (x86_64-conda-linux-gnu) using BFD version (GNU Binutils) 2.36.1]
-  ignore line: [GNU C++17 (GCC) version 9.4.0 (x86_64-conda-linux-gnu)]
-  ignore line: [	compiled by GNU C version 9.4.0  GMP version 6.1.0  MPFR version 3.1.4  MPC version 1.0.3  isl version isl-0.18-GMP]
+  ignore line: [Supported LTO compression algorithms: zlib zstd]
+  ignore line: [gcc version 10.3.0 (Ubuntu 10.3.0-1ubuntu1) ]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_992b7.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+  ignore line: [ /usr/lib/gcc/x86_64-linux-gnu/10/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE /usr/local/share/cmake-3.21/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpbase CMakeCXXCompilerABI.cpp -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_992b7.dir/CMakeCXXCompilerABI.cpp.o -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccxwdoOf.s]
+  ignore line: [GNU C++14 (Ubuntu 10.3.0-1ubuntu1) version 10.3.0 (x86_64-linux-gnu)]
+  ignore line: [	compiled by GNU C version 10.3.0  GMP version 6.2.1  MPFR version 4.1.0  MPC version 1.2.0  isl version isl-0.23-GMP]
   ignore line: []
   ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
-  ignore line: [ignoring duplicate directory "/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/../../lib/gcc/x86_64-conda-linux-gnu/9.4.0/include"]
-  ignore line: [ignoring nonexistent directory "/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../x86_64-conda-linux-gnu/sysroot/usr/local/include"]
-  ignore line: [ignoring duplicate directory "/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/../../lib/gcc/x86_64-conda-linux-gnu/9.4.0/include-fixed"]
-  ignore line: [ignoring duplicate directory "/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/../../lib/gcc/x86_64-conda-linux-gnu/9.4.0/../../../../x86_64-conda-linux-gnu/include"]
+  ignore line: [ignoring duplicate directory "/usr/include/x86_64-linux-gnu/c++/10"]
+  ignore line: [ignoring nonexistent directory "/usr/local/include/x86_64-linux-gnu"]
+  ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/10/include-fixed"]
+  ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/10/../../../../x86_64-linux-gnu/include"]
   ignore line: [#include "..." search starts here:]
   ignore line: [#include <...> search starts here:]
-  ignore line: [ /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/include]
-  ignore line: [ /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/include]
-  ignore line: [ /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/include-fixed]
-  ignore line: [ /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/../../../../x86_64-conda-linux-gnu/include]
-  ignore line: [ /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/../../x86_64-conda-linux-gnu/include/c++/9.4.0]
-  ignore line: [ /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/../../x86_64-conda-linux-gnu/include/c++/9.4.0/x86_64-conda-linux-gnu]
-  ignore line: [ /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/../../x86_64-conda-linux-gnu/include/c++/9.4.0/backward]
-  ignore line: [ /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../x86_64-conda-linux-gnu/sysroot/usr/include]
+  ignore line: [ /usr/include/c++/10]
+  ignore line: [ /usr/include/x86_64-linux-gnu/c++/10]
+  ignore line: [ /usr/include/c++/10/backward]
+  ignore line: [ /usr/lib/gcc/x86_64-linux-gnu/10/include]
+  ignore line: [ /usr/local/include]
+  ignore line: [ /usr/include/x86_64-linux-gnu]
+  ignore line: [ /usr/include]
   ignore line: [End of search list.]
-  ignore line: [GNU C++17 (GCC) version 9.4.0 (x86_64-conda-linux-gnu)]
-  ignore line: [	compiled by GNU C version 9.4.0  GMP version 6.1.0  MPFR version 3.1.4  MPC version 1.0.3  isl version isl-0.18-GMP]
+  ignore line: [GNU C++14 (Ubuntu 10.3.0-1ubuntu1) version 10.3.0 (x86_64-linux-gnu)]
+  ignore line: [	compiled by GNU C version 10.3.0  GMP version 6.2.1  MPFR version 4.1.0  MPC version 1.2.0  isl version isl-0.23-GMP]
   ignore line: []
   ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
-  ignore line: [Compiler executable checksum: 450d352db2c8843336545535add284ec]
-  ignore line: [COMPILER_PATH=/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../libexec/gcc/x86_64-conda-linux-gnu/9.4.0/:/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../libexec/gcc/:/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/../../../../x86_64-conda-linux-gnu/bin/]
-  ignore line: [LIBRARY_PATH=/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/:/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/:/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/../../../../x86_64-conda-linux-gnu/lib/../lib/:/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/../../../../lib/:/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../x86_64-conda-linux-gnu/sysroot/lib/../lib/:/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib/:/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/../../../../x86_64-conda-linux-gnu/lib/:/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/../../../:/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../x86_64-conda-linux-gnu/sysroot/lib/:/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-fvisibility-inlines-hidden' '-std=c++17' '-fmessage-length=0' '-march=nocona' '-mtune=haswell' '-ftree-vectorize' '-fPIC' '-fstack-protector-strong' '-fno-plt' '-O2' '-ffunction-sections' '-pipe' '-isystem' '/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/include' '-v' '-o' 'CMakeFiles/cmTC_0d784.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc']
-  ignore line: [Linking CXX executable cmTC_0d784]
-  ignore line: [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0d784.dir/link.txt --verbose=1]
-  ignore line: [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/x86_64-conda-linux-gnu-c++ -fvisibility-inlines-hidden -std=c++17 -fmessage-length=0 -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -isystem /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/include  -Wl -O2 -Wl --sort-common -Wl --as-needed -Wl -z relro -Wl -z now -Wl --disable-new-dtags -Wl --gc-sections -Wl -rpath /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib -Wl -rpath-link /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib -L/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib -v -rdynamic CMakeFiles/cmTC_0d784.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_0d784 ]
-  ignore line: [Reading specs from /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/specs]
-  ignore line: [COLLECT_GCC=/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/x86_64-conda-linux-gnu-c++]
-  ignore line: [COLLECT_LTO_WRAPPER=/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../libexec/gcc/x86_64-conda-linux-gnu/9.4.0/lto-wrapper]
-  ignore line: [Target: x86_64-conda-linux-gnu]
-  ignore line: [Configured with: ../configure --prefix=/home/conda/feedstock_root/build_artifacts/gcc_compilers_1634095554843/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placeho --with-slibdir=/home/conda/feedstock_root/build_artifacts/gcc_compilers_1634095554843/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placeho/lib --libdir=/home/conda/feedstock_root/build_artifacts/gcc_compilers_1634095554843/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placeho/lib --build=x86_64-conda-linux-gnu --host=x86_64-conda-linux-gnu --target=x86_64-conda-linux-gnu --enable-default-pie --enable-languages=c c++ fortran objc obj-c++ --enable-__cxa_atexit --disable-libmudflap --enable-libgomp --disable-libssp --enable-libquadmath --enable-libquadmath-support --enable-libsanitizer --enable-lto --enable-threads=posix --enable-target-optspace --enable-plugin --enable-gold --disable-nls --disable-bootstrap --disable-multilib --enable-long-long --enable-default-pie --with-sysroot=/home/conda/feedstock_root/build_artifacts/gcc_compilers_1634095554843/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placeho/x86_64-conda-linux-gnu/sysroot --with-build-sysroot=/home/conda/feedstock_root/build_artifacts/gcc_compilers_1634095554843/_build_env/x86_64-conda-linux-gnu/sysroot --with-gxx-include-dir=/home/conda/feedstock_root/build_artifacts/gcc_compilers_1634095554843/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placeho/x86_64-conda-linux-gnu/include/c++/9.4.0]
+  ignore line: [Compiler executable checksum: 118e824ee50d24f402f1f2e0e1ebfb12]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_992b7.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+  ignore line: [ as -v --64 -o CMakeFiles/cmTC_992b7.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccxwdoOf.s]
+  ignore line: [GNU assembler version 2.36.1 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.36.1]
+  ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/]
+  ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/10/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/10/../../../:/lib/:/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_992b7.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+  ignore line: [Linking CXX executable cmTC_992b7]
+  ignore line: [/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_992b7.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/c++  -v -rdynamic CMakeFiles/cmTC_992b7.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_992b7 ]
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=/usr/bin/c++]
+  ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/10/lto-wrapper]
+  ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa:hsa]
+  ignore line: [OFFLOAD_TARGET_DEFAULT=1]
+  ignore line: [Target: x86_64-linux-gnu]
+  ignore line: [Configured with: ../src/configure -v --with-pkgversion='Ubuntu 10.3.0-1ubuntu1' --with-bugurl=file:///usr/share/doc/gcc-10/README.Bugs --enable-languages=c ada c++ go brig d fortran objc obj-c++ m2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-10 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32 m64 mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-10-gDeRY6/gcc-10-10.3.0/debian/tmp-nvptx/usr amdgcn-amdhsa=/build/gcc-10-gDeRY6/gcc-10-10.3.0/debian/tmp-gcn/usr hsa --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu --with-build-config=bootstrap-lto-lean --enable-link-mutex]
   ignore line: [Thread model: posix]
-  ignore line: [gcc version 9.4.0 (GCC) ]
-  ignore line: [COMPILER_PATH=/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../libexec/gcc/x86_64-conda-linux-gnu/9.4.0/:/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../libexec/gcc/:/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/../../../../x86_64-conda-linux-gnu/bin/]
-  ignore line: [LIBRARY_PATH=/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/:/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/:/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/../../../../x86_64-conda-linux-gnu/lib/../lib/:/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/../../../../lib/:/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../x86_64-conda-linux-gnu/sysroot/lib/../lib/:/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib/:/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/../../../../x86_64-conda-linux-gnu/lib/:/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/../../../:/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../x86_64-conda-linux-gnu/sysroot/lib/:/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-fvisibility-inlines-hidden' '-std=c++17' '-fmessage-length=0' '-march=nocona' '-mtune=haswell' '-ftree-vectorize' '-fPIC' '-fstack-protector-strong' '-fno-plt' '-O2' '-ffunction-sections' '-pipe' '-isystem' '/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/include' '-L/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib' '-v' '-rdynamic' '-o' 'cmTC_0d784' '-shared-libgcc']
-  link line: [ /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../libexec/gcc/x86_64-conda-linux-gnu/9.4.0/collect2 -plugin /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../libexec/gcc/x86_64-conda-linux-gnu/9.4.0/liblto_plugin.so -plugin-opt=/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../libexec/gcc/x86_64-conda-linux-gnu/9.4.0/lto-wrapper -plugin-opt=-fresolution=/tmp/ccKWDd7z.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../x86_64-conda-linux-gnu/sysroot --eh-frame-hdr -m elf_x86_64 -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_0d784 /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib/Scrt1.o /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib/crti.o /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/crtbeginS.o -L/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib -L/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0 -L/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc -L/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/../../../../x86_64-conda-linux-gnu/lib/../lib -L/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/../../../../lib -L/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../x86_64-conda-linux-gnu/sysroot/lib/../lib -L/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib -L/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/../../../../x86_64-conda-linux-gnu/lib -L/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/../../.. -L/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../x86_64-conda-linux-gnu/sysroot/lib -L/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib -O2 --sort-common --as-needed -z relro -z now --disable-new-dtags --gc-sections -rpath /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib -rpath-link /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib CMakeFiles/cmTC_0d784.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/crtendS.o /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib/crtn.o -rpath /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib]
-    arg [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../libexec/gcc/x86_64-conda-linux-gnu/9.4.0/collect2] ==> ignore
+  ignore line: [Supported LTO compression algorithms: zlib zstd]
+  ignore line: [gcc version 10.3.0 (Ubuntu 10.3.0-1ubuntu1) ]
+  ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/]
+  ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/10/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/10/../../../:/lib/:/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_992b7' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+  link line: [ /usr/lib/gcc/x86_64-linux-gnu/10/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/10/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/10/lto-wrapper -plugin-opt=-fresolution=/tmp/cco2UW12.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_992b7 /usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/10/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/10 -L/usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/10/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/10/../../.. CMakeFiles/cmTC_992b7.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/10/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/crtn.o]
+    arg [/usr/lib/gcc/x86_64-linux-gnu/10/collect2] ==> ignore
     arg [-plugin] ==> ignore
-    arg [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../libexec/gcc/x86_64-conda-linux-gnu/9.4.0/liblto_plugin.so] ==> ignore
-    arg [-plugin-opt=/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../libexec/gcc/x86_64-conda-linux-gnu/9.4.0/lto-wrapper] ==> ignore
-    arg [-plugin-opt=-fresolution=/tmp/ccKWDd7z.res] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/10/liblto_plugin.so] ==> ignore
+    arg [-plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/10/lto-wrapper] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/cco2UW12.res] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
     arg [-plugin-opt=-pass-through=-lc] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
-    arg [--sysroot=/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../x86_64-conda-linux-gnu/sysroot] ==> ignore
+    arg [--build-id] ==> ignore
     arg [--eh-frame-hdr] ==> ignore
     arg [-m] ==> ignore
     arg [elf_x86_64] ==> ignore
+    arg [--hash-style=gnu] ==> ignore
+    arg [--as-needed] ==> ignore
     arg [-export-dynamic] ==> ignore
     arg [-dynamic-linker] ==> ignore
     arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
     arg [-pie] ==> ignore
-    arg [-o] ==> ignore
-    arg [cmTC_0d784] ==> ignore
-    arg [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib/Scrt1.o] ==> obj [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib/Scrt1.o]
-    arg [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib/crti.o] ==> obj [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib/crti.o]
-    arg [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/crtbeginS.o] ==> obj [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/crtbeginS.o]
-    arg [-L/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib] ==> dir [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib]
-    arg [-L/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0] ==> dir [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0]
-    arg [-L/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc] ==> dir [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc]
-    arg [-L/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/../../../../x86_64-conda-linux-gnu/lib/../lib] ==> dir [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/../../../../x86_64-conda-linux-gnu/lib/../lib]
-    arg [-L/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/../../../../lib] ==> dir [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/../../../../lib]
-    arg [-L/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../x86_64-conda-linux-gnu/sysroot/lib/../lib] ==> dir [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../x86_64-conda-linux-gnu/sysroot/lib/../lib]
-    arg [-L/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib] ==> dir [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib]
-    arg [-L/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/../../../../x86_64-conda-linux-gnu/lib] ==> dir [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/../../../../x86_64-conda-linux-gnu/lib]
-    arg [-L/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/../../..] ==> dir [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/../../..]
-    arg [-L/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../x86_64-conda-linux-gnu/sysroot/lib] ==> dir [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../x86_64-conda-linux-gnu/sysroot/lib]
-    arg [-L/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib] ==> dir [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib]
-    arg [-O2] ==> ignore
-    arg [--sort-common] ==> ignore
-    arg [--as-needed] ==> ignore
-    arg [-zrelro] ==> ignore
     arg [-znow] ==> ignore
-    arg [--disable-new-dtags] ==> ignore
-    arg [--gc-sections] ==> ignore
-    arg [-rpath] ==> ignore
-    arg [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib] ==> ignore
-    arg [-rpath-link] ==> ignore
-    arg [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib] ==> ignore
-    arg [CMakeFiles/cmTC_0d784.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+    arg [-zrelro] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTC_992b7] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/Scrt1.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/Scrt1.o]
+    arg [/usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/crti.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/crti.o]
+    arg [/usr/lib/gcc/x86_64-linux-gnu/10/crtbeginS.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/10/crtbeginS.o]
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/10] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/10]
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu]
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/10/../../../../lib] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/10/../../../../lib]
+    arg [-L/lib/x86_64-linux-gnu] ==> dir [/lib/x86_64-linux-gnu]
+    arg [-L/lib/../lib] ==> dir [/lib/../lib]
+    arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
+    arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/10/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/10/../../..]
+    arg [CMakeFiles/cmTC_992b7.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
     arg [-lstdc++] ==> lib [stdc++]
     arg [-lm] ==> lib [m]
     arg [-lgcc_s] ==> lib [gcc_s]
@@ -439,127 +430,120 @@ Parsed CXX implicit link information from above output:
     arg [-lc] ==> lib [c]
     arg [-lgcc_s] ==> lib [gcc_s]
     arg [-lgcc] ==> lib [gcc]
-    arg [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/crtendS.o] ==> obj [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/crtendS.o]
-    arg [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib/crtn.o] ==> obj [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib/crtn.o]
-    arg [-rpath] ==> ignore
-    arg [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib] ==> ignore
-  collapse obj [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib/Scrt1.o] ==> [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/x86_64-conda-linux-gnu/sysroot/usr/lib/Scrt1.o]
-  collapse obj [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib/crti.o] ==> [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/x86_64-conda-linux-gnu/sysroot/usr/lib/crti.o]
-  collapse obj [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/crtbeginS.o] ==> [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib/gcc/x86_64-conda-linux-gnu/9.4.0/crtbeginS.o]
-  collapse obj [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/crtendS.o] ==> [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib/gcc/x86_64-conda-linux-gnu/9.4.0/crtendS.o]
-  collapse obj [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib/crtn.o] ==> [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/x86_64-conda-linux-gnu/sysroot/usr/lib/crtn.o]
-  collapse library dir [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib] ==> [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib]
-  collapse library dir [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0] ==> [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib/gcc/x86_64-conda-linux-gnu/9.4.0]
-  collapse library dir [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc] ==> [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib/gcc]
-  collapse library dir [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/../../../../x86_64-conda-linux-gnu/lib/../lib] ==> [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/x86_64-conda-linux-gnu/lib]
-  collapse library dir [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/../../../../lib] ==> [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib]
-  collapse library dir [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../x86_64-conda-linux-gnu/sysroot/lib/../lib] ==> [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/x86_64-conda-linux-gnu/sysroot/lib]
-  collapse library dir [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib] ==> [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/x86_64-conda-linux-gnu/sysroot/usr/lib]
-  collapse library dir [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/../../../../x86_64-conda-linux-gnu/lib] ==> [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/x86_64-conda-linux-gnu/lib]
-  collapse library dir [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../lib/gcc/x86_64-conda-linux-gnu/9.4.0/../../..] ==> [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib]
-  collapse library dir [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../x86_64-conda-linux-gnu/sysroot/lib] ==> [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/x86_64-conda-linux-gnu/sysroot/lib]
-  collapse library dir [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib] ==> [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/x86_64-conda-linux-gnu/sysroot/usr/lib]
+    arg [/usr/lib/gcc/x86_64-linux-gnu/10/crtendS.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/10/crtendS.o]
+    arg [/usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/crtn.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/crtn.o]
+  collapse obj [/usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/Scrt1.o] ==> [/usr/lib/x86_64-linux-gnu/Scrt1.o]
+  collapse obj [/usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/crti.o] ==> [/usr/lib/x86_64-linux-gnu/crti.o]
+  collapse obj [/usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/crtn.o] ==> [/usr/lib/x86_64-linux-gnu/crtn.o]
+  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/10] ==> [/usr/lib/gcc/x86_64-linux-gnu/10]
+  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
+  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/10/../../../../lib] ==> [/usr/lib]
+  collapse library dir [/lib/x86_64-linux-gnu] ==> [/lib/x86_64-linux-gnu]
+  collapse library dir [/lib/../lib] ==> [/lib]
+  collapse library dir [/usr/lib/x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
+  collapse library dir [/usr/lib/../lib] ==> [/usr/lib]
+  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/10/../../..] ==> [/usr/lib]
   implicit libs: [stdc++;m;gcc_s;gcc;c;gcc_s;gcc]
-  implicit objs: [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/x86_64-conda-linux-gnu/sysroot/usr/lib/Scrt1.o;/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/x86_64-conda-linux-gnu/sysroot/usr/lib/crti.o;/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib/gcc/x86_64-conda-linux-gnu/9.4.0/crtbeginS.o;/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib/gcc/x86_64-conda-linux-gnu/9.4.0/crtendS.o;/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/x86_64-conda-linux-gnu/sysroot/usr/lib/crtn.o]
-  implicit dirs: [/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib;/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib/gcc/x86_64-conda-linux-gnu/9.4.0;/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib/gcc;/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/x86_64-conda-linux-gnu/lib;/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/x86_64-conda-linux-gnu/sysroot/lib;/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/x86_64-conda-linux-gnu/sysroot/usr/lib]
+  implicit objs: [/usr/lib/x86_64-linux-gnu/Scrt1.o;/usr/lib/x86_64-linux-gnu/crti.o;/usr/lib/gcc/x86_64-linux-gnu/10/crtbeginS.o;/usr/lib/gcc/x86_64-linux-gnu/10/crtendS.o;/usr/lib/x86_64-linux-gnu/crtn.o]
+  implicit dirs: [/usr/lib/gcc/x86_64-linux-gnu/10;/usr/lib/x86_64-linux-gnu;/usr/lib;/lib/x86_64-linux-gnu;/lib]
   implicit fwks: []
 
 
 Determining if the include file pthread.h exists passed with the following output:
-Change Dir: /mnt/sda1/jiancheng/GRAMS/GRAMS/GRAMS_2021/build/CMakeFiles/CMakeTmp
+Change Dir: /home/jiancheng/GRAMS/GRAMS/GRAMS_2021/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_1e2d3/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_1e2d3.dir/build.make CMakeFiles/cmTC_1e2d3.dir/build
-gmake[1]: Entering directory '/mnt/sda1/jiancheng/GRAMS/GRAMS/GRAMS_2021/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_1e2d3.dir/CheckIncludeFile.c.o
-/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/x86_64-conda-linux-gnu-cc   -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -isystem /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/include  -o CMakeFiles/cmTC_1e2d3.dir/CheckIncludeFile.c.o -c /mnt/sda1/jiancheng/GRAMS/GRAMS/GRAMS_2021/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
-Linking C executable cmTC_1e2d3
-/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1e2d3.dir/link.txt --verbose=1
-/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/x86_64-conda-linux-gnu-cc -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -isystem /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/include  -Wl,-O2 -Wl,--sort-common -Wl,--as-needed -Wl,-z,relro -Wl,-z,now -Wl,--disable-new-dtags -Wl,--gc-sections -Wl,-rpath,/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib -Wl,-rpath-link,/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib -L/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib  CMakeFiles/cmTC_1e2d3.dir/CheckIncludeFile.c.o -o cmTC_1e2d3 
-gmake[1]: Leaving directory '/mnt/sda1/jiancheng/GRAMS/GRAMS/GRAMS_2021/build/CMakeFiles/CMakeTmp'
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_ec379/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_ec379.dir/build.make CMakeFiles/cmTC_ec379.dir/build
+gmake[1]: Entering directory '/home/jiancheng/GRAMS/GRAMS/GRAMS_2021/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_ec379.dir/CheckIncludeFile.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_ec379.dir/CheckIncludeFile.c.o -c /home/jiancheng/GRAMS/GRAMS/GRAMS_2021/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_ec379
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ec379.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_ec379.dir/CheckIncludeFile.c.o -o cmTC_ec379 
+gmake[1]: Leaving directory '/home/jiancheng/GRAMS/GRAMS/GRAMS_2021/build/CMakeFiles/CMakeTmp'
 
 
 
-Determining if the function XOpenDisplay exists in the /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib/libX11.so;/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib/libXext.so passed with the following output:
-Change Dir: /mnt/sda1/jiancheng/GRAMS/GRAMS/GRAMS_2021/build/CMakeFiles/CMakeTmp
+Determining if the function XOpenDisplay exists in the /usr/lib/x86_64-linux-gnu/libX11.so;/usr/lib/x86_64-linux-gnu/libXext.so passed with the following output:
+Change Dir: /home/jiancheng/GRAMS/GRAMS/GRAMS_2021/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_4e0f9/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_4e0f9.dir/build.make CMakeFiles/cmTC_4e0f9.dir/build
-gmake[1]: Entering directory '/mnt/sda1/jiancheng/GRAMS/GRAMS/GRAMS_2021/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_4e0f9.dir/CheckFunctionExists.c.o
-/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/x86_64-conda-linux-gnu-cc   -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -isystem /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/include -DCHECK_FUNCTION_EXISTS=XOpenDisplay -o CMakeFiles/cmTC_4e0f9.dir/CheckFunctionExists.c.o -c /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/share/cmake-3.21/Modules/CheckFunctionExists.c
-Linking C executable cmTC_4e0f9
-/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4e0f9.dir/link.txt --verbose=1
-/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/x86_64-conda-linux-gnu-cc -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -isystem /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/include -DCHECK_FUNCTION_EXISTS=XOpenDisplay -Wl,-O2 -Wl,--sort-common -Wl,--as-needed -Wl,-z,relro -Wl,-z,now -Wl,--disable-new-dtags -Wl,--gc-sections -Wl,-rpath,/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib -Wl,-rpath-link,/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib -L/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib  CMakeFiles/cmTC_4e0f9.dir/CheckFunctionExists.c.o -o cmTC_4e0f9  /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib/libX11.so /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib/libXext.so 
-gmake[1]: Leaving directory '/mnt/sda1/jiancheng/GRAMS/GRAMS/GRAMS_2021/build/CMakeFiles/CMakeTmp'
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_9efbd/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_9efbd.dir/build.make CMakeFiles/cmTC_9efbd.dir/build
+gmake[1]: Entering directory '/home/jiancheng/GRAMS/GRAMS/GRAMS_2021/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_9efbd.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=XOpenDisplay -o CMakeFiles/cmTC_9efbd.dir/CheckFunctionExists.c.o -c /usr/local/share/cmake-3.21/Modules/CheckFunctionExists.c
+Linking C executable cmTC_9efbd
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9efbd.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=XOpenDisplay CMakeFiles/cmTC_9efbd.dir/CheckFunctionExists.c.o -o cmTC_9efbd  /usr/lib/x86_64-linux-gnu/libX11.so /usr/lib/x86_64-linux-gnu/libXext.so 
+gmake[1]: Leaving directory '/home/jiancheng/GRAMS/GRAMS/GRAMS_2021/build/CMakeFiles/CMakeTmp'
 
 
 
 Determining if the function gethostbyname exists passed with the following output:
-Change Dir: /mnt/sda1/jiancheng/GRAMS/GRAMS/GRAMS_2021/build/CMakeFiles/CMakeTmp
+Change Dir: /home/jiancheng/GRAMS/GRAMS/GRAMS_2021/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_40c0f/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_40c0f.dir/build.make CMakeFiles/cmTC_40c0f.dir/build
-gmake[1]: Entering directory '/mnt/sda1/jiancheng/GRAMS/GRAMS/GRAMS_2021/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_40c0f.dir/CheckFunctionExists.c.o
-/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/x86_64-conda-linux-gnu-cc   -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -isystem /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/include -DCHECK_FUNCTION_EXISTS=gethostbyname -o CMakeFiles/cmTC_40c0f.dir/CheckFunctionExists.c.o -c /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/share/cmake-3.21/Modules/CheckFunctionExists.c
-Linking C executable cmTC_40c0f
-/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/cmake -E cmake_link_script CMakeFiles/cmTC_40c0f.dir/link.txt --verbose=1
-/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/x86_64-conda-linux-gnu-cc -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -isystem /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/include -DCHECK_FUNCTION_EXISTS=gethostbyname -Wl,-O2 -Wl,--sort-common -Wl,--as-needed -Wl,-z,relro -Wl,-z,now -Wl,--disable-new-dtags -Wl,--gc-sections -Wl,-rpath,/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib -Wl,-rpath-link,/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib -L/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib  CMakeFiles/cmTC_40c0f.dir/CheckFunctionExists.c.o -o cmTC_40c0f 
-gmake[1]: Leaving directory '/mnt/sda1/jiancheng/GRAMS/GRAMS/GRAMS_2021/build/CMakeFiles/CMakeTmp'
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_c3659/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_c3659.dir/build.make CMakeFiles/cmTC_c3659.dir/build
+gmake[1]: Entering directory '/home/jiancheng/GRAMS/GRAMS/GRAMS_2021/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_c3659.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=gethostbyname -o CMakeFiles/cmTC_c3659.dir/CheckFunctionExists.c.o -c /usr/local/share/cmake-3.21/Modules/CheckFunctionExists.c
+Linking C executable cmTC_c3659
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c3659.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=gethostbyname CMakeFiles/cmTC_c3659.dir/CheckFunctionExists.c.o -o cmTC_c3659 
+gmake[1]: Leaving directory '/home/jiancheng/GRAMS/GRAMS/GRAMS_2021/build/CMakeFiles/CMakeTmp'
 
 
 
 Determining if the function connect exists passed with the following output:
-Change Dir: /mnt/sda1/jiancheng/GRAMS/GRAMS/GRAMS_2021/build/CMakeFiles/CMakeTmp
+Change Dir: /home/jiancheng/GRAMS/GRAMS/GRAMS_2021/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_a84e1/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_a84e1.dir/build.make CMakeFiles/cmTC_a84e1.dir/build
-gmake[1]: Entering directory '/mnt/sda1/jiancheng/GRAMS/GRAMS/GRAMS_2021/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_a84e1.dir/CheckFunctionExists.c.o
-/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/x86_64-conda-linux-gnu-cc   -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -isystem /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/include -DCHECK_FUNCTION_EXISTS=connect -o CMakeFiles/cmTC_a84e1.dir/CheckFunctionExists.c.o -c /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/share/cmake-3.21/Modules/CheckFunctionExists.c
-Linking C executable cmTC_a84e1
-/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a84e1.dir/link.txt --verbose=1
-/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/x86_64-conda-linux-gnu-cc -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -isystem /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/include -DCHECK_FUNCTION_EXISTS=connect -Wl,-O2 -Wl,--sort-common -Wl,--as-needed -Wl,-z,relro -Wl,-z,now -Wl,--disable-new-dtags -Wl,--gc-sections -Wl,-rpath,/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib -Wl,-rpath-link,/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib -L/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib  CMakeFiles/cmTC_a84e1.dir/CheckFunctionExists.c.o -o cmTC_a84e1 
-gmake[1]: Leaving directory '/mnt/sda1/jiancheng/GRAMS/GRAMS/GRAMS_2021/build/CMakeFiles/CMakeTmp'
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_951ed/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_951ed.dir/build.make CMakeFiles/cmTC_951ed.dir/build
+gmake[1]: Entering directory '/home/jiancheng/GRAMS/GRAMS/GRAMS_2021/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_951ed.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=connect -o CMakeFiles/cmTC_951ed.dir/CheckFunctionExists.c.o -c /usr/local/share/cmake-3.21/Modules/CheckFunctionExists.c
+Linking C executable cmTC_951ed
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_951ed.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=connect CMakeFiles/cmTC_951ed.dir/CheckFunctionExists.c.o -o cmTC_951ed 
+gmake[1]: Leaving directory '/home/jiancheng/GRAMS/GRAMS/GRAMS_2021/build/CMakeFiles/CMakeTmp'
 
 
 
 Determining if the function remove exists passed with the following output:
-Change Dir: /mnt/sda1/jiancheng/GRAMS/GRAMS/GRAMS_2021/build/CMakeFiles/CMakeTmp
+Change Dir: /home/jiancheng/GRAMS/GRAMS/GRAMS_2021/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_d51d1/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_d51d1.dir/build.make CMakeFiles/cmTC_d51d1.dir/build
-gmake[1]: Entering directory '/mnt/sda1/jiancheng/GRAMS/GRAMS/GRAMS_2021/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_d51d1.dir/CheckFunctionExists.c.o
-/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/x86_64-conda-linux-gnu-cc   -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -isystem /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/include -DCHECK_FUNCTION_EXISTS=remove -o CMakeFiles/cmTC_d51d1.dir/CheckFunctionExists.c.o -c /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/share/cmake-3.21/Modules/CheckFunctionExists.c
-Linking C executable cmTC_d51d1
-/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d51d1.dir/link.txt --verbose=1
-/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/x86_64-conda-linux-gnu-cc -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -isystem /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/include -DCHECK_FUNCTION_EXISTS=remove -Wl,-O2 -Wl,--sort-common -Wl,--as-needed -Wl,-z,relro -Wl,-z,now -Wl,--disable-new-dtags -Wl,--gc-sections -Wl,-rpath,/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib -Wl,-rpath-link,/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib -L/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib  CMakeFiles/cmTC_d51d1.dir/CheckFunctionExists.c.o -o cmTC_d51d1 
-gmake[1]: Leaving directory '/mnt/sda1/jiancheng/GRAMS/GRAMS/GRAMS_2021/build/CMakeFiles/CMakeTmp'
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_f9c73/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_f9c73.dir/build.make CMakeFiles/cmTC_f9c73.dir/build
+gmake[1]: Entering directory '/home/jiancheng/GRAMS/GRAMS/GRAMS_2021/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_f9c73.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=remove -o CMakeFiles/cmTC_f9c73.dir/CheckFunctionExists.c.o -c /usr/local/share/cmake-3.21/Modules/CheckFunctionExists.c
+Linking C executable cmTC_f9c73
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f9c73.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=remove CMakeFiles/cmTC_f9c73.dir/CheckFunctionExists.c.o -o cmTC_f9c73 
+gmake[1]: Leaving directory '/home/jiancheng/GRAMS/GRAMS/GRAMS_2021/build/CMakeFiles/CMakeTmp'
 
 
 
 Determining if the function shmat exists passed with the following output:
-Change Dir: /mnt/sda1/jiancheng/GRAMS/GRAMS/GRAMS_2021/build/CMakeFiles/CMakeTmp
+Change Dir: /home/jiancheng/GRAMS/GRAMS/GRAMS_2021/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_219b2/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_219b2.dir/build.make CMakeFiles/cmTC_219b2.dir/build
-gmake[1]: Entering directory '/mnt/sda1/jiancheng/GRAMS/GRAMS/GRAMS_2021/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_219b2.dir/CheckFunctionExists.c.o
-/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/x86_64-conda-linux-gnu-cc   -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -isystem /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/include -DCHECK_FUNCTION_EXISTS=shmat -o CMakeFiles/cmTC_219b2.dir/CheckFunctionExists.c.o -c /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/share/cmake-3.21/Modules/CheckFunctionExists.c
-Linking C executable cmTC_219b2
-/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/cmake -E cmake_link_script CMakeFiles/cmTC_219b2.dir/link.txt --verbose=1
-/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/x86_64-conda-linux-gnu-cc -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -isystem /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/include -DCHECK_FUNCTION_EXISTS=shmat -Wl,-O2 -Wl,--sort-common -Wl,--as-needed -Wl,-z,relro -Wl,-z,now -Wl,--disable-new-dtags -Wl,--gc-sections -Wl,-rpath,/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib -Wl,-rpath-link,/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib -L/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib  CMakeFiles/cmTC_219b2.dir/CheckFunctionExists.c.o -o cmTC_219b2 
-gmake[1]: Leaving directory '/mnt/sda1/jiancheng/GRAMS/GRAMS/GRAMS_2021/build/CMakeFiles/CMakeTmp'
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_29587/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_29587.dir/build.make CMakeFiles/cmTC_29587.dir/build
+gmake[1]: Entering directory '/home/jiancheng/GRAMS/GRAMS/GRAMS_2021/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_29587.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=shmat -o CMakeFiles/cmTC_29587.dir/CheckFunctionExists.c.o -c /usr/local/share/cmake-3.21/Modules/CheckFunctionExists.c
+Linking C executable cmTC_29587
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_29587.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=shmat CMakeFiles/cmTC_29587.dir/CheckFunctionExists.c.o -o cmTC_29587 
+gmake[1]: Leaving directory '/home/jiancheng/GRAMS/GRAMS/GRAMS_2021/build/CMakeFiles/CMakeTmp'
 
 
 
 Determining if the function IceConnectionNumber exists in the ICE passed with the following output:
-Change Dir: /mnt/sda1/jiancheng/GRAMS/GRAMS/GRAMS_2021/build/CMakeFiles/CMakeTmp
+Change Dir: /home/jiancheng/GRAMS/GRAMS/GRAMS_2021/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_0196b/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_0196b.dir/build.make CMakeFiles/cmTC_0196b.dir/build
-gmake[1]: Entering directory '/mnt/sda1/jiancheng/GRAMS/GRAMS/GRAMS_2021/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_0196b.dir/CheckFunctionExists.c.o
-/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/x86_64-conda-linux-gnu-cc   -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -isystem /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/include -DCHECK_FUNCTION_EXISTS=IceConnectionNumber -o CMakeFiles/cmTC_0196b.dir/CheckFunctionExists.c.o -c /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/share/cmake-3.21/Modules/CheckFunctionExists.c
-Linking C executable cmTC_0196b
-/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0196b.dir/link.txt --verbose=1
-/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/x86_64-conda-linux-gnu-cc -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -isystem /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/include -DCHECK_FUNCTION_EXISTS=IceConnectionNumber -Wl,-O2 -Wl,--sort-common -Wl,--as-needed -Wl,-z,relro -Wl,-z,now -Wl,--disable-new-dtags -Wl,--gc-sections -Wl,-rpath,/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib -Wl,-rpath-link,/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib -L/mnt/sda1/jiancheng/anaconda3/envs/grams-devel/lib  CMakeFiles/cmTC_0196b.dir/CheckFunctionExists.c.o -o cmTC_0196b  -lICE 
-gmake[1]: Leaving directory '/mnt/sda1/jiancheng/GRAMS/GRAMS/GRAMS_2021/build/CMakeFiles/CMakeTmp'
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_4c1f5/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_4c1f5.dir/build.make CMakeFiles/cmTC_4c1f5.dir/build
+gmake[1]: Entering directory '/home/jiancheng/GRAMS/GRAMS/GRAMS_2021/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_4c1f5.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=IceConnectionNumber -o CMakeFiles/cmTC_4c1f5.dir/CheckFunctionExists.c.o -c /usr/local/share/cmake-3.21/Modules/CheckFunctionExists.c
+Linking C executable cmTC_4c1f5
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4c1f5.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=IceConnectionNumber CMakeFiles/cmTC_4c1f5.dir/CheckFunctionExists.c.o -o cmTC_4c1f5  -lICE 
+gmake[1]: Leaving directory '/home/jiancheng/GRAMS/GRAMS/GRAMS_2021/build/CMakeFiles/CMakeTmp'
 
 
 

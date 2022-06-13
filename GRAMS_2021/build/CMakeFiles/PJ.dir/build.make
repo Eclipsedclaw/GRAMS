@@ -44,19 +44,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/cmake
+CMAKE_COMMAND = /usr/local/bin/cmake
 
 # The command to remove a file.
-RM = /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/cmake -E rm -f
+RM = /usr/local/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /mnt/sda1/jiancheng/GRAMS/GRAMS/GRAMS_2021
+CMAKE_SOURCE_DIR = /home/jiancheng/GRAMS/GRAMS/GRAMS_2021
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /mnt/sda1/jiancheng/GRAMS/GRAMS/GRAMS_2021/build
+CMAKE_BINARY_DIR = /home/jiancheng/GRAMS/GRAMS/GRAMS_2021/build
 
 # Utility rule file for PJ.
 
@@ -81,6 +81,6 @@ CMakeFiles/PJ.dir/clean:
 .PHONY : CMakeFiles/PJ.dir/clean
 
 CMakeFiles/PJ.dir/depend:
-	cd /mnt/sda1/jiancheng/GRAMS/GRAMS/GRAMS_2021/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /mnt/sda1/jiancheng/GRAMS/GRAMS/GRAMS_2021 /mnt/sda1/jiancheng/GRAMS/GRAMS/GRAMS_2021 /mnt/sda1/jiancheng/GRAMS/GRAMS/GRAMS_2021/build /mnt/sda1/jiancheng/GRAMS/GRAMS/GRAMS_2021/build /mnt/sda1/jiancheng/GRAMS/GRAMS/GRAMS_2021/build/CMakeFiles/PJ.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/jiancheng/GRAMS/GRAMS/GRAMS_2021/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/jiancheng/GRAMS/GRAMS/GRAMS_2021 /home/jiancheng/GRAMS/GRAMS/GRAMS_2021 /home/jiancheng/GRAMS/GRAMS/GRAMS_2021/build /home/jiancheng/GRAMS/GRAMS/GRAMS_2021/build /home/jiancheng/GRAMS/GRAMS/GRAMS_2021/build/CMakeFiles/PJ.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/PJ.dir/depend
 

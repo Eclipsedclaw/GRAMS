@@ -45,19 +45,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/cmake
+CMAKE_COMMAND = /usr/local/bin/cmake
 
 # The command to remove a file.
-RM = /mnt/sda1/jiancheng/anaconda3/envs/grams-devel/bin/cmake -E rm -f
+RM = /usr/local/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /mnt/sda1/jiancheng/GRAMS/GRAMS/GRAMS_2021
+CMAKE_SOURCE_DIR = /home/jiancheng/GRAMS/GRAMS/GRAMS_2021
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /mnt/sda1/jiancheng/GRAMS/GRAMS/GRAMS_2021/build
+CMAKE_BINARY_DIR = /home/jiancheng/GRAMS/GRAMS/GRAMS_2021/build
 
 #=============================================================================
 # Directory level rules for the build root directory
@@ -82,14 +82,14 @@ clean: CMakeFiles/GRAMS.dir/clean
 CMakeFiles/PJ.dir/all: CMakeFiles/GRAMS.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/PJ.dir/build.make CMakeFiles/PJ.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/PJ.dir/build.make CMakeFiles/PJ.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/sda1/jiancheng/GRAMS/GRAMS/GRAMS_2021/build/CMakeFiles --progress-num= "Built target PJ"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/jiancheng/GRAMS/GRAMS/GRAMS_2021/build/CMakeFiles --progress-num= "Built target PJ"
 .PHONY : CMakeFiles/PJ.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/PJ.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/sda1/jiancheng/GRAMS/GRAMS/GRAMS_2021/build/CMakeFiles 10
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/jiancheng/GRAMS/GRAMS/GRAMS_2021/build/CMakeFiles 10
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/PJ.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/sda1/jiancheng/GRAMS/GRAMS/GRAMS_2021/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/jiancheng/GRAMS/GRAMS/GRAMS_2021/build/CMakeFiles 0
 .PHONY : CMakeFiles/PJ.dir/rule
 
 # Convenience name for target.
@@ -108,14 +108,14 @@ CMakeFiles/PJ.dir/clean:
 CMakeFiles/GRAMS.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/GRAMS.dir/build.make CMakeFiles/GRAMS.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/GRAMS.dir/build.make CMakeFiles/GRAMS.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/sda1/jiancheng/GRAMS/GRAMS/GRAMS_2021/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10 "Built target GRAMS"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/jiancheng/GRAMS/GRAMS/GRAMS_2021/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10 "Built target GRAMS"
 .PHONY : CMakeFiles/GRAMS.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/GRAMS.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/sda1/jiancheng/GRAMS/GRAMS/GRAMS_2021/build/CMakeFiles 10
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/jiancheng/GRAMS/GRAMS/GRAMS_2021/build/CMakeFiles 10
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/GRAMS.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/sda1/jiancheng/GRAMS/GRAMS/GRAMS_2021/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/jiancheng/GRAMS/GRAMS/GRAMS_2021/build/CMakeFiles 0
 .PHONY : CMakeFiles/GRAMS.dir/rule
 
 # Convenience name for target.
