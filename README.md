@@ -3,16 +3,27 @@ For GRAMS simulation toy model.
 
 # Download GRAMS toy model
 First please use any method you like to download all of the files from this git repository. You could use git clone command if you already got a github account
-```ruby
+```bash
 git clone https://github.com/Eclipsedclaw/GRAMS.git
 ```
 
 If you don't have one, I strongly suggest you creat one. But at the same time you could directly click the code button on the top right and then download a zip file of it.
+
 <img width="416" alt="Screen Shot 2022-11-14 at 2 56 27 PM" src="https://user-images.githubusercontent.com/37788723/201753644-100a27ad-f98e-40bb-9f2a-8c2e1c9d1916.png">
 
 
 # Install GRAMS toy model
 
+first we need to make sure root and geant4 are properly working. Specificly for Aramaki Lab's ubuntu machine, you could use following command to activate root and geant4
+```bash
+source /opt/root/root_install/bin/thisroot.sh
+```
+
+```bash
+source /opt/geant4/geant4-11.0.3-install/bin/geant4.sh
+```
+
+go to local GRAMS toy model directory and we will install the model in build directory.
 
 ## Install anyenv/pyenv 
 > brew install pyenv
