@@ -52,110 +52,30 @@ cd build
 cmake ../
 make
 ```
-After these command you should see GRAMS successfully installed as showed below. If there is error, please check the error messege and contact me if you don't know how to fix it.
+After these commands you should see GRAMS successfully installed as showed below. If there is error, please check the error messege and contact me if you don't know how to fix it.
+
 <img width="468" alt="Screen Shot 2022-11-14 at 3 18 19 PM" src="https://user-images.githubusercontent.com/37788723/201757448-d12d6070-5822-418d-b84e-517f615f0731.png">
 
 
-## Install anyenv/pyenv 
-> brew install pyenv
-> 
-> echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.zshrc
-> 
-> echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.zshrC
-> 
-> echo -e 'if command -v pyenv 1>/dev/null 2>&1; then\n  eval "$(pyenv init --path)" \n  eval "$(pyenv init -)"\nfi' >> ~/.zshrc 
+# Run GRAMS toy model
+We use macro files to control the operation of the simulation such as choosing particle types and energy range. Check macro file [README.md](https://github.com/Eclipsedclaw/GRAMS/tree/main/macro) to see all the different options that you can change. Specificly there are geant4 library [GPS](https://geant4-userdoc.web.cern.ch/UsersGuides/ForApplicationDeveloper/html/GettingStarted/generalParticleSource.html) that you could use in the macro files to control the behavior of the input event, such as initial angle and generated location.
+And the normal simulation running command is to run command below in the source directory
+```bash
+build/GRAMS macro/"YOUR MACRO FILES"
+```
 
-## Install miniforge 
-> pyenv install miniforge** (most recent version)
-> 
-> pyenv global miniforge** (most recent version)
-
-## Install ROOT
-> conda install ROOT 
-
-## Install GEANT4 
-do not reinstall cmake when you finish set up geant4 which will cause error. 
-> brew install cmake qt5
-> 
-> sudo mkdir /opt/geant4
-> 
-> sudo chown your-username:staff /opt/geant4
-> 
-> cd /opt/geant4
-> 
-> mv ~/Downloads/geant4.10.07.p01.tar.gz .
-> 
-> tar zxvf geant4.10.07.p01.tar.gz
-> 
-> mkdir geant4.10.07.p01-build
-> 
-> cd geant4.10.07.p01-build
-> 
-> cmake -DCMAKE_INSTALL_PREFIX=/opt/geant4/geant4.10.07.p01-install -DGEANT4_INSTALL_DATA=ON -DGEANT4_USE_QT=OFF /opt/geant4/geant4.10.07.p01/
-> 
-> make -j8
-> 
-> make install
-> 
-> ln -s /opt/geant4/geant4.10.07.p01-install /opt/geant4/pro
-> 
-> echo 'cd /opt/geant4/pro/bin/' >> ~/.zshrc
-> 
-> echo 'source geant4.sh' >> ~/.zshrc
-> 
-> echo 'cd' >> ~/.zshrc
-
-## No need below if you didn’t turn on qt during the installation 
-> echo 'export PATH="/opt/homebrew/opt/qt5/bin:$PATH"' >> ~/.zshrc
-> 
-> echo 'export LDFLAGS="-L/opt/homebrew/opt/qt5/lib":$LDFLAGS' >> ~/.zshrc
-> 
-> echo 'export CPPFLAGS="-I/opt/homebrew/opt/qt5/include":$CPPFLAGS' >> ~/.zshrc
-> 
-> echo 'export PKG_CONFIG_PATH="/opt/homebrew/opt/qt5/lib/pkgconfig":$PKG_CONFIG_PATH' >> ~/.zshrc
-
-## Run example（not necessary）
-> mkdir g4work  
-> 
-> cd g4work
-> 
-> cp -r /opt/geant4/pro/share/Geant4-10.7.1/examples .
-> 
-> cd example/basic/B1
-> 
-> mkdir B1-build
-> 
-> cd B1-build
-> 
-> cmake ../B1
-> 
-> make
-> 
-> ./exampleB1
-
-## Run Original
-> cd Original/build
-> 
-> cmake ../
-> 
-> make
-> 
-> cd ..
-> 
-> build/Original macro/vis.mac
-
-## Visualization (see files in Teams/Labsetup). Download/Install Java8. Download and move HepRApp to /Application
-> echo 'alias HepRApp="java -jar /Applications/HepRApp.jar"' >> ~/.zshrc
-> 
-> HepRApp G4Data0.heprep
-
-## Install gerbv 
-> brew install gerbv
-> 
-> gerbv
-
- 
-
- 
-
- 
+## visulization
+There is a vis.mac file under macro directory, you could use this to generate heprep files. For default setting you could run
+```bash
+build/GRAMS macro/vis.mac
+```
+This will generate 2 heprep files, 0 usually just represents for empty geometry without any events. And to actually see the simulation visulization we need HepRApp. Run this command to link HepRapp to a simple format
+```bash
+echo 'alias HepRApp="java -jar /opt/HepRApp/HepRApp.jar"' >> ~/.bashrc
+source ~/.bashrc
+```
+Then you should be able to call HepRApp in the source folder by simply typing
+```bash
+HepRApp G4Data0.heprep
+```
+You should be able to see the UI interface of HepRApp. You could explore all the function of it!
