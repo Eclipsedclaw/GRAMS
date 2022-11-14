@@ -22,7 +22,16 @@ source /opt/root/root_install/bin/thisroot.sh
 ```bash
 source /opt/geant4/geant4-11.0.3-install/bin/geant4.sh
 ```
-
+## Saving time tips
+There are ways to prevent you from keeping typing same command every time. One way is to activate shell environment automatically when you open a new terminal. This will slow down the computational speed. But it's less concern if you don't have a long term plan. You could run these command to setup auto activation
+```bash
+echo 'cd /opt/geant4/geant4-11.0.3-install/bin/' >> ~/.bashrc
+echo 'source geant4.sh' >> ~/.bashrc
+echo 'cd /opt/root/root_install/bin/' >> ~/.bashrc
+echo 'source thisroot.sh' >> ~/.bashrc
+echo 'cd' >> ~/.bashrc
+>  
+```
 go to local GRAMS toy model directory and we will install the model in build directory.
 
 ## Install anyenv/pyenv 
