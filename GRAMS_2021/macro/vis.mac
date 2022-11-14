@@ -100,4 +100,4 @@
 # Specify zoom value:
 /vis/viewer/zoom 2.
 
-/run/beamOn 10
+/run/beamOn 200
