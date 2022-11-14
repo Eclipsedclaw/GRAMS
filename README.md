@@ -29,10 +29,32 @@ echo 'cd /opt/geant4/geant4-11.0.3-install/bin/' >> ~/.bashrc
 echo 'source geant4.sh' >> ~/.bashrc
 echo 'cd /opt/root/root_install/bin/' >> ~/.bashrc
 echo 'source thisroot.sh' >> ~/.bashrc
-echo 'cd' >> ~/.bashrc
->  
+echo 'cd' >> ~/.bashrc 
 ```
-go to local GRAMS toy model directory and we will install the model in build directory.
+
+You could also use bash_profile to keep track of the shell file directory. If you do this
+```bash
+echo 'export ROOTsh=/opt/root/root_install/bin/thisroot.sh' >> ~/.bash_profile
+echo 'export Geant4sh=/opt/geant4/geant4-11.0.3-install/bin/geant4.sh' >> ~/bash_profile
+source ~./bash_profile
+```
+You should be able to directly use string ROOTsh and Geant4sh to call the directory instead of typing them out everytime.
+```bash
+source $ROOTsh
+source $Geant4sh
+```
+You only need one of these two solutions. Please choose the one that you like better!
+
+## install toy model
+For the first time that you open the toy model or the first time after you change something in the src folder, you need to reinstall the toy model. Go to local GRAMS toy model directory and we will install the model in build directory.
+```bash
+cd build
+cmake ../
+make
+```
+After these command you should see GRAMS successfully installed as showed below. If there is error, please check the error messege and contact me if you don't know how to fix it.
+<img width="468" alt="Screen Shot 2022-11-14 at 3 18 19 PM" src="https://user-images.githubusercontent.com/37788723/201757448-d12d6070-5822-418d-b84e-517f615f0731.png">
+
 
 ## Install anyenv/pyenv 
 > brew install pyenv
