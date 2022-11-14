@@ -79,3 +79,4 @@ Then you should be able to call HepRApp in the source folder by simply typing
 HepRApp G4Data0.heprep
 ```
 You should be able to see the UI interface of HepRApp. You could explore all the function of it!
+<img width="1066" alt="Screen Shot 2022-11-14 at 3 35 26 PM" src="https://user-images.githubusercontent.com/37788723/201760546-78b86043-ee4a-42da-a051-f98b9c47b3fe.png">
