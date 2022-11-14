@@ -1,22 +1,15 @@
 # Geant-simulation
-For GRAMS simulation. This is the toy model case for MacOS. If on other platform, technically you just need python/root/geant4/qt/HepRApp.
+For GRAMS simulation toy model. 
+
+# Download GRAMS toy model
+First please use any method you like to download all of the files from this git repository. You could use git clone command if you already got a github account
+> git clone https://github.com/Eclipsedclaw/GRAMS.git
+If you don't have one, I strongly suggest you creat one. But at the same time you could directly click the code button on the top right and then download a zip file of it.
+<img width="416" alt="Screen Shot 2022-11-14 at 2 56 27 PM" src="https://user-images.githubusercontent.com/37788723/201753644-100a27ad-f98e-40bb-9f2a-8c2e1c9d1916.png">
 
 
-# All should be done in Terminal
-## Install XCode
-> xcode-select --install
+# Install GRAMS toy model
 
-
-## Install Homebrew
-> /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-> 
-> brew update
-> 
-> brew upgrade
-> 
-> echo 'alias brew="PATH=/opt/homebrew/bin brew"'
-> 
-> echo 'export PATH="/opt/homebrew/bin:$PATH"'
 
 ## Install anyenv/pyenv 
 > brew install pyenv
