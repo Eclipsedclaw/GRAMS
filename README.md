@@ -69,7 +69,7 @@ There is a vis.mac file under macro directory, you could use this to generate he
 ```bash
 build/GRAMS macro/vis.mac
 ```
-This will generate 2 heprep files, 0 usually just represents for empty geometry without any events. And to actually see the simulation visulization we need HepRApp. Run this command to link HepRapp to a simple format
+This will generate heprep files, G4data0 usually just represents for empty geometry without any events. And to actually see the simulation visulization we need HepRApp. Run this command to link HepRapp to a simple format
 ```bash
 echo 'alias HepRApp="java -jar /opt/HepRApp/HepRApp.jar"' >> ~/.bashrc
 source ~/.bashrc
