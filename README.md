@@ -48,6 +48,7 @@ You only need one of these two solutions. Please choose the one that you like be
 ## install toy model
 For the first time that you open the toy model or the first time after you change something in the src folder, you need to reinstall the toy model. Go to local GRAMS toy model directory and we will install the model in build directory.
 ```bash
+mkdir build
 cd build
 cmake ../
 make
