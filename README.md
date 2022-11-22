@@ -32,11 +32,11 @@ echo 'source thisroot.sh' >> ~/.bashrc
 echo 'cd' >> ~/.bashrc 
 ```
 
-You could also use bash_profile to keep track of the shell file directory. If you do this
+You could also use .profile to keep track of the shell file directory. If you do this
 ```bash
-echo 'export ROOTsh=/opt/root/root_install/bin/thisroot.sh' >> ~/.bash_profile
-echo 'export Geant4sh=/opt/geant4/geant4-11.0.3-install/bin/geant4.sh' >> ~/bash_profile
-source ~./bash_profile
+echo 'export ROOTsh=/opt/root/root_install/bin/thisroot.sh' >> ~/.profile
+echo 'export Geant4sh=/opt/geant4/geant4-11.0.3-install/bin/geant4.sh' >> ~/.profile
+source ~/.profile
 ```
 You should be able to directly use string ROOTsh and Geant4sh to call the directory instead of typing them out everytime.
 ```bash
