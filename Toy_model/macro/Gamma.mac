@@ -1,0 +1,162 @@
+# Macro file for "GRAMS.cc"
+# @author Tsuguo Aramaki
+# @date 2015 March 23
+
+/Visualization 0
+/CheckOverlap 1
+/DetectorType 2
+/OutputType 0
+/OutputFormat 0
+/TrackType 3
+/TrackEdep 1
+/StopEvent 0
+
+/NbOfLArLayer 1
+/NbOfLXeLayer 1
+/NbOfCellL 1
+/NbOfLArCellZ 1
+/NbOfLXeCellZ 1
+
+/Atmos_Z 0.0 cm
+/LArTPC_Z 20.0 cm
+/LXeTPC_Z 0.0 cm
+/TPC_L 140.0 cm
+/TPC_space 40.0 cm
+/TOFin_Z 0.5 cm
+/TOFout_Z 0.5 cm
+/TOFout_L 360. cm
+#/TOFout_H 200. cm
+/TOFout_Angle 90. deg
+/Gondola_Angle 0. deg
+
+/ParticleSource 1
+/gps/pos/type Plane
+/gps/pos/shape Square
+/gps/pos/centre 0. 0. 300. cm
+/gps/pos/halfx 100. cm
+/gps/pos/halfy 100. cm
+/gps/ang/type iso
+/gps/ang/mintheta 0.0 deg
+/gps/ang/maxtheta 0.0 deg
+/gps/ang/minphi 0. deg
+/gps/ang/maxphi 0. deg
+/gps/particle gamma
+/gps/ene/type Pow
+/gps/ene/min 0.1 MeV
+/gps/ene/max 0.1 MeV
+/gps/ene/alpha 0.
+
+/OutputDirectory output/Gamma/140cm_20cm/1000000
+
+/gps/ene/min 0.1 MeV
+/gps/ene/max 0.1 MeV
+/Gondola_Angle 0. deg
+/OutputFile Gamma_0.1MeV_0deg
+/update
+/run/beamOn 1000000
+/Gondola_Angle 45. deg
+/OutputFile Gamma_0.1MeV_45deg
+/update
+/run/beamOn 1000000
+
+/gps/ene/min 0.2 MeV
+/gps/ene/max 0.2 MeV
+/Gondola_Angle 0. deg
+/OutputFile Gamma_0.2MeV_0deg
+/update
+/run/beamOn 1000000
+/Gondola_Angle 45. deg
+/OutputFile Gamma_0.2MeV_45deg
+/update
+/run/beamOn 1000000
+
+/gps/ene/min 0.5 MeV
+/gps/ene/max 0.5 MeV
+/Gondola_Angle 0. deg
+/OutputFile Gamma_0.5MeV_0deg
+/update
+/run/beamOn 1000000
+/Gondola_Angle 45. deg
+/OutputFile Gamma_0.5MeV_45deg
+/update
+/run/beamOn 1000000
+
+/gps/ene/min 1. MeV
+/gps/ene/max 1. MeV
+/Gondola_Angle 0. deg
+/OutputFile Gamma_1MeV_0deg
+/update
+/run/beamOn 1000000
+/Gondola_Angle 45. deg
+/OutputFile Gamma_1MeV_45deg
+/update
+/run/beamOn 1000000
+
+/gps/ene/min 2. MeV
+/gps/ene/max 2. MeV
+/Gondola_Angle 0. deg
+/OutputFile Gamma_2MeV_0deg
+/update
+/run/beamOn 1000000
+/Gondola_Angle 45. deg
+/OutputFile Gamma_2MeV_45deg
+/update
+/run/beamOn 1000000
+
+/gps/ene/min 5. MeV
+/gps/ene/max 5. MeV
+/Gondola_Angle 0. deg
+/OutputFile Gamma_5MeV_0deg
+/update
+/run/beamOn 1000000
+/Gondola_Angle 45. deg
+/OutputFile Gamma_5MeV_45deg
+/update
+/run/beamOn 1000000
+
+/gps/ene/min 10. MeV
+/gps/ene/max 10. MeV
+/Gondola_Angle 0. deg
+/OutputFile Gamma_10MeV_0deg
+/update
+/run/beamOn 1000000
+/Gondola_Angle 45. deg
+/OutputFile Gamma_10MeV_45deg
+/update
+/run/beamOn 1000000
+
+/gps/ene/min 20. MeV
+/gps/ene/max 20. MeV
+/Gondola_Angle 0. deg
+/OutputFile Gamma_20MeV_0deg
+/update
+/run/beamOn 1000000
+/Gondola_Angle 45. deg
+/OutputFile Gamma_20MeV_45deg
+/update
+/run/beamOn 1000000
+
+/gps/ene/min 50. MeV
+/gps/ene/max 50. MeV
+/Gondola_Angle 0. deg
+/OutputFile Gamma_50MeV_0deg
+/update
+/run/beamOn 1000000
+/Gondola_Angle 45. deg
+/OutputFile Gamma_50MeV_45deg
+/update
+/run/beamOn 1000000
+
+/gps/ene/min 100. MeV
+/gps/ene/max 100. MeV
+/Gondola_Angle 0. deg
+/OutputFile Gamma_100MeV_0deg
+/update
+/run/beamOn 1000000
+/Gondola_Angle 45. deg
+/OutputFile Gamma_100MeV_45deg
+/update
+/run/beamOn 1000000
+
+
+

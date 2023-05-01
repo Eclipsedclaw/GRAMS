@@ -1,0 +1,109 @@
+# Macro file for "GRAMS.cc"
+# @author Tsuguo Aramaki
+# @date 2015 March 23
+
+/Visualization 0
+/CheckOverlap 1
+/SimulationType 2
+/OutputType 0
+/OutputFormat 0
+/TrackType 3
+/TrackEdep 1
+/StopEvent 0
+
+/DetectorType 1
+/NbOfLArLayer 1
+/NbOfLXeLayer 1
+/NbOfCellL 1
+/NbOfLArCellZ 1
+/NbOfLXeCellZ 1
+
+/Atmos_Z 0.0 cm
+/LArTPC_Z 20.0 cm
+/LXeTPC_Z 0.0 cm
+/TPC_L 100.0 cm
+/TPC_space 0.0 cm
+/TOFin_Z 0.5 cm
+/TOFout_Z 0.5 cm
+/TOFout_L 360. cm
+#/TOFout_H 200. cm
+/TOFout_Angle 90. deg
+/Gondola_Angle 0. deg
+
+/ParticleSource 1
+/OutputDirectory output
+
+/gps/pos/type Plane
+/gps/pos/shape Square
+/gps/pos/centre 0. 0. 300. cm
+/gps/pos/halfx 100. cm
+/gps/pos/halfy 100. cm
+
+/gps/ang/type iso
+/gps/ang/mintheta 0.0 deg
+/gps/ang/maxtheta 0.0 deg
+/gps/ang/minphi 0. deg
+/gps/ang/maxphi 0. deg
+
+/gps/particle gamma
+/gps/ene/type Pow
+/gps/ene/min 0.1 MeV
+/gps/ene/max 0.1 MeV
+/gps/ene/alpha 0.
+
+
+/OutputDirectory output/angle
+
+/gps/ene/min 0.01 MeV
+/gps/ene/max 0.01 MeV
+
+/Gondola_Angle 0. deg
+/OutputFile Gamma_0.01MeV_0deg
+/update
+/run/beamOn 100000
+
+/Gondola_Angle 45. deg
+/OutputFile Gamma_0.01MeV_45deg
+/update
+/run/beamOn 100000
+
+/Gondola_Angle 90. deg
+/OutputFile Gamma_0.01MeV_90deg
+/update
+/run/beamOn 100000
+
+/gps/ene/min 0.02 MeV
+/gps/ene/max 0.02 MeV
+
+/Gondola_Angle 0. deg
+/OutputFile Gamma_0.02MeV_0deg
+/update
+/run/beamOn 100000
+
+/Gondola_Angle 45. deg
+/OutputFile Gamma_0.02MeV_45deg
+/update
+/run/beamOn 100000
+
+/Gondola_Angle 90. deg
+/OutputFile Gamma_0.02MeV_90deg
+/update
+/run/beamOn 100000
+
+/gps/ene/min 0.05 MeV
+/gps/ene/max 0.05 MeV
+
+/Gondola_Angle 0. deg
+/OutputFile Gamma_0.05MeV_0deg
+/update
+/run/beamOn 100000
+
+/Gondola_Angle 45. deg
+/OutputFile Gamma_0.05MeV_45deg
+/update
+/run/beamOn 100000
+
+/Gondola_Angle 90. deg
+/OutputFile Gamma_0.05MeV_90deg
+/update
+/run/beamOn 100000
