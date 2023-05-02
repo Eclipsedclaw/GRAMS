@@ -2,30 +2,30 @@
 # @author Jiancheng Zeng
 # @date 2021 Sep 9
 
-/Visualization 1
+/Visualization 0
 /CheckOverlap 1
 /DetectorType 1
 /OutputType 0
 /OutputFormat 0
-/TrackType 3
+/TrackType 1
 /TrackEdep 1
-/StopEvent 0
+/StopEvent 2
 
 # HepRepFile diriver
-/vis/open HepRepFile
+#/vis/open HepRepFile
 
 # Add world volume
-/vis/drawVolume
+#/vis/drawVolume
 
 # Visualise geometry
-/vis/viewer/flush
+#/vis/viewer/flush
 
 
 # Add trajectories to the visualization.
-/vis/scene/add/trajectories
+#/vis/scene/add/trajectories
 
 # Add hits to scene
-/vis/scene/add/hits
+#/vis/scene/add/hits
 
 # Accumulate multiple events in one picture.
 #/vis/scene/endOfEventAction accumulate
@@ -37,9 +37,9 @@
 /NbOfLXeCellZ 1
 
 /Atmos_Z 0.0 cm
-/LArTPC_Z 20.0 cm
+/LArTPC_Z 9.821 cm
 /LXeTPC_Z 0.0 cm
-/TPC_L 140.0 cm
+/TPC_L 200.0 cm
 /TPC_space 40.0 cm
 /TOFin_Z 0.5 cm
 /TOFout_Z 0.5 cm
@@ -50,26 +50,101 @@
 
 /ParticleSource 1
 /gps/particle anti_deuteron
-/gps/ene/type Gauss
-/gps/ene/mono 130.0 MeV
-/gps/ene/min 20.0 MeV
-/gps/ene/max 500.0 MeV
-/gps/ene/sigma 250.0 MeV
+/gps/ene/type Lin
+/gps/ene/min 0.1 MeV
+/gps/ene/max 1000.0 MeV
+/gps/ene/intercept 1
 /gps/pos/type Plane
 /gps/pos/shape Square
 /gps/pos/centre 0.0 0.0 200.0 cm
 /gps/pos/halfx 10.0 m
 /gps/pos/halfy 10.0 m
-/gps/ang/type usr
-/gps/ang/user_coor
-#/gps/ang/mintheta
-#/gps/ang/maxtheta
+/gps/ang/type iso
+/gps/ang/mintheta 0.0 deg
+/gps/ang/maxtheta 90.0 deg	
 #/gps/ang/minphi
 #/gps/ang/minphi
-
-/OutputDirectory output
-
 /Gondola_Angle 0. deg
-/OutputFile Anti_Deuteron_260MeV_0deg
+
+/OutputDirectory output/2023/
+/OutputFile GRASP_anti_deuteron_1e8_200cm
 /update
-/run/beamOn 10
+/run/beamOn 10000000
+
+/OutputFile GRASP_anti_deuteron_1e8_180cm
+/LArTPC_Z 12.125 cm
+/TPC_L 180.0 cm
+/update
+/run/beamOn 10000000
+
+/OutputFile GRASP_anti_deuteron_1e8_160cm
+/LArTPC_Z 15.346 cm          
+/TPC_L 160.0 cm 
+/update           
+/run/beamOn 10000000
+
+/OutputFile GRASP_anti_deuteron_1e8_140cm
+/LArTPC_Z 20.044 cm          
+/TPC_L 140.0 cm 
+/update           
+/run/beamOn 10000000
+
+/OutputFile GRASP_anti_deuteron_1e7_120cm
+/LArTPC_Z 27.282 cm          
+/TPC_L 120.0 cm 
+/update           
+/run/beamOn 10000000 
+
+/OutputFile GRASP_anti_deuteron_1e7_100cm
+/LArTPC_Z 39.286 cm          
+/TPC_L 100.0 cm 
+/update           
+/run/beamOn 10000000 
+
+/OutputFile GRASP_anti_deuteron_1e7_73cm
+/LArTPC_Z 73.72 cm          
+/TPC_L 73.0 cm 
+/update           
+/run/beamOn 10000000 
+
+/OutputFile GRASP_anti_deuteron_1e8_200cm
+/LArTPC_Z 9.821 cm
+/TPC_L 200.0 cm
+/update
+/run/beamOn 100000000
+
+/OutputFile GRASP_anti_deuteron_1e8_180cm
+/LArTPC_Z 12.125 cm
+/TPC_L 180.0 cm
+/update
+/run/beamOn 100000000
+
+/OutputFile GRASP_anti_deuteron_1e8_160cm
+/LArTPC_Z 15.346 cm
+/TPC_L 160.0 cm
+/update
+/run/beamOn 100000000
+
+/OutputFile GRASP_anti_deuteron_1e8_140cm
+/LArTPC_Z 20.044 cm
+/TPC_L 140.0 cm
+/update
+/run/beamOn 100000000
+
+/OutputFile GRASP_anti_deuteron_1e7_120cm
+/LArTPC_Z 27.282 cm
+/TPC_L 120.0 cm
+/update
+/run/beamOn 100000000
+
+/OutputFile GRASP_anti_deuteron_1e7_100cm
+/LArTPC_Z 39.286 cm
+/TPC_L 100.0 cm
+/update
+/run/beamOn 100000000
+
+/OutputFile GRASP_anti_deuteron_1e7_73cm
+/LArTPC_Z 73.72 cm
+/TPC_L 73.0 cm
+/update
+/run/beamOn 100000000
