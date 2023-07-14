@@ -1,6 +1,8 @@
 # Geant-simulation
 For GRAMS simulation toy model. 
 
+# Get the newest version
+
 # Download GRAMS toy model
 First please use any method you like to download all of the files from this git repository. You could use git clone command if you already got a github account
 ```bash
