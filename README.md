@@ -2,7 +2,7 @@
 For GRAMS simulation toy model. If you are going through this the first time, please navigate to section **Download GRAMS toy model**.
 
 # Get the newest version
-If you want to follow the newest version of this software that has the development feature and analysis code by others, you could do code below in your source file(where you downloaded this software from github)
+If you want to follow the newest version of this software that has the development feature and analysis code by others, you could type codes below in your source directory(where you downloaded this software from github)
 ```bash
 git pull
 cd ../toymodel_work
