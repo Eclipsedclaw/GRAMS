@@ -4,10 +4,17 @@ import time
 import math
 import matplotlib.pyplot as plt
 
+
+
+
+
 # this function calculate distance in 3D space
 def calculate_distance(x1, y1, z1, x2, y2, z2):
     distance = math.hypot(math.hypot(x2 - x1, y2 - y1), z2 - z1)
     return distance
+
+
+
 
 
 # This function reads toy model data and reconstruct it in a more user friendly format. 
@@ -37,7 +44,7 @@ def read_data_from_toymodel(file_path):
             data_3d[group_name] = group_data.values
         
         print("Toy Model data imported\nFound " + str(len(list(data_3d.keys()))) + " Events!")
-        
+
         # Clear the data buffer
         df = None
         
@@ -50,6 +57,10 @@ def read_data_from_toymodel(file_path):
         return None
 
 
+    
+    
+    
+    
 # This function doing GRASP analysis
 def Analyze_GRASP(data_3d, particle_ID, stop_event=False, in_flight_event=False):
     
@@ -65,7 +76,10 @@ def Analyze_GRASP(data_3d, particle_ID, stop_event=False, in_flight_event=False)
     
     for i in range(len(Event_list)):
         # general condition that all the events has to match, here shows the last point is inside Liquid Argon
-        condition = data_3d[Event_list[i]][data_3d[Event_list[i]][:, 8] == np.min(data_3d[Event_list[i]][:, 8])][0, 6] == 'LAr' 
+        # currently not working properly, please fix this in the future
+        # condition = data_3d[Event_list[i]][data_3d[Event_list[i]][:, 8] == np.min(data_3d[Event_list[i]][:, 8])][0, 6] == 'LAr' 
+        condition = True
+        
         # conditions for stop events, here shows last point has 0 energy left and 0 energy deposit
         condition_stop = np.min(data_3d[Event_list[i]][:, 8]) == 0 and np.min(data_3d[Event_list[i]][:, 9]) == 0 and stop_event
         # conditions for in flight annihilation events, here shows last point has energy larger than 0
@@ -80,6 +94,8 @@ def Analyze_GRASP(data_3d, particle_ID, stop_event=False, in_flight_event=False)
     
     # return two things, first one is the inital energy array and second one is the number of the event generated.
     return np.array(Init_Energy), Event_list[len(Event_list)-1]
+
+
 
 
 # This function analyze distance traveled inside LAr
@@ -125,6 +141,10 @@ def Analyze_trace(data_3d, particle_ID, stop_event=False, in_flight_event=False)
     return np.array(Init_Energy), np.array(Depth), np.array(Distance)
 
 
+
+
+
+
 # This function is for analyzing TOF and angle of the trace
 # Need update!
 def Analyze_TOF(data_3d, particle_ID, stop_event=False):
@@ -157,6 +177,48 @@ def Analyze_TOF(data_3d, particle_ID, stop_event=False):
     return Result_Vector, Event_list[len(Event_list)-1]
 
 
+
+
+# This function doing primary daughter particles analysis including energy and directions
+def Analyze_daughter(data_3d, particle_ID, stop_event=False, in_flight_event=False):
+    
+    # This is the event number in the raw data
+    Event_list = list(data_3d.keys())
+    
+    # Construct a empty vector for initial e energy store
+    Init_Energy = []
+    
+    # Construct a empty vector for angle of the primary daughter particles
+    Primary_Angle = []
+    
+    # Construct a empty vector for angle change of the primary daughter particles
+    Scatter_Angle = []
+    
+    # Construct a empty vector for 
+    
+    
+    for i in range(len(Event_list)):
+        # general condition that all the events has to match, here shows the last point is inside Liquid Argon
+        condition = data_3d[Event_list[i]][data_3d[Event_list[i]][:, 8] == np.min(data_3d[Event_list[i]][:, 8])][0, 6] == 'LAr' 
+        # conditions for stop events, here shows last point has 0 energy left and 0 energy deposit
+        condition_stop = np.min(data_3d[Event_list[i]][:, 8]) == 0 and np.min(data_3d[Event_list[i]][:, 9]) == 0 and stop_event
+        # conditions for in flight annihilation events, here shows last point has energy larger than 0
+        condition_in_flight = np.min(data_3d[Event_list[i]][:, 8]) != 0 and in_flight_event
+        
+        if(condition_stop or condition_in_flight and condition):
+            N_stop_event = N_stop_event + 1
+            Init_Energy.append(data_3d[Event_list[i]][0, 8])
+        print("Now processing (" + str(i) + "/" + str(len(Event_list))+")",  end='\r')
+    print("\n We got " + str(N_stop_event) + " events selected")
+    print("Last event is "+ str(Event_list[len(Event_list)-1]))
+    
+    # return two things, first one is the inital energy array and second one is the number of the event generated.
+    return np.array(Init_Energy), Event_list[len(Event_list)-1]
+
+
+
+
+
 # This function is for plotting the histgram of GRASP
 def GRASP_hist(GRASP_vector, particle_ID, label, total_event, energy_min, energy_max, num_bins, ax=None):
     if ax is None:
@@ -182,6 +244,10 @@ def GRASP_hist(GRASP_vector, particle_ID, label, total_event, energy_min, energy
     ax.grid(alpha=0.2)
     ax.set_title('GRASP (Geometric Acceptance)')
     return ax
+
+
+
+
 
 
 #This function is for identify particles in geant4 including particle ID and Z numbers etc
