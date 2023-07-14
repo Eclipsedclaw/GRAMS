@@ -26,16 +26,37 @@ source /opt/geant4/geant4-11.0.3-install/bin/geant4.sh
 There are ways to prevent you from typing same commands every time. One way is to activate shell environment automatically when you open a new terminal. This will slow down the speed and potentially have some unknown shell conflict issues. But it's less concern if you don't have a long term plan. You could run these command to setup auto activation
 ```bash
 echo 'cd /opt/geant4/geant4-11.0.3-install/bin/' >> ~/.bashrc
+```
+```bash
 echo 'source geant4.sh' >> ~/.bashrc
+```
+
+```bash
 echo 'cd /opt/root/root_install/bin/' >> ~/.bashrc
+```
+
+```bash
 echo 'source thisroot.sh' >> ~/.bashrc
+```
+
+```bash
 echo 'cd' >> ~/.bashrc 
+```
+
+```bash
+source ~/.bashrc
 ```
 
 You could also use .profile to keep track of the shell file directory. If you do this
 ```bash
 echo 'export ROOTsh=/opt/root/root_install/bin/thisroot.sh' >> ~/.profile
+```
+
+```bash
 echo 'export Geant4sh=/opt/geant4/geant4-11.0.3-install/bin/geant4.sh' >> ~/.profile
+```
+
+```bash
 source ~/.profile
 ```
 You should be able to directly use string ROOTsh and Geant4sh to call the directory instead of typing them out everytime.
