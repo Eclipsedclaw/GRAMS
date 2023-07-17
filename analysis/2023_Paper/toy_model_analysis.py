@@ -20,10 +20,33 @@ def calculate_angle(px1, py1, pz1, px2, py2, pz2):
 
     dot_product = np.dot(vector1, vector2)
     norm_product = np.linalg.norm(vector1) * np.linalg.norm(vector2)
+    
+    if norm_product == 0:
+        return np.nan
+    
     cosine_angle = dot_product / norm_product
     angle_rad = np.arccos(cosine_angle)
     angle_deg = np.degrees(angle_rad)
     return angle_deg
+
+# this function calculate angle based on location
+def calculate_angle_location(x1, y1, z1, x2, y2, z2, x, y, z, px1, py1, pz1):
+    vector1 = np.array([x2 - x1, y2 - y1, z2 - z1])
+    vector2 = np.array([x, y, z])
+
+    dot_product = np.dot(vector1, vector2)
+    norm_product = np.linalg.norm(vector1) * np.linalg.norm(vector2)
+
+    if norm_product == 0:
+        angle_deg = calculate_angle(px1, py1, pz1, x, y, x)
+        return angle_deg
+
+    cosine_angle = dot_product / norm_product
+    angle_rad = np.arccos(cosine_angle)
+    angle_deg = np.degrees(angle_rad)
+
+    return angle_deg
+
 
 # this function checks if a new element is already exist in the original list or not
 def check_value(value, value_list):
@@ -31,6 +54,21 @@ def check_value(value, value_list):
         if item == value:
             return True
     return False
+
+# this function makes a process bar for the analysis progress
+def display_progress_bar(i, N, bar_length=50):
+    progress = i / N
+    num_bar_filled = int(progress * bar_length)
+    num_bar_empty = bar_length - num_bar_filled
+
+    bar = '[' + '#' * num_bar_filled + ' ' * num_bar_empty + ']'
+    percentage = progress * 100
+
+    # Color the percentage in red
+    percentage_text = f'\033[91m{percentage:.2f}%\033[0m'
+
+    print(f'\r{bar} {percentage_text} {i}/{N}', end='')
+
 
 # This function reads toy model data and reconstruct it in a more user friendly format. 
 # After this, each event will have their own data structire
@@ -103,7 +141,7 @@ def Analyze_GRASP(data_3d, particle_ID, stop_event=False, in_flight_event=False)
         if(condition_stop or condition_in_flight and condition):
             N_stop_event = N_stop_event + 1
             Init_Energy.append(data_3d[Event_list[i]][0, 8])
-        print("Now processing (" + str(i) + "/" + str(len(Event_list))+")",  end='\r')
+        display_progress_bar(i+1, len(Event_list))
     print("\n We got " + str(N_stop_event) + " events selected")
     print("Last event is "+ str(Event_list[len(Event_list)-1]))
     
@@ -148,7 +186,7 @@ def Analyze_trace(data_3d, particle_ID, stop_event=False, in_flight_event=False)
             Distance.append(calculate_distance(x1, y1, z1, x2, y2, z2))
             Depth.append(z2-z1)
             Init_Energy.append(data_3d[Event_list[i]][0, 8])
-        print("Now processing (" + str(i) + "/" + str(len(Event_list))+")",  end='\r')
+        display_progress_bar(i+1, len(Event_list))
     print("\n We got " + str(len(Depth)) + " events selected")
     print("Last event is "+ str(Event_list[len(Event_list)-1]))
     
@@ -185,7 +223,8 @@ def Analyze_TOF(data_3d, particle_ID, stop_event=False):
         if(Energy_in != 0 and Energy_out != 0 and condition):
             TOF_out_E.append(Energy_out)
             TOF_in_E.append(Energy_in)
-        print("Now processing (" + str(i) + "/" + str(len(Event_list))+")",  end='\r')
+        display_progress_bar(i+1, len(Event_list))
+        display_progress_bar(i+1, len(Event_list))
     Result_Vector = np.array([TOF_out_E, TOF_in_E])
     print("\n")
     print("number of events is:"+str(Event_list[len(Event_list)-1]))
@@ -215,6 +254,9 @@ def Analyze_daughter(data_3d, particle_ID, stop_event=False, in_flight_event=Fal
     # This is the event number in the raw data
     Event_list = list(data_3d.keys())
     
+    # Define result vector based on the property of the daughter particles
+    Result_vector = daughters(len(Event_list), 2)
+        
     # Construct an empty vector for initial primary particle energy store
     Init_Energy = []
     
@@ -230,36 +272,28 @@ def Analyze_daughter(data_3d, particle_ID, stop_event=False, in_flight_event=Fal
     # Construct an empty vector for time difference in the outer and inner TOF
     Delta_T = []
     
-    # Construct an empty vector for daughter particle ID
-    Daughter_ID = []
-    
-    # Construct an empty vector for initial daughter particle energy store
-    Daughter_Energy = []
-    
-    # Construct an empty vector for angle of the daughter particles
-    Daughter_Angle = []
-    
-    # Construct an empty vector for angle change of the primary daughter particles
-    Angle_Change = []
-    
-    # Construct an empty vector for distance traveled inside LAr
-    Distance_Traveled = []
-    
-    # Define result vector based on the property of the daughter particles
-    Result_vector = daughters(len(Event_list), 2)
-    
     for i in range(len(Event_list)):
+        
+        # Construct an empty vector for daughter particle ID
+        Daughter_ID = []
+    
+        # Construct an empty vector for initial daughter particle energy store
+        Daughter_Energy = []
+        
+        # Construct an empty vector for angle of the daughter particles
+        Daughter_Angle = []
+    
+        # Construct an empty vector for angle change of the primary daughter particles
+        Angle_Change = []
+    
+        # Construct an empty vector for distance traveled inside LAr
+        Distance_Traveled = []
+        
         Energy_out = 0
         Energy_in = 0
         Time_out = 0
         Time_in = 0
-        daughter_ID = []
-        daughter_energy = []
-        daughter_angle = []
-        angle_change = []
-        distance_traveled = []
-        
-        
+
         data_track = []
         track_ID = []
         # Name each data group with track ID
@@ -274,6 +308,26 @@ def Analyze_daughter(data_3d, particle_ID, stop_event=False, in_flight_event=Fal
             data_temp[group_name] = group_data.values
         track_ID = list(data_temp.keys())
 
+        # general condition that all the events has to match, here shows the last point is inside Liquid Argon
+        # currently not working properly, please fix this in the future
+        # condition = data_3d[Event_list[i]][data_3d[Event_list[i]][:, 8] == np.min(data_3d[Event_list[i]][:, 8])][0, 6] == 'LAr' 
+        condition = True
+        
+        # conditions for stop events, here shows last point has 0 energy left and 0 energy deposit
+        condition_stop = True
+        # condition_stop = np.min(data_3d[Event_list[i]][:, 8]) == 0 and np.min(data_3d[Event_list[i]][:, 9]) == 0 and stop_event
+        # conditions for in flight annihilation events, here shows last point has energy larger than 0
+        condition_in_flight = True
+        # condition_in_flight = np.min(data_3d[Event_list[i]][:, 8]) != 0 and in_flight_event
+        
+        # these are conditions for GRASP, need to update
+        # general condition that all the events has to match, here shows the last point is inside Liquid Argon
+        #condition = data_3d[Event_list[i]][data_3d[Event_list[i]][:, 8] == np.min(data_3d[Event_list[i]][:, 8])][0, 6] == 'LAr' and Energy_in != 0 and Energy_out != 0
+        # conditions for stop events, here shows last point has 0 energy left and 0 energy deposit
+        #condition_stop = np.min(data_3d[Event_list[i]][:, 8]) == 0 and np.min(data_3d[Event_list[i]][:, 9]) == 0 and stop_event
+        # conditions for in flight annihilation events, here shows last point has energy larger than 0
+        #condition_in_flight = np.min(data_3d[Event_list[i]][:, 8]) != 0 and in_flight_event
+        
         # Need to optimize this in the future
         for j in range(len(track_ID)):
             if(list(data_temp.keys())[j] == 1):
@@ -287,28 +341,18 @@ def Analyze_daughter(data_3d, particle_ID, stop_event=False, in_flight_event=Fal
                         if(Time_in == 0):
                             Time_in = data_temp[track_ID[j]][k, 7]
             else:
-                daughter_ID.append(data_temp[track_ID[j]][0, 3])
-                daughter_energy.append(max(data_temp[track_ID[j]][:, 8]))
-                #daughter_angle.append(calculate_angle(data_temp[track_ID[j]][0, 12], data_temp[track_ID[j]][0, 13], data_temp[track_ID[j]][0, 14], 0, 0, -1))
-                angle_change.append(calculate_angle(data_3d[Event_list[i]][0, 12], data_3d[Event_list[i]][0, 13], data_3d[Event_list[i]][0, 14], data_temp[track_ID[j]][0, 12], data_temp[track_ID[j]][0, 13], data_temp[track_ID[j]][0, 14]))
-                distance_traveled.append(calculate_distance(data_temp[track_ID[j]][0, 16], data_temp[track_ID[j]][0, 17], data_temp[track_ID[j]][0, 18], data_temp[track_ID[j]][len(data_temp[track_ID[j]][:, 1])-1, 16], data_temp[track_ID[j]][len(data_temp[track_ID[j]][:, 1])-1, 17], data_temp[track_ID[j]][len(data_temp[track_ID[j]][:, 1])-1, 18]))
-            
-        # general condition that all the events has to match, here shows the last point is inside Liquid Argon
-        # currently not working properly, please fix this in the future
-        # condition = data_3d[Event_list[i]][data_3d[Event_list[i]][:, 8] == np.min(data_3d[Event_list[i]][:, 8])][0, 6] == 'LAr' 
-        condition = True
-        
-        # conditions for stop events, here shows last point has 0 energy left and 0 energy deposit
-        condition_stop = np.min(data_3d[Event_list[i]][:, 8]) == 0 and np.min(data_3d[Event_list[i]][:, 9]) == 0 and stop_event
-        # conditions for in flight annihilation events, here shows last point has energy larger than 0
-        condition_in_flight = np.min(data_3d[Event_list[i]][:, 8]) != 0 and in_flight_event
-        
-        # general condition that all the events has to match, here shows the last point is inside Liquid Argon
-        condition = data_3d[Event_list[i]][data_3d[Event_list[i]][:, 8] == np.min(data_3d[Event_list[i]][:, 8])][0, 6] == 'LAr' and Energy_in != 0 and Energy_out != 0
-        # conditions for stop events, here shows last point has 0 energy left and 0 energy deposit
-        condition_stop = np.min(data_3d[Event_list[i]][:, 8]) == 0 and np.min(data_3d[Event_list[i]][:, 9]) == 0 and stop_event
-        # conditions for in flight annihilation events, here shows last point has energy larger than 0
-        condition_in_flight = np.min(data_3d[Event_list[i]][:, 8]) != 0 and in_flight_event
+                Daughter_ID.append(data_temp[track_ID[j]][0, 3])
+                Daughter_Energy.append(max(data_temp[track_ID[j]][:, 8]))
+                
+                # this is for checking angle bug
+                #if(np.linalg.norm(np.array([data_temp[track_ID[j]][0, 12], data_temp[track_ID[j]][0, 13], data_temp[track_ID[j]][0, 14]]))==0):
+                    #print("Event " + str(Event_list[i]) + ", Track " + str(track_ID[j]))
+                
+                Daughter_Angle.append(calculate_angle_location(data_temp[track_ID[0]][len(data_temp[track_ID[0]])-1, 16], data_temp[track_ID[0]][len(data_temp[track_ID[0]])-1, 17], data_temp[track_ID[0]][len(data_temp[track_ID[0]])-1, 18], data_temp[track_ID[j]][len(data_temp[track_ID[j]][:, 1])-1, 16], data_temp[track_ID[j]][len(data_temp[track_ID[j]][:, 1])-1, 17], data_temp[track_ID[j]][len(data_temp[track_ID[j]][:, 1])-1, 18], 0, 0, -1, data_temp[track_ID[j]][len(data_temp[track_ID[j]][:, 1])-1, 12], data_temp[track_ID[j]][len(data_temp[track_ID[j]][:, 1])-1, 13], data_temp[track_ID[j]][len(data_temp[track_ID[j]][:, 1])-1, 14]))
+                #Daughter_Angle.append(i)
+                #Angle_Change.append(calculate_angle(data_3d[Event_list[i]][0, 12], data_3d[Event_list[i]][0, 13], data_3d[Event_list[i]][0, 14], data_temp[track_ID[j]][0, 12], data_temp[track_ID[j]][0, 13], data_temp[track_ID[j]][0, 14]))
+                Angle_Change.append(i)
+                Distance_Traveled.append(calculate_distance(data_temp[track_ID[0]][len(data_temp[track_ID[0]])-1, 16], data_temp[track_ID[0]][len(data_temp[track_ID[0]])-1, 17], data_temp[track_ID[0]][len(data_temp[track_ID[0]])-1, 18], data_temp[track_ID[j]][len(data_temp[track_ID[j]][:, 1])-1, 16], data_temp[track_ID[j]][len(data_temp[track_ID[j]][:, 1])-1, 17], data_temp[track_ID[j]][len(data_temp[track_ID[j]][:, 1])-1, 18]))
         
         if(condition_stop or condition_in_flight and condition):
             E_TOF_OUT.append(Energy_out)
@@ -317,16 +361,16 @@ def Analyze_daughter(data_3d, particle_ID, stop_event=False, in_flight_event=Fal
             Delta_T.append(Time_in - Time_out)
             Primary_Angle.append(i)
             #Primary_Angle.append(calculate_angle(data_3d[Event_list[i]][0, 12], data_3d[Event_list[i]][0, 13], data_3d[Event_list[i]][0, 14], 0, 0, -1))  
-            Daughter_ID.append(daughter_ID)
-            Daughter_Energy.append(daughter_energy)
-            Daughter_Angle.append(i)
-            Angle_Change.append(angle_change)
-            Distance_Traveled.append(distance_traveled)
+                #Daughter_ID.append(d_ID)
+                #Daughter_Energy.append(d_energy)
+                #Daughter_Angle.append(i)
+                #Angle_Change.append(angle_change)
+                #Distance_Traveled.append(distance_traveled)
+
+        display_progress_bar(i+1, len(Event_list))
         
-        print("Now processing (" + str(i) + "/" + str(len(Event_list))+")",  end='\r')
-        
-        Result_vector.data[i][0] = [Event_list[i], Init_Energy[i], Primary_Angle[i], E_TOF_OUT[i], E_TOF_IN[i], Delta_T[i]]
-        Result_vector.data[i][1] = [track_ID[1], Daughter_ID, Daughter_Energy, Daughter_Angle, Angle_Change, Distance_Traveled]
+        Result_vector.set_value(i, 0, [Event_list[i], Init_Energy[i], Primary_Angle[i], E_TOF_OUT[i], E_TOF_IN[i], Delta_T[i]])
+        Result_vector.set_value(i, 1, [track_ID, Daughter_ID, Daughter_Energy, Daughter_Angle, Angle_Change, Distance_Traveled])
         
     print("\n We got " + str(len(E_TOF_IN)) + " events selected")
     print("Last event is "+ str(Event_list[len(Event_list)-1]))
