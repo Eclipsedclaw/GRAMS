@@ -1,18 +1,6 @@
 # Geant-simulation
 For GRAMS simulation toy model. If you are going through this the first time, please navigate to section **Download GRAMS toy model**.
 
-# Get the newest version
-If you want to follow the newest version of this software that has the development feature and analysis code by others, you could type codes below in your source directory(where you downloaded this software from github)
-```bash
-git pull
-cd ../toymodel_work
-cp -r ../GRAMS/Toy_model/* .
-rm -rf build/*
-cd build
-cmake ..
-make
-```
-
 # Download GRAMS toy model
 First please use any method you like to download all of the files from this git repository. You could use git clone command if you already got a github account
 ```bash
@@ -101,3 +89,16 @@ HepRApp G4Data0.heprep
 ```
 You should be able to see the UI interface of HepRApp. You could explore all the function of it!
 <img width="1066" alt="Screen Shot 2022-11-14 at 3 35 26 PM" src="https://user-images.githubusercontent.com/37788723/201760546-78b86043-ee4a-42da-a051-f98b9c47b3fe.png">
+
+
+# Get the newest version
+If you want to follow the newest version of this software that has the development feature and analysis code by others, you could type codes below in your source directory(where you downloaded this software from github)
+```bash
+git pull
+cd ../toymodel_work
+cp -r ../GRAMS/Toy_model/* .
+rm -rf build/*
+cd build
+cmake ..
+make
+```
