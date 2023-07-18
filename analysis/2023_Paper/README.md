@@ -1,3 +1,4 @@
 See data structure in Result_vector from function toy_modle_analysis.Analyze_daughter()
 
-<img width="1184" alt="Screenshot 2023-07-17 at 11 25 12 AM" src="https://github.com/Eclipsedclaw/GRAMS/assets/37788723/7e88c7c6-50c6-4cef-8b60-416449327b20">
+<img width="1434" alt="Screenshot 2023-07-17 at 11 30 00 PM" src="https://github.com/Eclipsedclaw/GRAMS/assets/37788723/8a26aa17-4611-49f3-b1ea-3dc1fe7ea6de">
+
