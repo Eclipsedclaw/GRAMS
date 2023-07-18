@@ -232,8 +232,6 @@ def Analyze_TOF(data_3d, particle_ID, stop_event=False):
 
 class daughters:
     def __init__(self, number_of_events, columns):
-        self.rows = number_of_events
-        self.columns = columns
         self.data = [[0] * columns for _ in range(number_of_events)]
 
     def get_value(self, row, column):
@@ -242,14 +240,17 @@ class daughters:
     def set_value(self, row, column, value):
         self.data[row][column] = value
 
-    def append_element(self, value):
-        self.data.append([value] * self.columns)
-        self.rows += 1
+    def remove_unused_rows(self, used_rows):
+        if used_rows < len(self.data):
+            self.data = self.data[:used_rows]
+    
+    def get_number_of_events(self):
+        return len(self.data)
 
-        
+
 
 # This function doing primary daughter particles analysis including energy and directions
-def Analyze_daughter(data_3d, particle_ID, stop_event=False, in_flight_event=False):
+def Analyze_daughter(data_3d, particle_ID, stop_event=True, in_flight_event=False):
     
     # This is the event number in the raw data
     Event_list = list(data_3d.keys())
@@ -263,6 +264,9 @@ def Analyze_daughter(data_3d, particle_ID, stop_event=False, in_flight_event=Fal
     # Construct an empty vector for angle of the primary particles
     Primary_Angle = []
     
+    # Construct an empty vector for distance traveled of primary particles
+    Primary_Distance = []
+    
     # Construct an empty vector for Energy deposit in the outer TOF
     E_TOF_OUT = []
     
@@ -271,6 +275,9 @@ def Analyze_daughter(data_3d, particle_ID, stop_event=False, in_flight_event=Fal
     
     # Construct an empty vector for time difference in the outer and inner TOF
     Delta_T = []
+    
+    # Creat an 0 variable that record how many evnets selected
+    n = 0
     
     for i in range(len(Event_list)):
         
@@ -293,6 +300,8 @@ def Analyze_daughter(data_3d, particle_ID, stop_event=False, in_flight_event=Fal
         Energy_in = 0
         Time_out = 0
         Time_in = 0
+        Event_out = 0
+        Event_in = 0
 
         data_track = []
         track_ID = []
@@ -314,11 +323,10 @@ def Analyze_daughter(data_3d, particle_ID, stop_event=False, in_flight_event=Fal
         condition = True
         
         # conditions for stop events, here shows last point has 0 energy left and 0 energy deposit
-        condition_stop = True
-        # condition_stop = np.min(data_3d[Event_list[i]][:, 8]) == 0 and np.min(data_3d[Event_list[i]][:, 9]) == 0 and stop_event
+        condition_stop = np.min(data_temp[track_ID[0]][:, 8]) == 0 and np.min(data_temp[track_ID[0]][:, 9]) == 0 and stop_event
+        
         # conditions for in flight annihilation events, here shows last point has energy larger than 0
-        condition_in_flight = True
-        # condition_in_flight = np.min(data_3d[Event_list[i]][:, 8]) != 0 and in_flight_event
+        condition_in_flight = np.min(data_temp[track_ID[0]][:, 8]) != 0 and in_flight_event
         
         # these are conditions for GRASP, need to update
         # general condition that all the events has to match, here shows the last point is inside Liquid Argon
@@ -330,16 +338,19 @@ def Analyze_daughter(data_3d, particle_ID, stop_event=False, in_flight_event=Fal
         
         # Need to optimize this in the future
         for j in range(len(track_ID)):
-            if(list(data_temp.keys())[j] == 1):
-                for k in range(len(data_temp[track_ID[j]])):
-                    if(str(data_temp[track_ID[j]][k, 5]) == '-10000' or str(data_temp[track_ID[j]][k, 5]) == '-10001' or str(data_temp[track_ID[j]][k, 5]) == '-10002' or str(data_temp[track_ID[j]][k, 5]) == '-10003' or str(data_temp[track_ID[j]][k, 5]) == '-10004' or str(data_temp[track_ID[j]][k, 5]) == '-10005' and str(data_3d[Event_list[i]][3]) == str(particle_ID)):
-                        Energy_out = Energy_out + float(data_temp[track_ID[j]][k, 9])
+            if(j == 0):
+                for k in range(len(data_temp[track_ID[0]])):
+                    if(str(data_temp[track_ID[0]][k, 5]) == '-10000' or str(data_temp[track_ID[0]][k, 5]) == '-10001' or str(data_temp[track_ID[0]][k, 5]) == '-10002' or str(data_temp[track_ID[0]][k, 5]) == '-10003' or str(data_temp[track_ID[0]][k, 5]) == '-10004' or str(data_temp[track_ID[0]][k, 5]) == '-10005'):
+                        #print('\nEvent'+str(Event_list[i])+' energy out is '+str(data_temp[track_ID[0]][k, 9])+'\n')
+                        Energy_out = Energy_out + float(data_temp[track_ID[0]][k, 9])
                         if(Time_out == 0):
-                            Time_out = data_temp[track_ID[j]][k, 7]
-                    if(str(data_temp[track_ID[j]][k, 5]) == '-11000' or str(data_temp[track_ID[j]][k, 5]) == '-11001' or str(data_temp[track_ID[j]][k, 5]) == '-11002' or str(data_temp[track_ID[j]][k, 5]) == '-11003' or str(data_temp[track_ID[j]][k, 5]) == '-11004' or str(data_temp[track_ID[j]][k, 5]) == '-11005' and str(data_3d[Event_list[i]][3]) == str(particle_ID)):
-                        Energy_in = Energy_in + float(data_temp[track_ID[j]][k, 9])
+                            Time_out = data_temp[track_ID[0]][k, 7]
+                    if(str(data_temp[track_ID[0]][k, 5]) == '-11000' or str(data_temp[track_ID[0]][k, 5]) == '-11001' or str(data_temp[track_ID[0]][k, 5]) == '-11002' or str(data_temp[track_ID[0]][k, 5]) == '-11003' or str(data_temp[track_ID[0]][k, 5]) == '-11004' or str(data_temp[track_ID[0]][k, 5]) == '-11005'):
+                        #print('\nEvent'+str(Event_list[i])+' energy in is '+str(data_temp[track_ID[0]][k, 9])+'\n')
+                        Energy_in = Energy_in + float(data_temp[track_ID[0]][k, 9])
+                        Event_in = k
                         if(Time_in == 0):
-                            Time_in = data_temp[track_ID[j]][k, 7]
+                            Time_in = data_temp[track_ID[0]][k, 7]
             else:
                 Daughter_ID.append(data_temp[track_ID[j]][0, 3])
                 Daughter_Energy.append(max(data_temp[track_ID[j]][:, 8]))
@@ -359,22 +370,24 @@ def Analyze_daughter(data_3d, particle_ID, stop_event=False, in_flight_event=Fal
             E_TOF_IN.append(Energy_in)
             Init_Energy.append(data_3d[Event_list[i]][0, 8])
             Delta_T.append(Time_in - Time_out)
-            Primary_Angle.append(i)
+            Primary_Angle.append(calculate_angle_location(data_temp[track_ID[0]][len(data_temp[track_ID[0]])-1, 16], data_temp[track_ID[0]][len(data_temp[track_ID[0]])-1, 17], data_temp[track_ID[0]][len(data_temp[track_ID[0]])-1, 18], data_temp[track_ID[0]][len(data_temp[track_ID[0]])-2, 16], data_temp[track_ID[0]][len(data_temp[track_ID[0]])-2, 17], data_temp[track_ID[0]][len(data_temp[track_ID[0]])-2, 18], 0, 0, -1, data_temp[track_ID[0]][len(data_temp[track_ID[0]])-1, 12], data_temp[track_ID[0]][len(data_temp[track_ID[0]])-1, 13], data_temp[track_ID[0]][len(data_temp[track_ID[0]])-1, 14]))
+            Primary_Distance.append(calculate_distance(data_temp[track_ID[0]][len(data_temp[track_ID[0]])-1, 16], data_temp[track_ID[0]][len(data_temp[track_ID[0]])-1, 17], data_temp[track_ID[0]][len(data_temp[track_ID[0]])-1, 18], data_temp[track_ID[0]][Event_in+1, 16], data_temp[track_ID[0]][Event_in+1, 17], data_temp[track_ID[0]][Event_in+1, 18]))
             #Primary_Angle.append(calculate_angle(data_3d[Event_list[i]][0, 12], data_3d[Event_list[i]][0, 13], data_3d[Event_list[i]][0, 14], 0, 0, -1))  
-                #Daughter_ID.append(d_ID)
-                #Daughter_Energy.append(d_energy)
-                #Daughter_Angle.append(i)
-                #Angle_Change.append(angle_change)
-                #Distance_Traveled.append(distance_traveled)
+            #Daughter_ID.append(d_ID)
+            #Daughter_Energy.append(d_energy)
+            #Daughter_Angle.append(i)
+            #Angle_Change.append(angle_change)
+            #Distance_Traveled.append(distance_traveled)
+            Result_vector.set_value(n, 0, [Event_list[n], Init_Energy[n], Primary_Angle[n], Primary_Distance[n], E_TOF_OUT[n], E_TOF_IN[n], Delta_T[n]])
+            Result_vector.set_value(n, 1, [track_ID, Daughter_ID, Daughter_Energy, Daughter_Angle, Angle_Change, Distance_Traveled])
+            n = n + 1
 
         display_progress_bar(i+1, len(Event_list))
-        
-        Result_vector.set_value(i, 0, [Event_list[i], Init_Energy[i], Primary_Angle[i], E_TOF_OUT[i], E_TOF_IN[i], Delta_T[i]])
-        Result_vector.set_value(i, 1, [track_ID, Daughter_ID, Daughter_Energy, Daughter_Angle, Angle_Change, Distance_Traveled])
-        
+                
     print("\n We got " + str(len(E_TOF_IN)) + " events selected")
     print("Last event is "+ str(Event_list[len(Event_list)-1]))
     
+    Result_vector.remove_unused_rows(len(Init_Energy))
     
     # return two things, first one is the inital energy array and second one is the number of the event generated.
     return Result_vector
