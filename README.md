@@ -100,3 +100,8 @@ git pull
 cd ../toymodel_work
 ccmake .
 ```
+From the UI interface of ccmake, you could hit 'c' to configure your software with newest updates, then follow the instruction showed on screen. Once configured successfully, you should see the option 'generate'. Then you could re-generate GRAMS toy model by press button 'g'. After re-generate the software, you could use make to install it with updated version again.
+
+```bash
+make
+```
