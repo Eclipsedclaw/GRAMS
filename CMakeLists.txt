@@ -47,6 +47,7 @@ target_link_libraries(GRAMS ${Geant4_LIBRARIES})
 # relies on these scripts being in the current working directory.
 #
 set(GRAMS_SCRIPTS
+  README.txt
 #  GRAMS.in
 #  GRAMS.out
 #  init_vis.mac
@@ -55,12 +56,24 @@ set(GRAMS_SCRIPTS
 #  vis.mac
   )
 
+set(GRAMS_FOLDERS
+  macro
+  )
+
 foreach(_script ${GRAMS_SCRIPTS})
   configure_file(
     ${PROJECT_SOURCE_DIR}/${_script}
     ${PROJECT_BINARY_DIR}/${_script}
     COPYONLY
     )
+endforeach()
+
+foreach(_folder ${GRAMS_FOLDERS})
+  file(COPY
+    ${PROJECT_SOURCE_DIR}/${_folder}
+    DESTINATION ${PROJECT_BINARY_DIR}
+    PATTERN "*"
+  )
 endforeach()
 
 #----------------------------------------------------------------------------
