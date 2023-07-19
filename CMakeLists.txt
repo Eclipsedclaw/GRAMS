@@ -47,7 +47,7 @@ target_link_libraries(GRAMS ${Geant4_LIBRARIES})
 # relies on these scripts being in the current working directory.
 #
 set(GRAMS_SCRIPTS
-  README.txt
+  Toy_model_info.txt
 #  GRAMS.in
 #  GRAMS.out
 #  init_vis.mac
