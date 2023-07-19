@@ -98,9 +98,5 @@ If you want to follow the newest version of this software that has the developme
 ```bash
 git pull
 cd ../toymodel_work
-cp -r ../GRAMS/Toy_model/* .
-rm -rf build/*
-cd build
-cmake ..
-make
+ccmake .
 ```
