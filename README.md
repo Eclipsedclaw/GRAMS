@@ -51,14 +51,16 @@ source $Geant4sh
 You only need one of these two solutions. Please choose the one that you like better!
 
 ## install toy model
-For the first time that you open the toy model or the first time after you change something in the source folder, you need to reinstall the toy model. Go to local GRAMS toy model directory and we will install the model in another build directory. Here I suggest to have another installation directory aside from the source directory. You should run the following commands in the parent directory of GRAMS git directory.
+For the first time that you open the toy model or the first time after you change something in the source folder, you need to reinstall the toy model. Go to local GRAMS toy model directory and we will install the model in another build directory. Here I suggest to have another installation directory aside from the source directory. You should run the following commands in the parent directory of GRAMS git directory. You could do
+```bash
+cd ..
+```
+to go to the parent directory.
 
+Then you could make a work directory and install GRAMS toymodel using commands below
 ```bash
 mkdir toymodel_work && cd toymodel_work
-mv ../GRAMS/Toy_model/* .
-mkdir build && mkdir output
-cd build
-cmake ../
+cmake ../GRAMS
 make
 ```
 After these commands you should see GRAMS successfully installed as showed below. If there is error, please check the error messege and contact me if you don't know how to fix it.
