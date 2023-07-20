@@ -72,13 +72,13 @@ After these commands you should see GRAMS successfully installed as showed below
 We use macro files to control the operation of the simulation such as choosing particle types and energy range. Check macro file [README.md](https://github.com/Eclipsedclaw/GRAMS/tree/main/macro) to see all the different options that you can change. Specificly there are geant4 library [GPS](https://geant4-userdoc.web.cern.ch/UsersGuides/ForApplicationDeveloper/html/GettingStarted/generalParticleSource.html) that you could use in the macro files to control the behavior of the input event, such as initial angle and generated location.
 And the normal simulation running command is to run command below in the source directory
 ```bash
-build/GRAMS macro/"YOUR MACRO FILES"
+./GRAMS macro/"YOUR MACRO FILES"
 ```
 
 ## visulization
 There is a vis.mac file under macro directory, you could use this to generate heprep files. For default setting you could run
 ```bash
-build/GRAMS macro/vis.mac
+./GRAMS macro/vis.mac
 ```
 This will generate heprep files, G4data0 usually just represents for empty geometry without any events. And to actually see the simulation visulization we need HepRApp. Run this command to link HepRapp to a simple format
 ```bash
