@@ -26,9 +26,7 @@ source /opt/geant4/geant4-11.0.3-install/bin/geant4.sh
 There are ways to prevent you from typing same commands every time. One way is to activate shell environment automatically when you open a new terminal. This will slow down the speed and potentially have some unknown shell conflict issues. But it's less concern if you don't have a long term plan. You could run these command to setup auto activation
 ```bash
 echo 'source /opt/geant4/geant4-11.1.0-install/bin/geant4.sh' >> ~/.bashrc
-
 echo 'source /opt/root/root_install/bin/thisroot.sh' >> ~/.bashrc
-
 echo 'cd' >> ~/.bashrc 
 source ~/.bashrc
 ```
