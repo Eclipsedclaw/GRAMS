@@ -302,6 +302,19 @@ def Analyze_daughter(data_3d, particle_ID, stop_event=True, in_flight_event=Fals
         Time_in = 0
         Event_out = 0
         Event_in = 0
+        
+        mother_ID_second_vertex_anti_deuteron = [0]
+        mother_ID_second_vertex_anti_proton = [0, 0, 0]
+        
+        # There might be daughter antiparticle scattering, be carefule with this
+        if np.any(data_3d[Event_list[i]][:, 3] == -1000010020):
+            mother_ID_second_vertex_anti_deuteron = np.unique(np.array(data_3d[Event_list[i]][data_3d[Event_list[i]][:, 3] == -1000010020, 1]))
+            mother_ID_second_vertex_anti_deuteron = np.pad(mother_ID_second_vertex_anti_deuteron, (0, 3 - len(mother_ID_second_vertex_anti_deuteron)), mode='constant')
+
+        if np.any(data_3d[Event_list[i]][:, 3] == -2212):
+            mother_ID_second_vertex_anti_proton = np.unique(np.array(data_3d[Event_list[i]][data_3d[Event_list[i]][:, 3] == -2212, 1]))
+            mother_ID_second_vertex_anti_proton = np.pad(mother_ID_second_vertex_anti_proton, (0, 3 - len(mother_ID_second_vertex_anti_proton)), mode='constant')
+            #print('\s'+str(mother_ID_second_vertex_anti_proton)+' and this is event '+ str(Event_list[i]))
 
         data_track = []
         track_ID = []
@@ -340,18 +353,24 @@ def Analyze_daughter(data_3d, particle_ID, stop_event=True, in_flight_event=Fals
         for j in range(len(track_ID)):
             if(j == 0):
                 for k in range(len(data_temp[track_ID[0]])):
-                    if(str(data_temp[track_ID[0]][k, 5]) == '-10000' or str(data_temp[track_ID[0]][k, 5]) == '-10001' or str(data_temp[track_ID[0]][k, 5]) == '-10002' or str(data_temp[track_ID[0]][k, 5]) == '-10003' or str(data_temp[track_ID[0]][k, 5]) == '-10004' or str(data_temp[track_ID[0]][k, 5]) == '-10005'):
+                    
+                    # Outer TOF info
+                    if(str(data_temp[track_ID[0]][k, 5]) == '-10000' or str(data_temp[track_ID[0]][k, 5]) == '-10001' or str(data_temp[track_ID[0]][k, 5]) == '-10002' or str(data_temp[track_ID[0]][k, 5]) == '-10003' or str(data_temp[track_ID[0]][k, 5]) == '-10004' or str(data_temp[track_ID[0]][k, 5]) == '-10005' and str(data_temp[track_ID[0]][k, 3]) == str(particle_ID)):
                         #print('\nEvent'+str(Event_list[i])+' energy out is '+str(data_temp[track_ID[0]][k, 9])+'\n')
                         Energy_out = Energy_out + float(data_temp[track_ID[0]][k, 9])
                         if(Time_out == 0):
                             Time_out = data_temp[track_ID[0]][k, 7]
-                    if(str(data_temp[track_ID[0]][k, 5]) == '-11000' or str(data_temp[track_ID[0]][k, 5]) == '-11001' or str(data_temp[track_ID[0]][k, 5]) == '-11002' or str(data_temp[track_ID[0]][k, 5]) == '-11003' or str(data_temp[track_ID[0]][k, 5]) == '-11004' or str(data_temp[track_ID[0]][k, 5]) == '-11005'):
+                            
+                    # Inner TOF info
+                    if(str(data_temp[track_ID[0]][k, 5]) == '-11000' or str(data_temp[track_ID[0]][k, 5]) == '-11001' or str(data_temp[track_ID[0]][k, 5]) == '-11002' or str(data_temp[track_ID[0]][k, 5]) == '-11003' or str(data_temp[track_ID[0]][k, 5]) == '-11004' or str(data_temp[track_ID[0]][k, 5]) == '-11005', str(data_temp[track_ID[0]][k, 3]) == str(particle_ID)):
                         #print('\nEvent'+str(Event_list[i])+' energy in is '+str(data_temp[track_ID[0]][k, 9])+'\n')
                         Energy_in = Energy_in + float(data_temp[track_ID[0]][k, 9])
                         Event_in = k
                         if(Time_in == 0):
                             Time_in = data_temp[track_ID[0]][k, 7]
-            else:
+            
+            # Only for the primary vertex                
+            elif(str(data_temp[track_ID[j]][0, 2]) == '1'):
                 Daughter_ID.append(data_temp[track_ID[j]][0, 3])
                 Daughter_Energy.append(max(data_temp[track_ID[j]][:, 8]))
                 
@@ -364,6 +383,71 @@ def Analyze_daughter(data_3d, particle_ID, stop_event=True, in_flight_event=Fals
                 #Angle_Change.append(calculate_angle(data_3d[Event_list[i]][0, 12], data_3d[Event_list[i]][0, 13], data_3d[Event_list[i]][0, 14], data_temp[track_ID[j]][0, 12], data_temp[track_ID[j]][0, 13], data_temp[track_ID[j]][0, 14]))
                 Angle_Change.append(i)
                 Distance_Traveled.append(calculate_distance(data_temp[track_ID[0]][len(data_temp[track_ID[0]])-1, 16], data_temp[track_ID[0]][len(data_temp[track_ID[0]])-1, 17], data_temp[track_ID[0]][len(data_temp[track_ID[0]])-1, 18], data_temp[track_ID[j]][len(data_temp[track_ID[j]][:, 1])-1, 16], data_temp[track_ID[j]][len(data_temp[track_ID[j]][:, 1])-1, 17], data_temp[track_ID[j]][len(data_temp[track_ID[j]][:, 1])-1, 18]))
+            
+            
+            # check the antideuteron vertex #2
+            elif(str(data_temp[track_ID[j]][0, 2]) == mother_ID_second_vertex_anti_deuteron[0]):
+                Daughter_ID.append(data_temp[track_ID[j]][0, 3])
+                Daughter_Energy.append(max(data_temp[track_ID[j]][:, 8]))
+                
+                # this is for checking angle bug
+                #if(np.linalg.norm(np.array([data_temp[track_ID[j]][0, 12], data_temp[track_ID[j]][0, 13], data_temp[track_ID[j]][0, 14]]))==0):
+                    #print("Event " + str(Event_list[i]) + ", Track " + str(track_ID[j]))
+                
+                Daughter_Angle.append(calculate_angle_location(data_temp[mother_ID_second_vertex_anti_deuteron[0]][len(data_temp[mother_ID_second_vertex_anti_deuteron[0]])-1, 16], data_temp[mother_ID_second_vertex_anti_deuteron[0]][len(data_temp[mother_ID_second_vertex_anti_deuteron[0]])-1, 17], data_temp[mother_ID_second_vertex_anti_deuteron[0]][len(data_temp[mother_ID_second_vertex_anti_deuteron[0]])-1, 18], data_temp[track_ID[j]][len(data_temp[track_ID[j]][:, 1])-1, 16], data_temp[track_ID[j]][len(data_temp[track_ID[j]][:, 1])-1, 17], data_temp[track_ID[j]][len(data_temp[track_ID[j]][:, 1])-1, 18], 0, 0, -1, data_temp[track_ID[j]][len(data_temp[track_ID[j]][:, 1])-1, 12], data_temp[track_ID[j]][len(data_temp[track_ID[j]][:, 1])-1, 13], data_temp[track_ID[j]][len(data_temp[track_ID[j]][:, 1])-1, 14]))
+                #Daughter_Angle.append(i)
+                #Angle_Change.append(calculate_angle(data_3d[Event_list[i]][0, 12], data_3d[Event_list[i]][0, 13], data_3d[Event_list[i]][0, 14], data_temp[track_ID[j]][0, 12], data_temp[track_ID[j]][0, 13], data_temp[track_ID[j]][0, 14]))
+                Angle_Change.append(i)
+                Distance_Traveled.append(calculate_distance(data_temp[mother_ID_second_vertex_anti_deuteron[0]][len(data_temp[mother_ID_second_vertex_anti_deuteron[0]])-1, 16], data_temp[mother_ID_second_vertex_anti_deuteron[0]][len(data_temp[mother_ID_second_vertex_anti_deuteron[0]])-1, 17], data_temp[mother_ID_second_vertex_anti_deuteron[0]][len(data_temp[mother_ID_second_vertex_anti_deuteron[0]])-1, 18], data_temp[track_ID[j]][len(data_temp[track_ID[j]][:, 1])-1, 16], data_temp[track_ID[j]][len(data_temp[track_ID[j]][:, 1])-1, 17], data_temp[track_ID[j]][len(data_temp[track_ID[j]][:, 1])-1, 18]))
+                
+                
+            # check the antiproton vertex #2 first
+            elif(str(data_temp[track_ID[j]][0, 2]) == mother_ID_second_vertex_anti_deuteron[0]):
+                Daughter_ID.append(data_temp[track_ID[j]][0, 3])
+                Daughter_Energy.append(max(data_temp[track_ID[j]][:, 8]))
+                
+                # this is for checking angle bug
+                #if(np.linalg.norm(np.array([data_temp[track_ID[j]][0, 12], data_temp[track_ID[j]][0, 13], data_temp[track_ID[j]][0, 14]]))==0):
+                    #print("Event " + str(Event_list[i]) + ", Track " + str(track_ID[j]))
+                
+                Daughter_Angle.append(calculate_angle_location(data_temp[mother_ID_second_vertex_anti_proton[0]][len(data_temp[mother_ID_second_vertex_anti_proton[0]])-1, 16], data_temp[mother_ID_second_vertex_anti_proton[0]][len(data_temp[mother_ID_second_vertex_anti_proton[0]])-1, 17], data_temp[mother_ID_second_vertex_anti_proton[0]][len(data_temp[mother_ID_second_vertex_anti_proton[0]])-1, 18], data_temp[track_ID[j]][len(data_temp[track_ID[j]][:, 1])-1, 16], data_temp[track_ID[j]][len(data_temp[track_ID[j]][:, 1])-1, 17], data_temp[track_ID[j]][len(data_temp[track_ID[j]][:, 1])-1, 18], 0, 0, -1, data_temp[track_ID[j]][len(data_temp[track_ID[j]][:, 1])-1, 12], data_temp[track_ID[j]][len(data_temp[track_ID[j]][:, 1])-1, 13], data_temp[track_ID[j]][len(data_temp[track_ID[j]][:, 1])-1, 14]))
+                #Daughter_Angle.append(i)
+                #Angle_Change.append(calculate_angle(data_3d[Event_list[i]][0, 12], data_3d[Event_list[i]][0, 13], data_3d[Event_list[i]][0, 14], data_temp[track_ID[j]][0, 12], data_temp[track_ID[j]][0, 13], data_temp[track_ID[j]][0, 14]))
+                Angle_Change.append(i)
+                Distance_Traveled.append(calculate_distance(data_temp[mother_ID_second_vertex_anti_proton[0]][len(data_temp[mother_ID_second_vertex_anti_proton[0]])-1, 16], data_temp[mother_ID_second_vertex_anti_proton[0]][len(data_temp[mother_ID_second_vertex_anti_proton[0]])-1, 17], data_temp[mother_ID_second_vertex_anti_proton[0]][len(data_temp[mother_ID_second_vertex_anti_proton[0]])-1, 18], data_temp[track_ID[j]][len(data_temp[track_ID[j]][:, 1])-1, 16], data_temp[track_ID[j]][len(data_temp[track_ID[j]][:, 1])-1, 17], data_temp[track_ID[j]][len(data_temp[track_ID[j]][:, 1])-1, 18]))
+                
+                
+            # check the proton vertex #2 second
+            elif(str(data_temp[track_ID[j]][0, 2]) == mother_ID_second_vertex_anti_proton[1]):
+                Daughter_ID.append(data_temp[track_ID[j]][0, 3])
+                Daughter_Energy.append(max(data_temp[track_ID[j]][:, 8]))
+                
+                # this is for checking angle bug
+                #if(np.linalg.norm(np.array([data_temp[track_ID[j]][0, 12], data_temp[track_ID[j]][0, 13], data_temp[track_ID[j]][0, 14]]))==0):
+                    #print("Event " + str(Event_list[i]) + ", Track " + str(track_ID[j]))
+                
+                Daughter_Angle.append(calculate_angle_location(data_temp[mother_ID_second_vertex_anti_proton[1]][len(data_temp[mother_ID_second_vertex_anti_proton[1]])-1, 16], data_temp[mother_ID_second_vertex_anti_proton[1]][len(data_temp[mother_ID_second_vertex_anti_proton[1]])-1, 17], data_temp[mother_ID_second_vertex_anti_proton[1]][len(data_temp[mother_ID_second_vertex_anti_proton[1]])-1, 18], data_temp[track_ID[j]][len(data_temp[track_ID[j]][:, 1])-1, 16], data_temp[track_ID[j]][len(data_temp[track_ID[j]][:, 1])-1, 17], data_temp[track_ID[j]][len(data_temp[track_ID[j]][:, 1])-1, 18], 0, 0, -1, data_temp[track_ID[j]][len(data_temp[track_ID[j]][:, 1])-1, 12], data_temp[track_ID[j]][len(data_temp[track_ID[j]][:, 1])-1, 13], data_temp[track_ID[j]][len(data_temp[track_ID[j]][:, 1])-1, 14]))
+                #Daughter_Angle.append(i)
+                #Angle_Change.append(calculate_angle(data_3d[Event_list[i]][0, 12], data_3d[Event_list[i]][0, 13], data_3d[Event_list[i]][0, 14], data_temp[track_ID[j]][0, 12], data_temp[track_ID[j]][0, 13], data_temp[track_ID[j]][0, 14]))
+                Angle_Change.append(i)
+                Distance_Traveled.append(calculate_distance(data_temp[mother_ID_second_vertex_anti_proton[1]][len(data_temp[mother_ID_second_vertex_anti_proton[1]])-1, 16], data_temp[mother_ID_second_vertex_anti_proton[1]][len(data_temp[mother_ID_second_vertex_anti_proton[1]])-1, 17], data_temp[mother_ID_second_vertex_anti_proton[1]][len(data_temp[mother_ID_second_vertex_anti_proton[1]])-1, 18], data_temp[track_ID[j]][len(data_temp[track_ID[j]][:, 1])-1, 16], data_temp[track_ID[j]][len(data_temp[track_ID[j]][:, 1])-1, 17], data_temp[track_ID[j]][len(data_temp[track_ID[j]][:, 1])-1, 18]))
+                
+                
+            # check the antideuteron vertex #2 third
+            elif(str(data_temp[track_ID[j]][0, 2]) == mother_ID_second_vertex_anti_proton[2]):
+                Daughter_ID.append(data_temp[track_ID[j]][0, 3])
+                Daughter_Energy.append(max(data_temp[track_ID[j]][:, 8]))
+                
+                # this is for checking angle bug
+                #if(np.linalg.norm(np.array([data_temp[track_ID[j]][0, 12], data_temp[track_ID[j]][0, 13], data_temp[track_ID[j]][0, 14]]))==0):
+                    #print("Event " + str(Event_list[i]) + ", Track " + str(track_ID[j]))
+                
+                Daughter_Angle.append(calculate_angle_location(data_temp[mother_ID_second_vertex_anti_proton[2]][len(data_temp[mother_ID_second_vertex_anti_proton[2]])-1, 16], data_temp[mother_ID_second_vertex_anti_proton[2]][len(data_temp[mother_ID_second_vertex_anti_proton[2]])-1, 17], data_temp[mother_ID_second_vertex_anti_proton[2]][len(data_temp[mother_ID_second_vertex_anti_proton[2]])-1, 18], data_temp[track_ID[j]][len(data_temp[track_ID[j]][:, 1])-1, 16], data_temp[track_ID[j]][len(data_temp[track_ID[j]][:, 1])-1, 17], data_temp[track_ID[j]][len(data_temp[track_ID[j]][:, 1])-1, 18], 0, 0, -1, data_temp[track_ID[j]][len(data_temp[track_ID[j]][:, 1])-1, 12], data_temp[track_ID[j]][len(data_temp[track_ID[j]][:, 1])-1, 13], data_temp[track_ID[j]][len(data_temp[track_ID[j]][:, 1])-1, 14]))
+                #Daughter_Angle.append(i)
+                #Angle_Change.append(calculate_angle(data_3d[Event_list[i]][0, 12], data_3d[Event_list[i]][0, 13], data_3d[Event_list[i]][0, 14], data_temp[track_ID[j]][0, 12], data_temp[track_ID[j]][0, 13], data_temp[track_ID[j]][0, 14]))
+                Angle_Change.append(i)
+                Distance_Traveled.append(calculate_distance(data_temp[mother_ID_second_vertex_anti_proton[2]][len(data_temp[mother_ID_second_vertex_anti_proton[2]])-1, 16], data_temp[mother_ID_second_vertex_anti_proton[2]][len(data_temp[mother_ID_second_vertex_anti_proton[2]])-1, 17], data_temp[mother_ID_second_vertex_anti_proton[2]][len(data_temp[mother_ID_second_vertex_anti_proton[2]])-1, 18], data_temp[track_ID[j]][len(data_temp[track_ID[j]][:, 1])-1, 16], data_temp[track_ID[j]][len(data_temp[track_ID[j]][:, 1])-1, 17], data_temp[track_ID[j]][len(data_temp[track_ID[j]][:, 1])-1, 18]))
+                
         
         if(condition_stop or condition_in_flight and condition):
             E_TOF_OUT.append(Energy_out)
@@ -371,7 +455,7 @@ def Analyze_daughter(data_3d, particle_ID, stop_event=True, in_flight_event=Fals
             Init_Energy.append(data_3d[Event_list[i]][0, 8])
             Delta_T.append(Time_in - Time_out)
             Primary_Angle.append(calculate_angle_location(data_temp[track_ID[0]][len(data_temp[track_ID[0]])-1, 16], data_temp[track_ID[0]][len(data_temp[track_ID[0]])-1, 17], data_temp[track_ID[0]][len(data_temp[track_ID[0]])-1, 18], data_temp[track_ID[0]][len(data_temp[track_ID[0]])-2, 16], data_temp[track_ID[0]][len(data_temp[track_ID[0]])-2, 17], data_temp[track_ID[0]][len(data_temp[track_ID[0]])-2, 18], 0, 0, -1, data_temp[track_ID[0]][len(data_temp[track_ID[0]])-1, 12], data_temp[track_ID[0]][len(data_temp[track_ID[0]])-1, 13], data_temp[track_ID[0]][len(data_temp[track_ID[0]])-1, 14]))
-            Primary_Distance.append(calculate_distance(data_temp[track_ID[0]][len(data_temp[track_ID[0]])-1, 16], data_temp[track_ID[0]][len(data_temp[track_ID[0]])-1, 17], data_temp[track_ID[0]][len(data_temp[track_ID[0]])-1, 18], data_temp[track_ID[0]][Event_in+1, 16], data_temp[track_ID[0]][Event_in+1, 17], data_temp[track_ID[0]][Event_in+1, 18]))
+            Primary_Distance.append(calculate_distance(data_temp[track_ID[0]][len(data_temp[track_ID[0]])-1, 16], data_temp[track_ID[0]][len(data_temp[track_ID[0]])-1, 17], data_temp[track_ID[0]][len(data_temp[track_ID[0]])-1, 18], data_temp[track_ID[0]][Event_in, 16], data_temp[track_ID[0]][Event_in, 17], data_temp[track_ID[0]][Event_in, 18]))
             #Primary_Angle.append(calculate_angle(data_3d[Event_list[i]][0, 12], data_3d[Event_list[i]][0, 13], data_3d[Event_list[i]][0, 14], 0, 0, -1))  
             #Daughter_ID.append(d_ID)
             #Daughter_Energy.append(d_energy)
