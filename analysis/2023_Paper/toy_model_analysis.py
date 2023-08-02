@@ -150,6 +150,47 @@ def Analyze_GRASP(data_3d, particle_ID, stop_event=False, in_flight_event=False)
 
 
 
+# This function doing muon rate analysis
+def Analyze_muon(data_3d, particle_ID):
+    
+    # This is the event number in the raw data
+    Event_list = list(data_3d.keys())
+    
+    # Construct a empty vector for initial energy store
+    Init_Energy = []
+    
+    # Counting the number of Events that pass through sci1
+    N_event_1 = 0
+    
+    # Counting the number of Events that pass through sci2
+    N_event_2 = 0
+    
+    # Counting the number of Events that pass both
+    N_both = 0
+    
+    # Counting how many events selected
+    N_event = 0
+    
+    for i in range(len(Event_list)):
+        condition1 = np.any(np.array(data_3d[Event_list[i]][data_3d[Event_list[i]][:, 6] == 'Plastic', 4]) == 1)
+        condition2 = np.any(np.array(data_3d[Event_list[i]][data_3d[Event_list[i]][:, 6] == 'Plastic', 4]) == 0)
+        
+        if(condition1):
+            N_event_1 = N_event_1 + 1
+        if(condition2):
+            N_event_2 = N_event_2 + 1
+        if(condition1 and condition2):
+            N_both = N_both + 1
+        if(condition1 or condition2):
+            N_event = N_event + 1
+        display_progress_bar(i+1, len(Event_list))
+    print("\n We got " + str(N_event) + " events selected")
+    print("Last event is "+ str(Event_list[len(Event_list)-1]))
+    
+    # return two things, first one is the inital energy array and second one is the number of the event generated.
+    return np.array(N_event_1), np.array(N_event_2), np.array(N_both)
+
+
 
 # This function analyze distance traveled inside LAr
 def Analyze_trace(data_3d, particle_ID, stop_event=False, in_flight_event=False):
