@@ -348,8 +348,8 @@ def Analyze_daughter(data_3d, particle_ID, stop_event=True, in_flight_event=Fals
         mother_ID_second_vertex_anti_proton = [0, 0, 0, 0, 0]
         
         #only for antiHe3 analysis
-        if(particle_ID == -1000010020):
-            # There might be daughter antiparticle scattering, be carefule with this. Also need to update antideuteron daughters
+        if(particle_ID == -1000020030):
+            # There might be daughter antiparticle scattering, be carefule with this. Also need to update antideuteron daughters. Also this is not considering the daughters that come from antideuteron generated from the first vertex
             if np.any(data_3d[Event_list[i]][:, 3] == -1000010020):
                 mother_ID_second_vertex_anti_deuteron = np.unique(np.array(data_3d[Event_list[i]][data_3d[Event_list[i]][:, 3] == -1000010020, 1]))
                 mother_ID_second_vertex_anti_deuteron = np.pad(mother_ID_second_vertex_anti_deuteron, (0, 5 - len(mother_ID_second_vertex_anti_deuteron)), mode='constant')
@@ -400,19 +400,21 @@ def Analyze_daughter(data_3d, particle_ID, stop_event=True, in_flight_event=Fals
                 for k in range(len(data_temp[track_ID[0]])):
                     
                     # Outer TOF info
-                    if(str(data_temp[track_ID[0]][k, 5]) == '-10000' or str(data_temp[track_ID[0]][k, 5]) == '-10001' or str(data_temp[track_ID[0]][k, 5]) == '-10002' or str(data_temp[track_ID[0]][k, 5]) == '-10003' or str(data_temp[track_ID[0]][k, 5]) == '-10004' or str(data_temp[track_ID[0]][k, 5]) == '-10005' and str(data_temp[track_ID[0]][k, 3]) == str(particle_ID)):
+                    if(str(data_temp[track_ID[0]][k, 5]) == '-10000' or str(data_temp[track_ID[0]][k, 5]) == '-10001' or str(data_temp[track_ID[0]][k, 5]) == '-10002' or str(data_temp[track_ID[0]][k, 5]) == '-10003' or str(data_temp[track_ID[0]][k, 5]) == '-10004' or str(data_temp[track_ID[0]][k, 5]) == '-10005'):
                         #print('\nEvent'+str(Event_list[i])+' energy out is '+str(data_temp[track_ID[0]][k, 9])+'\n')
                         Energy_out = Energy_out + float(data_temp[track_ID[0]][k, 9])
                         if(Time_out == 0):
                             Time_out = data_temp[track_ID[0]][k, 7]
+                            #print("OUTER TOF time is : "+str(Time_out))
                             
                     # Inner TOF info
-                    if(str(data_temp[track_ID[0]][k, 5]) == '-11000' or str(data_temp[track_ID[0]][k, 5]) == '-11001' or str(data_temp[track_ID[0]][k, 5]) == '-11002' or str(data_temp[track_ID[0]][k, 5]) == '-11003' or str(data_temp[track_ID[0]][k, 5]) == '-11004' or str(data_temp[track_ID[0]][k, 5]) == '-11005', str(data_temp[track_ID[0]][k, 3]) == str(particle_ID)):
+                    if(str(data_temp[track_ID[0]][k, 5]) == '-11000' or str(data_temp[track_ID[0]][k, 5]) == '-11001' or str(data_temp[track_ID[0]][k, 5]) == '-11002' or str(data_temp[track_ID[0]][k, 5]) == '-11003' or str(data_temp[track_ID[0]][k, 5]) == '-11004' or str(data_temp[track_ID[0]][k, 5]) == '-11005'):
                         #print('\nEvent'+str(Event_list[i])+' energy in is '+str(data_temp[track_ID[0]][k, 9])+'\n')
                         Energy_in = Energy_in + float(data_temp[track_ID[0]][k, 9])
-                        Event_in = k
                         if(Time_in == 0):
                             Time_in = data_temp[track_ID[0]][k, 7]
+                            #print("INNER TOF time is: "+str(Time_in))
+                            Event_in = k
             
             # Only for the primary vertex                
             elif(str(data_temp[track_ID[j]][0, 2]) == '1'):
@@ -519,6 +521,7 @@ def Analyze_daughter(data_3d, particle_ID, stop_event=True, in_flight_event=Fals
             #Distance_Traveled.append(distance_traveled)
             Result_vector.set_value(n, 0, [Event_list[n], Init_Energy[n], Primary_Angle[n], Primary_Distance[n], E_TOF_OUT[n], E_TOF_IN[n], Delta_T[n]])
             Result_vector.set_value(n, 1, [track_ID, Daughter_ID, Daughter_Energy, Daughter_Angle, Angle_Change, Distance_Traveled])
+            #print("Delta T for event("+str(Event_list[i])+") is "+str(Delta_T[n]))
             n = n + 1
 
         display_progress_bar(i+1, len(Event_list))
