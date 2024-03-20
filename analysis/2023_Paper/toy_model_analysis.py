@@ -3,6 +3,8 @@ import numpy as np
 import time
 import math
 import matplotlib.pyplot as plt
+import h5py
+import os
 
 
 
@@ -83,37 +85,76 @@ def display_progress_bar(i, N, bar_length=50):
 # 
 def read_data_from_toymodel(file_path):
     print("Reading data...\n")
+    file_name_without_extension = os.path.splitext(os.path.basename(file_path))[0]
+    save_path = file_name_without_extension + ".h5"
+    print(save_path)
     try:
-        df = pd.read_csv(file_path, delimiter='\t')  # Assumes tab-separated values in the text file
+        column_names = ['eventID', 'trackID', 'parentID', 'particleID', 'copyNb1 (mother volume)', 'copyNb', 'material', 'time (ns)', 'energy (MeV)', 'energy deposit (MeV)', 'parent process name', 'process name', 'px (MeV/c)', 'py (MeV/c)', 'pz (MeV/c)', 'step length (cm)', 'x (cm)', 'y (cm)', 'z (cm)']
+        df = pd.read_csv(file_path, delimiter='\t', header=None, names=column_names)  # Assumes tab-separated values in the text file
+ 
+        # Convert all columns to string data type
+        df = df.astype(str)
 
-        # Name each data group with event ID
-        grouped = df.groupby(df.iloc[:, 0])
+        # Group by eventID and trackID
+        grouped_data = df.groupby(['eventID'])
 
-        # Create an empty dictionary to store the 3D data structure
-        data_3d = {}
-
-        # Iterate over each group and populate the dictionary
-        for group_name, group_data in grouped:
-            data_3d[group_name] = group_data.values
-        
-        print("Toy Model data imported\nFound " + str(len(list(data_3d.keys()))) + " Events!")
+        # Create HDF5 file and store data
+        with h5py.File(save_path, 'w') as hf:
+            for event_index, (eventID, group_df) in enumerate(grouped_data):
+                event_group = hf.create_group(str(eventID))  # Create group for eventID
+                track_grouped_data = group_df.groupby(group_df.columns[1])  # Group by the second column (index 1)
+                for trackID, track_group_df in track_grouped_data:
+                    track_group = event_group.create_group(str(trackID))  # Create group for trackID under eventID
+                    events = track_group_df.to_numpy()  # Convert group_df to numpy array
+                    track_group.create_dataset("events", data=events)  # Store sub_events in dataset
+                display_progress_bar(event_index+1, len(grouped_data))
+  
+        print("Toy Model data imported\nFound " + str(len(grouped_data)) + " Events!")
 
         # Clear the data buffer
         df = None
         
-        return data_3d
+        return None
     except FileNotFoundError:
         print(f"Error: File '{file_path}' not found.")
         return None
     except pd.errors.ParserError:
         print(f"Error: Unable to parse data from '{file_path}'. Please ensure the file has the correct format.")
         return None
+    
+def list_eventID(file_path):
+    with h5py.File(file_path, "r") as f:
+        # Print all root level object names (aka keys) 
+        # these can be group or dataset names 
+        print("Select one Event number: %s" % f.keys())
+    return None
+
+def list_trackID(file_path, eventID = 1):
+    with h5py.File(file_path, "r") as f:
+        eventID_str = str(eventID)
+        indices = list(f.keys()).index(eventID_str)
+        print("Select one Track ID inside event " + str(eventID)+": "+ str(list(f[list(f.keys())[indices]])))
+    return None
+
+def list_track_data(file_path, eventID, trackID):
+    with h5py.File(file_path, "r") as f:
+        track_directory = str(eventID) + '/' + str(trackID) + '/events'
+        track_data = list(f[track_directory])
+    
+        data_array = np.array(track_data)
+
+        # Create an empty array to store decoded values
+        data_array_decoded = np.empty(data_array.shape, dtype=object)
+
+        # Iterate over each element and decode
+        for i in range(data_array.shape[0]):
+            for j in range(data_array.shape[1]):
+                data_array_decoded[i, j] = data_array[i, j].decode('utf-8')
+    
+    return data_array_decoded
 
 
-    
-    
-    
-    
+
 # This function doing GRASP analysis
 def Analyze_GRASP(data_3d, particle_name, stop_event=False, in_flight_event=False):
     
