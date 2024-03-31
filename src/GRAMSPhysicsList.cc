@@ -31,7 +31,7 @@
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
 
-#include "GRAMSPhysicsList.hh"
+#include "GAPSPhysicsList.hh"
 
 #include "G4DecayPhysics.hh"
 #include "G4EmStandardPhysics.hh"
@@ -41,15 +41,15 @@
 #include "G4HadronElasticPhysics.hh"
 #include "G4NeutronTrackingCut.hh"
 
-//#include "G4DataQuestionaire.hh"
+#include "G4DataQuestionaire.hh"
 #include "G4HadronPhysicsQGSP_BERT.hh"
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
-GRAMSPhysicsList::GRAMSPhysicsList():  G4VModularPhysicsList()
+GAPSPhysicsList::GAPSPhysicsList():  G4VModularPhysicsList()
 {
-//    G4DataQuestionaire it(photon);
-//    G4cout << "<<< Geant4 Physics List simulation engine: QGSP_BERT 3.4"<<G4endl;
-//    G4cout <<G4endl;
+    G4DataQuestionaire it(photon);
+    G4cout << "<<< Geant4 Physics List simulation engine: QGSP_BERT 3.4"<<G4endl;
+    G4cout <<G4endl;
     
     
     defaultCutValue = 0.7*CLHEP::mm;
@@ -82,11 +82,11 @@ GRAMSPhysicsList::GRAMSPhysicsList():  G4VModularPhysicsList()
 }
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
-GRAMSPhysicsList::~GRAMSPhysicsList()
+GAPSPhysicsList::~GAPSPhysicsList()
 {;}
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
-void GRAMSPhysicsList::SetCuts()
+void GAPSPhysicsList::SetCuts()
 {
     // Use default cut values gamma and e processes
     SetCutsWithDefault();   

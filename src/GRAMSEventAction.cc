@@ -30,7 +30,7 @@
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
  
-#include "GRAMSEventAction.hh"
+#include "GAPSEventAction.hh"
 
 #include "G4Event.hh"
 #include "G4EventManager.hh"
@@ -42,32 +42,28 @@
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
  
-GRAMSEventAction::GRAMSEventAction()
+GAPSEventAction::GAPSEventAction()
 {}
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
  
-GRAMSEventAction::~GRAMSEventAction()
+GAPSEventAction::~GAPSEventAction()
 {}
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
  
-void GRAMSEventAction::BeginOfEventAction(const G4Event* evt)
+void GAPSEventAction::BeginOfEventAction(const G4Event* evt)
 {  
   extern global_struct global;
   G4int event_id = evt->GetEventID();
   global.eventID = event_id;
 	global.lStopEvent = 0;
-  global.TOF0 = 0.0;
-  global.TOF1 = 0.0;
-  global.TScore1 = 0.0;
-  global.TScore2 = 0.0;
 	if (event_id < 10 || event_id%1000 == 0) G4cout << ">>> Event " << evt->GetEventID() << G4endl;
 }
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
  
-void GRAMSEventAction::EndOfEventAction(const G4Event* evt)
+void GAPSEventAction::EndOfEventAction(const G4Event* evt)
 {
 }
 

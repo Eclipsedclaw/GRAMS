@@ -30,9 +30,9 @@
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
-#include "GRAMSDetectorMessenger.hh"
+#include "GAPSDetectorMessenger.hh"
 
-#include "GRAMSDetectorConstruction.hh"
+#include "GAPSDetectorConstruction.hh"
 #include "G4UIdirectory.hh"
 #include "G4UIcmdWithAString.hh"
 #include "G4UIcmdWithAnInteger.hh"
@@ -45,7 +45,7 @@
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
-GRAMSDetectorMessenger::GRAMSDetectorMessenger(GRAMSDetectorConstruction* myDet)
+GAPSDetectorMessenger::GAPSDetectorMessenger(GAPSDetectorConstruction* myDet)
 :myDetector(myDet)
 { 
 // output directry
@@ -78,11 +78,17 @@ GRAMSDetectorMessenger::GRAMSDetectorMessenger(GRAMSDetectorConstruction* myDet)
   GunSeedCmd->SetParameterName( "num", true );
   GunSeedCmd->SetDefaultValue(9876);
 
-// Verbose level for Detector Type, 0 for reference, 1 for full geometry, 2 for TPC only (no TOF, no atmosphere, no scoring)
-  DetectorTypeCmd = new G4UIcmdWithAnInteger("/DetectorType", this );
-  DetectorTypeCmd->SetGuidance("DetectorType");
-  DetectorTypeCmd->SetParameterName("flag",true);
-  DetectorTypeCmd->SetDefaultValue(1);
+// Verbose level for GAPSs
+  GAPSVerboseCmd = new G4UIcmdWithAnInteger("/myVerbose/GAPS", this );
+  GAPSVerboseCmd->SetGuidance("Verbose level of GAPSs");
+  GAPSVerboseCmd->SetParameterName("flag",true);
+  GAPSVerboseCmd->SetDefaultValue(0);
+
+// Verbose level for Simulation Type, 0 for reference, 1 for grasp, 2 for Pbar/Dbar Stop event, generate only one particle, 3 for Pbar/Dbar Stop event, generate all particles
+  SimulationTypeCmd = new G4UIcmdWithAnInteger("/SimulationType", this );
+  SimulationTypeCmd->SetGuidance("SimulationType");
+  SimulationTypeCmd->SetParameterName("flag",true);
+  SimulationTypeCmd->SetDefaultValue(1);
 	
 // Output Type, 0 for ASCII, 1 for ROOT
   OutputTypeCmd = new G4UIcmdWithAnInteger("/OutputType", this );
@@ -108,17 +114,17 @@ GRAMSDetectorMessenger::GRAMSDetectorMessenger(GRAMSDetectorConstruction* myDet)
   TrackEdepCmd->SetParameterName("flag",true);
   TrackEdepCmd->SetDefaultValue(1);
 
-// Stop Event, 0 for all, 1 for stop event (trackID = 1), 2 for both stop and inelastic scattering/inflight annihilation
+// Stop Event, 0 for all, 1 for stop event (trackID = 1)
   StopEventCmd = new G4UIcmdWithAnInteger("/StopEvent", this );
   StopEventCmd->SetGuidance("StopEvent");
   StopEventCmd->SetParameterName("flag",true);
   StopEventCmd->SetDefaultValue(0);
 	
-// Particle Source, 0 for particle gun, 1 for GPS
-  ParticleSourceCmd = new G4UIcmdWithAnInteger("/ParticleSource", this );
-  ParticleSourceCmd->SetGuidance("ParticleSource");
-  ParticleSourceCmd->SetParameterName("flag",true);
-  ParticleSourceCmd->SetDefaultValue(0);
+// General Particle Source, 0 for off (particle gun), 1 for on (GPS) 
+  GPSCmd = new G4UIcmdWithAnInteger("/GeneralParticleSource", this );
+  GPSCmd->SetGuidance("GeneralParticleSource");
+  GPSCmd->SetParameterName("flag",true);
+  GPSCmd->SetDefaultValue(0);
 	
 // min E for the primary particle
   EminCmd = new G4UIcmdWithADoubleAndUnit("/PrimaryParticle/Emin",this);  
@@ -149,76 +155,34 @@ GRAMSDetectorMessenger::GRAMSDetectorMessenger(GRAMSDetectorConstruction* myDet)
   DetectorVisualizationCmd->SetGuidance("Detector Visualization");
   DetectorVisualizationCmd->SetParameterName("DetectorVisualization",false);
 	DetectorVisualizationCmd-> SetDefaultValue(0);
-
-// Gondola angle
-  Gondola_AngleCmd = new G4UIcmdWithADoubleAndUnit("/Gondola_Angle",this);
-  Gondola_AngleCmd->SetGuidance("Gondola rotation angle (deg)");
-  Gondola_AngleCmd->SetParameterName("Gondola_Angle",true);
-  Gondola_AngleCmd->SetRange("Gondola_Angle > -90.");
-  Gondola_AngleCmd->SetDefaultValue(0.0);
-  Gondola_AngleCmd->SetDefaultUnit("deg");
-
-// NbOfLArLayer
-  NbOfLArLayerCmd = new G4UIcmdWithAnInteger("/NbOfLArLayer",this);
-  NbOfLArLayerCmd->SetGuidance("NbOfLArLayer");
-  NbOfLArLayerCmd->SetParameterName("NbOfLArLayer",false);
-	NbOfLArLayerCmd-> SetDefaultValue(1);
-  
-// NbOfLXeLayer
-  NbOfLXeLayerCmd = new G4UIcmdWithAnInteger("/NbOfLXeLayer",this);
-  NbOfLXeLayerCmd->SetGuidance("NbOfLXeLayer");
-  NbOfLXeLayerCmd->SetParameterName("NbOfLXeLayer",false);
-  NbOfLXeLayerCmd-> SetDefaultValue(1);
-  
-// NbOfCellL
-  NbOfCellLCmd = new G4UIcmdWithAnInteger("/NbOfCellL",this);
-  NbOfCellLCmd->SetGuidance("NbOfCellL");
-  NbOfCellLCmd->SetParameterName("NbOfCellL",false);
-  NbOfCellLCmd-> SetDefaultValue(1);
-
-// NbOfLArCellZ
-  NbOfLArCellZCmd = new G4UIcmdWithAnInteger("/NbOfLArCellZ",this);
-  NbOfLArCellZCmd->SetGuidance("NbOfLArCellZ");
-  NbOfLArCellZCmd->SetParameterName("NbOfLArCellZ",false);
-  NbOfLArCellZCmd-> SetDefaultValue(1);
-
-// NbOfLXeCellZ
-  NbOfLXeCellZCmd = new G4UIcmdWithAnInteger("/NbOfLXeCellZ",this);
-  NbOfLXeCellZCmd->SetGuidance("NbOfLXeCellZ");
-  NbOfLXeCellZCmd->SetParameterName("NbOfLXeCellZ",false);
-  NbOfLXeCellZCmd-> SetDefaultValue(1);
 	
-// LArTPC thickness
-  LArTPC_ZCmd = new G4UIcmdWithADoubleAndUnit("/LArTPC_Z",this);
-  LArTPC_ZCmd->SetGuidance("LArTPC thickness (cm)");
-  LArTPC_ZCmd->SetParameterName("LArTPC_Z",true);
-	LArTPC_ZCmd->SetRange("LArTPC_Z >= 0.");
-	LArTPC_ZCmd->SetDefaultValue(15.0);
-	LArTPC_ZCmd->SetDefaultUnit("cm");
+// Detector Type
+  DetectorTypeCmd = new G4UIcmdWithAnInteger("/DetectorType",this);  
+  DetectorTypeCmd->SetGuidance("detector type");
+  DetectorTypeCmd->SetParameterName("DetectorType",false);
+	DetectorTypeCmd-> SetDefaultValue(0);
 
-// LXeTPC thickness
-  LXeTPC_ZCmd = new G4UIcmdWithADoubleAndUnit("/LXeTPC_Z",this);
-  LXeTPC_ZCmd->SetGuidance("LXeTPC thickness (cm)");
-  LXeTPC_ZCmd->SetParameterName("LXeTPC_Z",true);
-  LXeTPC_ZCmd->SetRange("LXeTPC_Z >= 0.");
-  LXeTPC_ZCmd->SetDefaultValue(15.0);
-  LXeTPC_ZCmd->SetDefaultUnit("cm");
-  
-// TPC space
-  TPC_spaceCmd = new G4UIcmdWithADoubleAndUnit("/TPC_space",this);
-  TPC_spaceCmd->SetGuidance("TPC space (cm)");
-  TPC_spaceCmd->SetParameterName("TPC_space",true);
-  TPC_spaceCmd->SetRange("TPC_space >= 0.");
-  TPC_spaceCmd->SetDefaultValue(1.0);
-  TPC_spaceCmd->SetDefaultUnit("cm");
+// NbOfLayers
+  NbOfLayersCmd = new G4UIcmdWithAnInteger("/NbOfLayers",this);  
+  NbOfLayersCmd->SetGuidance("number of layers");
+  NbOfLayersCmd->SetParameterName("NbOfLayers",false);
+	NbOfLayersCmd-> SetDefaultValue(13);
 	
-// TPC length
-  TPC_LCmd = new G4UIcmdWithADoubleAndUnit("/TPC_L",this);  
-  TPC_LCmd->SetGuidance("TPC length (cm)");
-  TPC_LCmd->SetParameterName("TPC_L",true);
-	TPC_LCmd->SetRange("TPC_L > 0."); 
-	TPC_LCmd->SetDefaultValue(200.0);
-	TPC_LCmd->SetDefaultUnit("cm");
+// layer space
+  LayerSpaceCmd = new G4UIcmdWithADoubleAndUnit("/LayerSpace",this);  
+  LayerSpaceCmd->SetGuidance("layer space (cm)");
+  LayerSpaceCmd->SetParameterName("LayerSpace",true);
+	LayerSpaceCmd->SetRange("LayerSpace > 0."); 
+	LayerSpaceCmd->SetDefaultValue(15.0);
+	LayerSpaceCmd->SetDefaultUnit("cm");
+	
+// layer length
+  Layer_LCmd = new G4UIcmdWithADoubleAndUnit("/Layer_L",this);  
+  Layer_LCmd->SetGuidance("layer length (cm)");
+  Layer_LCmd->SetParameterName("Layer_L",true);
+	Layer_LCmd->SetRange("Layer_L > 0."); 
+	Layer_LCmd->SetDefaultValue(200.0);
+	Layer_LCmd->SetDefaultUnit("cm");
 
 // TOFout thickness
   TOFout_ZCmd = new G4UIcmdWithADoubleAndUnit("/TOFout_Z",this);  
@@ -260,6 +224,22 @@ GRAMSDetectorMessenger::GRAMSDetectorMessenger(GRAMSDetectorConstruction* myDet)
 	TOFin_ZCmd->SetDefaultValue(0.3);
 	TOFin_ZCmd->SetDefaultUnit("cm");
 	
+// Si(Li) thickness
+  SiLi_ZCmd = new G4UIcmdWithADoubleAndUnit("/SiLi_Z",this);  
+  SiLi_ZCmd->SetGuidance("Si(Li) thickness (cm)");
+  SiLi_ZCmd->SetParameterName("SiLi_Z",true);
+	SiLi_ZCmd->SetRange("SiLi_Z > 0."); 
+	SiLi_ZCmd->SetDefaultValue(0.25);
+	SiLi_ZCmd->SetDefaultUnit("cm");
+
+// Frame thickness
+  Frame_ZCmd = new G4UIcmdWithADoubleAndUnit("/Frame_Z",this);  
+  Frame_ZCmd->SetGuidance("Frame thickness (cm)");
+  Frame_ZCmd->SetParameterName("Frame_Z",true);
+	Frame_ZCmd->SetRange("Frame_Z > 0."); 
+	Frame_ZCmd->SetDefaultValue(0.5);
+	Frame_ZCmd->SetDefaultUnit("cm");
+	
 // Atmos thickness
   Atmos_ZCmd = new G4UIcmdWithADoubleAndUnit("/Atmos_Z",this);  
   Atmos_ZCmd->SetGuidance("Atmos thickness (cm)");
@@ -270,7 +250,7 @@ GRAMSDetectorMessenger::GRAMSDetectorMessenger(GRAMSDetectorConstruction* myDet)
 
 // Detector overlap check
   CheckOverlapCmd = new G4UIcmdWithAnInteger("/CheckOverlap", this );
-  CheckOverlapCmd->SetGuidance("Verbose level of GRAMSs");
+  CheckOverlapCmd->SetGuidance("Verbose level of GAPSs");
   CheckOverlapCmd->SetParameterName("flag",true);
   CheckOverlapCmd->SetDefaultValue(0);
 	
@@ -283,39 +263,36 @@ GRAMSDetectorMessenger::GRAMSDetectorMessenger(GRAMSDetectorConstruction* myDet)
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
-GRAMSDetectorMessenger::~GRAMSDetectorMessenger()
+GAPSDetectorMessenger::~GAPSDetectorMessenger()
 {
 	delete OutDirCmd;
   delete OutFileCmd;
 	delete InDirCmd;
   delete InFileCmd;
   delete GunSeedCmd;
-	delete DetectorTypeCmd;
+  delete GAPSVerboseCmd;
+	delete SimulationTypeCmd;
 	delete DetectorVisualizationCmd;
-	delete NbOfLArLayerCmd;
-  delete NbOfLXeLayerCmd;
-  delete NbOfCellLCmd;
-  delete NbOfLArCellZCmd;
-  delete NbOfLXeCellZCmd;
+	delete DetectorTypeCmd;
+	delete NbOfLayersCmd;
 	delete OutputTypeCmd;
 	delete OutputFormatCmd;
 	delete TrackTypeCmd;
   delete TrackEdepCmd;
 	delete StopEventCmd;
-	delete ParticleSourceCmd;
+	delete GPSCmd;
 	delete EminCmd;
 	delete EmaxCmd;
 	delete areaCmd;
-  delete TPC_spaceCmd;
-	delete LArTPC_ZCmd;
-  delete LXeTPC_ZCmd;
-	delete TPC_LCmd;
+	delete LayerSpaceCmd;
+	delete Layer_LCmd;
 	delete TOFout_ZCmd;
 	delete TOFout_LCmd;
 	delete TOFout_HCmd;
 	delete TOFout_AngleCmd;
 	delete TOFin_ZCmd;
-  delete Gondola_AngleCmd;
+	delete SiLi_ZCmd;
+	delete Frame_ZCmd;
 	delete Atmos_ZCmd;
 	delete CheckOverlapCmd;
 	delete UpdateCmd;
@@ -323,7 +300,7 @@ GRAMSDetectorMessenger::~GRAMSDetectorMessenger()
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
-void GRAMSDetectorMessenger::SetNewValue(G4UIcommand* command,G4String newValue)
+void GAPSDetectorMessenger::SetNewValue(G4UIcommand* command,G4String newValue)
 { 
  extern global_struct global;
 	if(command == OutDirCmd) strcpy(global.outdir, newValue );
@@ -331,32 +308,29 @@ void GRAMSDetectorMessenger::SetNewValue(G4UIcommand* command,G4String newValue)
 	if(command == InDirCmd) strcpy(global.indir, newValue );
 	if(command == InFileCmd) strcpy(global.infile, newValue );
   if(command == GunSeedCmd) global.seed=(GunSeedCmd->GetNewIntValue(newValue));
-	if(command == DetectorTypeCmd) global.DetectorType = (DetectorTypeCmd->GetNewIntValue(newValue));
+  if(command == GAPSVerboseCmd) global.GAPSVerbose = (GAPSVerboseCmd->GetNewIntValue(newValue));
+	if(command == SimulationTypeCmd) global.SimulationType = (SimulationTypeCmd->GetNewIntValue(newValue));
 	if(command == DetectorVisualizationCmd) global.DetectorVisualization = (DetectorVisualizationCmd->GetNewIntValue(newValue));
-  if(command == OutputTypeCmd) global.OutputType = (OutputTypeCmd->GetNewIntValue(newValue));
-  if(command == OutputFormatCmd) global.OutputFormat = (OutputFormatCmd->GetNewIntValue(newValue));
-  if(command == TrackTypeCmd) global.TrackType = (TrackTypeCmd->GetNewIntValue(newValue));
+	if(command == DetectorTypeCmd) global.DetectorType = (DetectorTypeCmd->GetNewIntValue(newValue));
+	if(command == NbOfLayersCmd) myDetector->SetNbOfLayers(NbOfLayersCmd->GetNewIntValue(newValue));
+	if(command == OutputTypeCmd) global.OutputType = (OutputTypeCmd->GetNewIntValue(newValue));
+	if(command == OutputFormatCmd) global.OutputFormat = (OutputFormatCmd->GetNewIntValue(newValue));
+	if(command == TrackTypeCmd) global.TrackType = (TrackTypeCmd->GetNewIntValue(newValue));
   if(command == TrackEdepCmd) global.TrackEdep = (TrackEdepCmd->GetNewIntValue(newValue));
-  if(command == StopEventCmd) global.StopEvent = (StopEventCmd->GetNewIntValue(newValue));
-  if(command == ParticleSourceCmd) global.ParticleSource = (ParticleSourceCmd->GetNewIntValue(newValue));
-  if(command == EminCmd) global.Emin = (EminCmd->GetNewDoubleValue(newValue));
-  if(command == EmaxCmd) global.Emax = (EmaxCmd->GetNewDoubleValue(newValue));
-  if(command == areaCmd) global.area = (areaCmd->GetNewDoubleValue(newValue));
-  if(command == NbOfLArLayerCmd) global.NbLArTPC = (NbOfLArLayerCmd->GetNewIntValue(newValue));
-  if(command == NbOfLXeLayerCmd) global.NbLXeTPC = (NbOfLXeLayerCmd->GetNewIntValue(newValue));
-  if(command == NbOfCellLCmd) global.NbCellL = (NbOfCellLCmd->GetNewIntValue(newValue));
-  if(command == NbOfLArCellZCmd) global.NbLArCellZ = (NbOfLArCellZCmd->GetNewIntValue(newValue));
-  if(command == NbOfLXeCellZCmd) global.NbLXeCellZ = (NbOfLXeCellZCmd->GetNewIntValue(newValue));
-  if(command == TPC_spaceCmd) myDetector->SetTPC_space(TPC_spaceCmd->GetNewDoubleValue(newValue));
-  if(command == LArTPC_ZCmd) myDetector->SetLArTPC_Z(LArTPC_ZCmd->GetNewDoubleValue(newValue));
-  if(command == LXeTPC_ZCmd) myDetector->SetLXeTPC_Z(LXeTPC_ZCmd->GetNewDoubleValue(newValue));
-  if(command == TPC_LCmd) myDetector->SetTPC_L(TPC_LCmd->GetNewDoubleValue(newValue));
+	if(command == StopEventCmd) global.StopEvent = (StopEventCmd->GetNewIntValue(newValue));
+	if(command == GPSCmd) global.GPS = (GPSCmd->GetNewIntValue(newValue));
+  if(command == EminCmd) global.Emin = (EminCmd->GetNewDoubleValue(newValue)); 
+	if(command == EmaxCmd) global.Emax = (EmaxCmd->GetNewDoubleValue(newValue));
+	if(command == areaCmd) global.area = (areaCmd->GetNewDoubleValue(newValue));
+	if(command == LayerSpaceCmd) myDetector->SetLayerSpace(LayerSpaceCmd->GetNewDoubleValue(newValue));
+	if(command == Layer_LCmd) myDetector->SetLayer_L(Layer_LCmd->GetNewDoubleValue(newValue));
 	if(command == TOFout_ZCmd) myDetector->SetTOFout_Z(TOFout_ZCmd->GetNewDoubleValue(newValue));
 	if(command == TOFout_LCmd) myDetector->SetTOFout_L(TOFout_LCmd->GetNewDoubleValue(newValue));
 	if(command == TOFout_HCmd) myDetector->SetTOFout_H(TOFout_HCmd->GetNewDoubleValue(newValue));
 	if(command == TOFout_AngleCmd) myDetector->SetTOFout_Angle(TOFout_AngleCmd->GetNewDoubleValue(newValue));
 	if(command == TOFin_ZCmd) myDetector->SetTOFin_Z(TOFin_ZCmd->GetNewDoubleValue(newValue));
-  if(command == Gondola_AngleCmd) myDetector->SetGondola_Angle(Gondola_AngleCmd->GetNewDoubleValue(newValue));
+	if(command == SiLi_ZCmd) myDetector->SetSiLi_Z(SiLi_ZCmd->GetNewDoubleValue(newValue));
+	if(command == Frame_ZCmd) myDetector->SetFrame_Z(Frame_ZCmd->GetNewDoubleValue(newValue));
 	if(command == Atmos_ZCmd) myDetector->SetAtmos_Z(Atmos_ZCmd->GetNewDoubleValue(newValue));
 	if(command == CheckOverlapCmd) global.CheckOverlap = (CheckOverlapCmd->GetNewIntValue(newValue));
 	if(command == UpdateCmd) myDetector->UpdateGeometry();

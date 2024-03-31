@@ -30,7 +30,7 @@
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
-#include "GRAMSDetectorHit.hh"
+#include "GAPSDetectorHit.hh"
 #include "G4UnitsTable.hh"
 #include "G4VVisManager.hh"
 #include "G4Circle.hh"
@@ -39,19 +39,19 @@
 #include "global.h"
 #include "G4SystemOfUnits.hh"
 
-G4Allocator<GRAMSDetectorHit> GRAMSDetectorHitAllocator;
+G4Allocator<GAPSDetectorHit> GAPSDetectorHitAllocator;
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
-GRAMSDetectorHit::GRAMSDetectorHit() {}
+GAPSDetectorHit::GAPSDetectorHit() {}
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
-GRAMSDetectorHit::~GRAMSDetectorHit() {}
+GAPSDetectorHit::~GAPSDetectorHit() {}
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
-GRAMSDetectorHit::GRAMSDetectorHit(const GRAMSDetectorHit& right)
+GAPSDetectorHit::GAPSDetectorHit(const GAPSDetectorHit& right)
   : G4VHit()
 {
 	trackID_   = right.trackID_;
@@ -74,7 +74,7 @@ GRAMSDetectorHit::GRAMSDetectorHit(const GRAMSDetectorHit& right)
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
-const GRAMSDetectorHit& GRAMSDetectorHit::operator=(const GRAMSDetectorHit& right)
+const GAPSDetectorHit& GAPSDetectorHit::operator=(const GAPSDetectorHit& right)
 {
   trackID_   = right.trackID_;
 	time_ = right.time_;
@@ -96,14 +96,14 @@ const GRAMSDetectorHit& GRAMSDetectorHit::operator=(const GRAMSDetectorHit& righ
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
-G4int GRAMSDetectorHit::operator==(const GRAMSDetectorHit& right) const
+G4int GAPSDetectorHit::operator==(const GAPSDetectorHit& right) const
 {
   return (this==&right) ? 1 : 0;
 }
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
-void GRAMSDetectorHit::Draw()
+void GAPSDetectorHit::Draw()
 {
   G4VVisManager* pVVisManager = G4VVisManager::GetConcreteInstance();
   if(pVVisManager)
@@ -120,7 +120,7 @@ void GRAMSDetectorHit::Draw()
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
-void GRAMSDetectorHit::Print()
+void GAPSDetectorHit::Print()
 {
   G4cout << "  trackID_: " << trackID_ << "  time_: " << G4BestUnit(time_,"time_") 
 				 << "  particleID_: " << particleID_
@@ -135,53 +135,12 @@ void GRAMSDetectorHit::Print()
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
-void GRAMSDetectorHit::fPrint()
+void GAPSDetectorHit::fPrint()
 {
   extern global_struct global;
 	if(global.OutputFormat == 0)
 	{
-		if(global.StopEvent == 3)
-    {
-      if(copyNb_ == -12000) // Score1
-      {
-        if(global.TScore1 == 0.0 || global.TScore1 > time_ || (momentum_.getX()*momentum_.getX()+momentum_.getY()*momentum_.getY()+momentum_.getZ()*momentum_.getZ() == 0.0))
-        {
-          global.output << global.eventID << "\t" << trackID_ << "\t" << parentID_ << "\t" << particleID_ << "\t" << copyNb1_ << "\t" << copyNb_ << "\t" << materialName_ << "\t" << time_ / ns << "\t" << kEnergy_ / MeV << "\t" << edep_ / MeV << "\t" << parentProcess_ << "\t" << processName_ << "\t" << momentum_.getX() / MeV << "\t" << momentum_.getY() / MeV << "\t" << momentum_.getZ() / MeV << "\t" << stepLength_ / cm << "\t" << pos_.getX() / cm << "\t" << pos_.getY() / cm << "\t" << pos_.getZ() / cm << "\n";
-          global.TScore1 = time_;
-        }
-      }
-      else if(copyNb_ == -12001) // Score1
-      {
-        if(global.TScore2 == 0.0 || global.TScore2 > time_ || (momentum_.getX()*momentum_.getX()+momentum_.getY()*momentum_.getY()+momentum_.getZ()*momentum_.getZ() == 0.0))
-        {
-          global.output << global.eventID << "\t" << trackID_ << "\t" << parentID_ << "\t" << particleID_ << "\t" << copyNb1_ << "\t" << copyNb_ << "\t" << materialName_ << "\t" << time_ / ns << "\t" << kEnergy_ / MeV << "\t" << edep_ / MeV << "\t" << parentProcess_ << "\t" << processName_ << "\t" << momentum_.getX() / MeV << "\t" << momentum_.getY() / MeV << "\t" << momentum_.getZ() / MeV << "\t" << stepLength_ / cm << "\t" << pos_.getX() / cm << "\t" << pos_.getY() / cm << "\t" << pos_.getZ() / cm << "\n";
-          global.TScore2 = time_;
-        }
-      }
-      if(copyNb_ == -10000 || copyNb_ == -10002 ||copyNb_ == -10003 ||copyNb_ == -10004 || copyNb_ == -10005) // TOF out
-      {
-        if(global.TOF0 == 0.0 || global.TOF0 > time_ || (momentum_.getX()*momentum_.getX()+momentum_.getY()*momentum_.getY()+momentum_.getZ()*momentum_.getZ() == 0.0))
-        {
-          global.output << global.eventID << "\t" << trackID_ << "\t" << parentID_ << "\t" << particleID_ << "\t" << copyNb1_ << "\t" << copyNb_ << "\t" << materialName_ << "\t" << time_ / ns << "\t" << kEnergy_ / MeV << "\t" << edep_ / MeV << "\t" << parentProcess_ << "\t" << processName_ << "\t" << momentum_.getX() / MeV << "\t" << momentum_.getY() / MeV << "\t" << momentum_.getZ() / MeV << "\t" << stepLength_ / cm << "\t" << pos_.getX() / cm << "\t" << pos_.getY() / cm << "\t" << pos_.getZ() / cm << "\n";
-          global.TOF0 = time_;
-        }
-      }
-      else if(copyNb_ == -11000 || copyNb_ == -11001 || copyNb_ == -11002 ||copyNb_ == -11003 ||copyNb_ == -11004 || copyNb_ == -11005) // TOF in
-      {
-        if(global.TOF1 == 0.0 || global.TOF1 > time_ || (momentum_.getX()*momentum_.getX()+momentum_.getY()*momentum_.getY()+momentum_.getZ()*momentum_.getZ() == 0.0))
-        {
-          global.output << global.eventID << "\t" << trackID_ << "\t" << parentID_ << "\t" << particleID_ << "\t" << copyNb1_ << "\t" << copyNb_ << "\t" << materialName_ << "\t" << time_ / ns << "\t" << kEnergy_ / MeV << "\t" << edep_ / MeV << "\t" << parentProcess_ << "\t" << processName_ << "\t" << momentum_.getX() / MeV << "\t" << momentum_.getY() / MeV << "\t" << momentum_.getZ() / MeV << "\t" << stepLength_ / cm << "\t" << pos_.getX() / cm << "\t" << pos_.getY() / cm << "\t" << pos_.getZ() / cm << "\n";
-          global.TOF1 = time_;
-        }
-      }
-      else if(momentum_.getX()*momentum_.getX()+momentum_.getY()*momentum_.getY()+momentum_.getZ()*momentum_.getZ() == 0.0)
-      {
-        global.output << global.eventID << "\t" << trackID_ << "\t" << parentID_ << "\t" << particleID_ << "\t" << copyNb1_ << "\t" << copyNb_ << "\t" << materialName_ << "\t" << time_ / ns << "\t" << kEnergy_ / MeV << "\t" << edep_ / MeV << "\t" << parentProcess_ << "\t" << processName_ << "\t" << momentum_.getX() / MeV << "\t" << momentum_.getY() / MeV << "\t" << momentum_.getZ() / MeV << "\t" << stepLength_ / cm << "\t" << pos_.getX() / cm << "\t" << pos_.getY() / cm << "\t" << pos_.getZ() / cm << "\n";
-      }
-    }
-    else
-    {
-      global.output
+		global.output
   //													<< global.runnum << "\t"
                           << global.eventID << "\t"
 													<< trackID_ << "\t"
@@ -206,8 +165,31 @@ void GRAMSDetectorHit::fPrint()
 													<< pos_.getX() / cm << "\t"
                           << pos_.getY() / cm << "\t"
                           << pos_.getZ() / cm << "\n";
-    }
-  }
+	}
+	if(global.OutputFormat == 1) //ROOT format
+	{
+		global.eventID = int(global.eventID);
+		global.trackID = int(trackID_);
+		global.parentID = int(parentID_);
+		global.particleID = int(particleID_);
+		global.copyNb1 = int(copyNb1_);
+		global.copyNb = int(copyNb_);
+		//	global.material = int(materialName_);
+		sprintf(global.material,materialName_.c_str());
+		global.time = float(time_/ns);
+		global.energy = float(kEnergy_/MeV);
+		global.eDep = float(edep_/MeV);
+		sprintf(global.processName,processName_.c_str());
+		sprintf(global.parentProcess,parentProcess_.c_str());
+		global.px = float(momentum_.getX()/MeV);
+		global.py = float(momentum_.getY()/MeV);
+		global.pz = float(momentum_.getZ()/MeV);
+		global.stepLength = float(stepLength_/cm);
+		global.x = float(pos_.getX()/cm);
+		global.y = float(pos_.getY()/cm);
+		global.z = float(pos_.getZ()/cm);
+		global.tree->Fill();
+	}
 }
 
 

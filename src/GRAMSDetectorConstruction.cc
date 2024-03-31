@@ -30,8 +30,8 @@
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
-#include "GRAMSDetectorConstruction.hh"
-#include "GRAMSDetectorMessenger.hh"
+#include "GAPSDetectorConstruction.hh"
+#include "GAPSDetectorMessenger.hh"
 
 #include "G4Material.hh"
 #include "G4Box.hh"
@@ -47,7 +47,6 @@
 #include "G4AssemblyVolume.hh"
 #include "G4RotationMatrix.hh"
 #include "G4PVPlacement.hh"
-#include "G4PVReplica.hh"
 #include "G4SDManager.hh"
 #include "G4GeometryTolerance.hh"
 #include "G4GeometryManager.hh"
@@ -68,54 +67,56 @@
 #include "G4SystemOfUnits.hh"
 
 /* copy number
+ maximum layer: 50
+ maximum channel: 10
+ maximum channel/layer: 2000
  
- copyTPC = 0;
- copyCell = 0;
- copyTOFout = -10000;
- copyTOFin = -11000;
- copyScore1 = -12000;
- copyScore2 = -12001; // reference plane
- copyAtmosphere = -12002;
+ // copy number
+ copySiLi = 0;
+ copyLayer = 0;
+ copyFrame = 2000;
+ copyTOFout = 10000;
+ copyTOFin = 11000;
+ copyScore1 = 12000;
+ copyScore2 = 12001; // reference plane
+ copyAtmosphere = 12002;
+ copyOutlet = 12003;
+ copyPipe = 12004;
+ copyElectronics = 12005;
  copyWorld = -1;
- 
 */
 
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
-GRAMSDetectorConstruction::GRAMSDetectorConstruction()
+GAPSDetectorConstruction::GAPSDetectorConstruction()
 :solidWorld(0),logicWorld(0),physiWorld(0)
 {
   DefineMaterials();
-	detectorMessenger = new GRAMSDetectorMessenger(this);
+	detectorMessenger = new GAPSDetectorMessenger(this);
 	
 	// fixed value
 	atmosL = 50.0*m;
 	scoreL = atmosL;
 	scoreZ = 0.001*cm;
-	TOFspaceL = 100.0*cm;
-  TOFspaceH = 150.0*cm;
-  space = 5.0*cm;
+	TOFspace = 100.0*cm;
+	OutletT = 10.0*cm;
+	OutletL = 15.0*cm;
+	rPipe = 0.5*cm;//0.625*cm, 0.95*cm;
 	
 	// default parameter
-	TPCL = 100.0*cm;
-  LArTPCZ = 20.0*cm;
-  LXeTPCZ = 20.0*cm;
-  TPCZ = LArTPCZ+LXeTPCZ;
-  TPCspace = 4.0*cm;
+	NbOfLayers = 10;
+	LayerSpace = 20.0*cm;
+	LayerL = 200.0*cm;
+	zSiLi = 0.25*cm;
+	FrameZ = 0.32*cm;
 	TOFinZ = 0.5*cm;
 	TOFoutZ = 0.5*cm;
-	TOFoutL = 2.0*TOFspaceL+TOFinL;
-	TOFoutH = TOFspaceH+0.5*TOFinH;
+	TOFoutL = 2.0*TOFspace+TOFinL;
+	TOFoutH = TOFspace+0.5*TOFinH;
 	TOFoutAngle = 90.0*deg;
-  GondolaAngle = 0.0*deg;
 	atmosZ = 3.9*cm;
-  ChamberT = 1.0*cm;
-  
-  NbOfLayer = 10;
-  copyL = 500;
-  copyLArZ = 1;
-  copyLXeZ = 1;
+
 	
 	extern global_struct global;
 	sprintf(global.outdir, "tmp");
@@ -124,14 +125,14 @@ GRAMSDetectorConstruction::GRAMSDetectorConstruction()
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
-GRAMSDetectorConstruction::~GRAMSDetectorConstruction()
+GAPSDetectorConstruction::~GAPSDetectorConstruction()
 {
   delete detectorMessenger;
 }
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
-void GRAMSDetectorConstruction::DefineMaterials()
+void GAPSDetectorConstruction::DefineMaterials()
 {
 	//------------------------------------------------
 	// Material definition
@@ -168,12 +169,6 @@ void GRAMSDetectorConstruction::DefineMaterials()
   FlightAir = new G4Material("FlightAir", density, nel=1, kStateGas,temperature,pressure);
   FlightAir-> AddMaterial(Air, 100*perCent);
 	
-  // Liquid Argone
-  LAr = new G4Material("LAr",z=18.,a=39.95*g/mole,density=1.4*g/cm3);
-  
-  // Liquid Xenon
-  LXe = new G4Material("LXe",z=54.,a=131.29*g/mole,density=3.020*g/cm3);
-  
   //Silicon
 	Silicon= new G4Material("Silicon", z=14., a=28.0855*g/mole, density=2.330*g/cm3);
 	
@@ -186,6 +181,7 @@ void GRAMSDetectorConstruction::DefineMaterials()
 	
   //Al
 	Al = new G4Material("Al",z= 13., a= 26.98*g/mole, density= 2.7*g/cm3);
+	
 	
 	//Carbon
 	Carbon = new G4Material("Carbon", z= 6., a= 12.01*g/mole, density= 2.265*g/cm3);
@@ -202,88 +198,153 @@ void GRAMSDetectorConstruction::DefineMaterials()
   G4cout << *(G4Material::GetMaterialTable()) << G4endl;
 }
 
-G4VPhysicalVolume* GRAMSDetectorConstruction::Construct()
+G4VPhysicalVolume* GAPSDetectorConstruction::Construct()
 {
-	return ConstructGRAMSDetector();
+	return ConstructGAPSDetector();
 }
-G4VPhysicalVolume* GRAMSDetectorConstruction::ConstructGRAMSDetector()
+G4VPhysicalVolume* GAPSDetectorConstruction::ConstructGAPSDetector()
 {
 	extern global_struct global;
 	overlap = global.CheckOverlap;
-  copyL = global.NbCellL;
-  copyLArZ = global.NbLArCellZ;
-  copyLXeZ = global.NbLXeCellZ;
-  NbOfLArLayer = global.NbLArTPC;
-  NbOfLXeLayer = global.NbLXeTPC;
-  NbOfLayer = NbOfLArLayer+NbOfLXeLayer;
-	// TPCZ = LArTPCZ+LXeTPCZ;
-  TPCZ = (NbOfLArLayer-1)*TPCspace+LArTPCZ;
+	
 	//------------------------------------------------
 	// parameter setup
 	//------------------------------------------------
+	
+	int cType = 0; // cooling type: 0 for new design, 1 for old design
+	copyX = 12;
+	copyY = 12;
+	FrameL = 13.0*cm;
 		
-  CellL = TPCL/copyL;
-  if(copyLArZ == 0) CellLArZ = 0;
-  else CellLArZ = LArTPCZ/copyLArZ;
-  if(copyLXeZ == 0) CellLXeZ = 0;
-  else CellLXeZ = LXeTPCZ/copyLXeZ;
-  TOFinL = TPCL+space*2.;
-	// TOFinH = TPCZ+TPCspace+space*2.0+TOFinZ;
-  TOFinH = (NbOfLArLayer-1)*TPCspace+LArTPCZ+ChamberT+space*2.0;
-  TOFoutH = TOFspaceH+TOFinH+space;
-  TOFoutL = 2.0*TOFspaceL+TOFinL;
+	TOFinL = LayerL;
+	TOFinH = LayerSpace*NbOfLayers+TOFinZ;
+	LayerZ = max(FrameZ,zSiLi);
 	G4double referenceL = TOFinL;
-  
+    if(global.SimulationType == 5) FrameZ = zSiLi;
+    
+	if(cType == 1)
+	{
+		LayerZ = LayerSpace;
+		G4cout << "***** old cooling design *****"<< G4endl;
+	}
+	OutletZ = TOFinH;
+	
+	if(global.DetectorType == 0) // 4 inch detector, 1 strips
+	{
+		rSiLi = 5.0*cm;
+		NbOfStrips = 1;
+	}
+	else if(global.DetectorType == 1) // 4 inch detector, 2 strips
+	{
+		rSiLi = 5.0*cm;
+		NbOfStrips = 2;
+	}
+  else if(global.DetectorType == 2) // 4 inch detector, 4 strips
+  {
+    rSiLi = 5.0*cm;
+    NbOfStrips = 4;
+  }
+  else if(global.DetectorType == 3) // 4 inch detector, 8 strips
+  {
+    rSiLi = 5.0*cm;
+    NbOfStrips = 8;
+  }
+	else if(global.DetectorType == 4) // 2 inch detector, 1 strip
+	{
+		copyX = copyX*2;
+		copyY = copyY*2;
+		rSiLi = 2.5*cm;
+		FrameL = FrameL*0.5;
+		NbOfStrips = 1;
+	}
+	else if(global.DetectorType == 5) // 2 inch detector, 2 strips
+	{
+		copyX = copyX*2;
+		copyY = copyY*2;
+		rSiLi = 2.5*cm;
+		FrameL = FrameL*0.5;
+		NbOfStrips = 2;
+	}
+  else if(global.DetectorType == 6) // 2 inch detector, 2 strips
+  {
+    copyX = copyX*2;
+    copyY = copyY*2;
+    rSiLi = 2.5*cm;
+    FrameL = FrameL*0.5;
+    NbOfStrips = 2;
+  }
+	else cout << "***** choose proper detector type *****" << endl;
+    
+	NbOfSiLi = copyX*copyY; // Si(Li)/frame per layer
+	
 	//------------------------------------------------
 	// Sensitive detectors
 	//------------------------------------------------
 	
-  G4SDManager* SDman = G4SDManager::GetSDMpointer();
+    G4SDManager* SDman = G4SDManager::GetSDMpointer();
 	if(!ScoreSD)
 	{
-		ScoreSD = new GRAMSDetectorSD("ScoreSD");
+		ScoreSD = new GAPSDetectorSD("ScoreSD");
 		SDman->AddNewDetector(ScoreSD);
 	}
 	if(!TOFSD)
 	{
-		TOFSD = new GRAMSDetectorSD("TOFSD");
+		TOFSD = new GAPSDetectorSD("TOFSD");
 		SDman->AddNewDetector(TOFSD);
 	}
-	if(!TPCSD)
+	if(!SiliconSD)
 	{
-		TPCSD = new GRAMSDetectorSD("TPCSD");
-		SDman->AddNewDetector(TPCSD);
+		SiliconSD = new GAPSDetectorSD("SiliconSD");
+		
+		SDman->AddNewDetector(SiliconSD);
+	}
+	if(!FrameSD)
+	{
+		FrameSD = new GAPSDetectorSD("FrameSD");
+		SDman->AddNewDetector(FrameSD);
 	}
 	
 	//------------------------------------------------
 	// Copy Number
 	//------------------------------------------------
 	
-	copyTPC = 0;
-  copyCell = 0;
-	copyTOFout = -10000;
-	copyTOFin = -11000;
-	copyScore1 = -12000;
-	copyScore2 = -12001; // reference plane
-	copyAtmosphere = -12002;
+	copySiLi = 0;
+	copyLayer = 0;
+	copyFrame = 2000;
+	copyTOFout = 10000;
+	copyTOFin = 11000;
+	copyScore1 = 12000;
+	copyScore2 = 12001; // reference plane
+	copyAtmosphere = 12002;
+	copyOutlet = 12003;
+	copyPipe = 12004;
+	copyElectronics = 12005;
 	copyWorld = -1;
 	
 	//--------- Definitions of Solids, Logical Volumes, Physical Volumes ---------
  
-  //------------------------------------------------
-  // Material
-  //------------------------------------------------
+    
+    //------------------------------------------------
+    // Material
+    //------------------------------------------------
 
-  worldMaterial = FlightAir;
-  atmosMaterial = CompressedAir;
-  scoreMaterial = Vacuum;
-  ChamberMaterial = Fe;
-  TOFMaterial = Plastic;
-  TPCMaterial = LAr;
- 
-  //------------------------------------------------
+    worldMaterial = FlightAir;
+    atmosMaterial = CompressedAir;
+    scoreMaterial = Vacuum;
+    layerMaterial = FlightAir;
+    if(global.SimulationType == 6) layerMaterial = Al;
+    TOFframeMaterial = Plastic;
+    SiLiFrameMaterial = Al;
+    if(global.SimulationType == 5) SiLiFrameMaterial = Silicon;
+    SiLiMaterial = Silicon;
+    if(global.SimulationType == 6) SiLiMaterial = Al;
+    outletMaterial = Al;
+    pipeMaterial = Carbon;
+    
+	//------------------------------------------------
 	// World
 	//------------------------------------------------
+	
 	
   WorldLength = 100.0*m;
   G4GeometryManager::GetInstance()->SetWorldMaximumExtent(WorldLength);
@@ -303,22 +364,29 @@ G4VPhysicalVolume* GRAMSDetectorConstruction::ConstructGRAMSDetector()
                                  0,               // its mother  volume
                                  false,           // no boolean operations
                                  copyWorld,								// copy number
-																 overlap);
-  
+																 true);
+	
+	
 	//------------------------------------------------
-	// global.beamZ = TOFoutL*2.0;
-	// global.beamZ = TOFspaceH+0.5*TOFinH+TOFoutZ+atmosZ+scoreZ;
+	
+	
+	global.beamZ = TOFspace+0.5*TOFinH+0.5*TOFoutZ+atmosZ+scoreZ;
 	//	global.beamZ = 200.0*cm+0.5*TOFoutZ+atmosZ+scoreZ;
-  global.beamZ = TOFspaceH+0.5*TOFinH+TOFoutZ+space+atmosZ+scoreZ;
 	cout << "*******************" << endl;
 	
-	if(global.DetectorType == 0) cout << "Reference TPC length: " << referenceL/cm << " cm" << endl;
-	if(global.DetectorType > 0)
+	if(global.SimulationType == 0) cout << "Reference layer length: " << referenceL/cm << " cm" << endl;
+	if(global.SimulationType > 0)
 	{
-		cout << "Gondola  angle: " << GondolaAngle/deg << " deg" << endl;
-    cout << "Number of TPCs: " << NbOfLayer << endl;
-		cout << "TPC length: " << TPCL/cm << " cm" << endl;
-    cout << "TPC thickness: " << TPCZ/cm << " cm" << endl;
+		cout << "Number of Layers: " << NbOfLayers << endl;
+		cout << "Layer length: " << LayerL/cm << " cm" << endl;
+		cout << "Layer space: " << LayerSpace/cm << " cm" << endl;
+    cout << "Layer thickness: " << LayerZ/cm << " cm" << endl;
+    cout << "Number of Si(Li) per Layers: " << NbOfSiLi << endl;
+    cout << "Number of Strips per Si(Li) wafer: " << NbOfStrips << endl;
+    cout << "Si(Li) diameter: " << rSiLi/cm*2.0 << " cm" << endl;
+    cout << "Si(Li) thickness: " << zSiLi/cm << " cm" << endl;
+    cout << "Si(Li) frame material: " << SiLiFrameMaterial->GetName() << endl;
+    cout << "Si(Li) frame thickness: " << FrameZ/cm << " cm" << endl;
 		cout << "TOFin thickness: " << TOFinZ/cm << " cm" << endl;
 		cout << "TOFin length: " << TOFinL/cm << " cm" << endl;
 		cout << "TOFin height: " << TOFinH/cm << " cm" << endl;
@@ -329,7 +397,7 @@ G4VPhysicalVolume* GRAMSDetectorConstruction::ConstructGRAMSDetector()
 		cout << "Atmos depth: " << atmosZ/cm << " g/cm2" << endl;
 	}
 	
-	if(global.ParticleSource == 0)
+	if(global.SimulationType <= 1)
 	{
 		cout << "primary particle area: " << global.area/m*global.area/m << " m^2" << endl;
 		cout << "primary particle minimum energy: " << global.Emin/MeV << " MeV" << endl;
@@ -346,14 +414,20 @@ G4VPhysicalVolume* GRAMSDetectorConstruction::ConstructGRAMSDetector()
 		ofstream output_geometry;
 		output_geometry.open (fname);
 		
-		if(global.DetectorType == 0) output_geometry << "Reference TPC length: " << referenceL/cm << " cm" << endl;
-		if(global.DetectorType > 0)
+		if(global.SimulationType == 0) output_geometry << "Reference layer length: " << referenceL/cm << " cm" << endl;
+		if(global.SimulationType > 0)
 		{
-			output_geometry << "Gondola angle: " << GondolaAngle/deg << " deg" << endl;
-      output_geometry << "Number of TPCs: " << NbOfLayer << endl;
-			output_geometry << "TPC length: " << TPCL/cm << " cm" << endl;
-      output_geometry << "TPC thickness: " << TPCZ/cm << " cm" << endl;
- 			output_geometry << "TOFin thickness: " << TOFinZ/cm << " cm" << endl;
+			output_geometry << "Number of Layers: " << NbOfLayers << endl;
+			output_geometry << "Layer length: " << LayerL/cm << " cm" << endl;
+			output_geometry << "Layer space: " << LayerSpace/cm << " cm" << endl;
+      output_geometry << "Layer thickness: " << LayerZ/cm << " cm" << endl;
+      output_geometry << "Number of Si(Li) per layer: " << NbOfSiLi << endl;
+      output_geometry << "Number of Strips per Si(Li) wafer: " << NbOfStrips << endl;
+      output_geometry << "Si(Li) diameter: " << rSiLi/cm*2.0 << " cm" << endl;
+      output_geometry << "Si(Li) thickness: " << zSiLi/cm << " cm" << endl;
+      output_geometry << "Si(Li) frame material: " << SiLiFrameMaterial->GetName() << endl;
+      output_geometry << "Si(Li) frame thickness: " << FrameZ/cm << " cm" << endl;
+			output_geometry << "TOFin thickness: " << TOFinZ/cm << " cm" << endl;
 			output_geometry << "TOFin length: " << TOFinL/cm << " cm" << endl;
 			output_geometry << "TOFin height: " << TOFinH/cm << " cm" << endl;
 			output_geometry << "TOFout thickness: " << TOFoutZ/cm << " cm" << endl;
@@ -363,7 +437,7 @@ G4VPhysicalVolume* GRAMSDetectorConstruction::ConstructGRAMSDetector()
 			output_geometry << "Atmos depth: " << atmosZ/cm << " g/cm2" << endl;
 		}
 		
-		if(global.DetectorType <= 1)
+		if(global.SimulationType <= 1)
 		{
 			output_geometry << "primary particle area: " << global.area/m*global.area/m << " m^2" << endl;
 			output_geometry << "primary particle minimum energy: " << global.Emin/MeV << " MeV" << endl;
@@ -380,9 +454,7 @@ G4VPhysicalVolume* GRAMSDetectorConstruction::ConstructGRAMSDetector()
 	{
 		solidAtmos = new G4Box("AtmosSolid",atmosL*0.5,atmosL*0.5,atmosZ*0.5);
 		logicAtmos = new G4LogicalVolume(solidAtmos,atmosMaterial,"AtmosLogical",0,0,0);
-		if(global.DetectorType != 2)
-    {
-      physiAtmos = new G4PVPlacement(0,
+		physiAtmos = new G4PVPlacement(0,
 																	 G4ThreeVector(0.0,0.0,global.beamZ-scoreZ-0.5*atmosZ), // at (x,y,z)
 																	 logicAtmos,    // its logical volume
 																	 "Atmosphere",       // its name
@@ -390,7 +462,6 @@ G4VPhysicalVolume* GRAMSDetectorConstruction::ConstructGRAMSDetector()
 																	 false,           // no boolean operations
 																	 copyAtmosphere,								// copy number
 																	 overlap);
-    }
 	}
 	
   //------------------------------------------------
@@ -399,9 +470,7 @@ G4VPhysicalVolume* GRAMSDetectorConstruction::ConstructGRAMSDetector()
 	
 	solidScore1 = new G4Box("ScoreSolid1",scoreL*0.5,scoreL*0.5,scoreZ*0.5);
 	logicScore1 = new G4LogicalVolume(solidScore1,scoreMaterial,"ScoreLogical1",0,0,0);
-  if(global.DetectorType != 2)
-  {
-    physiScore1 = new G4PVPlacement(0,
+	physiScore1 = new G4PVPlacement(0,
 																	G4ThreeVector(0.0,0.0,global.beamZ-0.5*scoreZ), // at (x,y,z)
 																	logicScore1,    // its logical volume
 																	"Score1",       // its name
@@ -410,10 +479,10 @@ G4VPhysicalVolume* GRAMSDetectorConstruction::ConstructGRAMSDetector()
 																	copyScore1,								// copy number
 																	overlap);
 	
-    if(global.DetectorType <= 1) logicScore1->SetSensitiveDetector(ScoreSD);
-  }
+	if(global.SimulationType <= 1) logicScore1->SetSensitiveDetector(ScoreSD);
 	
-	if(global.DetectorType == 0)
+	
+	if(global.SimulationType == 0)
 	{
 		cout << "**********" << endl;
 		cout << "reference geometry is built" << endl;
@@ -432,127 +501,26 @@ G4VPhysicalVolume* GRAMSDetectorConstruction::ConstructGRAMSDetector()
 	}
 	else
 	{
-    //------------------------------------------------
-    // Gondola
-    //------------------------------------------------
-    
-    G4RotationMatrix* rotY = new G4RotationMatrix();
-    rotY -> rotateY(GondolaAngle);
-    // cubic with TOFoutL
-    solidGondola= new G4Box("Gondola",TOFoutL*0.5+TOFoutZ+space,TOFoutL*0.5+TOFoutZ+space,TOFspaceH+0.5*(TOFinH+TOFoutZ)+space);
-    logicGondola= new G4LogicalVolume(solidGondola, worldMaterial, "Gondola", 0, 0, 0);
-    physiGondola = new G4PVPlacement(rotY,
-                                     G4ThreeVector(),   // at (0,0,0)
-                                     logicGondola,      // its logical volume
-                                     "Gondola",         // its name
-                                     logicWorld,        // its mother  volume
-                                     false,             // no boolean operations
-                                     copyWorld,       // copy number
-                                     overlap);
-
-    
-    //------------------------------------------------
-    // Chamber
-    //------------------------------------------------
-    
-    solidChamber= new G4Box("Chamber",TPCL*0.5+ChamberT,TPCL*0.5+ChamberT,(NbOfLArLayer-1)*TPCspace*0.5+LArTPCZ*0.5+ChamberT);
-    logicChamber= new G4LogicalVolume(solidChamber, ChamberMaterial, "Chamber", 0, 0, 0);
-    physiChamber = new G4PVPlacement(0,
-                                     G4ThreeVector(),   // at (0,0,0)
-                                     logicChamber,      // its logical volume
-                                     "Chamber",         // its name
-                                     logicGondola,        // its mother  volume
-                                     false,             // no boolean operations
-                                     copyWorld,       // copy number
-                                     overlap);
-    
-    logicChamber->SetSensitiveDetector(TPCSD);
-    
-    solidChamberInside= new G4Box("ChamberInside",TPCL*0.5,TPCL*0.5,(NbOfLArLayer-1)*TPCspace*0.5+LArTPCZ*0.5);
-    logicChamberInside= new G4LogicalVolume(solidChamberInside, Vacuum, "ChamberInside", 0, 0, 0);
-    physiChamberInside = new G4PVPlacement(0,
-                                     G4ThreeVector(),   // at (0,0,0)
-                                     logicChamberInside,      // its logical volume
-                                     "ChamberInside",         // its name
-                                     logicChamber,        // its mother  volume
-                                     false,             // no boolean operations
-                                     copyWorld,       // copy number
-                                     overlap);
-    
-    //------------------------------------------------
-		// TPC
 		//------------------------------------------------
-    /*
-    // LXe
-    if(LXeTPCZ > 0.0 && NbOfLXeLayer > 0)
-    {
-      solidLXeTPC = new G4Box("LXeTPC",TPCL*0.5,TPCL*0.5,LXeTPCZ*0.5);
-      logicLXeTPC = new G4LogicalVolume(solidLXeTPC,LXe,"LXeTPC",0,0,0);
-      physiLXeTPC = new G4PVPlacement(0,
-                                      G4ThreeVector(0.0,0.0,-0.5*(LArTPCZ+TPCspace)), // at (x,y,z)
-                                      logicLXeTPC,    // its logical volume
-                                      "LXeTPC",       // its name
-                                      logicChamberInside,      // its mother  volume
-                                      false,           // no boolean operations
-                                      copyTPC,                // copy number
-                                      overlap);
-      copyTPC++;
-      //logicLXeTPC->SetSensitiveDetector(TPCSD);
-      
-      // layer
-      solidLXeLayer = new G4Box("LXeLayer",TPCL*0.5,TPCL*0.5,CellLXeZ*0.5);
-      logicLXeLayer = new G4LogicalVolume(solidLXeLayer,LXe,"LXeLayer",0,0,0);
-      physiLXeLayer = new G4PVReplica("LXeLayer",logicLXeLayer,logicLXeTPC,kZAxis,copyLXeZ,CellLXeZ);
-      // column
-      solidLXeColumn = new G4Box("LXeColumn",TPCL*0.5,CellL*0.5,CellLXeZ*0.5);
-      logicLXeColumn = new G4LogicalVolume(solidLXeColumn,LXe,"LXeColumn",0,0,0);
-      physiLXeColumn = new G4PVReplica("LXeColumn",logicLXeColumn,logicLXeLayer,kYAxis,copyL,CellL);
-      // cell
-      solidLXeCell = new G4Box("LXeCell",CellL*0.5,CellL*0.5,CellLXeZ*0.5);
-      logicLXeCell = new G4LogicalVolume(solidLXeCell,LXe,"LXeCell",0,0,0);
-      physiLXeCell = new G4PVReplica("LXeCell",logicLXeCell,logicLXeColumn,kXAxis,copyL,CellL);
-      
-      logicLXeCell->SetSensitiveDetector(TPCSD);
-    }
-    */
-    // LAr
-    if(LArTPCZ > 0.0 && NbOfLArLayer > 0)
-    {
-      solidLArTPC = new G4Box("LArTPC",TPCL*0.5,TPCL*0.5,LArTPCZ*0.5);
-      logicLArTPC = new G4LogicalVolume(solidLArTPC,LAr,"LArTPC",0,0,0);
-      for(int i=0; i<NbOfLArLayer;i++)
-      {
-        physiLArTPC = new G4PVPlacement(0,
-                                      G4ThreeVector(0.0,0.0,(i-(NbOfLArLayer-1)*0.5)*TPCspace), // at (x,y,z)
-                                      logicLArTPC,    // its logical volume
-                                      "LArTPC",       // its name
-                                      logicChamberInside,      // its mother  volume
-                                      false,           // no boolean operations
-                                      copyTPC,                // copy number
-                                      overlap);
-        copyTPC++;
-        //logicLArTPC->SetSensitiveDetector(TPCSD);
-      }
-      
-      // layer
-      solidLArLayer = new G4Box("LArLayer",TPCL*0.5,TPCL*0.5,CellLArZ*0.5);
-      logicLArLayer = new G4LogicalVolume(solidLArLayer,LAr,"LArLayer",0,0,0);
-      physiLArLayer = new G4PVReplica("LArLayer",logicLArLayer,logicLArTPC,kZAxis,copyLArZ,CellLArZ);
-      // column
-      solidLArColumn = new G4Box("LArColumn",TPCL*0.5,CellL*0.5,CellLArZ*0.5);
-      logicLArColumn = new G4LogicalVolume(solidLArColumn,LAr,"LArColumn",0,0,0);
-      physiLArColumn = new G4PVReplica("LArColumn",logicLArColumn,logicLArLayer,kYAxis,copyL,CellL);
-      // cell
-      solidLArCell = new G4Box("LArCell",CellL*0.5,CellL*0.5,CellLArZ*0.5);
-      logicLArCell = new G4LogicalVolume(solidLArCell,LAr,"LArCell",0,0,0);
-      physiLArCell = new G4PVReplica("LArCell",logicLArCell,logicLArColumn,kXAxis,copyL,CellL);
-      
-      logicLArCell->SetSensitiveDetector(TPCSD);
-      
-    }
-   
-		G4cout << "***** There are " << copyTPC << " TPC."<< G4endl;
-    //G4cout << "***** There are " << copyL*copyL*(copyLArZ+copyLXeZ) << " TPC Cells."<< G4endl;
+		// Layer
+		//------------------------------------------------
+		
+		solidLayer = new G4Box("layer",LayerL*0.5,LayerL*0.5,LayerZ*0.5);
+		logicLayer = new G4LogicalVolume(solidLayer,layerMaterial,"Layer",0,0,0);
+		for(int i=0; i<NbOfLayers;i++)
+		{
+			physiLayer = new G4PVPlacement(0,
+																		 G4ThreeVector(0.0,0.0,-(i-(NbOfLayers-1)*0.5)*(LayerSpace)), // at (x,y,z)
+																		 logicLayer,    // its logical volume
+																		 "Layer",       // its name
+																		 logicWorld,      // its mother  volume
+																		 false,           // no boolean operations
+																		 copyLayer,								// copy number
+																		 overlap);
+			copyLayer++;
+		}
+		G4cout << "***** There are " << copyLayer << " layers."<< G4endl;
+		if(global.SimulationType == 6) logicLayer->SetSensitiveDetector(FrameSD);
 		
 		//------------------------------------------------
 		// outer TOF
@@ -577,79 +545,62 @@ G4VPhysicalVolume* GRAMSDetectorConstruction::ConstructGRAMSDetector()
 		rotZXTOF2 -> rotateX(-TOFoutAngle);
 		
 		
-    // top and bottom
+    // top
     solidTOFout1 = new G4Box("TOFout1",TOFoutL*0.5,TOFoutL*0.5,TOFoutZ*0.5);
-    logicTOFout1 = new G4LogicalVolume(solidTOFout1,TOFMaterial,"TOFout1",0,0,0);
-    if(global.DetectorType != 2)
-    {
-      physiTOFout1 = new G4PVPlacement(0,
-                                     G4ThreeVector(0.0,0.0,TOFspaceH+0.5*TOFinH), // at (x,y,z)
+    logicTOFout1 = new G4LogicalVolume(solidTOFout1,TOFframeMaterial,"TOFout1",0,0,0);
+    physiTOFout1 = new G4PVPlacement(0,
+                                     G4ThreeVector(0.0,0.0,TOFspace+0.5*TOFinH), // at (x,y,z)
                                      logicTOFout1,    // its logical volume
-                                     "TOFoutBottom",       // its name
-                                     logicGondola,      // its mother  volume
+                                     "TOFout1",       // its name
+                                     logicWorld,      // its mother  volume
                                      false,           // no boolean operations
                                      copyTOFout,								// copy number
                                      overlap);
-      copyTOFout--;
+    copyTOFout++;
+    logicTOFout1->SetSensitiveDetector(TOFSD);
     
-      physiTOFout1 = new G4PVPlacement(0,
-                                     G4ThreeVector(0.0,0.0,TOFspaceH+0.5*TOFinH-(TOFoutH+TOFoutZ*0.5)), // at (x,y,z)
-                                     logicTOFout1,    // its logical volume
-                                     "TOFoutTop",       // its name
-                                     logicGondola,      // its mother  volume
-                                     false,           // no boolean operations
-                                     copyTOFout,								// copy number
-                                     overlap);
-      copyTOFout--;
-      // logicTOFout1->SetSensitiveDetector(TOFSD);
-      logicTOFout1->SetSensitiveDetector(TPCSD);
-    }
     //side
     if(TOFoutH > 0.) // no side if TOFoutH = 0
     {
       solidTOFout2 = new G4Box("TOFout2",TOFoutL*0.5,TOFoutH*0.5,TOFoutZ*0.5);
-      logicTOFout2 = new G4LogicalVolume(solidTOFout2,TOFMaterial,"TOFout2",0,0,0);
-      if(global.DetectorType != 2)
-      {
-        physiTOFout2 = new G4PVPlacement(rotXTOF2,
-                                       G4ThreeVector(0.0,-0.5*(TOFoutL+TOFoutZ+TOFoutH*cos(TOFoutAngle)),TOFspaceH+0.5*TOFinH-0.5*TOFoutH*sin(TOFoutAngle)), // at (x,y,z)
+      logicTOFout2 = new G4LogicalVolume(solidTOFout2,TOFframeMaterial,"TOFout2",0,0,0);
+      physiTOFout2 = new G4PVPlacement(rotXTOF2,
+                                       G4ThreeVector(0.0,-0.5*(TOFoutL+TOFoutZ+TOFoutH*cos(TOFoutAngle)),TOFspace+0.5*TOFinH-0.5*TOFoutH*sin(TOFoutAngle)), // at (x,y,z)
                                        logicTOFout2,    // its logical volume
-                                       "TOFoutSide",       // its name
-                                       logicGondola,      // its mother  volume
+                                       "TOFout2",       // its name
+                                       logicWorld,      // its mother  volume
                                        false,           // no boolean operations
                                        copyTOFout,								// copy number
                                        overlap);
-        copyTOFout--;
-        physiTOFout2 = new G4PVPlacement(rotXTOF1,
-                                       G4ThreeVector(0.0,0.5*(TOFoutL+TOFoutZ+TOFoutH*cos(TOFoutAngle)),TOFspaceH+0.5*TOFinH-0.5*TOFoutH*sin(TOFoutAngle)), // at (x,y,z)
+      copyTOFout++;
+      physiTOFout2 = new G4PVPlacement(rotXTOF1,
+                                       G4ThreeVector(0.0,0.5*(TOFoutL+TOFoutZ+TOFoutH*cos(TOFoutAngle)),TOFspace+0.5*TOFinH-0.5*TOFoutH*sin(TOFoutAngle)), // at (x,y,z)
                                        logicTOFout2,    // its logical volume
-                                       "TOFoutSide",       // its name
-                                       logicGondola,      // its mother  volume
+                                       "TOFout2",       // its name
+                                       logicWorld,      // its mother  volume
                                        false,           // no boolean operations
                                        copyTOFout,								// copy number
                                        overlap);
-        copyTOFout--;
-        physiTOFout2 = new G4PVPlacement(rotZXTOF2,
-                                       G4ThreeVector(-0.5*(TOFoutL+TOFoutZ+TOFoutH*cos(TOFoutAngle)),0.0,TOFspaceH+0.5*TOFinH-0.5*TOFoutH*sin(TOFoutAngle)), // at (x,y,z)
+      copyTOFout++;
+      physiTOFout2 = new G4PVPlacement(rotZXTOF2,
+                                       G4ThreeVector(-0.5*(TOFoutL+TOFoutZ+TOFoutH*cos(TOFoutAngle)),0.0,TOFspace+0.5*TOFinH-0.5*TOFoutH*sin(TOFoutAngle)), // at (x,y,z)
                                        logicTOFout2,    // its logical volume
-                                       "TOFoutSide",       // its name
-                                       logicGondola,      // its mother  volume
+                                       "TOFout2",       // its name
+                                       logicWorld,      // its mother  volume
                                        false,           // no boolean operations
                                        copyTOFout,								// copy number
                                        overlap);
-        copyTOFout--;
-        physiTOFout2 = new G4PVPlacement(rotZXTOF1,
-                                       G4ThreeVector(0.5*(TOFoutL+TOFoutZ+TOFoutH*cos(TOFoutAngle)),0.0,TOFspaceH+0.5*TOFinH-0.5*TOFoutH*sin(TOFoutAngle)), // at (x,y,z)
+      copyTOFout++;
+      physiTOFout2 = new G4PVPlacement(rotZXTOF1,
+                                       G4ThreeVector(0.5*(TOFoutL+TOFoutZ+TOFoutH*cos(TOFoutAngle)),0.0,TOFspace+0.5*TOFinH-0.5*TOFoutH*sin(TOFoutAngle)), // at (x,y,z)
                                        logicTOFout2,    // its logical volume
-                                       "TOFoutSide",       // its name
-                                       logicGondola,      // its mother  volume
+                                       "TOFout2",       // its name
+                                       logicWorld,      // its mother  volume
                                        false,           // no boolean operations
                                        copyTOFout,								// copy number
                                        overlap);
-        copyTOFout--;
-        // logicTOFout2->SetSensitiveDetector(TOFSD);
-        logicTOFout2->SetSensitiveDetector(TPCSD);
-      }
+      copyTOFout++;
+      logicTOFout2->SetSensitiveDetector(TOFSD);
     }
 		
 		//------------------------------------------------
@@ -658,126 +609,420 @@ G4VPhysicalVolume* GRAMSDetectorConstruction::ConstructGRAMSDetector()
 		
 		// top and bottom
 		solidTOFin1 = new G4Box("TOFin1",TOFinL*0.5,TOFinL*0.5,TOFinZ*0.5);
-		logicTOFin1 = new G4LogicalVolume(solidTOFin1,TOFMaterial,"TOFin1",0,0,0);
+		logicTOFin1 = new G4LogicalVolume(solidTOFin1,TOFframeMaterial,"TOFin1",0,0,0);
 		
 		for(int i=0; i<2;i++)
 		{
-			if(global.DetectorType == 2) break;
-      physiTOFin1 = new G4PVPlacement(0,
+			physiTOFin1 = new G4PVPlacement(0,
 																			G4ThreeVector(0.0,0.0,-(i-0.5)*TOFinH), // at (x,y,z)
 																			logicTOFin1,    // its logical volume
-																			"TOFin1",       // its name
-																			logicGondola,      // its mother  volume
+																			"TOFin",       // its name
+																			logicWorld,      // its mother  volume
 																			false,           // no boolean operations
 																			copyTOFin,								// copy number
 																			overlap);
-			copyTOFin--;
+			copyTOFin++;
 		}
 		// side
 		solidTOFin2 = new G4Box("TOFin2",TOFinL*0.5,TOFinH*0.5,TOFinZ*0.5);
-		logicTOFin2 = new G4LogicalVolume(solidTOFin2,TOFMaterial,"TOFin2",0,0,0);
+		logicTOFin2 = new G4LogicalVolume(solidTOFin2,TOFframeMaterial,"TOFin2",0,0,0);
 		
 		for(int i=0; i<2;i++)
 		{
-			if(global.DetectorType == 2) break;
+			if(global.SimulationType == 6) break;
       physiTOFin2 = new G4PVPlacement(rotX,
 																			G4ThreeVector(0.0,-(i-0.5)*(TOFinL+TOFinZ),0.0), // at (x,y,z)
 																			logicTOFin2,    // its logical volume
 																			"TOFin2",       // its name
-																			logicGondola,      // its mother  volume
+																			logicWorld,      // its mother  volume
 																			false,           // no boolean operations
 																			copyTOFin,								// copy number
 																			overlap);
-			copyTOFin--;
+			copyTOFin++;
 		}
 		for(int i=0; i<2;i++)
 		{
-			if(global.DetectorType == 2) break;
+			if(global.SimulationType == 6) break;
       physiTOFin2 = new G4PVPlacement(rotZX,
 																			G4ThreeVector(-(i-0.5)*(TOFinL+TOFinZ),0.0,0.0), // at (x,y,z)
 																			logicTOFin2,    // its logical volume
 																			"TOFin2",       // its name
-																			logicGondola,      // its mother  volume
+																			logicWorld,      // its mother  volume
 																			false,           // no boolean operations
 																			copyTOFin,								// copy number
 																			overlap);
-			copyTOFin--;
+			copyTOFin++;
 		}
-    if(global.DetectorType != 2)
+		
+		logicTOFin1->SetSensitiveDetector(TOFSD);
+		logicTOFin2->SetSensitiveDetector(TOFSD);
+		
+        
+    //------------------------------------------------
+    // Si(Li), Frame
+    //------------------------------------------------
+    
+    int NbFrame = 0, NbChannel = 0;
+    
+    // Frame
+    solidBox = new G4Box("box",FrameL*0.5,FrameL*0.5,FrameZ*0.5);
+    solidCylinder = new G4Tubs("Cylinder",0.0,rSiLi,FrameZ*0.51,0*deg,360*deg);
+    solidFrame = new G4SubtractionSolid("Frame", solidBox, solidCylinder, 0, G4ThreeVector(0.,0.,0.));
+    logicFrame = new G4LogicalVolume(solidFrame,SiLiFrameMaterial,"Frame",0,0,0);
+    
+    // Si(Li)
+    G4Tubs* solidSiLiWafer = new G4Tubs("SiLi",0.0,rSiLi,zSiLi*0.5,0*deg,360*deg);
+    if(NbOfStrips == 8)
     {
-      // logicTOFin1->SetSensitiveDetector(TOFSD);
-      // logicTOFin2->SetSensitiveDetector(TOFSD);
-      logicTOFin1->SetSensitiveDetector(TPCSD);
-      logicTOFin2->SetSensitiveDetector(TPCSD);
+      G4double StripWidth1 = rSiLi*1.717/4.701; // Based on SEMIKON's design
+      G4double StripWidth3 = rSiLi*1.085/4.701;
+      G4double StripWidth2 = rSiLi*0.97/4.701;
+      G4double StripWidth4 = rSiLi*0.929/4.701;
+      
+      G4double StripY1 = StripWidth4+StripWidth3+StripWidth2+StripWidth1*0.5;
+      G4double StripY2 = StripWidth4+StripWidth3+StripWidth2*0.5;
+      G4double StripY3 = StripWidth4+StripWidth3*0.5;
+      G4double StripY4 = StripWidth4*0.5;
+      
+      G4Box* solidStrip1 = new G4Box("solidStrip1",rSiLi,StripWidth1*0.5,zSiLi*0.5);
+      G4Box* solidStrip2 = new G4Box("solidStrip2",rSiLi,StripWidth2*0.5,zSiLi*0.5);
+      G4Box* solidStrip3 = new G4Box("solidStrip3",rSiLi,StripWidth3*0.5,zSiLi*0.5);
+      G4Box* solidStrip4 = new G4Box("solidStrip4",rSiLi,StripWidth4*0.5,zSiLi*0.5);
+      
+      solidSiLi[0] = new G4IntersectionSolid("Strip1", solidSiLiWafer, solidStrip1, 0, G4ThreeVector(0.0,StripY1,0.0));
+      solidSiLi[1] = new G4IntersectionSolid("Strip2", solidSiLiWafer, solidStrip2, 0, G4ThreeVector(0.0,StripY2,0.0));
+      solidSiLi[2] = new G4IntersectionSolid("Strip3", solidSiLiWafer, solidStrip3, 0, G4ThreeVector(0.0,StripY3,0.0));
+      solidSiLi[3] = new G4IntersectionSolid("Strip4", solidSiLiWafer, solidStrip4, 0, G4ThreeVector(0.0,StripY4,0.0));
+      solidSiLi[4] = new G4IntersectionSolid("Strip5", solidSiLiWafer, solidStrip4, 0, G4ThreeVector(0.0,-StripY4,0.0));
+      solidSiLi[5] = new G4IntersectionSolid("Strip6", solidSiLiWafer, solidStrip3, 0, G4ThreeVector(0.0,-StripY3,0.0));
+      solidSiLi[6] = new G4IntersectionSolid("Strip7", solidSiLiWafer, solidStrip2, 0, G4ThreeVector(0.0,-StripY2,0.0));
+      solidSiLi[7] = new G4IntersectionSolid("Strip8", solidSiLiWafer, solidStrip1, 0, G4ThreeVector(0.0,-StripY1,0.0));
     }
-    //--------- Visualization attributes -------------------------------
-
-    whiteVisAtt = new G4VisAttributes(G4Colour(1.0,1.0,1.0,0.2));
-    redVisAtt = new G4VisAttributes(G4Colour(1.0,0.0,0.0,0.2));
-    greenVisAtt = new G4VisAttributes(G4Colour(0.0,1.0,0.0,0.2));
-    blueVisAtt = new G4VisAttributes(G4Colour(0.0,0.0,1.0,0.2));
-    yellowVisAtt = new G4VisAttributes(G4Colour(1.0,1.0,0.0,0.2));
-    greyVisAtt = new G4VisAttributes(G4Colour(153/255.,153/255.,153/255.));
-    logicWorld->SetVisAttributes(whiteVisAtt);
-    if(logicGondola) logicGondola->SetVisAttributes(greyVisAtt);
-    if(logicChamber) logicChamber->SetVisAttributes(yellowVisAtt);
-    if(logicTOFin1) logicTOFin1->SetVisAttributes(greenVisAtt);
-    if(logicTOFin2) logicTOFin2->SetVisAttributes(greenVisAtt);
-    if(logicTOFout1) logicTOFout1->SetVisAttributes(greenVisAtt);
-    if(logicTOFout2) logicTOFout2->SetVisAttributes(greenVisAtt);
-    // if(logicLArTPC) logicLArTPC->SetVisAttributes(greyVisAtt);
-    if(logicLArCell) logicLArCell->SetVisAttributes(redVisAtt);
-    if(logicLXeTPC) logicLXeTPC->SetVisAttributes(blueVisAtt);
-  }
+    if(NbOfStrips == 4)
+    {
+      G4double StripWidth1 = rSiLi*(1.717+1.085)/4.701; // Based on SEMIKON's design
+      G4double StripWidth2 = rSiLi*(0.97+0.929)/4.701;
+      
+      G4double StripY1 = StripWidth2+StripWidth1*0.5;
+      G4double StripY2 = StripWidth2*0.5;
+      
+      G4Box* solidStrip1 = new G4Box("solidStrip1",rSiLi,StripWidth1*0.5,zSiLi*0.5);
+      G4Box* solidStrip2 = new G4Box("solidStrip2",rSiLi,StripWidth2*0.5,zSiLi*0.5);
+      
+      solidSiLi[0] = new G4IntersectionSolid("Strip1", solidSiLiWafer, solidStrip1, 0, G4ThreeVector(0.0,StripY1,0.0));
+      solidSiLi[1] = new G4IntersectionSolid("Strip2", solidSiLiWafer, solidStrip2, 0, G4ThreeVector(0.0,StripY2,0.0));
+      solidSiLi[2] = new G4IntersectionSolid("Strip3", solidSiLiWafer, solidStrip2, 0, G4ThreeVector(0.0,-StripY2,0.0));
+      solidSiLi[3] = new G4IntersectionSolid("Strip4", solidSiLiWafer, solidStrip1, 0, G4ThreeVector(0.0,-StripY1,0.0));
+    }
+    else if(NbOfStrips == 2)
+    {
+      G4double StripWidth1 = rSiLi;
+      G4double StripY1 = StripWidth1*0.5;
+      G4Box* solidStrip1 = new G4Box("solidStrip1",rSiLi,StripWidth1*0.5,zSiLi*0.5);
+      
+      solidSiLi[0] = new G4IntersectionSolid("Strip1", solidSiLiWafer, solidStrip1, 0, G4ThreeVector(0.0,StripY1,0.0));
+      solidSiLi[1] = new G4IntersectionSolid("Strip2", solidSiLiWafer, solidStrip1, 0, G4ThreeVector(0.0,-StripY1,0.0));
+    }
+    else if(NbOfStrips == 1)
+    {
+      G4double StripWidth1 = rSiLi*2.0;
+      G4double StripY1 = 0.0;
+      G4Box* solidStrip1 = new G4Box("solidStrip1",rSiLi,StripWidth1*0.5,zSiLi*0.5);
+      
+      solidSiLi[0] = new G4IntersectionSolid("Strip1", solidSiLiWafer, solidStrip1, 0, G4ThreeVector(0.0,StripY1,0.0));
+    }
+    for(int i=0; i<NbOfStrips; i++)
+    {
+      logicSiLi[i] = new G4LogicalVolume(solidSiLi[i],SiLiMaterial,"SiLiLogical",0,0,0);
+    }
+    
+    for(int i=0; i<NbOfSiLi; i++)
+    {
+      if(global.SimulationType == 6) break;
+      /*
+       if(global.DetectorVisualization == 1)
+       {
+       if(i > copyX-1) break; // place only one raw to visualize
+       }
+       */
+      overlap = global.CheckOverlap;
+      row = i/copyY;
+      column = i%copyY;
+      xFrame[i] = -(row-(copyX-1)*0.5)*FrameL;
+      yFrame[i] = -(column-(copyY-1)*0.5)*FrameL;
+      zFrame[i] = 0.0*cm;
+      
+      // Si(Li) and Frame for 2 inch and 4 inch
+      // frame
+      physiFrame = new G4PVPlacement(0,
+                                     G4ThreeVector(xFrame[i],yFrame[i],zFrame[i]),
+                                     logicFrame,    // its logical volume
+                                     "Frame",       // its name
+                                     logicLayer,      // its mother  volume
+                                     false,           // no boolean operations
+                                     copyFrame,								// copy number
+                                     overlap);
+      copyFrame++;
+      NbFrame++;
+      
+      // Si(Li)
+      for(int ii=0; ii<NbOfStrips; ii++)
+      {
+        overlap = global.CheckOverlap;
+        physiSiLi[ii] = new G4PVPlacement(0,
+                                          G4ThreeVector(xFrame[i],yFrame[i],zFrame[i]),
+                                          logicSiLi[ii],			// its logical volume
+                                          "Si(Li)",						// its name
+                                          logicLayer,					// its mother  volume
+                                          false,							// no boolean operations
+                                          copySiLi,						// copy number
+                                          overlap);
+        copySiLi++;
+        NbChannel++;
+      }
+    }
+    
+    // sensitivie detector
+    logicFrame->SetSensitiveDetector(FrameSD);
+    
+    for(int ii=0; ii<NbOfStrips; ii++)
+    {
+      logicSiLi[ii]->SetSensitiveDetector(SiliconSD);
+    }
+    
+    G4cout << "***** there are "<< NbFrame << " Si(Li) wafers/frames per layer."<< G4endl;
+    G4cout << "***** there are " << NbChannel << " Si(Li) channels per layer."<< G4endl;
+    /*
+    //------------------------------------------------
+    // outlet: PMT, light guide and cables
+    //------------------------------------------------
+    
+    solidOutlet = new G4Box("Outlet",OutletT*0.5,OutletL*0.5,TOFinH*0.5);
+    logicOutlet = new G4LogicalVolume(solidOutlet,outletMaterial,"Outlet",0,0,0);
+    
+    G4RotationMatrix* rotZ45 = new G4RotationMatrix();
+    rotZ45 -> rotateZ(45.*deg);
+    G4RotationMatrix* rotZ135 = new G4RotationMatrix();
+    rotZ135 -> rotateZ(135.*deg);
+    
+    if(global.SimulationType != 6)
+    {
+      // dead area for outlets: PMT, light guide and cable
+      physiOutlet = new G4PVPlacement(rotZ45,
+                                      G4ThreeVector((TOFinZ+TOFinL+OutletL/sqrt(2.0))*0.5,(TOFinZ+TOFinL+OutletL/sqrt(2.0))*0.5,0.0), // at (x,y,z)
+                                      logicOutlet,    // its logical volume
+                                      "Outlet",       // its name
+                                      logicWorld,      // its mother  volume
+                                      false,           // no boolean operations
+                                      copyOutlet,								// copy number
+                                      overlap);
+      
+      physiOutlet = new G4PVPlacement(rotZ135,
+                                      G4ThreeVector(-(TOFinZ+TOFinL+OutletL/sqrt(2.0))*0.5,(TOFinZ+TOFinL+OutletL/sqrt(2.0))*0.5,0.0), // at (x,y,z)
+                                      logicOutlet,    // its logical volume
+                                      "Outlet",       // its name
+                                      logicWorld,      // its mother  volume
+                                      false,           // no boolean operations
+                                      copyOutlet,								// copy number
+                                      overlap);
+      
+      physiOutlet = new G4PVPlacement(rotZ135,
+                                      G4ThreeVector((TOFinZ+TOFinL+OutletL/sqrt(2.0))*0.5,-(TOFinZ+TOFinL+OutletL/sqrt(2.0))*0.5,0.0), // at (x,y,z)
+                                      logicOutlet,    // its logical volume
+                                      "Outlet",       // its name
+                                      logicWorld,      // its mother  volume
+                                      false,           // no boolean operations
+                                      copyOutlet,								// copy number
+                                      overlap);
+      
+      physiOutlet = new G4PVPlacement(rotZ45,
+                                      G4ThreeVector(-(TOFinZ+TOFinL+OutletL/sqrt(2.0))*0.5,-(TOFinZ+TOFinL+OutletL/sqrt(2.0))*0.5,0.0), // at (x,y,z)
+                                      logicOutlet,    // its logical volume
+                                      "Outlet",       // its name
+                                      logicWorld,      // its mother  volume
+                                      false,           // no boolean operations
+                                      copyOutlet,								// copy number
+                                      overlap);
+    }
+    
+    // sensitivie detector
+    logicOutlet->SetSensitiveDetector(FrameSD);
+    */
+    /*
+     solidSiLiLayer = new G4Box("SiLiLayer",LayerL*0.5,LayerL*0.5,zSiLi*0.5);
+     logicSiLiLayer = new G4LogicalVolume(solidSiLiLayer,SiLiMaterial,"Layer",0,0,0);
+     physiSiLiLayer = new G4PVPlacement(0,
+     G4ThreeVector(0.0,0.0,0.0),  // at (x,y,z)
+     logicSiLiLayer,              // its logical volume
+     "SiLiLayer",                // its name
+     logicLayer,                  // its mother  volume
+     false,                       // no boolean operations
+     copySiLi,                    // copy number
+     overlap);
+     
+     // sensitivie detector
+     logicSiLiLayer->SetSensitiveDetector(SiliconSD);
+     */
+    
+    /*
+    //------------------------------------------------
+    // cooling tube
+    //------------------------------------------------
+    
+    int NbPipe = 0;
+    if(cType == 0) // new cooling design
+    {
+      lPipe = 0.5*(TOFoutL-TOFinL-TOFinZ)*sqrt(2.0)-OutletL-rPipe;
+      if(lPipe < 0.) lPipe = 1.0*cm;
+      solidPipe = new G4Tubs("PipeSolid",0.0,rPipe,lPipe*0.5,0*deg,360*deg);
+      logicPipe = new G4LogicalVolume(solidPipe,pipeMaterial,"PipeLogical",0,0,0);
+      
+      G4RotationMatrix* rotX90Z45 = new G4RotationMatrix();
+      rotX90Z45 -> rotateX(90.*deg);
+      rotX90Z45 -> rotateY(-45.*deg);
+      G4RotationMatrix* rotX90Z135 = new G4RotationMatrix();
+      rotX90Z135 -> rotateX(90.*deg);
+      rotX90Z135 -> rotateY(-135.*deg);
+      
+      for(int i=0; i<NbOfLayers;i++)
+      {
+        if(global.SimulationType == 6) break;
+        physiPipe = new G4PVPlacement(rotX90Z45,
+                                      G4ThreeVector(0.5*(TOFoutL-lPipe/sqrt(2.0))-rPipe/sqrt(2.0),0.5*(TOFoutL-lPipe/sqrt(2.0))-rPipe/sqrt(2.0),-(i-(NbOfLayers-1)*0.5)*(LayerSpace)), // at (x,y,z)
+                                      logicPipe,    // its logical volume
+                                      "Pipe",       // its name
+                                      logicWorld,      // its mother  volume
+                                      false,           // no boolean operations
+                                      copyPipe,								// copy number
+                                      overlap);
+        NbPipe++;
+        
+        physiPipe = new G4PVPlacement(rotX90Z135,
+                                      G4ThreeVector((0.5*(TOFoutL-lPipe/sqrt(2.0))-rPipe/sqrt(2.0)),-(0.5*(TOFoutL-lPipe/sqrt(2.0))-rPipe/sqrt(2.0)),-(i-(NbOfLayers-1)*0.5)*(LayerSpace)), // at (x,y,z)
+                                      logicPipe,    // its logical volume
+                                      "Pipe",       // its name
+                                      logicWorld,      // its mother  volume
+                                      false,           // no boolean operations
+                                      copyPipe,								// copy number
+                                      overlap);
+        NbPipe++;
+      }
+      // sensitivie detector
+      logicPipe->SetSensitiveDetector(FrameSD);
+      G4cout << "***** there are "<< NbPipe << " pipes."<< G4endl;
+    }
+    
+    if(cType == 1) // old cooling design
+    {
+      NbOfPipe = NbOfSiLi/4; // per layer, old design
+      rPipe = 0.625*cm;
+      lPipe = (LayerSpace-FrameZ)*0.5;
+      solidPipe = new G4Tubs("PipeSolid",0.0,rPipe,lPipe*0.5,0*deg,360*deg);
+      logicPipe = new G4LogicalVolume(solidPipe,pipeMaterial,"PipeLogical",0,0,0);
+      
+      for(int i=0; i<NbOfPipe; i++)
+      {
+        overlap = global.CheckOverlap;
+        if(global.SimulationType == 6) break;
+        row = i/(copyY/2);
+        column = i%(copyY/2);
+        pipeX = -(row-((copyX/2)-1)*0.5)*FrameL*2.0;
+        pipeY = -(column-((copyY/2)-1)*0.5)*FrameL*2.0;
+        pipeZ = 0.5*(LayerSpace - lPipe);
+        
+        physiPipe = new G4PVPlacement(0,
+                                      G4ThreeVector(pipeX,pipeY,pipeZ), // at (x,y,z)
+                                      logicPipe,			// its logical volume
+                                      "Pipe",					// its name
+                                      logicLayer,      // its mother  volume
+                                      false,           // no boolean operations
+                                      copyPipe,								// copy number
+                                      overlap);
+        
+        physiPipe = new G4PVPlacement(0,
+                                      G4ThreeVector(pipeX,pipeY,-pipeZ), // at (x,y,z)
+                                      logicPipe,			// its logical volume
+                                      "Pipe",					// its name
+                                      logicLayer,      // its mother  volume
+                                      false,           // no boolean operations
+                                      copyPipe,								// copy number
+                                      overlap);
+        NbPipe++;
+      }
+      
+      // sensitivie detector
+      logicPipe->SetSensitiveDetector(FrameSD);
+      G4cout << "there are "<< NbPipe << " pipes per layer."<< G4endl;
+    }
+    */
+        ///////////////////////////////////////////////////////////
+    
+    
+        //--------- Visualization attributes -------------------------------
+    
+        whiteVisAtt= new G4VisAttributes(G4Colour(1.0,1.0,1.0,0.2));
+        redVisAtt= new G4VisAttributes(G4Colour(1.0,0.0,0.0,0.2));
+        greenVisAtt= new G4VisAttributes(G4Colour(0.0,1.0,0.0,0.2));
+        blueVisAtt= new G4VisAttributes(G4Colour(0.0,0.0,1.0,0.2));
+        logicWorld->SetVisAttributes(whiteVisAtt);
+        for(int i=0; i<NbOfLayers;i++) logicLayer->SetVisAttributes(whiteVisAtt);
+        if(logicTOFin1) logicTOFin1->SetVisAttributes(blueVisAtt);
+        if(logicTOFin2) logicTOFin2->SetVisAttributes(blueVisAtt);
+        if(logicTOFout1) logicTOFout1->SetVisAttributes(greenVisAtt);
+        if(logicTOFout2) logicTOFout2->SetVisAttributes(greenVisAtt);
+        for(int i=0; i<NbOfStrips;i++) if(logicSiLi[i]) logicSiLi[i]->SetVisAttributes(redVisAtt);
+        if(logicPipe) logicPipe->SetVisAttributes(redVisAtt);
+        if(global.SimulationType == 6) logicLayer->SetVisAttributes(redVisAtt);
+    }
 	return physiWorld;
 }
 
-void GRAMSDetectorConstruction::SetTPC_space(G4double NewValue)
+void GAPSDetectorConstruction::SetNbOfLayers(G4int NewValue)
 {
-  TPCspace = NewValue;
+	NbOfLayers = NewValue;
 }
-void GRAMSDetectorConstruction::SetLArTPC_Z(G4double NewValue)
+void GAPSDetectorConstruction::SetLayerSpace(G4double NewValue)
 {
-	LArTPCZ = NewValue;
+	LayerSpace = NewValue;
 }
-void GRAMSDetectorConstruction::SetLXeTPC_Z(G4double NewValue)
+void GAPSDetectorConstruction::SetLayer_L(G4double NewValue)
 {
-  LXeTPCZ = NewValue;
+	LayerL = NewValue;
 }
-void GRAMSDetectorConstruction::SetTPC_L(G4double NewValue)
+void GAPSDetectorConstruction::SetSiLi_Z(G4double NewValue)
 {
-	TPCL = NewValue;
+	zSiLi = NewValue;
 }
-void GRAMSDetectorConstruction::SetTOFout_Z(G4double NewValue)
+void GAPSDetectorConstruction::SetFrame_Z(G4double NewValue)
+{
+	FrameZ = NewValue;
+}
+void GAPSDetectorConstruction::SetTOFout_Z(G4double NewValue)
 {
 	TOFoutZ = NewValue;
 }
-void GRAMSDetectorConstruction::SetTOFout_L(G4double NewValue)
+void GAPSDetectorConstruction::SetTOFout_L(G4double NewValue)
 {
 	TOFoutL = NewValue;
 }
-void GRAMSDetectorConstruction::SetTOFout_H(G4double NewValue)
+void GAPSDetectorConstruction::SetTOFout_H(G4double NewValue)
 {
 	TOFoutH = NewValue;
 }
-void GRAMSDetectorConstruction::SetTOFout_Angle(G4double NewValue)
+void GAPSDetectorConstruction::SetTOFout_Angle(G4double NewValue)
 {
 	TOFoutAngle = NewValue;
 }
-void GRAMSDetectorConstruction::SetGondola_Angle(G4double NewValue)
-{
-  GondolaAngle = NewValue;
-}
-void GRAMSDetectorConstruction::SetTOFin_Z(G4double NewValue)
+void GAPSDetectorConstruction::SetTOFin_Z(G4double NewValue)
 {
 	TOFinZ = NewValue;
 }
-void GRAMSDetectorConstruction::SetAtmos_Z(G4double NewValue)
+void GAPSDetectorConstruction::SetAtmos_Z(G4double NewValue)
 {
 	atmosZ = NewValue;
 }
 
-void GRAMSDetectorConstruction::UpdateGeometry()
+void GAPSDetectorConstruction::UpdateGeometry()
 {
 	// Cleanup old geometry
 	G4GeometryManager::GetInstance()->OpenGeometry();
@@ -785,7 +1030,7 @@ void GRAMSDetectorConstruction::UpdateGeometry()
 	G4LogicalVolumeStore::GetInstance()->Clean();
 	G4SolidStore::GetInstance()->Clean();
 	
-	G4RunManager::GetRunManager()->DefineWorldVolume(ConstructGRAMSDetector());
+	G4RunManager::GetRunManager()->DefineWorldVolume(ConstructGAPSDetector());
 	G4RunManager::GetRunManager()->GeometryHasBeenModified();
 }
 

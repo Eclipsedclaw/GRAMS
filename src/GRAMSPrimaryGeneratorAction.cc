@@ -30,8 +30,8 @@
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
-#include "GRAMSPrimaryGeneratorAction.hh"
-#include "GRAMSDetectorConstruction.hh"
+#include "GAPSPrimaryGeneratorAction.hh"
+#include "GAPSDetectorConstruction.hh"
 
 #include "G4GeneralParticleSource.hh"
 #include "G4SPSAngDistribution.hh"
@@ -54,8 +54,8 @@
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
-GRAMSPrimaryGeneratorAction::GRAMSPrimaryGeneratorAction(
-                                               GRAMSDetectorConstruction* myDC)
+GAPSPrimaryGeneratorAction::GAPSPrimaryGeneratorAction(
+                                               GAPSDetectorConstruction* myDC)
 :myDetector(myDC)
 {
 	GeneralParticleSource = new G4GeneralParticleSource();
@@ -70,7 +70,7 @@ GRAMSPrimaryGeneratorAction::GRAMSPrimaryGeneratorAction(
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
-GRAMSPrimaryGeneratorAction::~GRAMSPrimaryGeneratorAction()
+GAPSPrimaryGeneratorAction::~GAPSPrimaryGeneratorAction()
 {
 	delete GeneralParticleSource;
 	delete particleGun;
@@ -78,13 +78,13 @@ GRAMSPrimaryGeneratorAction::~GRAMSPrimaryGeneratorAction()
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
-void GRAMSPrimaryGeneratorAction::GeneratePrimaries(G4Event* anEvent)
+void GAPSPrimaryGeneratorAction::GeneratePrimaries(G4Event* anEvent)
 { 
 	extern global_struct global;
-	if(global.ParticleSource == 1) GeneralParticleSource->GeneratePrimaryVertex(anEvent);
+	if(global.GPS == 1) GeneralParticleSource->GeneratePrimaryVertex(anEvent);
 	else
 	{
-		if(global.ParticleSource == 0) // for particle gun
+		if(global.SimulationType <= 1 || global.SimulationType == 5) // simulation for GRASP. 0: reference, 1: detector
 		{
 			G4double lSquare,X,Y,Z,cosTheta,sinTheta,phi,directionX,directionY,directionZ,minE,maxE,kinetic ;  
 			lSquare = global.area;
@@ -109,7 +109,7 @@ void GRAMSPrimaryGeneratorAction::GeneratePrimaries(G4Event* anEvent)
 			particleGun->SetParticleMomentumDirection(G4ThreeVector(directionX,directionY,directionZ));
 			particleGun->GeneratePrimaryVertex(anEvent);
 		}
-		else if(global.ParticleSource == 2) // for pbar/dbar stop event, generate one particle
+		else if(global.SimulationType == 2) // simulation for pbar/dbar stop event, generate one particle
 		{
 			G4double cosTheta,sinTheta,phi,ux,uy,uz,x,y,z;
 			x = global.inputX[global.eventID%global.nLine]*cm;
@@ -126,12 +126,12 @@ void GRAMSPrimaryGeneratorAction::GeneratePrimaries(G4Event* anEvent)
 			particleGun->SetParticleMomentumDirection(G4ThreeVector(ux,uy,uz));
 			particleGun->GeneratePrimaryVertex(anEvent);
 		}
-		else if(global.ParticleSource == 3) // for dbar stop event, generate all particles
+		else if(global.SimulationType == 3) // simulation for dbar stop event, generate all particles
 		{
 			G4ParticleTable* particleTable = G4ParticleTable::GetParticleTable();
 			G4ParticleDefinition* particle;
 			G4double cosTheta,sinTheta,phi,ux,uy,uz,x,y,z;
-            G4double yield[2] = {0.92,0.701}; // 74, 114 keV
+            G4double yield[3] = {0.8,0.93,0.94}; // 30, 44, 67 keV
 			x = global.inputX[global.eventID%global.nLine]*cm;
 			y = global.inputY[global.eventID%global.nLine]*cm;
 			z = global.inputZ[global.eventID%global.nLine]*cm;
@@ -154,7 +154,7 @@ void GRAMSPrimaryGeneratorAction::GeneratePrimaries(G4Event* anEvent)
 			uy = sinTheta*std::sin(phi),
 			uz = cosTheta;
 			particleGun->SetParticleMomentumDirection(G4ThreeVector(ux,uy,uz));
-			particleGun->SetParticleEnergy(73.7*keV);
+			particleGun->SetParticleEnergy(30.0*keV);
 			if(G4UniformRand() <= yield[0]) particleGun->GeneratePrimaryVertex(anEvent);
 			
 			particle = particleTable->FindParticle("gamma");
@@ -167,17 +167,29 @@ void GRAMSPrimaryGeneratorAction::GeneratePrimaries(G4Event* anEvent)
 			uy = sinTheta*std::sin(phi),
 			uz = cosTheta;
 			particleGun->SetParticleMomentumDirection(G4ThreeVector(ux,uy,uz));
-			particleGun->SetParticleEnergy(113.6*keV);
+			particleGun->SetParticleEnergy(44.0*keV);
 			if(G4UniformRand() <= yield[1]) particleGun->GeneratePrimaryVertex(anEvent);
 			
-			/*
-      particle = particleTable->FindParticle("anti_deuteron");
-      particleGun->SetParticleDefinition(particle);
-      particleGun->SetParticlePosition(G4ThreeVector(x,y,z));
-      particleGun->SetParticleEnergy(1.0*keV);
-      particleGun->GeneratePrimaryVertex(anEvent);
-      */
-      
+			particle = particleTable->FindParticle("gamma");
+			particleGun->SetParticleDefinition(particle);
+			particleGun->SetParticlePosition(G4ThreeVector(x,y,z));
+			cosTheta = 2.*G4UniformRand() - 1.0;
+			phi = CLHEP::twopi*G4UniformRand();
+			sinTheta = std::sqrt(1. - cosTheta*cosTheta);
+			ux = sinTheta*std::cos(phi),
+			uy = sinTheta*std::sin(phi),
+			uz = cosTheta;
+			particleGun->SetParticleMomentumDirection(G4ThreeVector(ux,uy,uz));
+			particleGun->SetParticleEnergy(67.0*keV);
+			if(G4UniformRand() <= yield[2]) particleGun->GeneratePrimaryVertex(anEvent);
+			
+            particle = particleTable->FindParticle("anti_deuteron");
+            particleGun->SetParticleDefinition(particle);
+            particleGun->SetParticlePosition(G4ThreeVector(x,y,z));
+            particleGun->SetParticleEnergy(1.0*keV);
+            particleGun->GeneratePrimaryVertex(anEvent);
+            
+            /*
 			particle = particleTable->FindParticle("anti_proton");
 			particleGun->SetParticleDefinition(particle);
 			particleGun->SetParticlePosition(G4ThreeVector(x,y,z));
@@ -190,15 +202,15 @@ void GRAMSPrimaryGeneratorAction::GeneratePrimaries(G4Event* anEvent)
 			particleGun->SetParticlePosition(G4ThreeVector(x,y,z));
 			particleGun->SetParticleEnergy(1.0*keV);
 			particleGun->GeneratePrimaryVertex(anEvent);
-      
+            */
 			
 		}
-		else if(global.ParticleSource == 4) // for pbar stop event, generate all particles
+		else if(global.SimulationType == 4) // simulation for pbar stop event, generate all particles
 		{
 			G4ParticleTable* particleTable = G4ParticleTable::GetParticleTable();
 			G4ParticleDefinition* particle;
             G4double cosTheta,sinTheta,phi,ux,uy,uz,x,y,z;
-            G4double yield[2] = {0.782,0.837}; // 58.2 keV, 96.5 keV
+            G4double yield[3] = {0.73,0.84,0.70}; // 35, 58, 106 keV
 			
 			x = global.inputX[global.eventID%global.nLine]*cm;
 			y = global.inputY[global.eventID%global.nLine]*cm;
@@ -222,7 +234,7 @@ void GRAMSPrimaryGeneratorAction::GeneratePrimaries(G4Event* anEvent)
 			uy = sinTheta*std::sin(phi),
 			uz = cosTheta;
 			particleGun->SetParticleMomentumDirection(G4ThreeVector(ux,uy,uz));
-			particleGun->SetParticleEnergy(58.2*keV);
+			particleGun->SetParticleEnergy(35.0*keV);
 			if(G4UniformRand() <= yield[0]) particleGun->GeneratePrimaryVertex(anEvent);
 			
 			particle = particleTable->FindParticle("gamma");
@@ -235,8 +247,21 @@ void GRAMSPrimaryGeneratorAction::GeneratePrimaries(G4Event* anEvent)
 			uy = sinTheta*std::sin(phi),
 			uz = cosTheta;
 			particleGun->SetParticleMomentumDirection(G4ThreeVector(ux,uy,uz));
-			particleGun->SetParticleEnergy(96.5*keV);
+			particleGun->SetParticleEnergy(58.0*keV);
 			if(G4UniformRand() <= yield[1]) particleGun->GeneratePrimaryVertex(anEvent);
+			
+			particle = particleTable->FindParticle("gamma");
+			particleGun->SetParticleDefinition(particle);
+			particleGun->SetParticlePosition(G4ThreeVector(x,y,z));
+			cosTheta = 2.*G4UniformRand() - 1.0;
+			phi = CLHEP::twopi*G4UniformRand();
+			sinTheta = std::sqrt(1. - cosTheta*cosTheta);
+			ux = sinTheta*std::cos(phi),
+			uy = sinTheta*std::sin(phi),
+			uz = cosTheta;
+			particleGun->SetParticleMomentumDirection(G4ThreeVector(ux,uy,uz));
+			particleGun->SetParticleEnergy(106.0*keV);
+			if(G4UniformRand() <= yield[2]) particleGun->GeneratePrimaryVertex(anEvent);
 			
 			particle = particleTable->FindParticle("anti_proton");
 			particleGun->SetParticleDefinition(particle);
@@ -245,7 +270,64 @@ void GRAMSPrimaryGeneratorAction::GeneratePrimaries(G4Event* anEvent)
 			particleGun->GeneratePrimaryVertex(anEvent);
 					
 		}
-  }
+        else if(global.SimulationType == 6) // simulation for dbar stop event, only X-rays with 100% yield
+        {
+            G4ParticleTable* particleTable = G4ParticleTable::GetParticleTable();
+            G4ParticleDefinition* particle;
+            G4double cosTheta,sinTheta,phi,ux,uy,uz,x,y,z;
+            G4double yield[3] = {1.0,1.0,1.0}; // 30, 44, 67 keV
+            x = global.inputX[global.eventID%global.nLine]*cm;
+            y = global.inputY[global.eventID%global.nLine]*cm;
+            z = global.inputZ[global.eventID%global.nLine]*cm;
+            
+            // dammy e- to find out the initial position
+            particle = particleTable->FindParticle("e-");
+            particleGun->SetParticleDefinition(particle);
+            particleGun->SetParticlePosition(G4ThreeVector(x,y,z));
+            particleGun->SetParticleEnergy(1.0*keV);
+            particleGun->GeneratePrimaryVertex(anEvent);
+            
+            particle = particleTable->FindParticle("gamma");
+            particleGun->SetParticleDefinition(particle);
+            particleGun->SetParticleDefinition(particle);
+            particleGun->SetParticlePosition(G4ThreeVector(x,y,z));
+            cosTheta = 2.*G4UniformRand() - 1.0;
+            phi = CLHEP::twopi*G4UniformRand();
+            sinTheta = std::sqrt(1. - cosTheta*cosTheta);
+            ux = sinTheta*std::cos(phi),
+            uy = sinTheta*std::sin(phi),
+            uz = cosTheta;
+            particleGun->SetParticleMomentumDirection(G4ThreeVector(ux,uy,uz));
+            particleGun->SetParticleEnergy(30.0*keV);
+            if(G4UniformRand() <= yield[0]) particleGun->GeneratePrimaryVertex(anEvent);
+            
+            particle = particleTable->FindParticle("gamma");
+            particleGun->SetParticleDefinition(particle);
+            particleGun->SetParticlePosition(G4ThreeVector(x,y,z));
+            cosTheta = 2.*G4UniformRand() - 1.0;
+            phi = CLHEP::twopi*G4UniformRand();
+            sinTheta = std::sqrt(1. - cosTheta*cosTheta);
+            ux = sinTheta*std::cos(phi),
+            uy = sinTheta*std::sin(phi),
+            uz = cosTheta;
+            particleGun->SetParticleMomentumDirection(G4ThreeVector(ux,uy,uz));
+            particleGun->SetParticleEnergy(44.0*keV);
+            if(G4UniformRand() <= yield[1]) particleGun->GeneratePrimaryVertex(anEvent);
+            
+            particle = particleTable->FindParticle("gamma");
+            particleGun->SetParticleDefinition(particle);
+            particleGun->SetParticlePosition(G4ThreeVector(x,y,z));
+            cosTheta = 2.*G4UniformRand() - 1.0;
+            phi = CLHEP::twopi*G4UniformRand();
+            sinTheta = std::sqrt(1. - cosTheta*cosTheta);
+            ux = sinTheta*std::cos(phi),
+            uy = sinTheta*std::sin(phi),
+            uz = cosTheta;
+            particleGun->SetParticleMomentumDirection(G4ThreeVector(ux,uy,uz));
+            particleGun->SetParticleEnergy(67.0*keV);
+            if(G4UniformRand() <= yield[2]) particleGun->GeneratePrimaryVertex(anEvent);
+        }
+	}
 }
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......

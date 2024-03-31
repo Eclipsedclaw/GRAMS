@@ -30,7 +30,7 @@
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
-#include "GRAMSDetectorSD.hh"
+#include "GAPSDetectorSD.hh"
 #include "G4HCofThisEvent.hh"
 #include "G4Step.hh"
 #include "G4ThreeVector.hh"
@@ -41,7 +41,7 @@
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
-GRAMSDetectorSD::GRAMSDetectorSD(G4String name)
+GAPSDetectorSD::GAPSDetectorSD(G4String name)
 :G4VSensitiveDetector(name)
 {
   G4String HCname;
@@ -51,13 +51,13 @@ GRAMSDetectorSD::GRAMSDetectorSD(G4String name)
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
-GRAMSDetectorSD::~GRAMSDetectorSD(){ }
+GAPSDetectorSD::~GAPSDetectorSD(){ }
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
-void GRAMSDetectorSD::Initialize(G4HCofThisEvent* HCE)
+void GAPSDetectorSD::Initialize(G4HCofThisEvent* HCE)
 {
-  DetectorCollection = new GRAMSDetectorHitsCollection
+  DetectorCollection = new GAPSDetectorHitsCollection
 													(SensitiveDetectorName,collectionName[0]); 
   static G4int HCID = -1;
   if(HCID<0)
@@ -67,91 +67,53 @@ void GRAMSDetectorSD::Initialize(G4HCofThisEvent* HCE)
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
-G4bool GRAMSDetectorSD::ProcessHits(G4Step* aStep,G4TouchableHistory*)
+G4bool GAPSDetectorSD::ProcessHits(G4Step* aStep,G4TouchableHistory*)
 {
 	extern global_struct global;
   G4double eDep = aStep->GetTotalEnergyDeposit();
-	G4double energy = aStep->GetPreStepPoint()->GetKineticEnergy();
+//	G4double energy = aStep->GetPreStepPoint()->GetKineticEnergy();
 	G4int particleID = aStep->GetTrack()->GetDynamicParticle()->GetDefinition()->GetPDGEncoding();
 	G4int trackID = aStep->GetTrack()->GetTrackID();
-  G4int parentID = aStep->GetTrack()->GetParentID();
+    G4int parentID = aStep->GetTrack()->GetParentID();
 	G4ThreeVector Momentum = aStep->GetPostStepPoint()->GetMomentum();
-  G4String processName = aStep->GetPostStepPoint()->GetProcessDefinedStep()->GetProcessName();
-  G4String Material = aStep->GetPreStepPoint()->GetPhysicalVolume()->GetLogicalVolume()->GetMaterial()->GetName();
-  
-  if(eDep == 0. && global.TrackEdep != 0 && processName == "Transportation") return false;
-//	if(edep == 0.) return false;
-//	if(eDep == 0. && global.TrackType != 2 && particleID != 0) return false; // track only particles energy deposited
-  
-//	if(global.TrackType == 1 && trackID != 1) return false; // track only primary particles
-  if(global.TrackType == 1 && !(!(aStep->GetTrack()->GetCreatorProcess()))) return false; // track only primary particles
-  if(global.TrackType == 2 && parentID != 1) return false; // track only parentID = 1 (particles generated from primary)
-  if(global.TrackType == 3 && (parentID > 1)) return false; // track only trackID = 1 or parentID = 1 (primary particles or particles generated from primary)
-  GRAMSDetectorHit* newHit = new GRAMSDetectorHit();
-  newHit->SetTrackID  (aStep->GetTrack()->GetTrackID());
-  newHit->SetTime     (aStep->GetTrack()->GetGlobalTime());
-  newHit->SetParticleID   (aStep->GetTrack()->GetDynamicParticle()->GetDefinition()->GetPDGEncoding());
-  newHit->SetParentID  (aStep->GetTrack()->GetParentID());
-  newHit->SetMomentum (aStep->GetPostStepPoint()->GetMomentum()); // post-step
-  // newHit->SetMomentum (aStep->GetPreStepPoint()->GetMomentum()); // pre-step
-  newHit->SetEnergy   (aStep->GetPreStepPoint()->GetKineticEnergy()); // pre-step
+	
+    if(eDep==0. && global.TrackEdep != 0) return false;
+//	if(edep==0.) return false;
+//	if(eDep==0. && global.TrackType != 2 && particleID != 0) return false; // track only particles energy deposited
+	if(global.TrackType == 1 && trackID != 1) return false; // track only primary particles
+    if(global.TrackType == 2 && parentID != 1) return false; // track only particles generated from primary
+	if(global.GAPSVerbose > 0)  
+	{
+	  GAPSDetectorHit* newHit = new GAPSDetectorHit();
+		newHit->SetTrackID  (aStep->GetTrack()->GetTrackID());
+		newHit->SetTime     (aStep->GetTrack()->GetGlobalTime());
+		newHit->SetParticleID   (aStep->GetTrack()->GetDynamicParticle()->GetDefinition()->GetPDGEncoding());
+		newHit->SetParentID  (aStep->GetTrack()->GetParentID());
+		newHit->SetMomentum (aStep->GetPostStepPoint()->GetMomentum());
+		newHit->SetEnergy   (aStep->GetPreStepPoint()->GetKineticEnergy()); // pre-step
 //		newHit->SetEnergy   (aStep->GetPostStepPoint()->GetKineticEnergy()); // post-step
-  newHit->SetVertexPos(aStep->GetTrack()->GetVertexPosition());
-  //newHit->SetCopyNb(aStep->GetPreStepPoint()->GetTouchableHandle()->GetCopyNumber());
-  //newHit->SetCopyNb1(aStep->GetPreStepPoint()->GetTouchableHandle()->GetCopyNumber(1));
-
-  G4String logicName = aStep->GetPreStepPoint()->GetTouchableHandle()->GetVolume()->GetLogicalVolume()->GetName();
-  if (logicName == "LArCell" || logicName == "LXeCell")
-  {
-    G4int copyCell2 = aStep->GetPreStepPoint()->GetTouchableHandle()->GetReplicaNumber(2);
-    G4int copyCell1 = aStep->GetPreStepPoint()->GetTouchableHandle()->GetReplicaNumber(1);
-    G4int copyCell0 = aStep->GetPreStepPoint()->GetTouchableHandle()->GetReplicaNumber();
-    newHit->SetCopyNb1(aStep->GetPreStepPoint()->GetTouchableHandle()->GetReplicaNumber(3));
-    newHit->SetCopyNb(copyCell2*global.NbCellL*global.NbCellL+copyCell1*global.NbCellL+copyCell0);
-    //newHit->SetCopyNb(aStep->GetPreStepPoint()->GetTouchableHandle()->GetCopyNumber());
-    //newHit->SetCopyNb1(aStep->GetPreStepPoint()->GetTouchableHandle()->GetCopyNumber(1));
-    // G4cout << "copy2: " << aStep->GetPreStepPoint()->GetTouchableHandle()->GetReplicaNumber(2) << G4endl;
-  }
-  else
-  {
-    newHit->SetCopyNb(aStep->GetPreStepPoint()->GetTouchableHandle()->GetReplicaNumber());
-    newHit->SetCopyNb1(aStep->GetPreStepPoint()->GetTouchableHandle()->GetReplicaNumber(1));
-  }
-
-  if(global.OutputType == 1) // simple output mode
-  {
-    newHit->SetParentProcess("0");
-    newHit->SetProcessName("0");
-  }
-  else // output text
-  {
-    if(!(aStep->GetTrack()->GetCreatorProcess())) newHit->SetParentProcess("N/A"); // N/A for the manually generated primary particles
-    else newHit->SetParentProcess(aStep->GetTrack()->GetCreatorProcess()->GetProcessName());
-    newHit->SetProcessName(aStep->GetPostStepPoint()->GetProcessDefinedStep()->GetProcessName());
-  }
-  newHit->SetMaterialName(aStep->GetPreStepPoint()->GetPhysicalVolume()->GetLogicalVolume()->GetMaterial()->GetName());
-  newHit->SetEdep				(eDep);
-  newHit->SetStepLength	(aStep->GetStepLength());
-  newHit->SetPos				(aStep->GetPostStepPoint()->GetPosition());
+		newHit->SetVertexPos(aStep->GetTrack()->GetVertexPosition());
+		newHit->SetCopyNb(aStep->GetPreStepPoint()->GetTouchableHandle()->GetCopyNumber());
+		newHit->SetCopyNb1(aStep->GetPreStepPoint()->GetTouchableHandle()->GetCopyNumber(1));
+		if(global.OutputType == 1) // simple output mode
+		{
+			newHit->SetParentProcess("0");
+			newHit->SetProcessName("0");
+		}
+		else // output text
+		{
+			if(!(aStep->GetTrack()->GetCreatorProcess())) newHit->SetParentProcess("N/A"); // N/A for the manually generated primary particles
+			else newHit->SetParentProcess(aStep->GetTrack()->GetCreatorProcess()->GetProcessName());
+			newHit->SetProcessName(aStep->GetPostStepPoint()->GetProcessDefinedStep()->GetProcessName());
+		}		
+		newHit->SetMaterialName(aStep->GetPreStepPoint()->GetPhysicalVolume()->GetLogicalVolume()->GetMaterial()->GetName());
+		newHit->SetEdep				(eDep);
+		newHit->SetStepLength	(aStep->GetStepLength());
+		newHit->SetPos				(aStep->GetPostStepPoint()->GetPosition());
 //		if(trackID == 1 && eDep == energy) global.lStopEvent = 1;
-  // if(trackID == 1 && Momentum.getX()*Momentum.getX()+Momentum.getY()*Momentum.getY()+Momentum.getZ()*Momentum.getZ() == 0.0)
-  if(trackID == 1 && Momentum.getX()*Momentum.getX()+Momentum.getY()*Momentum.getY()+Momentum.getZ()*Momentum.getZ() == 0.0 && Material == "LAr")
-  {    
-    if(global.lStopEvent == 0)
-    {
-      if(eDep == energy && energy > 0.0)
-      {
-        global.NbStop++;
-        global.lStopEvent = 1;
-      }
-      else
-      {
-        global.NbInflight++;
-        global.lStopEvent = 2;
-      }
-    }
-  }
-  DetectorCollection->insert( newHit );
+		if(trackID == 1 && Momentum.getX()*Momentum.getX()+Momentum.getY()*Momentum.getY()+Momentum.getZ()*Momentum.getZ() == 0.0) global.lStopEvent = 1;
+		DetectorCollection->insert( newHit );
+	}
   
   //newHit->Print();
   //newHit->Draw();
@@ -161,32 +123,20 @@ G4bool GRAMSDetectorSD::ProcessHits(G4Step* aStep,G4TouchableHistory*)
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
-void GRAMSDetectorSD::EndOfEvent(G4HCofThisEvent*)
+void GAPSDetectorSD::EndOfEvent(G4HCofThisEvent*)
 {
 	extern global_struct global;	
   G4int NbHits = DetectorCollection->entries();
-  for(G4int i=0; i<NbHits; i++ )
-  {
-    if(global.StopEvent >= 0)
-    {
-      if(global.StopEvent == 1)
-      {
-        if(global.lStopEvent == 1)(*DetectorCollection)[i]->fPrint();
-      }
-      else if(global.StopEvent == 2)
-      {
-        if(global.lStopEvent == 1 || global.lStopEvent == 2)(*DetectorCollection)[i]->fPrint();
-      }
-      else if(global.StopEvent == 3)
-      {
-        if(global.lStopEvent == 1)(*DetectorCollection)[i]->fPrint();
-      }
-      else if(global.StopEvent == 4)
-      {
-        if(global.lStopEvent == 1 || global.lStopEvent == 2)(*DetectorCollection)[i]->fPrint();
-      }
-      else (*DetectorCollection)[i]->fPrint();
-    }
+  if( global.GAPSVerbose > 0 )
+	{
+    for(G4int i=0; i<NbHits; i++ )
+		{
+			if(global.StopEvent == 1)
+			{
+				if(global.lStopEvent == 1)(*DetectorCollection)[i]->fPrint();
+			}
+			else (*DetectorCollection)[i]->fPrint();
+		}
   }
   
   if (verboseLevel>1) { 
