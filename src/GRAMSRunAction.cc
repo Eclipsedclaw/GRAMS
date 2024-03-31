@@ -45,6 +45,8 @@
 */
 #include "global.h"
 #include <fstream>
+#include <TTree.h>
+#include <TFile.h>
 
 using namespace std;
 
@@ -71,7 +73,33 @@ void GRAMSRunAction::BeginOfRunAction(const G4Run* aRun)
   ((G4Run *)(aRun))->SetRunID(global.runnum);
   G4cout << "### Run " << aRun->GetRunID() << " start." << G4endl;
 
-// Particles in Scoring volume  
+// Particles in Scoring volume
+  if(global.OutputFormat == 1)
+		{
+			sprintf(fname, "%s/%s.root", global.outdir, global.outfile );
+			global.fROOT=new TFile(fname,"RECREATE");
+			global.tree = new TTree("tree", "");
+			
+			global.tree -> Branch("eventID",&global.eventID,"eventID/I");
+			global.tree -> Branch("trackID",&global.trackID,"trackID/I");
+			global.tree -> Branch("parentID",&global.parentID,"parentID/I");
+			global.tree -> Branch("particleID",&global.particleID,"particleID/I");
+			global.tree -> Branch("copyNb1",&global.copyNb1,"copyNb1/I");
+			global.tree -> Branch("copyNb",&global.copyNb,"copyNb/I");
+			global.tree -> Branch("material",global.material,"material[10]/C");
+			global.tree -> Branch("processName",global.processName,"processName[30]/C");
+			global.tree -> Branch("parentProcess",global.parentProcess,"parentProcess[30]/C");
+			global.tree -> Branch("time",&global.time,"time/F");
+			global.tree -> Branch("energy",&global.energy,"energy/F");
+			global.tree -> Branch("eDep",&global.eDep,"eDep/F");
+			global.tree -> Branch("px",&global.px,"px/F");
+			global.tree -> Branch("py",&global.py,"py/F");
+			global.tree -> Branch("pz",&global.pz,"pz/F");
+			global.tree -> Branch("stepLength",&global.stepLength,"stepLength/F");
+			global.tree -> Branch("x",&global.x,"x/F");
+			global.tree -> Branch("y",&global.y,"y/F");
+			global.tree -> Branch("z",&global.z,"z/F");
+		}  
   if(global.OutputFormat == 0)
   {
     sprintf(fname, "%s/%s.dat", global.outdir, global.outfile );
@@ -111,6 +139,12 @@ void GRAMSRunAction::EndOfRunAction(const G4Run*)
 	extern global_struct global;
     std::ofstream outfile;
 	if(global.OutputFormat == 0) global.output.close();
+  if(global.OutputFormat == 1)
+	{
+		global.fROOT->Print();
+		global.fROOT->Write();
+		global.fROOT->Close();
+	}
   if(global.StopEvent == 1)
   {
     if(global.NbStop > 0) 
