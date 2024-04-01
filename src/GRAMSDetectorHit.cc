@@ -230,7 +230,7 @@ void GRAMSDetectorHit::fPrint()
 		global.x = float(pos_.getX()/cm);
 		global.y = float(pos_.getY()/cm);
 		global.z = float(pos_.getZ()/cm);
-		global.tree->Fill();
+		//global.tree->Fill();
 	}
 }
 

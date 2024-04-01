@@ -41,6 +41,8 @@ using namespace std;
 #include "G4VUserDetectorConstruction.hh"
 #include "globals.hh"
 #include "G4SystemOfUnits.hh"
+#include "TTree.h"
+#include "TFile.h"
 class G4LogicalVolume;
 class G4VPhysicalVolume;
 
@@ -59,6 +61,8 @@ struct global_struct{
 	G4int ParticleSource;
 	ofstream output;
 	ifstream input;
+	TTree *tree;
+	TFile* fROOT;
 	
 	vector<float> inputX,inputY,inputZ,inputPx,inputPy,inputPz,inputE;
 	int nLine;
