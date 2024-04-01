@@ -208,6 +208,30 @@ void GRAMSDetectorHit::fPrint()
                           << pos_.getZ() / cm << "\n";
     }
   }
+  if(global.OutputFormat == 1) //ROOT format
+	{
+		global.eventID = int(global.eventID);
+		global.trackID = int(trackID_);
+		global.parentID = int(parentID_);
+		global.particleID = int(particleID_);
+		global.copyNb1 = int(copyNb1_);
+		global.copyNb = int(copyNb_);
+		//	global.material = int(materialName_);
+		sprintf(global.material,materialName_.c_str());
+		global.time = float(time_/ns);
+		global.energy = float(kEnergy_/MeV);
+		global.eDep = float(edep_/MeV);
+		sprintf(global.processName,processName_.c_str());
+		sprintf(global.parentProcess,parentProcess_.c_str());
+		global.px = float(momentum_.getX()/MeV);
+		global.py = float(momentum_.getY()/MeV);
+		global.pz = float(momentum_.getZ()/MeV);
+		global.stepLength = float(stepLength_/cm);
+		global.x = float(pos_.getX()/cm);
+		global.y = float(pos_.getY()/cm);
+		global.z = float(pos_.getZ()/cm);
+		global.tree->Fill();
+	}
 }
 
 
