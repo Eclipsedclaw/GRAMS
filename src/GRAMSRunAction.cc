@@ -78,7 +78,7 @@ void GRAMSRunAction::BeginOfRunAction(const G4Run* aRun)
 		{
 			sprintf(fname, "%s/%s.root", global.outdir, global.outfile );
 			global.fROOT=new TFile(fname,"RECREATE");
-			global.tree = new TTree("tree", "");
+			//global.tree = new TTree("tree", "");
 			
 			global.tree -> Branch("eventID",&global.eventID,"eventID/I");
 			global.tree -> Branch("trackID",&global.trackID,"trackID/I");
