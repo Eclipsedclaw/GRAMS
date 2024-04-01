@@ -30,7 +30,7 @@
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
-#include "GRAMSRunAction.hh"
+#include "GAPSRunAction.hh"
 
 #include "G4Run.hh"
 #include "G4RunManager.hh"
@@ -44,42 +44,42 @@
 #include <unistd.h>
 */
 #include "global.h"
-#include <fstream>
-#include <TTree.h>
-#include <TFile.h>
+#include "fstream"
+#include "TTree.h"
+#include "TFile.h"
 
 using namespace std;
 
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
-GRAMSRunAction::GRAMSRunAction()
+GAPSRunAction::GAPSRunAction()
 {}
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
-GRAMSRunAction::~GRAMSRunAction()
+GAPSRunAction::~GAPSRunAction()
 {}
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
-void GRAMSRunAction::BeginOfRunAction(const G4Run* aRun)
+void GAPSRunAction::BeginOfRunAction(const G4Run* aRun)
 {
   extern global_struct global;
   char fname[100];
-  global.NbStop = 0;
-  global.NbInflight = 0;
 	
   ((G4Run *)(aRun))->SetRunID(global.runnum);
   G4cout << "### Run " << aRun->GetRunID() << " start." << G4endl;
 
-// Particles in Scoring volume
-  if(global.OutputFormat == 1)
+// Particles in Scoring volume  
+  if( global.GAPSVerbose > 0 )
+	{
+		if(global.OutputFormat == 1)
 		{
 			sprintf(fname, "%s/%s.root", global.outdir, global.outfile );
 			global.fROOT=new TFile(fname,"RECREATE");
-			global.tree = new TTree("tree", "");
-			
+			//global.tree = new TTree("tree", "");
+
 			global.tree -> Branch("eventID",&global.eventID,"eventID/I");
 			global.tree -> Branch("trackID",&global.trackID,"trackID/I");
 			global.tree -> Branch("parentID",&global.parentID,"parentID/I");
@@ -99,63 +99,52 @@ void GRAMSRunAction::BeginOfRunAction(const G4Run* aRun)
 			global.tree -> Branch("x",&global.x,"x/F");
 			global.tree -> Branch("y",&global.y,"y/F");
 			global.tree -> Branch("z",&global.z,"z/F");
-		}  
-  if(global.OutputFormat == 0)
-  {
-    sprintf(fname, "%s/%s.dat", global.outdir, global.outfile );
-    G4cout << "Output file: " << fname << G4endl;
-    global.output.open (fname);
-  }
-  if(global.ParticleSource > 2) // for pbar/dbar stop event
-  {
-    global.inputX.clear();
-    global.inputY.clear();
-    global.inputZ.clear();
-    sprintf(fname, "%s/%s", global.indir, global.infile );
-    G4cout << "Input file for primary particles: " << fname << G4endl;
-    global.input.open (fname);
-    // Read input files for primary particles
-    float X,Y,Z;
-    int nLine = 0;
-    while (global.input.good())
-    {
-      global.input >> X >> Y >> Z;
-      //				cout << X << " " << Y << " " <<  Z << endl;
-      global.inputX.push_back(X);
-      global.inputY.push_back(Y);
-      global.inputZ.push_back(Z);
-      nLine++;
-    }
-    cout << "there are " << nLine << " lines in the input file" << endl;
-    global.nLine = nLine;
-    global.input.close();
-  }
+		}
+		if(global.OutputFormat == 0)
+		{
+			sprintf(fname, "%s/%s.dat", global.outdir, global.outfile );
+			G4cout << "Output file: " << fname << G4endl;
+			global.output.open (fname);
+		}
+		if(global.SimulationType >= 2 && global.SimulationType != 5) // simulation for pbar/dbar stop event
+		{
+			global.inputX.clear();
+			global.inputY.clear();
+			global.inputZ.clear();
+			sprintf(fname, "%s/%s", global.indir, global.infile );
+			G4cout << "Input file for primary particles: " << fname << G4endl;
+			global.input.open (fname);
+			// Read input files for primary particles
+			float X,Y,Z;
+			int nLine = 0;
+			while (global.input.good())
+			{
+				global.input >> X >> Y >> Z;	
+//				cout << X << " " << Y << " " <<  Z << endl;
+				global.inputX.push_back(X);
+				global.inputY.push_back(Y);
+				global.inputZ.push_back(Z);
+				nLine++;
+			}
+			cout << "there are " << nLine << " lines in the input file" << endl;
+			global.nLine = nLine;
+			global.input.close();
+		}
+	}	
 }
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
-void GRAMSRunAction::EndOfRunAction(const G4Run*)
+void GAPSRunAction::EndOfRunAction(const G4Run*)
 {
 	extern global_struct global;
-    std::ofstream outfile;
 	if(global.OutputFormat == 0) global.output.close();
-  if(global.OutputFormat == 1)
+	if(global.OutputFormat == 1)
 	{
 		global.fROOT->Print();
 		global.fROOT->Write();
 		global.fROOT->Close();
 	}
-  if(global.StopEvent == 1)
-  {
-    if(global.NbStop > 0) 
-    {
-        G4cout << "Stop Event = " << global.NbStop << G4endl;
-        outfile.open("NoS.txt", std::ios_base::app); 
-        outfile << global.NbStop << '\t' << global.NbInflight << '\t' << global.Emin << '\n';
-        outfile.close();
-    }
-    if(global.NbInflight > 0) G4cout << "Inflight Event = " << global.NbInflight << G4endl;
-  }
 	G4cout << "Run end  " << G4endl;
 }
 
