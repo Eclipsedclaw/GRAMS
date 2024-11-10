@@ -614,7 +614,7 @@ def GRASP_hist(GRASP_vector, particle_name, label, total_event, energy_min, ener
 
 
 
-
+# Don't use functions bellow, instead, use Particle.from_pdgid()
 
 # This function is for identify particles in geant4 including particle ID and Z numbers etc
 def number_of_nucleons(particle_ID):
