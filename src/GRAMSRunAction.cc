@@ -71,7 +71,7 @@ void GRAMSRunAction::BeginOfRunAction(const G4Run* aRun)
   ((G4Run *)(aRun))->SetRunID(global.runnum);
   G4cout << "### Run " << aRun->GetRunID() << " start." << G4endl;
 
-// Particles in Scoring volume  
+// Particles in Scoring volume
   if(global.OutputFormat == 0)
   {
     sprintf(fname, "%s/%s.dat", global.outdir, global.outfile );
