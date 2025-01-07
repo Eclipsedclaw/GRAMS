@@ -86,6 +86,7 @@ def display_progress_bar(i, N, bar_length=50):
 def read_data_from_toymodel(file_path):
     print("Reading data...\n")
     file_name_without_extension = os.path.splitext(os.path.basename(file_path))[0]
+    print(file_name_without_extension)
     save_path = file_name_without_extension + ".h5"
     print(save_path)
     try:
@@ -114,7 +115,7 @@ def read_data_from_toymodel(file_path):
         # Clear the data buffer
         df = None
         
-        return None
+        return hf
     except FileNotFoundError:
         print(f"Error: File '{file_path}' not found.")
         return None
@@ -330,12 +331,12 @@ class daughters:
         return len(self.data)
 
 
-
+# TODO: need to redo a lot of the design
 # This function doing primary daughter particles analysis including energy and directions
 def Analyze_daughter(data_3d, particle_name, stop_event=True, in_flight_event=False):
     
     # This is the event number in the raw data
-    Event_list = list(data_3d.keys())
+    Event_list = list_eventID(file_path=data_3d)
     
     # Define result vector based on the property of the daughter particles
     Result_vector = daughters(len(Event_list), 2)
@@ -613,7 +614,7 @@ def GRASP_hist(GRASP_vector, particle_name, label, total_event, energy_min, ener
 
 
 
-
+# Don't use functions bellow, instead, use Particle.from_pdgid()
 
 # This function is for identify particles in geant4 including particle ID and Z numbers etc
 def number_of_nucleons(particle_ID):
