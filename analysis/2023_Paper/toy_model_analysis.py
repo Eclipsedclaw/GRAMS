@@ -115,7 +115,7 @@ def read_data_from_toymodel(file_path):
         # Clear the data buffer
         df = None
         
-        return hf
+        return save_path
     except FileNotFoundError:
         print(f"Error: File '{file_path}' not found.")
         return None
@@ -157,11 +157,13 @@ def list_track_data(file_path, eventID, trackID):
 
 
 # This function doing GRASP analysis
-def Analyze_GRASP(data_3d, particle_name, stop_event=False, in_flight_event=False):
+def Analyze_GRASP(hdf5_file_path, particle_name, stop_event=False, in_flight_event=False):
     
-    # This is the event number in the raw data
-    Event_list = list(data_3d.keys())
-    
+    # Open the HDF5 file
+    with h5py.File(hdf5_file_path, 'r') as data_3d:
+        # This is the event number in the raw data
+        Event_list = list(data_3d.keys())  # Now data_3d is an HDF5 file object, which has .keys()
+        
     # Construct a empty vector for initial energy store
     Init_Energy = []
     
