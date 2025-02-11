@@ -589,7 +589,7 @@ def GRASP_hist(GRASP_vector, particle_name, label, total_event, energy_min, ener
     
     GRASP_bin = []
     
-    Xaxis = np.linspace(energy_min, energy_max, num_bins + 1) / particle_info[particle_name][1]
+    Xaxis = np.linspace(energy_min, energy_max, num_bins + 1) / number_of_nucleons(particle_name)[1]
     centersXaxis = Xaxis[:-1] + np.diff(Xaxis) / 2
 
     for i in range(num_bins):
