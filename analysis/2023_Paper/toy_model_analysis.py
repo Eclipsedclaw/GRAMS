@@ -187,12 +187,10 @@ def list_track_data(file_path, eventID, trackID):
 
 
 # This function doing GRASP analysis
-def Analyze_GRASP(hdf5_file_path, particle_name, stop_event=False, in_flight_event=False):
+def Analyze_GRASP(data_3d, particle_name, stop_event=False, in_flight_event=False):
     
-    # Open the HDF5 file
-    with h5py.File(hdf5_file_path, 'r') as data_3d:
-        # This is the event number in the raw data
-        Event_list = list(data_3d.keys())  # Now data_3d is an HDF5 file object, which has .keys()
+    # This is the event number in the raw data
+    Event_list = list(data_3d.keys())
         
     # Construct a empty vector for initial energy store
     Init_Energy = []
@@ -633,14 +631,15 @@ def GRASP_hist(GRASP_vector, particle_name, label, total_event, energy_min, ener
         # print("GRASP_bin[" + str(i) + "] is " + str(GRASP_bin[i]))
         
     ax.step(centersXaxis, GRASP_bin, where='mid', label=str(label)+"("+str(len(GRASP_vector))+" events)", alpha=0.8)
-    ax.set_xlabel("energy [MeV/n]", fontsize='large')
-    ax.set_ylabel("GRASP [m^2 sr]", fontsize='large')
-    ax.legend(fontsize='large', loc='upper right')
+    ax.tick_params(axis='both', labelsize=15)
+    ax.set_xlabel("energy [MeV/n]", fontsize=20)
+    ax.set_ylabel("GRASP [m^2 sr]", fontsize=20)
+    ax.legend(fontsize=15, loc='upper right')
     
     # This is for customized legend location
     #ax.legend(fontsize='large', loc='upper left', bbox_to_anchor=(0.3, -0.08))
     ax.grid(alpha=0.2)
-    ax.set_title('GRASP (Geometric Acceptance)', fontsize='large')
+    #ax.set_title('GRASP', fontsize='large')
     return ax
 
 
