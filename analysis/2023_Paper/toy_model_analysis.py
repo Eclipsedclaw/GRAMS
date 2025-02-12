@@ -83,6 +83,7 @@ def display_progress_bar(i, N, bar_length=50):
 # 
 # data[list(data.keys())[12]]
 # 
+"""
 def read_data_from_toymodel(file_path):
     print("Reading data...\n")
     file_name_without_extension = os.path.splitext(os.path.basename(file_path))[0]
@@ -122,7 +123,36 @@ def read_data_from_toymodel(file_path):
     except pd.errors.ParserError:
         print(f"Error: Unable to parse data from '{file_path}'. Please ensure the file has the correct format.")
         return None
-    
+"""
+def read_data_from_toymodel(file_path):
+    print("Reading data...\n")
+    try:
+        df = pd.read_csv(file_path, delimiter='\t')  # Assumes tab-separated values in the text file
+
+        # Name each data group with event ID
+        grouped = df.groupby(df.iloc[:, 0])
+
+        # Create an empty dictionary to store the 3D data structure
+        data_3d = {}
+
+        # Iterate over each group and populate the dictionary
+        for group_name, group_data in grouped:
+            data_3d[group_name] = group_data.values
+        
+        print("Toy Model data imported\nFound " + str(len(list(data_3d.keys()))) + " Events!")
+
+        # Clear the data buffer
+        df = None
+        
+        return data_3d
+    except FileNotFoundError:
+        print(f"Error: File '{file_path}' not found.")
+        return None
+    except pd.errors.ParserError:
+        print(f"Error: Unable to parse data from '{file_path}'. Please ensure the file has the correct format.")
+        return None
+
+            
 def list_eventID(file_path):
     with h5py.File(file_path, "r") as f:
         # Print all root level object names (aka keys) 
