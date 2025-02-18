@@ -613,7 +613,7 @@ def Analyze_daughter(data_3d, particle_name, stop_event=True, in_flight_event=Fa
 
 
 # This function is for plotting the histgram of GRASP
-def GRASP_hist(GRASP_vector, particle_name, label, total_event, energy_min, energy_max, num_bins, ax=None):
+def GRASP_hist(GRASP_vector, particle_name, label, total_event, energy_min, energy_max, num_bins, ax=None, color='blue', alpha=1, linestyle='-'):
     if ax is None:
         fig, ax = plt.subplots()
     
@@ -630,11 +630,16 @@ def GRASP_hist(GRASP_vector, particle_name, label, total_event, energy_min, ener
         # For debugging each bin
         # print("GRASP_bin[" + str(i) + "] is " + str(GRASP_bin[i]))
         
-    ax.step(centersXaxis, GRASP_bin, where='mid', label=str(label)+"("+str(len(GRASP_vector))+" events)", alpha=0.8)
+    ax.step(centersXaxis, GRASP_bin, where='mid', label=str(label)+"("+str(len(GRASP_vector))+" events)", color=color, alpha=alpha, linestyle=linestyle)
     ax.tick_params(axis='both', labelsize=15)
     ax.set_xlabel("energy [MeV/n]", fontsize=20)
     ax.set_ylabel("GRASP [m^2 sr]", fontsize=20)
-    ax.legend(fontsize=15, loc='upper right')
+    ax.legend(
+        fontsize=20, 
+        loc='upper center',          # Anchor point for the legend
+        bbox_to_anchor=(0.5, -0.1), # Position the legend below the plot
+        ncol=1                      # Number of columns for the legend items
+    )
     
     # This is for customized legend location
     #ax.legend(fontsize='large', loc='upper left', bbox_to_anchor=(0.3, -0.08))
