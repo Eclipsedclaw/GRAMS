@@ -629,15 +629,18 @@ def GRASP_hist(GRASP_vector, particle_name, label, total_event, energy_min, ener
         
         # For debugging each bin
         # print("GRASP_bin[" + str(i) + "] is " + str(GRASP_bin[i]))
-        
-    ax.step(centersXaxis, GRASP_bin, where='mid', label=str(label)+"("+str(len(GRASP_vector))+" events)", color=color, alpha=alpha, linestyle=linestyle)
-    ax.tick_params(axis='both', labelsize=15)
-    ax.set_xlabel("energy [MeV/n]", fontsize=20)
-    ax.set_ylabel("GRASP [m^2 sr]", fontsize=20)
+
+    # With number of events displayed    
+    #ax.step(centersXaxis, GRASP_bin, where='mid', label=str(label)+" ("+str(len(GRASP_vector))+" events)", color=color, alpha=alpha, linestyle=linestyle)
+
+    ax.step(centersXaxis, GRASP_bin, where='mid', label=str(label), color=color, alpha=alpha, linestyle=linestyle)
+    ax.tick_params(axis='both', labelsize=20)
+    ax.set_xlabel(r"energy $ [MeV/n] $", fontsize=25)
+    ax.set_ylabel(r"GRASP $ [m^2 sr] $", fontsize=25)
     ax.legend(
         fontsize=20, 
-        loc='upper center',          # Anchor point for the legend
-        bbox_to_anchor=(0.5, -0.1), # Position the legend below the plot
+        loc='center right',          # Anchor point for the legend
+        #bbox_to_anchor=(0.5, -0.1), # Position the legend below the plot
         ncol=1                      # Number of columns for the legend items
     )
     
