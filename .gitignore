@@ -78,3 +78,4 @@ simulation/output/
 __pycache__/
 *.root
 .DAWN_*
+__pycache__/

@@ -83,6 +83,7 @@ def display_progress_bar(i, N, bar_length=50):
 # 
 # data[list(data.keys())[12]]
 # 
+"""
 def read_data_from_toymodel(file_path):
     print("Reading data...\n")
     file_name_without_extension = os.path.splitext(os.path.basename(file_path))[0]
@@ -115,14 +116,43 @@ def read_data_from_toymodel(file_path):
         # Clear the data buffer
         df = None
         
-        return hf
+        return save_path
     except FileNotFoundError:
         print(f"Error: File '{file_path}' not found.")
         return None
     except pd.errors.ParserError:
         print(f"Error: Unable to parse data from '{file_path}'. Please ensure the file has the correct format.")
         return None
-    
+"""
+def read_data_from_toymodel(file_path):
+    print("Reading data...\n")
+    try:
+        df = pd.read_csv(file_path, delimiter='\t')  # Assumes tab-separated values in the text file
+
+        # Name each data group with event ID
+        grouped = df.groupby(df.iloc[:, 0])
+
+        # Create an empty dictionary to store the 3D data structure
+        data_3d = {}
+
+        # Iterate over each group and populate the dictionary
+        for group_name, group_data in grouped:
+            data_3d[group_name] = group_data.values
+        
+        print("Toy Model data imported\nFound " + str(len(list(data_3d.keys()))) + " Events!")
+
+        # Clear the data buffer
+        df = None
+        
+        return data_3d
+    except FileNotFoundError:
+        print(f"Error: File '{file_path}' not found.")
+        return None
+    except pd.errors.ParserError:
+        print(f"Error: Unable to parse data from '{file_path}'. Please ensure the file has the correct format.")
+        return None
+
+            
 def list_eventID(file_path):
     with h5py.File(file_path, "r") as f:
         # Print all root level object names (aka keys) 
@@ -214,7 +244,7 @@ def Analyze_GRASP(data_3d, particle_name, stop_event=False, in_flight_event=Fals
     
     # This is the event number in the raw data
     Event_list = list(data_3d.keys())
-    
+        
     # Construct a empty vector for initial energy store
     Init_Energy = []
     
@@ -636,13 +666,13 @@ def Analyze_daughter(data_3d, particle_name, stop_event=True, in_flight_event=Fa
 
 
 # This function is for plotting the histgram of GRASP
-def GRASP_hist(GRASP_vector, particle_name, label, total_event, energy_min, energy_max, num_bins, ax=None):
+def GRASP_hist(GRASP_vector, particle_name, label, total_event, energy_min, energy_max, num_bins, ax=None, color='blue', alpha=1, linestyle='-'):
     if ax is None:
         fig, ax = plt.subplots()
     
     GRASP_bin = []
     
-    Xaxis = np.linspace(energy_min, energy_max, num_bins + 1) / particle_info[particle_name][1]
+    Xaxis = np.linspace(energy_min, energy_max, num_bins + 1) / number_of_nucleons(particle_name)[1]
     centersXaxis = Xaxis[:-1] + np.diff(Xaxis) / 2
 
     for i in range(num_bins):
@@ -652,16 +682,25 @@ def GRASP_hist(GRASP_vector, particle_name, label, total_event, energy_min, ener
         
         # For debugging each bin
         # print("GRASP_bin[" + str(i) + "] is " + str(GRASP_bin[i]))
-        
-    ax.step(centersXaxis, GRASP_bin, where='mid', label=str(label)+"("+str(len(GRASP_vector))+" events)", alpha=0.8)
-    ax.set_xlabel("energy [MeV/n]", fontsize='large')
-    ax.set_ylabel("GRASP [m^2 sr]", fontsize='large')
-    ax.legend(fontsize='large', loc='upper right')
+
+    # With number of events displayed    
+    #ax.step(centersXaxis, GRASP_bin, where='mid', label=str(label)+" ("+str(len(GRASP_vector))+" events)", color=color, alpha=alpha, linestyle=linestyle)
+
+    ax.step(centersXaxis, GRASP_bin, where='mid', label=str(label), color=color, alpha=alpha, linestyle=linestyle)
+    ax.tick_params(axis='both', labelsize=20)
+    ax.set_xlabel(r"energy $ [MeV/n] $", fontsize=25)
+    ax.set_ylabel(r"GRASP $ [m^2 sr] $", fontsize=25)
+    ax.legend(
+        fontsize=20, 
+        loc='center right',          # Anchor point for the legend
+        #bbox_to_anchor=(0.5, -0.1), # Position the legend below the plot
+        ncol=1                      # Number of columns for the legend items
+    )
     
     # This is for customized legend location
     #ax.legend(fontsize='large', loc='upper left', bbox_to_anchor=(0.3, -0.08))
     ax.grid(alpha=0.2)
-    ax.set_title('GRASP (Geometric Acceptance)', fontsize='large')
+    #ax.set_title('GRASP', fontsize='large')
     return ax
 
 
