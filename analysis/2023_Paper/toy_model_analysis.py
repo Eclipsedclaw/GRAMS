@@ -155,6 +155,59 @@ def list_track_data(file_path, eventID, trackID):
     return data_array_decoded
 
 
+# Branch names of the "hits" tree in the ROOT output (/OutputFormat 1) and the matching
+# column names of the .dat output (same order and units as the .dat file)
+ROOT_HITS_COLUMNS = {
+    'eventID': 'eventID',
+    'trackID': 'trackID',
+    'parentID': 'parentID',
+    'particleID': 'particleID',
+    'copyNb1': 'copyNb1 (mother volume)',
+    'copyNb': 'copyNb',
+    'material': 'material',
+    'time': 'time (ns)',
+    'energy': 'energy (MeV)',
+    'eDep': 'energy deposit (MeV)',
+    'parentProcess': 'parent process name',
+    'processName': 'process name',
+    'px': 'px (MeV/c)',
+    'py': 'py (MeV/c)',
+    'pz': 'pz (MeV/c)',
+    'stepLength': 'step length (cm)',
+    'x': 'x (cm)',
+    'y': 'y (cm)',
+    'z': 'z (cm)',
+}
+
+# This function reads the ROOT output of the toy model into a pandas DataFrame with the
+# same columns as pd.read_csv gives for the .dat file, so the .dat analysis code still works:
+#
+# df = read_root_from_toymodel("GRASP_anti_proton_1e7_1.root")
+# grouped_data = df.groupby(['eventID'])
+#
+# To save memory, read only the columns you need with branches, e.g. branches=['eventID', 'energy'].
+# It needs uproot: pip install uproot
+def read_root_from_toymodel(file_path, branches=None):
+    import uproot
+    if branches is None:
+        branches = list(ROOT_HITS_COLUMNS)
+    # read as numpy arrays: string branches become plain python strings like in read_csv
+    # (library="pd" would need the extra awkward-pandas package for them)
+    with uproot.open(file_path) as f:
+        arrays = f["hits"].arrays(branches, library="np")
+    return pd.DataFrame({ROOT_HITS_COLUMNS[branch]: arrays[branch] for branch in branches})
+
+# This function returns the "run" tree of a ROOT output file as a dictionary.
+# nEvents is the number of generated events (the hits tree only has the events that were written)
+#
+# read_run_info_from_toymodel("GRASP_anti_proton_1e7_1.root")['nEvents']
+def read_run_info_from_toymodel(file_path):
+    import uproot
+    with uproot.open(file_path) as f:
+        run = f["run"].arrays(library="np")
+    return {key: value[0].item() for key, value in run.items()}
+
+
 
 # This function doing GRASP analysis
 def Analyze_GRASP(data_3d, particle_name, stop_event=False, in_flight_event=False):

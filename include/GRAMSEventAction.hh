@@ -34,6 +34,7 @@
 #define GRAMSEventAction_h 1
 
 #include "G4UserEventAction.hh"
+#include <chrono>
 
 class G4Event;
 
@@ -48,6 +49,9 @@ class GRAMSEventAction : public G4UserEventAction
   public:
     void BeginOfEventAction(const G4Event*);
     void EndOfEventAction(const G4Event*);
+
+  private:
+    std::chrono::steady_clock::time_point lastAutoSave; // last AutoSave of the ROOT output
 };
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......

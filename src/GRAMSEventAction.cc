@@ -39,10 +39,12 @@
 #include "G4ios.hh"
 #include "global.h"
 #include <unistd.h>
+#include "TTree.h"
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
  
 GRAMSEventAction::GRAMSEventAction()
+:lastAutoSave(std::chrono::steady_clock::now())
 {}
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
@@ -67,8 +69,20 @@ void GRAMSEventAction::BeginOfEventAction(const G4Event* evt)
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
  
-void GRAMSEventAction::EndOfEventAction(const G4Event* evt)
+void GRAMSEventAction::EndOfEventAction(const G4Event*)
 {
+  extern global_struct global;
+  // Save the "hits" tree to the file every 5 minutes, so that a job killed before the
+  // end of the run still leaves a readable .root file (with the hits up to the last save)
+  if(global.OutputFormat == 1 && global.hitTree)
+  {
+    auto now = std::chrono::steady_clock::now();
+    if(now - lastAutoSave > std::chrono::minutes(5))
+    {
+      global.hitTree->AutoSave("SaveSelf FlushBaskets");
+      lastAutoSave = now;
+    }
+  }
 }
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......

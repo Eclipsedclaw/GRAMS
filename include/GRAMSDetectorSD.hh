@@ -53,6 +53,7 @@ class GRAMSDetectorSD : public G4VSensitiveDetector
 
   private:
       GRAMSDetectorHitsCollection* DetectorCollection;
+      G4int HCID; // collection ID, one per detector (ScoreSD, TOFSD, TPCSD)
 };
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......

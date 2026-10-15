@@ -3,7 +3,7 @@
 
 #----------------------------------------------------------------------------
 # Setup the project
-cmake_minimum_required(VERSION 2.6 FATAL_ERROR)
+cmake_minimum_required(VERSION 3.16)
 project(PJ)
 
 #----------------------------------------------------------------------------
@@ -19,6 +19,15 @@ else()
 endif()
 
 #----------------------------------------------------------------------------
+# Find ROOT, used for the .root output (/OutputFormat 1)
+#
+find_package(ROOT CONFIG COMPONENTS RIO Tree)
+if(NOT ROOT_FOUND)
+  message(FATAL_ERROR "ROOT not found. Run 'source <your ROOT install>/bin/thisroot.sh' "
+                      "and then run cmake again in a clean build directory.")
+endif()
+
+#----------------------------------------------------------------------------
 # Setup Geant4 include directories and compile definitions
 # Setup include directory for this project
 #
@@ -29,14 +38,15 @@ include(${Geant4_USE_FILE})
 #
 include_directories(${PROJECT_SOURCE_DIR}/include 
                     ${PROJECT_SOURCE_DIR}/shared/include 
-                    ${Geant4_INCLUDE_DIR})
+                    ${Geant4_INCLUDE_DIR}
+                    ${ROOT_INCLUDE_DIRS})
 file(GLOB sources ${PROJECT_SOURCE_DIR}/src/*.cc
                   ${PROJECT_SOURCE_DIR}/shared/src/*.cc)
 file(GLOB headers ${PROJECT_SOURCE_DIR}/include/*.hh
                   ${PROJECT_SOURCE_DIR}/shared/include/*.hh)
 
 #----------------------------------------------------------------------------
-# Add the executable, and link it to the Geant4 libraries
+# Add the executable, and link it to the Geant4 and ROOT libraries
 #
 add_executable(GRAMS GRAMS.cc ${sources} ${headers})
 target_link_libraries(GRAMS ${Geant4_LIBRARIES} ${ROOT_LIBRARIES})

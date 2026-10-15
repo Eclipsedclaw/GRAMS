@@ -1,0 +1,56 @@
+# Macro file for "GRAMS.cc"
+# @author Jiancheng Zeng
+# @date 2026 October 15
+#
+# All 15 energy bins of anti_proton_1.mac ... anti_proton_15.mac in one job:
+# 0-750 MeV in 50 MeV bins, 1e7 events per bin, ROOT output.
+# Every bin is a separate run and writes its own file, with the same names as before:
+#   output/anti_proton/GRASP_anti_proton_1e7_1.root ... GRASP_anti_proton_1e7_15.root
+# Memory use stays constant, so there is no need to split the job into several macros.
+#
+# Run it from the build directory:
+#   ./GRAMS macro/GRASP_anti_proton/anti_proton_all.mac
+
+/Visualization 0
+/CheckOverlap 1
+/DetectorType 1
+/OutputType 1
+/OutputFormat 1
+/TrackType 1
+/TrackEdep 1
+/StopEvent 1
+
+/NbOfLArLayer 1
+/NbOfLXeLayer 1
+/NbOfCellL 1
+/NbOfLArCellZ 1
+/NbOfLXeCellZ 1
+
+/Atmos_Z 3.9 cm
+/LArTPC_Z 20.0 cm
+/LXeTPC_Z 0.0 cm
+/TPC_L 140.0 cm
+/TPC_space 40.0 cm
+/TOFin_Z 0.5 cm
+/TOFout_Z 0.5 cm
+/TOFout_L 360. cm
+#/TOFout_H 200. cm
+/TOFout_Angle 90. deg
+/Gondola_Angle 0. deg
+
+
+/ParticleSource 0
+/PrimaryParticle/area 2000.0 cm
+/PrimaryParticle/Emin 0.0 MeV
+/PrimaryParticle/Emax 750. MeV
+/gun/particle anti_proton
+
+/OutputDirectory output/anti_proton
+/OutputFile GRASP_anti_proton_1e7
+/update
+
+# Energy bins: bin i covers (i-1)*binWidth to i*binWidth MeV and writes {fileName}_i.root
+/control/alias binWidth 50
+/control/alias nEvents 10000000
+/control/alias fileName GRASP_anti_proton_1e7
+/control/loop macro/GRASP_anti_proton/anti_proton_bin.mac ibin 1 15 1

@@ -1,0 +1,19 @@
+# Macro file for "GRAMS.cc"
+# @author Jiancheng Zeng
+# @date 2026 October 15
+#
+# One energy bin, called by anti_proton_all.mac through /control/loop.
+# Do not run this file directly: it needs the aliases ibin, binWidth, nEvents and fileName.
+
+/control/subtract ilow {ibin} 1
+/control/multiply emin {ilow} {binWidth}
+/control/multiply emax {ibin} {binWidth}
+/PrimaryParticle/Emin {emin} MeV
+/PrimaryParticle/Emax {emax} MeV
+/OutputFile {fileName}_{ibin}
+
+# a different random seed for every bin, so any single bin can be re-run on its own
+/random/setSeeds {ibin} 12345
+
+/control/echo Energy bin {ibin}: {emin} - {emax} MeV -> {fileName}_{ibin}
+/run/beamOn {nEvents}

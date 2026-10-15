@@ -96,6 +96,8 @@ class GRAMSDetectorHit : public G4VHit
 */      
   private:
   
+      void WriteRow(); // write one row to the .dat file or the "hits" tree
+
       G4int         trackID_;
 			G4int         originalID_;
 			G4double	    time_;
