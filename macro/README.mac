@@ -6,14 +6,14 @@
 # /OutputFile
 # /InputDirectory
 # /InputFile
-# /gun/seed, default 9876
+# /gun/seed has no effect, use /random/setSeeds <n1> <n2> to set the random seed
 # /myVerbose/GRAMS, default 0
 
 # beamZ = TOFspaceH+0.5*TOFinH+0.5*TOFoutZ+atmosZ+scoreZ
 
 # /DetectorType: 0 for reference, 1 for full geometry, 2 for TPC only (no TOF, no atmosphere, no scoring)
-# /OutputType 0 for all, 1 for simple mode (parent process, process name = 0), -1 for no output
-# /OutputFormat 0: 0 for ASCII 1 for ROOT tree
+# /OutputType 0 for all, 1 for simple mode (parent process, process name = 0)
+# /OutputFormat: 1 for ROOT <OutputFile>.root (default), 0 for ASCII <OutputFile>.dat, other values for no output (see docs/output.md)
 # /TrackType: 0 for all, 1 for trackID = 1, 2 for parentID = 1 only, 3 for trackID = 1 or parentID = 1 only
 # /TrackEdep: 0 for all, 1 for eDep > 0.0 keV 
 # /StopEvent: 0 for all, 1 for stop event (trackID = 1), 2 for both stop and inelastic scattering/inflight annihilation, 3 for G4step only for TOF + stop, 4 for G4step only for TOF + stop/inflight

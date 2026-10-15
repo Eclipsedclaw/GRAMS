@@ -42,7 +42,7 @@
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
 GRAMSDetectorSD::GRAMSDetectorSD(G4String name)
-:G4VSensitiveDetector(name)
+:G4VSensitiveDetector(name), HCID(-1)
 {
   G4String HCname;
 //  collectionName.insert(HCname="DetectorCollection");
@@ -59,7 +59,8 @@ void GRAMSDetectorSD::Initialize(G4HCofThisEvent* HCE)
 {
   DetectorCollection = new GRAMSDetectorHitsCollection
 													(SensitiveDetectorName,collectionName[0]); 
-  static G4int HCID = -1;
+  // HCID must be per detector: a shared (static) ID made all three detectors
+  // overwrite the same slot, leaking two hits collections every event
   if(HCID<0)
   { HCID = G4SDManager::GetSDMpointer()->GetCollectionID(collectionName[0]); }
   HCE->AddHitsCollection( HCID, DetectorCollection );

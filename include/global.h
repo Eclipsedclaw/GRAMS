@@ -43,6 +43,8 @@ using namespace std;
 #include "G4SystemOfUnits.hh"
 class G4LogicalVolume;
 class G4VPhysicalVolume;
+class TFile;
+class TTree;
 
 
 struct global_struct{
@@ -59,15 +61,19 @@ struct global_struct{
 	G4int ParticleSource;
 	ofstream output;
 	ifstream input;
+	TFile* rootFile; // ROOT output file (OutputFormat 1)
+	TTree* hitTree;  // "hits" tree, one entry per hit, same columns as the .dat file
 	
 	vector<float> inputX,inputY,inputZ,inputPx,inputPy,inputPz,inputE;
 	int nLine;
 	int runnum;
 //	int eventID;
 	int ID1, ID2, ID3;
+	// eventID ... stepLength and the three strings are the branch buffers of the "hits" tree
+	// (eventID is also the current event ID, TOF0 ... TScore2 are used by StopEvent 3)
 	int eventID, trackID, parentID, particleID, copyNb1, copyNb;
 	float time, energy, eDep, px, py, pz, x, y,z, stepLength, TOF0, TOF1, TScore1, TScore2;
-	char material[10],parentProcess[30], processName[30];
+	string material, parentProcess, processName;
 	int CheckOverlap;
   int NbLArTPC;
   int NbLXeTPC;

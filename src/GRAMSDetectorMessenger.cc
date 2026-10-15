@@ -84,17 +84,17 @@ GRAMSDetectorMessenger::GRAMSDetectorMessenger(GRAMSDetectorConstruction* myDet)
   DetectorTypeCmd->SetParameterName("flag",true);
   DetectorTypeCmd->SetDefaultValue(1);
 	
-// Output Type, 0 for ASCII, 1 for ROOT
+// Output Type, 0 for full output, 1 for simple mode (process names written as "0")
   OutputTypeCmd = new G4UIcmdWithAnInteger("/OutputType", this );
-  OutputTypeCmd->SetGuidance("OutputType");
+  OutputTypeCmd->SetGuidance("OutputType: 0 full output, 1 simple mode (parent process and process name written as \"0\")");
   OutputTypeCmd->SetParameterName("flag",true);
   OutputTypeCmd->SetDefaultValue(0);	
 
-// Output Format, 0 for simple mode (no text), 1 include texts (process name etc.)
+// Output Format, 0 for ASCII (.dat), 1 for ROOT (.root), other values for no hit output
   OutputFormatCmd = new G4UIcmdWithAnInteger("/OutputFormat", this );
-  OutputFormatCmd->SetGuidance("OutputFormat");
+  OutputFormatCmd->SetGuidance("OutputFormat: 0 ASCII <OutputFile>.dat, 1 ROOT <OutputFile>.root (default)");
   OutputFormatCmd->SetParameterName("flag",true);
-  OutputFormatCmd->SetDefaultValue(0);
+  OutputFormatCmd->SetDefaultValue(1);
 	
 // Track Type, 0 for all particles, 1 for only primary particle (trackID = 1)
   TrackTypeCmd = new G4UIcmdWithAnInteger("/TrackType", this );

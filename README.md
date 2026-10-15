@@ -60,6 +60,7 @@ mkdir toymodel_work && cd toymodel_work
 cmake ../GRAMS
 make
 ```
+ROOT is needed for the build (the simulation writes ROOT files), so source `thisroot.sh` before running cmake. If cmake stops with `ROOT not found`, source it and run cmake again in a clean build directory.
 After these commands you should see GRAMS successfully installed as showed below. If there is error, please check the error messege and contact me if you don't know how to fix it.
 
 <img width="468" alt="Screen Shot 2022-11-14 at 3 18 19 PM" src="https://user-images.githubusercontent.com/37788723/201757448-d12d6070-5822-418d-b84e-517f615f0731.png">
@@ -71,6 +72,11 @@ And the normal simulation running command is to run command below in the source 
 ```bash
 ./GRAMS macro/"YOUR MACRO FILES"
 ```
+
+## Output
+Each run writes `<OutputFile>.root` into `/OutputDirectory`, with a `hits` tree (one entry per recorded step, the same columns as the old `.dat` files) and a `run` tree (number of generated events and the primary particle settings). `/OutputFormat 0` in a macro still writes the old `.dat` text file instead. Memory use no longer grows with the number of events, so a large simulation does not need to be split into many macros anymore: `macro/GRASP_anti_proton/anti_proton_all.mac` runs all 15 energy bins of `anti_proton_1.mac` ... `anti_proton_15.mac` in one job.
+
+See [docs/output.md](docs/output.md) for the branches and their units, how to read the files in Python and ROOT (`toy_model_analysis.read_root_from_toymodel` gives the same DataFrame as the old `.dat` reader), and how to run large or parallel jobs.
 
 ## visulization
 There is a vis.mac file under macro directory, you could use this to generate heprep files. For default setting you could run

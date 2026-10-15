@@ -38,6 +38,7 @@
 #include "G4VisAttributes.hh"
 #include "global.h"
 #include "G4SystemOfUnits.hh"
+#include "TTree.h"
 
 G4Allocator<GRAMSDetectorHit> GRAMSDetectorHitAllocator;
 
@@ -138,7 +139,7 @@ void GRAMSDetectorHit::Print()
 void GRAMSDetectorHit::fPrint()
 {
   extern global_struct global;
-	if(global.OutputFormat == 0)
+	if(global.OutputFormat == 0 || global.OutputFormat == 1)
 	{
 		if(global.StopEvent == 3)
     {
@@ -146,7 +147,7 @@ void GRAMSDetectorHit::fPrint()
       {
         if(global.TScore1 == 0.0 || global.TScore1 > time_ || (momentum_.getX()*momentum_.getX()+momentum_.getY()*momentum_.getY()+momentum_.getZ()*momentum_.getZ() == 0.0))
         {
-          global.output << global.eventID << "\t" << trackID_ << "\t" << parentID_ << "\t" << particleID_ << "\t" << copyNb1_ << "\t" << copyNb_ << "\t" << materialName_ << "\t" << time_ / ns << "\t" << kEnergy_ / MeV << "\t" << edep_ / MeV << "\t" << parentProcess_ << "\t" << processName_ << "\t" << momentum_.getX() / MeV << "\t" << momentum_.getY() / MeV << "\t" << momentum_.getZ() / MeV << "\t" << stepLength_ / cm << "\t" << pos_.getX() / cm << "\t" << pos_.getY() / cm << "\t" << pos_.getZ() / cm << "\n";
+          WriteRow();
           global.TScore1 = time_;
         }
       }
@@ -154,7 +155,7 @@ void GRAMSDetectorHit::fPrint()
       {
         if(global.TScore2 == 0.0 || global.TScore2 > time_ || (momentum_.getX()*momentum_.getX()+momentum_.getY()*momentum_.getY()+momentum_.getZ()*momentum_.getZ() == 0.0))
         {
-          global.output << global.eventID << "\t" << trackID_ << "\t" << parentID_ << "\t" << particleID_ << "\t" << copyNb1_ << "\t" << copyNb_ << "\t" << materialName_ << "\t" << time_ / ns << "\t" << kEnergy_ / MeV << "\t" << edep_ / MeV << "\t" << parentProcess_ << "\t" << processName_ << "\t" << momentum_.getX() / MeV << "\t" << momentum_.getY() / MeV << "\t" << momentum_.getZ() / MeV << "\t" << stepLength_ / cm << "\t" << pos_.getX() / cm << "\t" << pos_.getY() / cm << "\t" << pos_.getZ() / cm << "\n";
+          WriteRow();
           global.TScore2 = time_;
         }
       }
@@ -162,7 +163,7 @@ void GRAMSDetectorHit::fPrint()
       {
         if(global.TOF0 == 0.0 || global.TOF0 > time_ || (momentum_.getX()*momentum_.getX()+momentum_.getY()*momentum_.getY()+momentum_.getZ()*momentum_.getZ() == 0.0))
         {
-          global.output << global.eventID << "\t" << trackID_ << "\t" << parentID_ << "\t" << particleID_ << "\t" << copyNb1_ << "\t" << copyNb_ << "\t" << materialName_ << "\t" << time_ / ns << "\t" << kEnergy_ / MeV << "\t" << edep_ / MeV << "\t" << parentProcess_ << "\t" << processName_ << "\t" << momentum_.getX() / MeV << "\t" << momentum_.getY() / MeV << "\t" << momentum_.getZ() / MeV << "\t" << stepLength_ / cm << "\t" << pos_.getX() / cm << "\t" << pos_.getY() / cm << "\t" << pos_.getZ() / cm << "\n";
+          WriteRow();
           global.TOF0 = time_;
         }
       }
@@ -170,18 +171,29 @@ void GRAMSDetectorHit::fPrint()
       {
         if(global.TOF1 == 0.0 || global.TOF1 > time_ || (momentum_.getX()*momentum_.getX()+momentum_.getY()*momentum_.getY()+momentum_.getZ()*momentum_.getZ() == 0.0))
         {
-          global.output << global.eventID << "\t" << trackID_ << "\t" << parentID_ << "\t" << particleID_ << "\t" << copyNb1_ << "\t" << copyNb_ << "\t" << materialName_ << "\t" << time_ / ns << "\t" << kEnergy_ / MeV << "\t" << edep_ / MeV << "\t" << parentProcess_ << "\t" << processName_ << "\t" << momentum_.getX() / MeV << "\t" << momentum_.getY() / MeV << "\t" << momentum_.getZ() / MeV << "\t" << stepLength_ / cm << "\t" << pos_.getX() / cm << "\t" << pos_.getY() / cm << "\t" << pos_.getZ() / cm << "\n";
+          WriteRow();
           global.TOF1 = time_;
         }
       }
       else if(momentum_.getX()*momentum_.getX()+momentum_.getY()*momentum_.getY()+momentum_.getZ()*momentum_.getZ() == 0.0)
       {
-        global.output << global.eventID << "\t" << trackID_ << "\t" << parentID_ << "\t" << particleID_ << "\t" << copyNb1_ << "\t" << copyNb_ << "\t" << materialName_ << "\t" << time_ / ns << "\t" << kEnergy_ / MeV << "\t" << edep_ / MeV << "\t" << parentProcess_ << "\t" << processName_ << "\t" << momentum_.getX() / MeV << "\t" << momentum_.getY() / MeV << "\t" << momentum_.getZ() / MeV << "\t" << stepLength_ / cm << "\t" << pos_.getX() / cm << "\t" << pos_.getY() / cm << "\t" << pos_.getZ() / cm << "\n";
+        WriteRow();
       }
     }
-    else
-    {
-      global.output
+    else WriteRow();
+  }
+}
+
+//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
+
+// Write this hit as one row: a tab-separated line in the .dat file (OutputFormat 0)
+// or one entry of the "hits" tree in the .root file (OutputFormat 1)
+void GRAMSDetectorHit::WriteRow()
+{
+  extern global_struct global;
+  if(global.OutputFormat == 0)
+  {
+    global.output
   //													<< global.runnum << "\t"
                           << global.eventID << "\t"
 													<< trackID_ << "\t"
@@ -206,7 +218,29 @@ void GRAMSDetectorHit::fPrint()
 													<< pos_.getX() / cm << "\t"
                           << pos_.getY() / cm << "\t"
                           << pos_.getZ() / cm << "\n";
-    }
+  }
+  else if(global.OutputFormat == 1 && global.hitTree)
+  {
+    // same values and units as the .dat columns; eventID is already set in BeginOfEventAction
+    global.trackID = trackID_;
+    global.parentID = parentID_;
+    global.particleID = particleID_;
+    global.copyNb1 = copyNb1_;
+    global.copyNb = copyNb_;
+    global.material = materialName_;
+    global.time = time_ / ns;
+    global.energy = kEnergy_ / MeV;
+    global.eDep = edep_ / MeV;
+    global.parentProcess = parentProcess_;
+    global.processName = processName_;
+    global.px = momentum_.getX() / MeV;
+    global.py = momentum_.getY() / MeV;
+    global.pz = momentum_.getZ() / MeV;
+    global.stepLength = stepLength_ / cm;
+    global.x = pos_.getX() / cm;
+    global.y = pos_.getY() / cm;
+    global.z = pos_.getZ() / cm;
+    global.hitTree->Fill();
   }
 }
 

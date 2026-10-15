@@ -66,6 +66,7 @@
 #include "G4ios.hh"
 #include "global.h"
 #include "G4SystemOfUnits.hh"
+#include <filesystem>
 
 /* copy number
  
@@ -120,6 +121,7 @@ GRAMSDetectorConstruction::GRAMSDetectorConstruction()
 	extern global_struct global;
 	sprintf(global.outdir, "tmp");
 	sprintf(global.outfile, "test");
+	global.OutputFormat = 1; // ROOT output unless the macro sets /OutputFormat 0
 }
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
@@ -343,6 +345,8 @@ G4VPhysicalVolume* GRAMSDetectorConstruction::ConstructGRAMSDetector()
 	{
 		sprintf(fname, "%s/%s_geometry.txt", global.outdir, global.outfile );
 		G4cout << "Geometry output file: " << fname << G4endl;
+		std::error_code ec;
+		std::filesystem::create_directories(global.outdir, ec);
 		ofstream output_geometry;
 		output_geometry.open (fname);
 		
